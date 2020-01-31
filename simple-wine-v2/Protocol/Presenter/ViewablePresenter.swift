@@ -18,6 +18,8 @@ protocol ViewableFilterPresenter {
     func filterNumberOfRowsInSection(section: Int) -> Int
     func filterGetData(indexPath: IndexPath) -> Filter?
     func filterGetIndexPath(category: Category) -> IndexPath?
+    func filterGetSectionTitle(section: Int) -> String
+    
     
     func filterDidPress(at indexPath: IndexPath)
     func titleDidPress(at indexPath: IndexPath)

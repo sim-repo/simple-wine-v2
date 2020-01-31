@@ -33,6 +33,7 @@
 		165DD71D23E42E0A0068D76E /* SyncablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165DD71C23E42E0A0068D76E /* SyncablePresenter.swift */; };
 		165DD72023E42F780068D76E /* MapSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165DD71F23E42F780068D76E /* MapSync.swift */; };
 		165DD72323E42FD70068D76E /* PresentableMapSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165DD72223E42FD70068D76E /* PresentableMapSync.swift */; };
+		165DD72823E46D300068D76E /* Sequences+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165DD72723E46D300068D76E /* Sequences+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		165DD71C23E42E0A0068D76E /* SyncablePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncablePresenter.swift; sourceTree = "<group>"; };
 		165DD71F23E42F780068D76E /* MapSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSync.swift; sourceTree = "<group>"; };
 		165DD72223E42FD70068D76E /* PresentableMapSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableMapSync.swift; sourceTree = "<group>"; };
+		165DD72723E46D300068D76E /* Sequences+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequences+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		165DD6C423E39A0C0068D76E /* simple-wine-v2 */ = {
 			isa = PBXGroup;
 			children = (
+				165DD72623E46D1D0068D76E /* Helper */,
 				165DD71823E42B510068D76E /* Service */,
 				165DD6FC23E3A65C0068D76E /* Protocol */,
 				165DD6DD23E39AAD0068D76E /* Model */,
@@ -263,6 +266,14 @@
 			path = Sync;
 			sourceTree = "<group>";
 		};
+		165DD72623E46D1D0068D76E /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				165DD72723E46D300068D76E /* Sequences+Extensions.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -338,6 +349,7 @@
 				165DD6C623E39A0C0068D76E /* AppDelegate.swift in Sources */,
 				165DD6F623E3A13C0068D76E /* Filter.swift in Sources */,
 				165DD72323E42FD70068D76E /* PresentableMapSync.swift in Sources */,
+				165DD72823E46D300068D76E /* Sequences+Extensions.swift in Sources */,
 				165DD71423E3AA940068D76E /* ProductTableViewCell.swift in Sources */,
 				165DD6FB23E3A3B30068D76E /* SelectedFilter.swift in Sources */,
 				165DD70023E3A69D0068D76E /* ViewablePresenter.swift in Sources */,

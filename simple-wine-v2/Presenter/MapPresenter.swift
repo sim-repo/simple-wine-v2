@@ -18,10 +18,14 @@ class MapPresenter {
     
 //MARK:- selected filters
     var selectedFilter: [SelectedFilter] = SelectedFilter.list()
-    var shownFilter: [Filter] = []
-    
-    
 
+//MARK:- filters
+    var shownFilter: [Filter] = []
+    var filterSectionTitle: [Int:String] = [:] //section: parent title
+    var filterSection: [IndexPath:Filter] = [:]
+    
+    
+    
     private init() {
         mapSync.syncFilter(onSuccess: getOnSuccessFilter(),
                            onError: getOnErrorFilter())
@@ -42,6 +46,7 @@ extension MapPresenter: SyncableMapPresenter {
     func setFilterDataSource(filters: [Filter]) {
         filterDataSource = filters
         resetShownFilters()
+        prepareFilterSection()
         view?.filterReloadData()
     }
     

@@ -9,21 +9,30 @@ extension MapPresenter {
         shownFilter = filterDataSource.filter{$0.level == 0}
     }
     
-    private func fillParentShownFilters(by child: Filter) {
-        if let current = filterDataSource.first(where: {$0.id == child.parentId}) {
-            shownFilter.append(current)
-            fillParentShownFilters(by: current)
-        } else {
-            return
-        }
-    }
-    
-    private func fillChildShownFilters(by parent: Filter) {
+    private func prepareShownFilters(by parent: Filter) {
         let currents = filterDataSource.filter{$0.parentId == parent.id}
         currents.forEach{ curr in
             shownFilter.append(curr)
         }
     }
+    
+    func prepareFilterSection() {
+        filterSectionTitle.removeAll()
+        filterSectionTitle = shownFilter.reduce(into: [Int: String]()) {
+            $0[$1.level] = $1.parentTitle
+        }
+        let groupBySection = shownFilter.group(by: \Filter.level)
+        
+        for item in groupBySection {
+            let section = item.key
+            let filters = item.values
+            
+            for (row, val) in filters.enumerated() {
+                filterSection[IndexPath(row: row, section: section)] = val
+            }
+        }
+    }
+    
 }
 
 
@@ -31,23 +40,30 @@ extension MapPresenter {
 extension MapPresenter: ViewableFilterPresenter {
     
     // getters
-    final func filterNumberOfSections() -> Int {
-        return 1
+    func filterNumberOfSections() -> Int {
+        return filterSectionTitle.count > 0 ? filterSectionTitle.count + 1 : 1
     }
     
-    final func filterNumberOfRowsInSection(section: Int) -> Int {
-        return shownFilter.count
+    func filterNumberOfRowsInSection(section: Int) -> Int {
+        let items = filterSection.filter{$0.key.section == section}
+        return items.count
     }
     
-    final func filterGetData(indexPath: IndexPath) -> Filter? {
-        return shownFilter[indexPath.row]
+    func filterGetData(indexPath: IndexPath) -> Filter? {
+        return filterSection[indexPath]
     }
     
-    final func filterGetIndexPath(category: Category) -> IndexPath?{
-        guard let idx = shownFilter.firstIndex(where: { $0.id == category.id })
-            else { return nil }
-        
-        return IndexPath(row: idx, section: 0)
+    func filterGetIndexPath(category: Category) -> IndexPath?{
+        let dict = filterSection.first(where: {$0.value.id == category.id})
+        return dict?.key
+    }
+    
+    func filterGetSectionTitle(section: Int) -> String {
+        guard filterSectionTitle.count > 0
+            else {
+                return ""
+        }
+        return filterSectionTitle[section] ?? ""
     }
     
     //setters
@@ -58,8 +74,8 @@ extension MapPresenter: ViewableFilterPresenter {
     func titleDidPress(at indexPath: IndexPath) {
         guard let filter = filterGetData(indexPath: indexPath) else { return }
         shownFilter = shownFilter.filter{$0.level <= filter.level}
-       // fillParentShownFilters(by: filter)
-        fillChildShownFilters(by: filter)
+        prepareShownFilters(by: filter)
+        prepareFilterSection()
         view?.filterReloadData()
     }
 }
