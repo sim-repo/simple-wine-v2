@@ -5,6 +5,15 @@ import Foundation
 
 extension MapPresenter {
     
+    func addSelectedFilter(_ filter: Filter) {
+        let selected = SelectedFilter(id: filter.id, title: filter.title)
+        selectedFilter.append(selected)
+    }
+    
+    func removeSelectedFilter(_ filter: Filter) {
+        let selected = SelectedFilter(id: filter.id, title: filter.title)
+        selectedFilter.removeAll(where: {$0.id == filter.id})
+    }
 }
 
 

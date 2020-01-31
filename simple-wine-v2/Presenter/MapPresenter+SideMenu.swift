@@ -6,29 +6,29 @@ import Foundation
 extension MapPresenter {
     
     func resetShownFilters() {
-        shownFilter = filterDataSource.filter{$0.level == 0}
+        tmpShownFilter = filterDataSource.filter{$0.level == 0}
     }
     
     private func prepareShownFilters(by parent: Filter) {
         let currents = filterDataSource.filter{$0.parentId == parent.id}
         currents.forEach{ curr in
-            shownFilter.append(curr)
+            tmpShownFilter.append(curr)
         }
     }
     
     func prepareFilterSection() {
-        filterSectionTitle.removeAll()
-        filterSectionTitle = shownFilter.reduce(into: [Int: String]()) {
+        tmpFilterSectionTitle.removeAll()
+        tmpFilterSectionTitle = tmpShownFilter.reduce(into: [Int: String]()) {
             $0[$1.level] = $1.parentTitle
         }
-        let groupBySection = shownFilter.group(by: \Filter.level)
+        let groupBySection = tmpShownFilter.group(by: \Filter.level)
         
         for item in groupBySection {
             let section = item.key
             let filters = item.values
             
             for (row, val) in filters.enumerated() {
-                filterSection[IndexPath(row: row, section: section)] = val
+                tmpFilterSection[IndexPath(row: row, section: section)] = val
             }
         }
     }
@@ -41,39 +41,48 @@ extension MapPresenter: ViewableFilterPresenter {
     
     // getters
     func filterNumberOfSections() -> Int {
-        return filterSectionTitle.count > 0 ? filterSectionTitle.count + 1 : 1
+        return tmpFilterSectionTitle.count > 0 ? tmpFilterSectionTitle.count + 1 : 1
     }
     
     func filterNumberOfRowsInSection(section: Int) -> Int {
-        let items = filterSection.filter{$0.key.section == section}
+        let items = tmpFilterSection.filter{$0.key.section == section}
         return items.count
     }
     
     func filterGetData(indexPath: IndexPath) -> Filter? {
-        return filterSection[indexPath]
+        return tmpFilterSection[indexPath]
     }
     
     func filterGetIndexPath(category: Category) -> IndexPath?{
-        let dict = filterSection.first(where: {$0.value.id == category.id})
+        let dict = tmpFilterSection.first(where: {$0.value.id == category.id})
         return dict?.key
     }
     
     func filterGetSectionTitle(section: Int) -> String {
-        guard filterSectionTitle.count > 0
+        guard tmpFilterSectionTitle.count > 0
             else {
                 return ""
         }
-        return filterSectionTitle[section] ?? ""
+        return tmpFilterSectionTitle[section] ?? ""
     }
     
     //setters
     func filterDidPress(at indexPath: IndexPath) {
+        guard let filter = filterGetData(indexPath: indexPath) else { return }
+        filter.selected = !filter.selected
         
+        if filter.selected {
+            addSelectedFilter(filter)
+        } else {
+            removeSelectedFilter(filter)
+        }
+        prepareProduct()
+        view?.productReloadData()
     }
     
     func titleDidPress(at indexPath: IndexPath) {
         guard let filter = filterGetData(indexPath: indexPath) else { return }
-        shownFilter = shownFilter.filter{$0.level <= filter.level}
+        tmpShownFilter = tmpShownFilter.filter{$0.level <= filter.level}
         prepareShownFilters(by: filter)
         prepareFilterSection()
         view?.filterReloadData()

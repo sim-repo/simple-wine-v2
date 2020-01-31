@@ -9,12 +9,25 @@ class FilterTableViewCell: UITableViewCell {
     
     var presenter: ViewableFilterPresenter!
     var indexPath: IndexPath!
+    var didSelect = false
     
     func setup(_ filter: Filter, _ presenter: ViewableFilterPresenter, _ indexPath: IndexPath) {
         titleButton.setTitle(filter.title, for: .normal)
         self.presenter = presenter
         self.indexPath = indexPath
         titleButton.showsTouchWhenHighlighted = true
+        
+        didSelect = filter.selected
+        setupFilterButton(filter.level == 0)
+    }
+    
+    
+    private func setupFilterButton(_ isHidden: Bool? = false) {
+        if let hidden = isHidden {
+             filterButton.isHidden = hidden
+        }
+       
+        filterButton.setImage(UIImage(systemName: didSelect ? "square.fill" : "square"), for: .normal)
     }
     
     @IBAction func doPressTitle(_ sender: Any) {
@@ -32,7 +45,11 @@ class FilterTableViewCell: UITableViewCell {
         })
     }
     
+    
     @IBAction func doPressFilter(_ sender: Any) {
+        presenter.filterDidPress(at: indexPath)
+        didSelect = !didSelect
+        setupFilterButton()
     }
     
 }

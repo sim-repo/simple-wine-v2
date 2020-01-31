@@ -16,13 +16,17 @@ class MapPresenter {
     var filterDataSource: [Filter] = []
     var productDataSource: [Product] = Product.list()
     
-//MARK:- selected filters
-    var selectedFilter: [SelectedFilter] = SelectedFilter.list()
+//MARK:- selected filter
+    var selectedFilter: [SelectedFilter] = []
 
-//MARK:- filters
-    var shownFilter: [Filter] = []
-    var filterSectionTitle: [Int:String] = [:] //section: parent title
-    var filterSection: [IndexPath:Filter] = [:]
+//MARK:- filter
+    var tmpShownFilter: [Filter] = []
+    var tmpFilterSectionTitle: [Int:String] = [:] //section: parent title
+    var tmpFilterSection: [IndexPath:Filter] = [:]
+    
+//MARK:- product
+    var tmpShownProducts: [Product] = [] //product id: Product
+    
     
     
     

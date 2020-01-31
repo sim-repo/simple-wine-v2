@@ -5,6 +5,18 @@ import Foundation
 
 extension MapPresenter {
     
+    
+    func prepareProduct() {
+        tmpShownProducts.removeAll()
+        selectedFilter.forEach { selected in
+            let products = productDataSource.filter{$0.filterIds.contains(selected.id)}
+            products.forEach{ product in
+                if !tmpShownProducts.contains(where: {$0.id == product.id}) {
+                    tmpShownProducts.append(product)
+                }
+            }
+        }
+    }
 }
 
 
@@ -16,18 +28,18 @@ extension MapPresenter: ViewableProductPresenter {
     }
     
     final func productNumberOfRowsInSection() -> Int {
-        return productDataSource.count
+        return tmpShownProducts.count
     }
     
     final func productGetData(indexPath: IndexPath) -> Product? {
-        return productDataSource[indexPath.row]
+        return tmpShownProducts[indexPath.row]
     }
     
     final func productGetIndexPath(product: Product) -> IndexPath?{
-        guard let idx = productDataSource.firstIndex(where: { $0.id == product.id })
-            else { return nil }
-        
-        return IndexPath(row: idx, section: 0)
+        if let idx = tmpShownProducts.firstIndex(where: {$0.id == product.id}) {
+            return IndexPath(row: idx, section: 0)
+        }
+        return nil
     }
 }
 

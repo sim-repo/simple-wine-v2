@@ -23,4 +23,8 @@ extension MapViewController: PresentableView {
     func filterReloadData() {
         filterTableView.reloadData()
     }
+    
+    func productReloadData() {
+        productTableView.reloadData()
+    }
 }
