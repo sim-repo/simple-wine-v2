@@ -8,7 +8,7 @@ class ProductTableViewCell: UITableViewCell {
     @IBOutlet weak var textView: UITextView!
     
     
-    func setup(product: Product) {
+    func setup(_ product: Product) {
         itemImageView.image = UIImage(named: "wine")
         titleLabel.text = product.name
         textView.text = product.desc

@@ -1,6 +1,11 @@
 import Foundation
 
 
+
+protocol ViewableMapPresenter {
+    func setView(view: PresentableView)
+}
+
 protocol ViewableCategoryPresenter {
     func categoryNumberOfRowsInSection() -> Int
     func categoryGetData(indexPath: IndexPath) -> Category?
@@ -14,7 +19,8 @@ protocol ViewableFilterPresenter {
     func filterGetData(indexPath: IndexPath) -> Filter?
     func filterGetIndexPath(category: Category) -> IndexPath?
     
-    func filterDidDrillDown(at indexPath: IndexPath)
+    func filterDidPress(at indexPath: IndexPath)
+    func titleDidPress(at indexPath: IndexPath)
 }
 
 protocol ViewableProductPresenter {

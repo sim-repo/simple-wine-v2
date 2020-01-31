@@ -29,6 +29,10 @@
 		165DD70823E3AA2D0068D76E /* SelectedFilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165DD70623E3AA2D0068D76E /* SelectedFilterCollectionViewCell.swift */; };
 		165DD70F23E3AA780068D76E /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165DD70D23E3AA780068D76E /* FilterTableViewCell.swift */; };
 		165DD71423E3AA940068D76E /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165DD71223E3AA940068D76E /* ProductTableViewCell.swift */; };
+		165DD71723E422280068D76E /* PresentableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165DD71623E422280068D76E /* PresentableView.swift */; };
+		165DD71D23E42E0A0068D76E /* SyncablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165DD71C23E42E0A0068D76E /* SyncablePresenter.swift */; };
+		165DD72023E42F780068D76E /* MapSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165DD71F23E42F780068D76E /* MapSync.swift */; };
+		165DD72323E42FD70068D76E /* PresentableMapSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165DD72223E42FD70068D76E /* PresentableMapSync.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +60,10 @@
 		165DD70623E3AA2D0068D76E /* SelectedFilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedFilterCollectionViewCell.swift; sourceTree = "<group>"; };
 		165DD70D23E3AA780068D76E /* FilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
 		165DD71223E3AA940068D76E /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		165DD71623E422280068D76E /* PresentableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableView.swift; sourceTree = "<group>"; };
+		165DD71C23E42E0A0068D76E /* SyncablePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncablePresenter.swift; sourceTree = "<group>"; };
+		165DD71F23E42F780068D76E /* MapSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSync.swift; sourceTree = "<group>"; };
+		165DD72223E42FD70068D76E /* PresentableMapSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableMapSync.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +96,7 @@
 		165DD6C423E39A0C0068D76E /* simple-wine-v2 */ = {
 			isa = PBXGroup;
 			children = (
+				165DD71823E42B510068D76E /* Service */,
 				165DD6FC23E3A65C0068D76E /* Protocol */,
 				165DD6DD23E39AAD0068D76E /* Model */,
 				165DD6DC23E39AA70068D76E /* View */,
@@ -163,6 +172,7 @@
 		165DD6FC23E3A65C0068D76E /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				165DD72123E42FC10068D76E /* Sync */,
 				165DD6FE23E3A66D0068D76E /* View */,
 				165DD6FD23E3A6630068D76E /* Presenter */,
 			);
@@ -173,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				165DD6FF23E3A69D0068D76E /* ViewablePresenter.swift */,
+				165DD71C23E42E0A0068D76E /* SyncablePresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -180,6 +191,7 @@
 		165DD6FE23E3A66D0068D76E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				165DD71623E422280068D76E /* PresentableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -225,6 +237,30 @@
 				165DD71223E3AA940068D76E /* ProductTableViewCell.swift */,
 			);
 			path = Product;
+			sourceTree = "<group>";
+		};
+		165DD71823E42B510068D76E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				165DD71E23E42F550068D76E /* Sync */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		165DD71E23E42F550068D76E /* Sync */ = {
+			isa = PBXGroup;
+			children = (
+				165DD71F23E42F780068D76E /* MapSync.swift */,
+			);
+			path = Sync;
+			sourceTree = "<group>";
+		};
+		165DD72123E42FC10068D76E /* Sync */ = {
+			isa = PBXGroup;
+			children = (
+				165DD72223E42FD70068D76E /* PresentableMapSync.swift */,
+			);
+			path = Sync;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,10 +337,13 @@
 				165DD70423E3AA0B0068D76E /* CategoryCollectionViewCell.swift in Sources */,
 				165DD6C623E39A0C0068D76E /* AppDelegate.swift in Sources */,
 				165DD6F623E3A13C0068D76E /* Filter.swift in Sources */,
+				165DD72323E42FD70068D76E /* PresentableMapSync.swift in Sources */,
 				165DD71423E3AA940068D76E /* ProductTableViewCell.swift in Sources */,
 				165DD6FB23E3A3B30068D76E /* SelectedFilter.swift in Sources */,
 				165DD70023E3A69D0068D76E /* ViewablePresenter.swift in Sources */,
 				165DD6F423E3A1140068D76E /* Category.swift in Sources */,
+				165DD72023E42F780068D76E /* MapSync.swift in Sources */,
+				165DD71D23E42E0A0068D76E /* SyncablePresenter.swift in Sources */,
 				165DD6F023E3A0BA0068D76E /* MapPresenter+SideMenu.swift in Sources */,
 				165DD6EC23E3A0A10068D76E /* MapPresenter+TopMenu.swift in Sources */,
 				165DD6DA23E39A8A0068D76E /* MapViewController.swift in Sources */,
@@ -315,6 +354,7 @@
 				165DD6E423E39F3F0068D76E /* MapViewController+Collection.swift in Sources */,
 				165DD6E823E39F7E0068D76E /* MapViewController+Table.swift in Sources */,
 				165DD6E023E39AD80068D76E /* MapPresenter.swift in Sources */,
+				165DD71723E422280068D76E /* PresentableView.swift in Sources */,
 				165DD6F223E3A0C20068D76E /* MapPresenter+Product.swift in Sources */,
 				165DD6F823E3A1450068D76E /* Product.swift in Sources */,
 			);

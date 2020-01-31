@@ -34,14 +34,14 @@ extension MapViewController: UITableViewDataSource {
             case 3000:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "FilterTableViewCell", for: indexPath) as! FilterTableViewCell
                 if let filter = presenter.filterGetData(indexPath: indexPath) {
-                    cell.setup(filter: filter)
+                    cell.setup(filter, presenter, indexPath)
                 }
                 return cell
             
             case 4000:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ProductTableViewCell", for: indexPath) as! ProductTableViewCell
                 if let product = presenter.productGetData(indexPath: indexPath) {
-                    cell.setup(product: product)
+                    cell.setup(product)
                 }
                 return cell
             
@@ -49,6 +49,6 @@ extension MapViewController: UITableViewDataSource {
                 return UITableViewCell()
         }
     }
-    
-    
 }
+
+

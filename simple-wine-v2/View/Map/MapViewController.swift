@@ -2,18 +2,25 @@ import UIKit
 
 class MapViewController: UIViewController {
 
-    @IBOutlet weak var topCollectionView: UICollectionView!
+    @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var selectedFilterCollectionView: UICollectionView!
-    @IBOutlet weak var sideMenuTableView: UITableView!
+    @IBOutlet weak var filterTableView: UITableView!
     @IBOutlet weak var productTableView: UITableView!
     
     var presenter: MapPresenter {
         return MapPresenter.shared
     }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+
+    override func viewDidAppear(_ animated: Bool) {
+        presenter.setView(view: self)
     }
+}
+
+
+
+extension MapViewController: PresentableView {
     
+    func filterReloadData() {
+        filterTableView.reloadData()
+    }
 }
