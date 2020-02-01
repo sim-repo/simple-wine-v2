@@ -266,6 +266,7 @@
                         <outlet property="filterTableView" destination="f7m-SK-WDd" id="Upu-nC-sDQ"/>
                         <outlet property="productTableView" destination="TlQ-gX-6Et" id="6XC-WG-0Ze"/>
                         <outlet property="selectedFilterCollectionView" destination="Ddj-ZX-HeC" id="3PK-En-d1X"/>
+                        <outlet property="selectedFilterHeightConstraint" destination="pMg-gF-Rxi" id="kUx-EH-Wab"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="af6-3y-iZB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
