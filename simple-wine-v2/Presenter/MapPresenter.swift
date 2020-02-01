@@ -27,9 +27,7 @@ class MapPresenter {
 //MARK:- product
     var tmpShownProducts: [Product] = [] //product id: Product
     
-    
-    
-    
+
     private init() {
         mapSync.syncFilter(onSuccess: getOnSuccessFilter(),
                            onError: getOnErrorFilter())
@@ -60,5 +58,12 @@ extension MapPresenter: SyncableMapPresenter {
     
     func setProductDataSource(products: [Product]) {
         productDataSource = products
+    }
+}
+
+extension MapPresenter: SortablePresenter {
+    func didSortSelect(sortEnum: SortEnum) {
+        productSort(by: sortEnum)
+        view?.productReloadData()
     }
 }

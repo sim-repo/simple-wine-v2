@@ -2,7 +2,7 @@ import Foundation
 
 
 
-extension Sequence{
+extension Sequence {
 
     func group<T:Comparable>(by:KeyPath<Element,T>) -> [(key:T,values:[Element])]{
 

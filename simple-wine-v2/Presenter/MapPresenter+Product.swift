@@ -52,19 +52,41 @@ extension MapPresenter: ViewableProductPresenter {
         return 1
     }
     
-    final func productNumberOfRowsInSection() -> Int {
+    func productNumberOfRowsInSection() -> Int {
         return tmpShownProducts.count
     }
     
-    final func productGetData(indexPath: IndexPath) -> Product? {
+    func productGetData(indexPath: IndexPath) -> Product? {
         return tmpShownProducts[indexPath.row]
     }
     
-    final func productGetIndexPath(product: Product) -> IndexPath?{
+    func productGetIndexPath(product: Product) -> IndexPath?{
         if let idx = tmpShownProducts.firstIndex(where: {$0.id == product.id}) {
             return IndexPath(row: idx, section: 0)
         }
         return nil
+    }
+    
+    func productSort(by sortEnum: SortEnum) {
+        guard tmpShownProducts.count > 0 else { return }
+        switch sortEnum {
+        case .popularity:
+            tmpShownProducts = tmpShownProducts.sorted {
+                $0.popularity > $1.popularity
+            }
+        case .priceDown:
+            tmpShownProducts = tmpShownProducts.sorted {
+                $0.price < $1.price
+            }
+        case .priceUp:
+            tmpShownProducts = tmpShownProducts.sorted {
+                $0.price > $1.price
+            }
+        default:
+            tmpShownProducts = tmpShownProducts.sorted {
+                $0.name < $1.name
+            }
+        }
     }
 }
 

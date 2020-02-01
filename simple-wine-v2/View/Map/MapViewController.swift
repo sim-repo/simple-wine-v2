@@ -6,6 +6,8 @@ class MapViewController: UIViewController {
     @IBOutlet weak var selectedFilterCollectionView: UICollectionView!
     @IBOutlet weak var filterTableView: UITableView!
     @IBOutlet weak var productTableView: UITableView!
+    @IBOutlet weak var searchView: UIView!
+    @IBOutlet weak var sortButton: DropDownButton!
     
     @IBOutlet weak var selectedFilterHeightConstraint: NSLayoutConstraint!
     
@@ -16,12 +18,25 @@ class MapViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         presenter.setView(view: self)
         setupTables()
+        setupSearchView()
+        setupSortButton()
         selectedFilterHeightConstraint.constant = 1
     }
     
     private func setupTables(){
         filterTableView.allowsSelection = false
         productTableView.allowsSelection = false
+    }
+    
+    private func setupSearchView(){
+        searchView.layer.borderWidth = 1
+        searchView.layer.borderColor = #colorLiteral(red: 0.8819957972, green: 0.8767530322, blue: 0.8860259652, alpha: 1)
+    }
+    
+    private func setupSortButton(){
+        sortButton.setupPresenter(sortablePresenter: presenter)
+        sortButton.layer.borderWidth = 1
+        sortButton.layer.borderColor = #colorLiteral(red: 0.8819957972, green: 0.8767530322, blue: 0.8860259652, alpha: 1)
     }
 }
 

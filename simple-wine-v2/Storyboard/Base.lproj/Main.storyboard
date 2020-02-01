@@ -3,6 +3,7 @@
     <device id="ipad10_2" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -71,6 +72,26 @@
                                     <outlet property="delegate" destination="5YT-60-n0b" id="cYw-dr-jyS"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hu6-ew-kx6" userLabel="Search View">
+                                <rect key="frame" x="250" y="188" width="830" height="42"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="gZq-21-YNM">
+                                        <rect key="frame" x="610" y="0.0" width="220" height="42"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="220" id="akt-nc-lSX"/>
+                                        </constraints>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="gZq-21-YNM" secondAttribute="trailing" symbolic="YES" id="KBZ-Gk-cal"/>
+                                    <constraint firstAttribute="height" constant="42" id="iAu-F7-Nsu"/>
+                                    <constraint firstItem="gZq-21-YNM" firstAttribute="top" secondItem="hu6-ew-kx6" secondAttribute="top" id="tUk-A2-tCf"/>
+                                    <constraint firstAttribute="bottom" secondItem="gZq-21-YNM" secondAttribute="bottom" id="zRq-jq-vzN"/>
+                                </constraints>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2000" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ddj-ZX-HeC" userLabel="Selected Filter Collection View">
                                 <rect key="frame" x="0.0" y="128" width="1080" height="60"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -187,7 +208,7 @@
                                 </connections>
                             </tableView>
                             <tableView clipsSubviews="YES" tag="4000" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="160" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TlQ-gX-6Et" userLabel="Product Table View">
-                                <rect key="frame" x="250" y="188" width="830" height="622"/>
+                                <rect key="frame" x="250" y="230" width="830" height="580"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductTableViewCell" rowHeight="160" id="vHQ-ao-G0M" customClass="ProductTableViewCell" customModule="simple_wine_v2" customModuleProvider="target">
@@ -243,30 +264,55 @@
                                     <outlet property="delegate" destination="5YT-60-n0b" id="FR1-3y-dJA"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сортировка:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8LX-1z-3G1">
+                                <rect key="frame" x="581.5" y="200" width="90.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uP2-ui-jUO" customClass="DropDownButton" customModule="simple_wine_v2" customModuleProvider="target">
+                                <rect key="frame" x="680" y="188" width="180" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="b7s-jA-bRD"/>
+                                    <constraint firstAttribute="height" constant="42" id="inX-Ey-Eot"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Наш Выбор ▼"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="TsR-FP-xXh" firstAttribute="top" secondItem="Kam-Ml-PMu" secondAttribute="top" id="5Qd-We-yc4"/>
                             <constraint firstItem="TlQ-gX-6Et" firstAttribute="leading" secondItem="f7m-SK-WDd" secondAttribute="trailing" id="9BW-L8-Vb6"/>
-                            <constraint firstItem="TlQ-gX-6Et" firstAttribute="top" secondItem="Ddj-ZX-HeC" secondAttribute="bottom" id="CdS-0F-Gj1"/>
+                            <constraint firstItem="hu6-ew-kx6" firstAttribute="top" secondItem="Ddj-ZX-HeC" secondAttribute="bottom" id="GNh-TR-5ug"/>
                             <constraint firstItem="TlQ-gX-6Et" firstAttribute="trailing" secondItem="Kam-Ml-PMu" secondAttribute="trailing" id="Myi-87-3Lb"/>
                             <constraint firstItem="f7m-SK-WDd" firstAttribute="bottom" secondItem="Kam-Ml-PMu" secondAttribute="bottom" id="NcQ-hP-gkI"/>
+                            <constraint firstItem="8LX-1z-3G1" firstAttribute="centerY" secondItem="uP2-ui-jUO" secondAttribute="centerY" id="T5P-SW-Waj"/>
+                            <constraint firstItem="TlQ-gX-6Et" firstAttribute="top" secondItem="hu6-ew-kx6" secondAttribute="bottom" id="aeU-Q4-qnL"/>
                             <constraint firstItem="Ddj-ZX-HeC" firstAttribute="top" secondItem="TsR-FP-xXh" secondAttribute="bottom" id="dJF-3X-1BY"/>
+                            <constraint firstItem="uP2-ui-jUO" firstAttribute="leading" secondItem="8LX-1z-3G1" secondAttribute="trailing" constant="8" symbolic="YES" id="g52-5D-cNl"/>
                             <constraint firstItem="TsR-FP-xXh" firstAttribute="trailing" secondItem="Kam-Ml-PMu" secondAttribute="trailing" id="g8Z-in-miF"/>
                             <constraint firstItem="Ddj-ZX-HeC" firstAttribute="trailing" secondItem="Kam-Ml-PMu" secondAttribute="trailing" id="nuM-LH-SAJ"/>
                             <constraint firstItem="f7m-SK-WDd" firstAttribute="top" secondItem="Ddj-ZX-HeC" secondAttribute="bottom" id="obE-zz-ajn"/>
                             <constraint firstItem="f7m-SK-WDd" firstAttribute="leading" secondItem="Kam-Ml-PMu" secondAttribute="leading" id="qBg-ia-1oD"/>
                             <constraint firstItem="TsR-FP-xXh" firstAttribute="leading" secondItem="Kam-Ml-PMu" secondAttribute="leading" id="qRB-te-AMn"/>
                             <constraint firstItem="TlQ-gX-6Et" firstAttribute="bottom" secondItem="Kam-Ml-PMu" secondAttribute="bottom" id="qrc-s8-KCj"/>
+                            <constraint firstItem="las-0C-q4M" firstAttribute="trailing" secondItem="uP2-ui-jUO" secondAttribute="trailing" constant="220" id="uVU-a5-JjP"/>
+                            <constraint firstItem="hu6-ew-kx6" firstAttribute="trailing" secondItem="las-0C-q4M" secondAttribute="trailing" id="vgX-vr-Gyf"/>
+                            <constraint firstItem="hu6-ew-kx6" firstAttribute="leading" secondItem="f7m-SK-WDd" secondAttribute="trailing" id="wKR-Fa-TKh"/>
                             <constraint firstItem="Ddj-ZX-HeC" firstAttribute="leading" secondItem="Kam-Ml-PMu" secondAttribute="leading" id="xPR-K1-YIP"/>
+                            <constraint firstItem="uP2-ui-jUO" firstAttribute="top" secondItem="hu6-ew-kx6" secondAttribute="top" id="zbZ-5b-FM4"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="las-0C-q4M"/>
                     </view>
                     <connections>
                         <outlet property="categoryCollectionView" destination="TsR-FP-xXh" id="p6L-rC-ixr"/>
                         <outlet property="filterTableView" destination="f7m-SK-WDd" id="Upu-nC-sDQ"/>
                         <outlet property="productTableView" destination="TlQ-gX-6Et" id="6XC-WG-0Ze"/>
+                        <outlet property="searchView" destination="hu6-ew-kx6" id="QI4-Ig-ZG1"/>
                         <outlet property="selectedFilterCollectionView" destination="Ddj-ZX-HeC" id="3PK-En-d1X"/>
                         <outlet property="selectedFilterHeightConstraint" destination="pMg-gF-Rxi" id="kUx-EH-Wab"/>
+                        <outlet property="sortButton" destination="uP2-ui-jUO" id="cQf-fe-m43"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="af6-3y-iZB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
