@@ -30,7 +30,6 @@ extension MapPresenter {
                     filteredProductsByKind[filtersPerKind.key] = set
                 }
             }
-            
         }
         let sets = filteredProductsByKind.map{$0.value}
         guard !sets.isEmpty else { return }
@@ -38,7 +37,6 @@ extension MapPresenter {
         for (_, set) in sets.enumerated() {
             resultSet = resultSet.intersection(set)
         }
-        
         for id in resultSet {
             let product = productDataSource.first(where:{$0.id == id})
             tmpShownProducts.append(product!)

@@ -37,4 +37,6 @@ protocol ViewableSelectedFilterPresenter {
     func selectedFilterNumberOfRowsInSection() -> Int
     func selectedFilterGetData(indexPath: IndexPath) -> SelectedFilter?
     func selectedFilterGetIndexPath(selecteFilter: SelectedFilter) -> IndexPath?
+    
+    
 }

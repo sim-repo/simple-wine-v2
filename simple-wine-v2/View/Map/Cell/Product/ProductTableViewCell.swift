@@ -9,7 +9,7 @@ class ProductTableViewCell: UITableViewCell {
     
     
     func setup(_ product: Product) {
-        itemImageView.image = UIImage(named: "wine")
+        itemImageView.image = UIImage(named: product.imageURL)
         titleLabel.text = product.name
         textView.text = product.desc
     }
