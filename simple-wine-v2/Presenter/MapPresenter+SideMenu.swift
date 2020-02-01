@@ -18,6 +18,8 @@ extension MapPresenter {
     
     func prepareFilterSection() {
         tmpFilterSectionTitle.removeAll()
+        tmpFilterSection.removeAll()
+        
         tmpFilterSectionTitle = tmpShownFilter.reduce(into: [Int: String]()) {
             $0[$1.level] = $1.parentTitle
         }

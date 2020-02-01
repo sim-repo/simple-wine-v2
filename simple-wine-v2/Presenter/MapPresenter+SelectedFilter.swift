@@ -6,13 +6,14 @@ import Foundation
 extension MapPresenter {
     
     func addSelectedFilter(_ filter: Filter) {
-        let selected = SelectedFilter(id: filter.id, title: filter.title)
+        let selected = SelectedFilter(id: filter.id, title: filter.title, parentId: filter.parentId ?? 0, kind: filter.kind)
         selectedFilter.append(selected)
+        view?.selectedFilterReloadData()
     }
     
     func removeSelectedFilter(_ filter: Filter) {
-        let selected = SelectedFilter(id: filter.id, title: filter.title)
         selectedFilter.removeAll(where: {$0.id == filter.id})
+        view?.selectedFilterReloadData()
     }
 }
 
