@@ -34,7 +34,7 @@ extension MapViewController: UICollectionViewDataSource {
             case 2000:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectedFilterCollectionViewCell", for: indexPath) as! SelectedFilterCollectionViewCell
                 if let selectedFilter = presenter.selectedFilterGetData(indexPath: indexPath) {
-                    cell.setup(selectedFilter: selectedFilter)
+                    cell.setup(selectedFilter, presenter, indexPath)
                 }
                 return cell
             

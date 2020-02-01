@@ -97,7 +97,7 @@ class Filter {
             Filter(id: 50, title: "вионье", parentId: 3, level: 1, parentTitle: "Сорт Винограда", kind: 4),
             Filter(id: 51, title: "витовска", parentId: 3, level: 1, parentTitle: "Сорт Винограда", kind: 4),
             Filter(id: 52, title: "виура", parentId: 3, level: 1, parentTitle: "Сорт Винограда", kind: 4),
-            Filter(id: 53, title: "гальоппо", parentId: 2, level: 1, parentTitle: "Сорт Винограда", kind: 4),
+            Filter(id: 53, title: "гальоппо", parentId: 3, level: 1, parentTitle: "Сорт Винограда", kind: 4),
             Filter(id: 54, title: "гаме", parentId: 3, level: 1, parentTitle: "Сорт Винограда", kind: 4),
             Filter(id: 55, title: "гарганега", parentId: 3, level: 1, parentTitle: "Сорт Винограда", kind: 4),
             Filter(id: 56, title: "гарнача", parentId: 3, level: 1, parentTitle: "Сорт Винограда", kind: 4),

@@ -8,7 +8,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     
     
     func setup(category: Category) {
-        imageView.image = UIImage(named: "wine")
+        imageView.image = UIImage(named: category.imageURL)
         titleLabel.text = category.title
     }
 }

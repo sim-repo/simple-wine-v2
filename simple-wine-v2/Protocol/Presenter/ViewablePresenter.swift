@@ -20,7 +20,6 @@ protocol ViewableFilterPresenter {
     func filterGetIndexPath(category: Category) -> IndexPath?
     func filterGetSectionTitle(section: Int) -> String
     
-    
     func filterDidPress(at indexPath: IndexPath)
     func titleDidPress(at indexPath: IndexPath)
 }
@@ -38,5 +37,6 @@ protocol ViewableSelectedFilterPresenter {
     func selectedFilterGetData(indexPath: IndexPath) -> SelectedFilter?
     func selectedFilterGetIndexPath(selecteFilter: SelectedFilter) -> IndexPath?
     
+    func selectedFilterCancelDidPress(at indexPath: IndexPath)
     
 }

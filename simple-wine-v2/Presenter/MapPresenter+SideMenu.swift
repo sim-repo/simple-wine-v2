@@ -35,6 +35,12 @@ extension MapPresenter {
         }
     }
     
+    func filterRemove(filterId: Int) {
+        guard let filter = filterDataSource.first(where: {$0.id == filterId}) else { return }
+        filter.selected = false
+        view?.filterReloadData()
+    }
+    
 }
 
 

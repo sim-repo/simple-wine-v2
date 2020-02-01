@@ -13,6 +13,12 @@ class MapViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         presenter.setView(view: self)
+        setupTables()
+    }
+    
+    private func setupTables(){
+        filterTableView.allowsSelection = false
+        productTableView.allowsSelection = false
     }
 }
 

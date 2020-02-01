@@ -15,25 +15,38 @@ extension MapPresenter {
         selectedFilter.removeAll(where: {$0.id == filter.id})
         view?.selectedFilterReloadData()
     }
+    
+    func removeSelectedFilter(at indexPath: IndexPath) {
+        selectedFilter.remove(at: indexPath.row)
+        view?.selectedFilterReloadData()
+    }
 }
 
 
 //MARK:- Called by View
 extension MapPresenter: ViewableSelectedFilterPresenter {
     
-    final func selectedFilterNumberOfRowsInSection() -> Int {
+    func selectedFilterNumberOfRowsInSection() -> Int {
         return selectedFilter.count
     }
     
-    final func selectedFilterGetData(indexPath: IndexPath) -> SelectedFilter? {
+    func selectedFilterGetData(indexPath: IndexPath) -> SelectedFilter? {
         return selectedFilter[indexPath.row]
     }
     
-    final func selectedFilterGetIndexPath(selecteFilter: SelectedFilter) -> IndexPath?{
+    func selectedFilterGetIndexPath(selecteFilter: SelectedFilter) -> IndexPath?{
         guard let idx = selectedFilter.firstIndex(where: { $0.id == selecteFilter.id })
             else { return nil }
         
         return IndexPath(row: idx, section: 0)
+    }
+    
+    func selectedFilterCancelDidPress(at indexPath: IndexPath) {
+        let id = selectedFilter[indexPath.row].id
+        removeSelectedFilter(at: indexPath)
+        filterRemove(filterId: id)
+        prepareProduct()
+        view?.productReloadData()
     }
 }
 
