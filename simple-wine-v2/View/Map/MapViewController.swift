@@ -16,18 +16,27 @@ class MapViewController: UIViewController {
         return MapPresenter.shared
     }
     
+    override func viewDidLoad() {
+        registerNib()
+    }
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         presenter.setView(view: self)
         setupTables()
         setupSearchView()
         setupSortButton()
         setupSearchBar()
+        
         selectedFilterHeightConstraint.constant = 1
     }
     
     private func setupTables(){
         filterTableView.allowsSelection = false
         productTableView.allowsSelection = false
+        
+        productTableView.layer.borderColor = #colorLiteral(red: 0.8819957972, green: 0.8767530322, blue: 0.8860259652, alpha: 1)
+        productTableView.layer.borderWidth = 1.0
     }
     
     private func setupSearchView(){
@@ -43,6 +52,10 @@ class MapViewController: UIViewController {
     
     private func setupSearchBar(){
         searchBar.delegate = self
+    }
+    
+    private func registerNib(){
+        filterTableView.register( FilterSectionHeader.nib, forHeaderFooterViewReuseIdentifier: FilterSectionHeader.reuseIdentifier )
     }
 }
 

@@ -3,7 +3,7 @@ import UIKit
 
 //MARK:- Side Menu + Product
 
-extension MapViewController: UITableViewDataSource {
+extension MapViewController: UITableViewDataSource , UITableViewDelegate{
     
     func numberOfSections(in tableView: UITableView) -> Int {
         switch tableView.tag {
@@ -55,11 +55,10 @@ extension MapViewController: UITableViewDataSource {
         
         switch tableView.tag {
         case 3000:
-            let hview = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 20))
-            let label = UILabel(frame: CGRect(x: 10, y: 7, width: view.frame.size.width, height: 20))
-            label.text = presenter.filterGetSectionTitle(section: section)
-            hview.addSubview(label)
-            return hview
+            let cell = tableView.dequeueReusableHeaderFooterView(withIdentifier: FilterSectionHeader.reuseIdentifier) as! FilterSectionHeader
+            cell.title.text = presenter.filterGetSectionTitle(section: section)
+            cell.contentView.backgroundColor = #colorLiteral(red: 0.935985744, green: 0.9304216504, blue: 0.9402627349, alpha: 1)
+            return cell
         case 4000:
             return UIView()
         default:
@@ -67,14 +66,14 @@ extension MapViewController: UITableViewDataSource {
         }
     }
     
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch tableView.tag {
         case 3000:
-            return presenter.filterGetSectionTitle(section: section)
-        case 4000: return ""
+            return 42
+        case 4000:
+            return 0
         default:
-            return ""
+            return 0
         }
     }
 }

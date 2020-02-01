@@ -38,6 +38,8 @@
 		16ABE89723E58CD50065D873 /* DropDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABE89623E58CD50065D873 /* DropDownButton.swift */; };
 		16ABE8BE23E5B00E0065D873 /* SortablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABE8BD23E5B00E0065D873 /* SortablePresenter.swift */; };
 		16ABE8C123E5B0B60065D873 /* SortConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABE8C023E5B0B60065D873 /* SortConstant.swift */; };
+		16ABE8C823E5EA660065D873 /* FilterSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABE8C723E5EA660065D873 /* FilterSectionHeader.swift */; };
+		16ABE8CA23E5EA750065D873 /* FilterSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16ABE8C923E5EA750065D873 /* FilterSectionHeader.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,8 @@
 		16ABE89623E58CD50065D873 /* DropDownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownButton.swift; sourceTree = "<group>"; };
 		16ABE8BD23E5B00E0065D873 /* SortablePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortablePresenter.swift; sourceTree = "<group>"; };
 		16ABE8C023E5B0B60065D873 /* SortConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortConstant.swift; sourceTree = "<group>"; };
+		16ABE8C723E5EA660065D873 /* FilterSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSectionHeader.swift; sourceTree = "<group>"; };
+		16ABE8C923E5EA750065D873 /* FilterSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterSectionHeader.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +245,8 @@
 			isa = PBXGroup;
 			children = (
 				165DD70D23E3AA780068D76E /* FilterTableViewCell.swift */,
+				16ABE8C723E5EA660065D873 /* FilterSectionHeader.swift */,
+				16ABE8C923E5EA750065D873 /* FilterSectionHeader.xib */,
 			);
 			path = Filter;
 			sourceTree = "<group>";
@@ -368,6 +374,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16ABE8CA23E5EA750065D873 /* FilterSectionHeader.xib in Resources */,
 				165DD6D223E39A0D0068D76E /* LaunchScreen.storyboard in Resources */,
 				165DD6CF23E39A0D0068D76E /* Assets.xcassets in Resources */,
 				165DD6CD23E39A0C0068D76E /* Main.storyboard in Resources */,
@@ -401,6 +408,7 @@
 				165DD6C823E39A0C0068D76E /* SceneDelegate.swift in Sources */,
 				16ABE89523E58B590065D873 /* DropDownView.swift in Sources */,
 				16ABE8C123E5B0B60065D873 /* SortConstant.swift in Sources */,
+				16ABE8C823E5EA660065D873 /* FilterSectionHeader.swift in Sources */,
 				165DD70823E3AA2D0068D76E /* SelectedFilterCollectionViewCell.swift in Sources */,
 				165DD6EE23E3A0B10068D76E /* MapPresenter+SelectedFilter.swift in Sources */,
 				165DD6E423E39F3F0068D76E /* MapViewController+Collection.swift in Sources */,

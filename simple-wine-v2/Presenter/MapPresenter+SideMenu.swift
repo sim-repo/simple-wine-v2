@@ -69,9 +69,9 @@ extension MapPresenter: ViewableFilterPresenter {
     func filterGetSectionTitle(section: Int) -> String {
         guard tmpFilterSectionTitle.count > 0
             else {
-                return ""
+                return "Фильтры"
         }
-        return tmpFilterSectionTitle[section] ?? ""
+        return tmpFilterSectionTitle[section] ?? "Фильтры"
     }
     
     //setters

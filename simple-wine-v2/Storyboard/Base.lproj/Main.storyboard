@@ -208,7 +208,7 @@
                                 </connections>
                             </tableView>
                             <tableView clipsSubviews="YES" tag="4000" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="160" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TlQ-gX-6Et" userLabel="Product Table View">
-                                <rect key="frame" x="250" y="230" width="830" height="580"/>
+                                <rect key="frame" x="250" y="229" width="830" height="581"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductTableViewCell" rowHeight="160" id="vHQ-ao-G0M" customClass="ProductTableViewCell" customModule="simple_wine_v2" customModuleProvider="target">
@@ -288,7 +288,7 @@
                             <constraint firstItem="TlQ-gX-6Et" firstAttribute="trailing" secondItem="Kam-Ml-PMu" secondAttribute="trailing" id="Myi-87-3Lb"/>
                             <constraint firstItem="f7m-SK-WDd" firstAttribute="bottom" secondItem="Kam-Ml-PMu" secondAttribute="bottom" id="NcQ-hP-gkI"/>
                             <constraint firstItem="8LX-1z-3G1" firstAttribute="centerY" secondItem="uP2-ui-jUO" secondAttribute="centerY" id="T5P-SW-Waj"/>
-                            <constraint firstItem="TlQ-gX-6Et" firstAttribute="top" secondItem="hu6-ew-kx6" secondAttribute="bottom" id="aeU-Q4-qnL"/>
+                            <constraint firstItem="TlQ-gX-6Et" firstAttribute="top" secondItem="hu6-ew-kx6" secondAttribute="bottom" constant="-1" id="aeU-Q4-qnL"/>
                             <constraint firstItem="Ddj-ZX-HeC" firstAttribute="top" secondItem="TsR-FP-xXh" secondAttribute="bottom" id="dJF-3X-1BY"/>
                             <constraint firstItem="uP2-ui-jUO" firstAttribute="leading" secondItem="8LX-1z-3G1" secondAttribute="trailing" constant="8" symbolic="YES" id="g52-5D-cNl"/>
                             <constraint firstItem="TsR-FP-xXh" firstAttribute="trailing" secondItem="Kam-Ml-PMu" secondAttribute="trailing" id="g8Z-in-miF"/>
