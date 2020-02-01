@@ -6,13 +6,15 @@ import Foundation
 extension MapPresenter {
     
     func resetShownFilters() {
-        tmpShownFilter = filterDataSource.filter{$0.level == 0}
+        tmpShownFilter = filterDataSource.filter{$0.level == 0 && $0.categoryId == currentCategoryId}
     }
     
-    private func prepareShownFilters(by parent: Filter) {
-        let currents = filterDataSource.filter{$0.parentId == parent.id}
-        currents.forEach{ curr in
-            tmpShownFilter.append(curr)
+    func prepareShownFilters(by parent: Filter) {
+        
+        let filters = filterDataSource.filter{$0.parentId == parent.id && $0.categoryId == currentCategoryId}
+        
+        for filter in filters {
+            tmpShownFilter.append(filter)
         }
     }
     

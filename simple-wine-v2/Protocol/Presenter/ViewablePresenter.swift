@@ -10,6 +10,9 @@ protocol ViewableCategoryPresenter {
     func categoryNumberOfRowsInSection() -> Int
     func categoryGetData(indexPath: IndexPath) -> Category?
     func categoryGetIndexPath(category: Category) -> IndexPath?
+    func categoryIsSelected(indexPath: IndexPath) -> Bool
+    
+    func categoryDidPress(at indexPath: IndexPath)
 }
 
 
@@ -23,6 +26,7 @@ protocol ViewableFilterPresenter {
     func filterDidPress(at indexPath: IndexPath)
     func titleDidPress(at indexPath: IndexPath)
 }
+
 
 protocol ViewableProductPresenter {
     func productNumberSections() -> Int

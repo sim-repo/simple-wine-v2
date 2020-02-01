@@ -6,7 +6,7 @@ import Foundation
 extension MapPresenter {
     
     func addSelectedFilter(_ filter: Filter) {
-        let selected = SelectedFilter(id: filter.id, title: filter.title, parentId: filter.parentId ?? 0, kind: filter.kind)
+        let selected = SelectedFilter(id: filter.id, title: filter.title, parentId: filter.parentId ?? 0, kind: filter.kindId)
         selectedFilter.append(selected)
         view?.selectedFilterReloadData()
     }

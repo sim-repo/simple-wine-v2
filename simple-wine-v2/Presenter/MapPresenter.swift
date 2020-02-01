@@ -14,7 +14,7 @@ class MapPresenter {
     
     var categoryDataSource: [Category] = Category.list()
     var filterDataSource: [Filter] = []
-    var productDataSource: [Product] = Product.list()
+    var productDataSource: [Product] = Product.list0() + Product.list1()
     
 //MARK:- selected filter
     var selectedFilter: [SelectedFilter] = []
@@ -28,6 +28,10 @@ class MapPresenter {
     var tmpShownProducts: [Product] = [] //product id: Product
     var tmpShownProductsWhenSearching: [Product] = [] // used when searching
 
+//MARK:- category
+    var currentCategoryId = 0
+    
+    
     private init() {
         mapSync.syncFilter(onSuccess: getOnSuccessFilter(),
                            onError: getOnErrorFilter())

@@ -22,12 +22,13 @@ extension MapViewController: UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         switch collectionView.tag {
-            
             case 1000:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as! CategoryCollectionViewCell
                 if let category = presenter.categoryGetData(indexPath: indexPath) {
-                    cell.setup(category: category)
+                    let isSelected = presenter.categoryIsSelected(indexPath: indexPath)
+                    cell.setup(category, selected: isSelected)
                 }
                 return cell
             
@@ -46,5 +47,15 @@ extension MapViewController: UICollectionViewDataSource {
 
 
 extension MapViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch collectionView.tag {
+            case 1000:
+                presenter.categoryDidPress(at: indexPath)
+            break
+            case 2000: break
+            default: break
+        }
+    }
     
 }

@@ -49,6 +49,13 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Wn-PE-g74" userLabel="Highlight">
+                                                    <rect key="frame" x="0.0" y="125" width="212" height="3"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="3" id="0AG-ZL-DFt"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                         </view>
                                         <constraints>
@@ -56,12 +63,16 @@
                                             <constraint firstAttribute="bottom" secondItem="QM0-gN-V3T" secondAttribute="bottom" id="Wb1-rh-uk7"/>
                                             <constraint firstAttribute="bottom" secondItem="8BJ-Kj-WaN" secondAttribute="bottom" id="cuf-Hx-dul"/>
                                             <constraint firstItem="QM0-gN-V3T" firstAttribute="top" secondItem="9EZ-oI-mEy" secondAttribute="top" id="exl-vJ-q7O"/>
+                                            <constraint firstItem="0Wn-PE-g74" firstAttribute="leading" secondItem="9EZ-oI-mEy" secondAttribute="leading" id="j3h-Oh-wOf"/>
                                             <constraint firstAttribute="trailing" secondItem="QM0-gN-V3T" secondAttribute="trailing" id="kg2-QY-PTe"/>
                                             <constraint firstItem="8BJ-Kj-WaN" firstAttribute="leading" secondItem="9EZ-oI-mEy" secondAttribute="leading" id="pZk-rf-ZGJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="0Wn-PE-g74" secondAttribute="trailing" id="r5J-Ra-Kmf"/>
+                                            <constraint firstAttribute="bottom" secondItem="0Wn-PE-g74" secondAttribute="bottom" id="tAs-PF-u9s"/>
                                             <constraint firstAttribute="trailing" secondItem="8BJ-Kj-WaN" secondAttribute="trailing" id="wG8-Xp-GAL"/>
                                         </constraints>
                                         <size key="customSize" width="212" height="128"/>
                                         <connections>
+                                            <outlet property="highlight" destination="0Wn-PE-g74" id="4tz-1e-v5q"/>
                                             <outlet property="imageView" destination="QM0-gN-V3T" id="Jfm-aP-mdW"/>
                                             <outlet property="titleLabel" destination="8BJ-Kj-WaN" id="CGp-oO-roR"/>
                                         </connections>
@@ -226,11 +237,11 @@
                                                     </constraints>
                                                 </imageView>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fqt-rW-7by">
-                                                    <rect key="frame" x="184" y="40" width="627" height="113"/>
+                                                    <rect key="frame" x="184" y="36" width="627" height="113"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPE-mr-EiX">
@@ -244,12 +255,12 @@
                                                 <constraint firstItem="xPE-mr-EiX" firstAttribute="top" secondItem="l9r-9j-SDx" secondAttribute="topMargin" constant="4" id="DK5-kG-PXd"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="xPE-mr-EiX" secondAttribute="trailing" constant="8" id="DhE-Tz-d4S"/>
                                                 <constraint firstItem="Fqt-rW-7by" firstAttribute="leading" secondItem="Xh4-mp-id4" secondAttribute="trailing" constant="16" id="QR3-v9-ncO"/>
-                                                <constraint firstItem="Fqt-rW-7by" firstAttribute="top" secondItem="xPE-mr-EiX" secondAttribute="bottom" constant="4" id="ZEe-89-Zd1"/>
+                                                <constraint firstItem="Fqt-rW-7by" firstAttribute="top" secondItem="xPE-mr-EiX" secondAttribute="bottom" id="ZEe-89-Zd1"/>
                                                 <constraint firstItem="Xh4-mp-id4" firstAttribute="leading" secondItem="l9r-9j-SDx" secondAttribute="leading" constant="8" id="ia7-Oi-G8b"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Fqt-rW-7by" secondAttribute="trailing" constant="4" id="mbb-fb-ScS"/>
                                                 <constraint firstItem="xPE-mr-EiX" firstAttribute="leading" secondItem="Xh4-mp-id4" secondAttribute="trailing" constant="8" id="qxl-fi-oKa"/>
                                                 <constraint firstItem="Xh4-mp-id4" firstAttribute="centerY" secondItem="l9r-9j-SDx" secondAttribute="centerY" id="rzw-O7-isA"/>
-                                                <constraint firstItem="Fqt-rW-7by" firstAttribute="bottom" secondItem="l9r-9j-SDx" secondAttribute="bottomMargin" constant="4" id="skd-0c-LID"/>
+                                                <constraint firstItem="Fqt-rW-7by" firstAttribute="bottom" secondItem="l9r-9j-SDx" secondAttribute="bottomMargin" id="skd-0c-LID"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

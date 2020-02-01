@@ -79,6 +79,10 @@ extension MapViewController: PresentableView {
         }
         self.selectedFilterCollectionView.reloadData()
     }
+    
+    func categoryReloadData() {
+        categoryCollectionView.reloadData()
+    }
 }
 
 

@@ -217,10 +217,10 @@
 		165DD70123E3A9DF0068D76E /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				165DD71123E3AA7D0068D76E /* Product */,
-				165DD70C23E3AA4B0068D76E /* Filter */,
-				165DD70B23E3AA410068D76E /* SelectedFilter */,
 				165DD70A23E3AA320068D76E /* Category */,
+				165DD70B23E3AA410068D76E /* SelectedFilter */,
+				165DD70C23E3AA4B0068D76E /* Filter */,
+				165DD71123E3AA7D0068D76E /* Product */,
 			);
 			path = Cell;
 			sourceTree = "<group>";

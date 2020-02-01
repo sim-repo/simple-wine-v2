@@ -20,6 +20,18 @@ extension MapPresenter: ViewableCategoryPresenter {
             else { return nil }
         return IndexPath(row: idx, section: 0)
     }
+    
+    func categoryDidPress(at indexPath: IndexPath) {
+        currentCategoryId = categoryGetData(indexPath: indexPath)?.id ?? 0
+        resetShownFilters()
+        prepareFilterSection()
+        view?.categoryReloadData()
+        view?.filterReloadData()
+    }
+    
+    func categoryIsSelected(indexPath: IndexPath) -> Bool {
+        return currentCategoryId == indexPath.row
+    }
 }
 
 
