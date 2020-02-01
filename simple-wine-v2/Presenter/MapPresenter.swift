@@ -26,7 +26,7 @@ class MapPresenter {
     
 //MARK:- product
     var tmpShownProducts: [Product] = [] //product id: Product
-    
+    var tmpShownProductsWhenSearching: [Product] = [] // used when searching
 
     private init() {
         mapSync.syncFilter(onSuccess: getOnSuccessFilter(),

@@ -309,6 +309,7 @@
                         <outlet property="categoryCollectionView" destination="TsR-FP-xXh" id="p6L-rC-ixr"/>
                         <outlet property="filterTableView" destination="f7m-SK-WDd" id="Upu-nC-sDQ"/>
                         <outlet property="productTableView" destination="TlQ-gX-6Et" id="6XC-WG-0Ze"/>
+                        <outlet property="searchBar" destination="gZq-21-YNM" id="vJf-QA-lPp"/>
                         <outlet property="searchView" destination="hu6-ew-kx6" id="QI4-Ig-ZG1"/>
                         <outlet property="selectedFilterCollectionView" destination="Ddj-ZX-HeC" id="3PK-En-d1X"/>
                         <outlet property="selectedFilterHeightConstraint" destination="pMg-gF-Rxi" id="kUx-EH-Wab"/>

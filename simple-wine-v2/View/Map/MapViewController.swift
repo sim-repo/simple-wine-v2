@@ -8,6 +8,7 @@ class MapViewController: UIViewController {
     @IBOutlet weak var productTableView: UITableView!
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var sortButton: DropDownButton!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     @IBOutlet weak var selectedFilterHeightConstraint: NSLayoutConstraint!
     
@@ -20,6 +21,7 @@ class MapViewController: UIViewController {
         setupTables()
         setupSearchView()
         setupSortButton()
+        setupSearchBar()
         selectedFilterHeightConstraint.constant = 1
     }
     
@@ -37,6 +39,10 @@ class MapViewController: UIViewController {
         sortButton.setupPresenter(sortablePresenter: presenter)
         sortButton.layer.borderWidth = 1
         sortButton.layer.borderColor = #colorLiteral(red: 0.8819957972, green: 0.8767530322, blue: 0.8860259652, alpha: 1)
+    }
+    
+    private func setupSearchBar(){
+        searchBar.delegate = self
     }
 }
 
@@ -59,5 +65,28 @@ extension MapViewController: PresentableView {
             self.selectedFilterHeightConstraint.constant = 1
         }
         self.selectedFilterCollectionView.reloadData()
+    }
+}
+
+
+
+extension MapViewController: UISearchBarDelegate {
+
+
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        presenter.productSearchTextDidBeginEditing()
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        print("begin searchBarTextDidEndEditing")
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        presenter.productSearchTextDidChange(textSearch: searchText)
     }
 }

@@ -10,12 +10,14 @@ class DropDownButton: UIButton, DropDownProtocol {
     var height = NSLayoutConstraint()
     var isOpen = false
     var presenter: SortablePresenter!
+    var title = ""
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         dropView = DropDownView.init(frame: CGRect.init(x: 0, y: 0, width: 0, height: 0))
         dropView.translatesAutoresizingMaskIntoConstraints = false
         dropView.delegate = self
+        title = SortEnum.ourCase.rawValue
     }
     
     func setupPresenter(sortablePresenter: SortablePresenter) {
@@ -39,9 +41,9 @@ class DropDownButton: UIButton, DropDownProtocol {
             NSLayoutConstraint.deactivate([self.height])
             if self.dropView.tableView.contentSize.height > 180 {
                 self.dropView.tableView.reloadData()
-                
                 self.height.constant = 180
             } else {
+                setOpenedTitle()
                 self.height.constant = self.dropView.tableView.contentSize.height
             }
             NSLayoutConstraint.activate([self.height])
@@ -53,7 +55,7 @@ class DropDownButton: UIButton, DropDownProtocol {
             
         } else {
             isOpen = false
-            
+            setClosedTitle()
             NSLayoutConstraint.deactivate([self.height])
             self.height.constant = 0
             NSLayoutConstraint.activate([self.height])
@@ -65,8 +67,17 @@ class DropDownButton: UIButton, DropDownProtocol {
         }
     }
     
+    private func setOpenedTitle(){
+        self.setTitle(title + " ▲", for: .normal)
+    }
+    
+    private func setClosedTitle(){
+        self.setTitle(title + " ▼", for: .normal)
+    }
+    
     func dropDownPressed(string: String) {
-        self.setTitle(string, for: .normal)
+        title = string
+        setClosedTitle()
         self.dismissDropDown()
     }
     

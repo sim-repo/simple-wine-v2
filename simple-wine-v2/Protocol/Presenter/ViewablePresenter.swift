@@ -29,8 +29,10 @@ protocol ViewableProductPresenter {
     func productNumberOfRowsInSection() -> Int
     func productGetData(indexPath: IndexPath) -> Product?
     func productGetIndexPath(product: Product) -> IndexPath?
+    
+    func productSearchTextDidBeginEditing()
+    func productSearchTextDidChange(textSearch: String)
 }
-
 
 protocol ViewableSelectedFilterPresenter {
     func selectedFilterNumberOfRowsInSection() -> Int
@@ -38,5 +40,4 @@ protocol ViewableSelectedFilterPresenter {
     func selectedFilterGetIndexPath(selecteFilter: SelectedFilter) -> IndexPath?
     
     func selectedFilterCancelDidPress(at indexPath: IndexPath)
-    
 }

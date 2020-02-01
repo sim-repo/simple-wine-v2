@@ -88,6 +88,23 @@ extension MapPresenter: ViewableProductPresenter {
             }
         }
     }
+    
+    func productSearchTextDidBeginEditing() {
+        tmpShownProductsWhenSearching = tmpShownProducts
+    }
+    
+    func productSearchTextDidChange(textSearch: String) {
+        
+        if textSearch == "" {
+            tmpShownProducts = tmpShownProductsWhenSearching
+        } else {
+            let searched = productDataSource.filter{$0.desc.lowercased().range(of: textSearch.lowercased()) != nil }
+            if searched.isEmpty == false {
+                tmpShownProducts = searched
+            }
+        }
+        view?.productReloadData()
+    }
 }
 
 
