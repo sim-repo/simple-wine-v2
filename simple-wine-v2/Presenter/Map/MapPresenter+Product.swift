@@ -49,6 +49,7 @@ extension MapPresenter {
             let product = productDataSource.first(where:{$0.id == id})
             tmpShownProducts.append(product!)
         }
+        productSort(by: currentSortEnum)
     }
 }
 

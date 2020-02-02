@@ -34,6 +34,10 @@ class MapPresenter {
 //MARK:- favourites
     var favourites: [Product] = []
     
+//MARK:- sorting
+    var currentSortEnum: SortEnum = .ourCase
+    
+    
     private init() {
         mapSync.syncFilter(onSuccess: getOnSuccessFilter(),
                            onError: getOnErrorFilter())
@@ -43,6 +47,7 @@ class MapPresenter {
     
     func fillAll() {
         tmpShownProducts = productDataSource.filter{ $0.categoryId == currentCategoryId}
+        productSort(by: currentSortEnum)
     }
 }
 
@@ -97,6 +102,7 @@ extension MapPresenter: SyncableMapPresenter {
 
 extension MapPresenter: SortablePresenter {
     func didSortSelect(sortEnum: SortEnum) {
+        currentSortEnum = sortEnum
         productSort(by: sortEnum)
         view?.productReloadData()
     }
