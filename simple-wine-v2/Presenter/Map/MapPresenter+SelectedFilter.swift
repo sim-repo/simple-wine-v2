@@ -33,6 +33,7 @@ extension MapPresenter {
 
 
 //MARK:- Called by View
+
 extension MapPresenter: ViewableSelectedFilterPresenter {
     
     func selectedFilterNumberOfRowsInSection() -> Int {

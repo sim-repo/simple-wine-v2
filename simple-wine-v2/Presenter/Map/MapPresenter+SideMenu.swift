@@ -47,6 +47,7 @@ extension MapPresenter {
 
 
 //MARK:- Called by View
+
 extension MapPresenter: ViewableFilterPresenter {
     
     // getters
@@ -101,6 +102,7 @@ extension MapPresenter: ViewableFilterPresenter {
 
 
 //MARK:- Called by Sync
+
 extension MapPresenter {
     
     func getOnSuccessFilter() -> ((_ filters: [Filter]) -> Void)?  {

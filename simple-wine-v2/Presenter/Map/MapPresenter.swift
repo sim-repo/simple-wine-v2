@@ -11,7 +11,6 @@ class MapPresenter {
     
     
 //MARK:- datasources
-    
     var categoryDataSource: [Category] = Category.list()
     var filterDataSource: [Filter] = []
     var productDataSource: [Product] = Product.list0() + Product.list1()
@@ -38,17 +37,27 @@ class MapPresenter {
     private init() {
         mapSync.syncFilter(onSuccess: getOnSuccessFilter(),
                            onError: getOnErrorFilter())
+        
+        fillAll()
+    }
+    
+    func fillAll() {
+        tmpShownProducts = productDataSource.filter{ $0.categoryId == currentCategoryId}
     }
 }
 
 
-extension MapPresenter: ViewableMapPresenter {
 
+//MARK:- ViewableMapPresenter
+
+extension MapPresenter: ViewableMapPresenter {
     func setView(view: PresentableMapView) {
         self.view = view
     }
 }
 
+
+//MARK:- ViewableFavouriteMapPresenter
 
 extension MapPresenter: ViewableFavouriteMapPresenter {
     
@@ -61,6 +70,9 @@ extension MapPresenter: ViewableFavouriteMapPresenter {
         view?.performFavouriteSegue(presenter: favouritePresenter)
     }
 }
+
+
+//MARK:- SyncableMapPresenter
 
 extension MapPresenter: SyncableMapPresenter {
     
@@ -80,6 +92,9 @@ extension MapPresenter: SyncableMapPresenter {
     }
 }
 
+
+//MARK:- SortablePresenter
+
 extension MapPresenter: SortablePresenter {
     func didSortSelect(sortEnum: SortEnum) {
         productSort(by: sortEnum)
@@ -88,6 +103,7 @@ extension MapPresenter: SortablePresenter {
 }
 
 
+//MARK:- DetailMapPresenterDelegate
 
 extension MapPresenter: DetailMapPresenterDelegate {
     

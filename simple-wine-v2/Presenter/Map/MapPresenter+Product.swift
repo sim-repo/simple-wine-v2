@@ -9,11 +9,18 @@ extension MapPresenter {
         
         tmpShownProducts.removeAll()
         
+        guard let selectedFilters = getSelectedFilter(),
+            selectedFilters.filters.count > 0
+        else {
+            fillAll()
+            return
+        }
+        
+        
         var filteredProductsByKind = [Int: Set<Int>]() // kind: Set<productIds>
         
         // 1 group by
-        let selectedFilters = getSelectedFilter()
-        guard let groupByKind = selectedFilters?.filters.group(by: \SelectedFilter.InnerFilter.kind) else { return }
+        let groupByKind = selectedFilters.filters.group(by: \SelectedFilter.InnerFilter.kind)
         
         // 2 apply grouped by filters
         for filtersPerKind in groupByKind {
@@ -47,6 +54,7 @@ extension MapPresenter {
 
 
 //MARK:- Called by View
+
 extension MapPresenter: ViewableProductPresenter {
     
     func productNumberSections() -> Int {
@@ -128,6 +136,7 @@ extension MapPresenter: ViewableProductPresenter {
 
 
 //MARK:- Called by Sync
+
 extension MapPresenter {
     
 }
