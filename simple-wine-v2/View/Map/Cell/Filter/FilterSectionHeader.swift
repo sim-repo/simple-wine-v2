@@ -1,11 +1,3 @@
-//
-//  FilterSectionHeader.swift
-//  simple-wine-v2
-//
-//  Created by Igor Ivanov on 01.02.2020.
-//  Copyright © 2020 Igor Ivanov. All rights reserved.
-//
-
 import UIKit
 
 class FilterSectionHeader: UITableViewHeaderFooterView {

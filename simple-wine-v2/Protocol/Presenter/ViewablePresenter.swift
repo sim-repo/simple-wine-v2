@@ -3,7 +3,7 @@ import Foundation
 
 //MARK:- Map
 protocol ViewableMapPresenter {
-    func setView(view: PresentableView)
+    func setView(view: PresentableMapView)
 }
 
 protocol ViewableCategoryPresenter {
@@ -47,9 +47,31 @@ protocol ViewableSelectedFilterPresenter {
     func selectedFilterCancelDidPress(at indexPath: IndexPath)
 }
 
+protocol ViewableFavouriteMapPresenter {
+    func getFavouriteNumber() -> Int
+    func favouriteDidPress()
+}
 
 
 //MARK:- DetailMap
 protocol ViewableDetailMapPresenter {
     func getAttribute() -> String
+    func getProduct() -> Product?
+    
+    func favouriteDidPressLike(isLike: Bool)
+}
+
+
+
+//MARK:- Favourite
+protocol ViewableFavouritePresenter {
+    
+    func numberOfSections() -> Int
+    func numberOfRowsInSection(section: Int) -> Int
+    func getData(indexPath: IndexPath) -> Product?
+    func getIndexPath(product: Product) -> IndexPath?
+    func getSectionTitle(section: Int) -> String
+    
+    func setView(view: PresentableFavouriteView) 
+    func productDidPressDetail(indexPath: IndexPath)
 }

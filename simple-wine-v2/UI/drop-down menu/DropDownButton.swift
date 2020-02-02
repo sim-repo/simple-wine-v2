@@ -42,6 +42,7 @@ class DropDownButton: UIButton, DropDownProtocol {
             if self.dropView.tableView.contentSize.height > 260 {
                 self.dropView.tableView.reloadData()
                 self.height.constant = 260
+                setOpenedTitle()
             } else {
                 setOpenedTitle()
                 self.height.constant = self.dropView.tableView.contentSize.height

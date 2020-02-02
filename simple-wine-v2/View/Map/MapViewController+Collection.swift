@@ -17,7 +17,6 @@ extension MapViewController: UICollectionViewDataSource {
             default:
                 return 0
         }
-
     }
     
     

@@ -2,6 +2,7 @@ import Foundation
 
 protocol DetailMapPresenterDelegate {
     func getAttributeName(kindId: Int, productAttributeIds: [Int]) -> String
+    func favouriteDidPressLike(product: Product, isLike: Bool)
 }
 
 class DetailMapPresenter {
@@ -13,6 +14,11 @@ class DetailMapPresenter {
 
 
 extension DetailMapPresenter: ViewableDetailMapPresenter {
+    
+    func getProduct() -> Product? {
+        return product
+    }
+    
     
     func getAttribute() -> String {
         var attributes = ""
@@ -37,6 +43,11 @@ extension DetailMapPresenter: ViewableDetailMapPresenter {
             return attributeName
         }
         return ""
+    }
+    
+    func favouriteDidPressLike(isLike: Bool) {
+        guard let product = product else { return }
+        delegate?.favouriteDidPressLike(product: product, isLike: isLike)
     }
     
 }

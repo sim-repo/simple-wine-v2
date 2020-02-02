@@ -14,13 +14,13 @@ class MapDetailViewController: UIViewController {
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var closeButton: UIButton!
     
-    var presenter: DetailMapPresenter?
+    var presenter: ViewableDetailMapPresenter?
     var isLike = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let presenter = presenter else { return }
-        guard let product = presenter.product else { return }
+        guard let product = presenter.getProduct() else { return }
         setupOutlets()
         imageView.image = UIImage(named: product.imageURL)
         originalNameLabel.text = product.name + ", \(product.manufactureYear)г."
@@ -39,7 +39,7 @@ class MapDetailViewController: UIViewController {
     }
     
     
-    func setup(presenter: DetailMapPresenter){
+    func setup(presenter: ViewableDetailMapPresenter){
         self.presenter = presenter
     }
     
@@ -52,5 +52,6 @@ class MapDetailViewController: UIViewController {
         isLike = !isLike
         let image2 = getSystemImage(name: isLike ? "heart.fill" : "heart", pointSize: 20, color: #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1))
         likeButton.setImage(image2, for: .normal)
+        presenter?.favouriteDidPressLike(isLike: isLike)
     }
 }

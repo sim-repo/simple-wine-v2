@@ -4,9 +4,9 @@ import Foundation
 class MapPresenter {
     
     
-    static var shared = MapPresenter()
+   static var shared = MapPresenter()
     
-    weak var view: PresentableView?
+    weak var view: PresentableMapView?
     var mapSync: PresentableMapSync = MapSync.shared
     
     
@@ -32,6 +32,10 @@ class MapPresenter {
 //MARK:- category
     var currentCategoryId = 0
     
+//MARK:- favourites
+    var favourites: [Product] = []
+    
+    
     
     private init() {
         mapSync.syncFilter(onSuccess: getOnSuccessFilter(),
@@ -41,12 +45,25 @@ class MapPresenter {
 
 
 extension MapPresenter: ViewableMapPresenter {
-    
-    func setView(view: PresentableView) {
+
+    func setView(view: PresentableMapView) {
         self.view = view
     }
 }
 
+
+extension MapPresenter: ViewableFavouriteMapPresenter {
+    
+    func getFavouriteNumber() -> Int {
+        return favourites.count
+    }
+    
+    func favouriteDidPress() {
+        print(favourites.count)
+        let favouritePresenter = FavouritePresenter(favourites: favourites, categoryDataSource: categoryDataSource)
+        view?.performFavouriteSegue(presenter: favouritePresenter)
+    }
+}
 
 extension MapPresenter: SyncableMapPresenter {
     
@@ -94,5 +111,17 @@ extension MapPresenter: DetailMapPresenterDelegate {
             return (filter.level, filter.title)
         }
         return nil
+    }
+    
+    func favouriteDidPressLike(product: Product, isLike: Bool) {
+        if isLike {
+            if favourites.contains(where: {$0.id == product.id}) == false {
+                favourites.append(product)
+            }
+        } else {
+            favourites = favourites.filter({$0.id != product.id})
+        }
+        
+        view?.favouriteNumberReload(number: favourites.count)
     }
 }

@@ -9,6 +9,8 @@ class MapViewController: UIViewController {
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var sortButton: DropDownButton!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var favouriteButton: UIButton!
+
     
     @IBOutlet weak var selectedFilterHeightConstraint: NSLayoutConstraint!
     
@@ -17,21 +19,20 @@ class MapViewController: UIViewController {
     }
     
     
-    
-    
     override func viewDidLoad() {
         registerNib()
+        selectedFilterHeightConstraint.constant = 1
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
         presenter.setView(view: self)
         setupTables()
+        setupCollections()
         setupSearchView()
         setupSortButton()
         setupSearchBar()
-        
-        selectedFilterHeightConstraint.constant = 1
+        setupFavouriteNumber()
     }
     
     private func setupTables(){
@@ -40,6 +41,11 @@ class MapViewController: UIViewController {
         
         productTableView.layer.borderColor = #colorLiteral(red: 0.8819957972, green: 0.8767530322, blue: 0.8860259652, alpha: 1)
         productTableView.layer.borderWidth = 1.0
+    }
+    
+    private func setupCollections(){
+        categoryCollectionView.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        categoryCollectionView.layer.borderWidth = 1.0
     }
     
     private func setupSearchView(){
@@ -57,22 +63,39 @@ class MapViewController: UIViewController {
         searchBar.delegate = self
     }
     
+    private func setupFavouriteNumber() {
+        let count = presenter.getFavouriteNumber()
+        favouriteButton.setTitle("Выбрано: \(count)", for: .normal)
+    }
+    
     private func registerNib(){
         filterTableView.register( FilterSectionHeader.nib, forHeaderFooterViewReuseIdentifier: FilterSectionHeader.reuseIdentifier )
     }
     
     
+    @IBAction func pressFavourite(_ sender: Any) {
+        presenter.favouriteDidPress()
+    }
+    
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if let dest = segue.destination as? MapDetailViewController,
         let presenter = sender as? DetailMapPresenter {
             dest.setup(presenter: presenter)
+        }
+        
+        if let dest = segue.destination as? FavouriteViewController,
+        let presenter = sender as? FavouritePresenter {
+            dest.presenter = presenter
         }
     }
 }
 
 
 
-extension MapViewController: PresentableView {
+extension MapViewController: PresentableMapView {
     
     func filterReloadData() {
         filterTableView.reloadData()
@@ -84,7 +107,7 @@ extension MapViewController: PresentableView {
     
     func selectedFilterReloadData() {
         if self.presenter.selectedFilterNumberOfRowsInSection() > 0 {
-            self.selectedFilterHeightConstraint.constant = 60
+            self.selectedFilterHeightConstraint.constant = 30
         } else {
             self.selectedFilterHeightConstraint.constant = 1
         }
@@ -98,6 +121,16 @@ extension MapViewController: PresentableView {
    func performMapDetailSegue(presenter: DetailMapPresenter) {
         performSegue(withIdentifier: "showDetailSegue", sender: presenter)
     }
+    
+    func performFavouriteSegue(presenter: FavouritePresenter) {
+        performSegue(withIdentifier: "showFavouriteSegue", sender: presenter)
+    }
+    
+    func favouriteNumberReload(number: Int) {
+        favouriteButton.setTitle("Выбрано: \(number)", for: .normal)
+        view.layoutIfNeeded()
+    }
+    
 }
 
 
