@@ -112,9 +112,14 @@ class MapViewController: UIViewController {
 
 
 extension MapViewController: PresentableMapView {
+
     
     func filterReloadData() {
         filterTableView.reloadData()
+    }
+    
+    func productReloadData(at indexPath: IndexPath) {
+        productTableView.reloadRows(at: [indexPath], with: .automatic)
     }
     
     func productReloadData() {

@@ -47,7 +47,6 @@ extension DetailMapPresenter: ViewableDetailMapPresenter {
     
     func favouriteDidPressLike(isLike: Bool) {
         guard let product = product else { return }
-        product.isLiked = isLike
         delegate?.favouriteDidPressLike(product: product, isLike: isLike)
     }
     

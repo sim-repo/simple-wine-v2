@@ -37,8 +37,8 @@ class MapDetailViewController: UIViewController {
     }
     
     private func setLikeButton(isLiked: Bool) {
-        let image2 = getSystemImage(name: isLiked ? "heart.fill" : "heart", pointSize: 20, color: #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1))
-        likeButton.setImage(image2, for: .normal)
+        let image = getSystemImage(name: "heart", pointSize: 20, color:  isLiked ? #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1) : #colorLiteral(red: 0.7517493367, green: 0.7518768311, blue: 0.751732409, alpha: 1) )
+        likeButton.setImage(image, for: .normal)
     }
     
     func setup(presenter: ViewableDetailMapPresenter){

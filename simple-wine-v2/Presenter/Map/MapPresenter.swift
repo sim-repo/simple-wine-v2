@@ -133,6 +133,9 @@ extension MapPresenter: DetailMapPresenterDelegate {
     }
     
     func favouriteDidPressLike(product: Product, isLike: Bool) {
+        
+        product.isLiked = isLike
+        
         if isLike {
             if favourites.contains(where: {$0.id == product.id}) == false {
                 favourites.append(product)
@@ -140,7 +143,9 @@ extension MapPresenter: DetailMapPresenterDelegate {
         } else {
             favourites = favourites.filter({$0.id != product.id})
         }
-        
         view?.favouriteNumberReload(number: favourites.count)
+        if let indexPath = productGetIndexPath(product: product) {
+          view?.productReloadData(at: indexPath)
+        }
     }
 }
