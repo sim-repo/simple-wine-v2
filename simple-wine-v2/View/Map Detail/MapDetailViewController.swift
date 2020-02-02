@@ -21,7 +21,9 @@ class MapDetailViewController: UIViewController {
         super.viewDidLoad()
         guard let presenter = presenter else { return }
         guard let product = presenter.getProduct() else { return }
-        setupOutlets()
+        isLike = product.isLiked
+        setCloseButton()
+        setLikeButton(isLiked: product.isLiked)
         imageView.image = UIImage(named: product.imageURL)
         originalNameLabel.text = product.name + ", \(product.manufactureYear)г."
         russianNameLabel.text = product.name
@@ -29,18 +31,19 @@ class MapDetailViewController: UIViewController {
         bigDescLabel.text = product.bigDesc
     }
     
-    private func setupOutlets(){
-        
+    private func setCloseButton(){
         let image = getSystemImage(name: "xmark.octagon", pointSize: 20, color: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
         closeButton.setImage(image, for: .normal)
-        
-        let image2 = getSystemImage(name: "heart", pointSize: 20, color: #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1))
+    }
+    
+    private func setLikeButton(isLiked: Bool) {
+        let image2 = getSystemImage(name: isLiked ? "heart.fill" : "heart", pointSize: 20, color: #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1))
         likeButton.setImage(image2, for: .normal)
     }
     
-    
     func setup(presenter: ViewableDetailMapPresenter){
         self.presenter = presenter
+        
     }
     
     @IBAction func pressClose(_ sender: Any) {
@@ -50,8 +53,7 @@ class MapDetailViewController: UIViewController {
     
     @IBAction func pressLike(_ sender: Any) {
         isLike = !isLike
-        let image2 = getSystemImage(name: isLike ? "heart.fill" : "heart", pointSize: 20, color: #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1))
-        likeButton.setImage(image2, for: .normal)
+        setLikeButton(isLiked: isLike)
         presenter?.favouriteDidPressLike(isLike: isLike)
     }
 }

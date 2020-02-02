@@ -15,6 +15,8 @@ class Product {
     var imageURL = ""
     var manufactureYear: Int
     
+    // non-server fields
+    var isLiked = false
     
     
     init(id: Int, name: String, categoryId: Int, desc: String, price: Double, oldPrice: Double, attributeIds: [Int], imageURL: String, popularity: Int, manufactureYear: Int){
