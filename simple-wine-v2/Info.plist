@@ -55,5 +55,29 @@
 	<array>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 	</array>
+    <key>UIAppFonts</key>
+    <array>
+        <string>CharterITC Bold Italic.otf</string>
+        <string>LucidaGrande.ttf</string>
+        <string>CharterITC Bold.otf</string>
+        <string>CharterITC Italic.otf</string>
+        <string>CharterITC.otf</string>
+        <string>Geometria.otf</string>
+        <string>Geometria-ThinItalic.otf</string>
+        <string>Geometria-Bold.otf</string>
+        <string>Geometria-BoldItalic.otf</string>
+        <string>Geometria-ExtaBlack.otf</string>
+        <string>Geometria-ExtraBlackItalic.otf</string>
+        <string>Geometria-ExtraLight.otf</string>
+        <string>Geometria-ExtraLightItalic.otf</string>
+        <string>Geometria-Heavy.otf</string>
+        <string>Geometria-HeavyItalic.otf</string>
+        <string>Geometria-Italic.otf</string>
+        <string>Geometria-Light.otf</string>
+        <string>Geometria-LightItalic.otf</string>
+        <string>Geometria-Medium.otf</string>
+        <string>Geometria-MediumItalic.otf</string>
+        <string>Geometria-Thin.otf</string>
+    </array>
 </dict>
 </plist>

@@ -6,4 +6,5 @@ protocol PresentableView: class {
     func productReloadData()
     func selectedFilterReloadData()
     func categoryReloadData()
+    func performMapDetailSegue(presenter: DetailMapPresenter)
 }

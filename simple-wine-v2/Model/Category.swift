@@ -6,6 +6,7 @@ class Category {
     var id = 0
     var title = ""
     var imageURL = ""
+    var kinds: [Int] = []
     
     init(id: Int, title: String, imageURL: String){
         self.id = id

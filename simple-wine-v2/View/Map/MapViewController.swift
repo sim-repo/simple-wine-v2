@@ -16,6 +16,9 @@ class MapViewController: UIViewController {
         return MapPresenter.shared
     }
     
+    
+    
+    
     override func viewDidLoad() {
         registerNib()
     }
@@ -57,6 +60,14 @@ class MapViewController: UIViewController {
     private func registerNib(){
         filterTableView.register( FilterSectionHeader.nib, forHeaderFooterViewReuseIdentifier: FilterSectionHeader.reuseIdentifier )
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest = segue.destination as? MapDetailViewController,
+        let presenter = sender as? DetailMapPresenter {
+            dest.setup(presenter: presenter)
+        }
+    }
 }
 
 
@@ -82,6 +93,10 @@ extension MapViewController: PresentableView {
     
     func categoryReloadData() {
         categoryCollectionView.reloadData()
+    }
+    
+   func performMapDetailSegue(presenter: DetailMapPresenter) {
+        performSegue(withIdentifier: "showDetailSegue", sender: presenter)
     }
 }
 

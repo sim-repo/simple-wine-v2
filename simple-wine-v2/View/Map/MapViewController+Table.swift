@@ -41,7 +41,7 @@ extension MapViewController: UITableViewDataSource , UITableViewDelegate{
         case 4000:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProductTableViewCell", for: indexPath) as! ProductTableViewCell
             if let product = presenter.productGetData(indexPath: indexPath) {
-                cell.setup(product)
+                cell.setup(product, presenter: presenter, indexPath: indexPath)
             }
             return cell
             

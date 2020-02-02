@@ -20,7 +20,7 @@ extension MapPresenter {
             let filters = filtersPerKind.values
             for filter in filters {
                 
-                let products = productDataSource.filter{$0.filterIds.contains(filter.id)}
+                let products = productDataSource.filter{$0.attributeIds.contains(filter.id)}
                 products.forEach{ product in
                     var set = filteredProductsByKind[filtersPerKind.key]
                     if set == nil {
@@ -82,6 +82,14 @@ extension MapPresenter: ViewableProductPresenter {
             tmpShownProducts = tmpShownProducts.sorted {
                 $0.price > $1.price
             }
+        case .manufactureDown:
+            tmpShownProducts = tmpShownProducts.sorted {
+                $0.manufactureYear < $1.manufactureYear
+            }
+        case .manufactureUp:
+            tmpShownProducts = tmpShownProducts.sorted {
+                $0.manufactureYear > $1.manufactureYear
+            }
         default:
             tmpShownProducts = tmpShownProducts.sorted {
                 $0.name < $1.name
@@ -104,6 +112,16 @@ extension MapPresenter: ViewableProductPresenter {
             }
         }
         view?.productReloadData()
+    }
+    
+    func productDidPressDetail(indexPath: IndexPath) {
+        let detailMapPresenter = DetailMapPresenter()
+        detailMapPresenter.delegate = self
+        let product = productGetData(indexPath: indexPath)
+        detailMapPresenter.product = product
+        let setting = detailMapSettingDataSource.first(where: {$0.categoryId == currentCategoryId})
+        detailMapPresenter.detailMapSetting = setting
+        view?.performMapDetailSegue(presenter: detailMapPresenter)
     }
 }
 

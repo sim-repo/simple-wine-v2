@@ -1,7 +1,7 @@
 import Foundation
 
 
-
+//MARK:- Map
 protocol ViewableMapPresenter {
     func setView(view: PresentableView)
 }
@@ -36,6 +36,7 @@ protocol ViewableProductPresenter {
     
     func productSearchTextDidBeginEditing()
     func productSearchTextDidChange(textSearch: String)
+    func productDidPressDetail(indexPath: IndexPath)
 }
 
 protocol ViewableSelectedFilterPresenter {
@@ -44,4 +45,11 @@ protocol ViewableSelectedFilterPresenter {
     func selectedFilterGetIndexPath(selecteFilter: SelectedFilter) -> IndexPath?
     
     func selectedFilterCancelDidPress(at indexPath: IndexPath)
+}
+
+
+
+//MARK:- DetailMap
+protocol ViewableDetailMapPresenter {
+    func getAttribute() -> String
 }

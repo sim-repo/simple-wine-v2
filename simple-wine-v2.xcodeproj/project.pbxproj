@@ -40,6 +40,31 @@
 		16ABE8C123E5B0B60065D873 /* SortConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABE8C023E5B0B60065D873 /* SortConstant.swift */; };
 		16ABE8C823E5EA660065D873 /* FilterSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABE8C723E5EA660065D873 /* FilterSectionHeader.swift */; };
 		16ABE8CA23E5EA750065D873 /* FilterSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16ABE8C923E5EA750065D873 /* FilterSectionHeader.xib */; };
+		16ABE8CF23E623FE0065D873 /* MapDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABE8CE23E623FE0065D873 /* MapDetailViewController.swift */; };
+		16ABE8D323E62B650065D873 /* DetailMapSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABE8D223E62B650065D873 /* DetailMapSetting.swift */; };
+		16ABE8D723E62CC30065D873 /* DetailMapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABE8D623E62CC30065D873 /* DetailMapPresenter.swift */; };
+		16ABE8DA23E6516C0065D873 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABE8D923E6516C0065D873 /* UIImage+Extensions.swift */; };
+		16ABE8F423E6561E0065D873 /* CharterITC Bold Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 16ABE8E923E655FB0065D873 /* CharterITC Bold Italic.otf */; };
+		16ABE8F523E656210065D873 /* CharterITC Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 16ABE8EC23E655FB0065D873 /* CharterITC Bold.otf */; };
+		16ABE8F623E656240065D873 /* CharterITC Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 16ABE8EE23E655FB0065D873 /* CharterITC Italic.otf */; };
+		16ABE8F723E656240065D873 /* CharterITC.otf in Resources */ = {isa = PBXBuildFile; fileRef = 16ABE8E323E655FB0065D873 /* CharterITC.otf */; };
+		16ABE8F823E6562B0065D873 /* Geometria-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 16ABE8E123E655FA0065D873 /* Geometria-Bold.otf */; };
+		16ABE8F923E6562B0065D873 /* Geometria-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 16ABE8E723E655FB0065D873 /* Geometria-BoldItalic.otf */; };
+		16ABE8FA23E6562B0065D873 /* Geometria-ExtaBlack.otf in Resources */ = {isa = PBXBuildFile; fileRef = 16ABE8DF23E655FA0065D873 /* Geometria-ExtaBlack.otf */; };
+		16ABE8FB23E6562B0065D873 /* Geometria-ExtraBlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 16ABE8E523E655FB0065D873 /* Geometria-ExtraBlackItalic.otf */; };
+		16ABE8FC23E6562B0065D873 /* Geometria-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 16ABE8E623E655FB0065D873 /* Geometria-ExtraLight.otf */; };
+		16ABE8FD23E6562B0065D873 /* Geometria-ExtraLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 16ABE8F023E655FC0065D873 /* Geometria-ExtraLightItalic.otf */; };
+		16ABE8FE23E6562B0065D873 /* Geometria-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 16ABE8EA23E655FB0065D873 /* Geometria-Heavy.otf */; };
+		16ABE8FF23E6562B0065D873 /* Geometria-HeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 16ABE8E223E655FA0065D873 /* Geometria-HeavyItalic.otf */; };
+		16ABE90023E6562B0065D873 /* Geometria-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 16ABE8F123E655FC0065D873 /* Geometria-Italic.otf */; };
+		16ABE90123E6562B0065D873 /* Geometria-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 16ABE8E823E655FB0065D873 /* Geometria-Light.otf */; };
+		16ABE90223E6562B0065D873 /* Geometria-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 16ABE8EF23E655FC0065D873 /* Geometria-LightItalic.otf */; };
+		16ABE90323E6562B0065D873 /* Geometria-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 16ABE8EB23E655FB0065D873 /* Geometria-Medium.otf */; };
+		16ABE90423E6562B0065D873 /* Geometria-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 16ABE8ED23E655FB0065D873 /* Geometria-MediumItalic.otf */; };
+		16ABE90523E6562B0065D873 /* Geometria-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 16ABE8F323E655FC0065D873 /* Geometria-Thin.otf */; };
+		16ABE90623E6562B0065D873 /* Geometria-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 16ABE8E023E655FA0065D873 /* Geometria-ThinItalic.otf */; };
+		16ABE90723E6562B0065D873 /* Geometria.otf in Resources */ = {isa = PBXBuildFile; fileRef = 16ABE8E423E655FB0065D873 /* Geometria.otf */; };
+		16ABE90823E6562B0065D873 /* LucidaGrande.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16ABE8F223E655FC0065D873 /* LucidaGrande.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +103,31 @@
 		16ABE8C023E5B0B60065D873 /* SortConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortConstant.swift; sourceTree = "<group>"; };
 		16ABE8C723E5EA660065D873 /* FilterSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSectionHeader.swift; sourceTree = "<group>"; };
 		16ABE8C923E5EA750065D873 /* FilterSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterSectionHeader.xib; sourceTree = "<group>"; };
+		16ABE8CE23E623FE0065D873 /* MapDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailViewController.swift; sourceTree = "<group>"; };
+		16ABE8D223E62B650065D873 /* DetailMapSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMapSetting.swift; sourceTree = "<group>"; };
+		16ABE8D623E62CC30065D873 /* DetailMapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMapPresenter.swift; sourceTree = "<group>"; };
+		16ABE8D923E6516C0065D873 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		16ABE8DF23E655FA0065D873 /* Geometria-ExtaBlack.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geometria-ExtaBlack.otf"; sourceTree = "<group>"; };
+		16ABE8E023E655FA0065D873 /* Geometria-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geometria-ThinItalic.otf"; sourceTree = "<group>"; };
+		16ABE8E123E655FA0065D873 /* Geometria-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geometria-Bold.otf"; sourceTree = "<group>"; };
+		16ABE8E223E655FA0065D873 /* Geometria-HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geometria-HeavyItalic.otf"; sourceTree = "<group>"; };
+		16ABE8E323E655FB0065D873 /* CharterITC.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CharterITC.otf; sourceTree = "<group>"; };
+		16ABE8E423E655FB0065D873 /* Geometria.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Geometria.otf; sourceTree = "<group>"; };
+		16ABE8E523E655FB0065D873 /* Geometria-ExtraBlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geometria-ExtraBlackItalic.otf"; sourceTree = "<group>"; };
+		16ABE8E623E655FB0065D873 /* Geometria-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geometria-ExtraLight.otf"; sourceTree = "<group>"; };
+		16ABE8E723E655FB0065D873 /* Geometria-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geometria-BoldItalic.otf"; sourceTree = "<group>"; };
+		16ABE8E823E655FB0065D873 /* Geometria-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geometria-Light.otf"; sourceTree = "<group>"; };
+		16ABE8E923E655FB0065D873 /* CharterITC Bold Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CharterITC Bold Italic.otf"; sourceTree = "<group>"; };
+		16ABE8EA23E655FB0065D873 /* Geometria-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geometria-Heavy.otf"; sourceTree = "<group>"; };
+		16ABE8EB23E655FB0065D873 /* Geometria-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geometria-Medium.otf"; sourceTree = "<group>"; };
+		16ABE8EC23E655FB0065D873 /* CharterITC Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CharterITC Bold.otf"; sourceTree = "<group>"; };
+		16ABE8ED23E655FB0065D873 /* Geometria-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geometria-MediumItalic.otf"; sourceTree = "<group>"; };
+		16ABE8EE23E655FB0065D873 /* CharterITC Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CharterITC Italic.otf"; sourceTree = "<group>"; };
+		16ABE8EF23E655FC0065D873 /* Geometria-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geometria-LightItalic.otf"; sourceTree = "<group>"; };
+		16ABE8F023E655FC0065D873 /* Geometria-ExtraLightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geometria-ExtraLightItalic.otf"; sourceTree = "<group>"; };
+		16ABE8F123E655FC0065D873 /* Geometria-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geometria-Italic.otf"; sourceTree = "<group>"; };
+		16ABE8F223E655FC0065D873 /* LucidaGrande.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LucidaGrande.ttf; sourceTree = "<group>"; };
+		16ABE8F323E655FC0065D873 /* Geometria-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geometria-Thin.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,11 +181,8 @@
 		165DD6DB23E39A9F0068D76E /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				165DD6DF23E39AD80068D76E /* MapPresenter.swift */,
-				165DD6EB23E3A0A10068D76E /* MapPresenter+TopMenu.swift */,
-				165DD6ED23E3A0B10068D76E /* MapPresenter+SelectedFilter.swift */,
-				165DD6EF23E3A0BA0068D76E /* MapPresenter+SideMenu.swift */,
-				165DD6F123E3A0C20068D76E /* MapPresenter+Product.swift */,
+				16ABE8D423E62C930065D873 /* Map */,
+				16ABE8D523E62CA10065D873 /* DetailMap */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -143,6 +190,7 @@
 		165DD6DC23E39AA70068D76E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				16ABE8CD23E623CA0065D873 /* Detail */,
 				165DD6DE23E39ABA0068D76E /* Map */,
 			);
 			path = View;
@@ -155,6 +203,7 @@
 				165DD6F523E3A13C0068D76E /* Filter.swift */,
 				165DD6F723E3A1450068D76E /* Product.swift */,
 				165DD6FA23E3A3B30068D76E /* SelectedFilter.swift */,
+				16ABE8D223E62B650065D873 /* DetailMapSetting.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -181,6 +230,7 @@
 		165DD6E223E39B080068D76E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				16ABE8DB23E6547C0065D873 /* Fonts */,
 				165DD6CE23E39A0D0068D76E /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -287,6 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				165DD72723E46D300068D76E /* Sequences+Extensions.swift */,
+				16ABE8D923E6516C0065D873 /* UIImage+Extensions.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -314,6 +365,62 @@
 				16ABE8C023E5B0B60065D873 /* SortConstant.swift */,
 			);
 			path = Constant;
+			sourceTree = "<group>";
+		};
+		16ABE8CD23E623CA0065D873 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				16ABE8CE23E623FE0065D873 /* MapDetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		16ABE8D423E62C930065D873 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				165DD6DF23E39AD80068D76E /* MapPresenter.swift */,
+				165DD6EB23E3A0A10068D76E /* MapPresenter+TopMenu.swift */,
+				165DD6ED23E3A0B10068D76E /* MapPresenter+SelectedFilter.swift */,
+				165DD6EF23E3A0BA0068D76E /* MapPresenter+SideMenu.swift */,
+				165DD6F123E3A0C20068D76E /* MapPresenter+Product.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		16ABE8D523E62CA10065D873 /* DetailMap */ = {
+			isa = PBXGroup;
+			children = (
+				16ABE8D623E62CC30065D873 /* DetailMapPresenter.swift */,
+			);
+			path = DetailMap;
+			sourceTree = "<group>";
+		};
+		16ABE8DB23E6547C0065D873 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				16ABE8E923E655FB0065D873 /* CharterITC Bold Italic.otf */,
+				16ABE8EC23E655FB0065D873 /* CharterITC Bold.otf */,
+				16ABE8EE23E655FB0065D873 /* CharterITC Italic.otf */,
+				16ABE8E323E655FB0065D873 /* CharterITC.otf */,
+				16ABE8E123E655FA0065D873 /* Geometria-Bold.otf */,
+				16ABE8E723E655FB0065D873 /* Geometria-BoldItalic.otf */,
+				16ABE8DF23E655FA0065D873 /* Geometria-ExtaBlack.otf */,
+				16ABE8E523E655FB0065D873 /* Geometria-ExtraBlackItalic.otf */,
+				16ABE8E623E655FB0065D873 /* Geometria-ExtraLight.otf */,
+				16ABE8F023E655FC0065D873 /* Geometria-ExtraLightItalic.otf */,
+				16ABE8EA23E655FB0065D873 /* Geometria-Heavy.otf */,
+				16ABE8E223E655FA0065D873 /* Geometria-HeavyItalic.otf */,
+				16ABE8F123E655FC0065D873 /* Geometria-Italic.otf */,
+				16ABE8E823E655FB0065D873 /* Geometria-Light.otf */,
+				16ABE8EF23E655FC0065D873 /* Geometria-LightItalic.otf */,
+				16ABE8EB23E655FB0065D873 /* Geometria-Medium.otf */,
+				16ABE8ED23E655FB0065D873 /* Geometria-MediumItalic.otf */,
+				16ABE8F323E655FC0065D873 /* Geometria-Thin.otf */,
+				16ABE8E023E655FA0065D873 /* Geometria-ThinItalic.otf */,
+				16ABE8E423E655FB0065D873 /* Geometria.otf */,
+				16ABE8F223E655FC0065D873 /* LucidaGrande.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,10 +481,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16ABE8F923E6562B0065D873 /* Geometria-BoldItalic.otf in Resources */,
+				16ABE8FD23E6562B0065D873 /* Geometria-ExtraLightItalic.otf in Resources */,
+				16ABE8F523E656210065D873 /* CharterITC Bold.otf in Resources */,
+				16ABE8FB23E6562B0065D873 /* Geometria-ExtraBlackItalic.otf in Resources */,
+				16ABE90223E6562B0065D873 /* Geometria-LightItalic.otf in Resources */,
+				16ABE90023E6562B0065D873 /* Geometria-Italic.otf in Resources */,
+				16ABE8FE23E6562B0065D873 /* Geometria-Heavy.otf in Resources */,
+				16ABE90823E6562B0065D873 /* LucidaGrande.ttf in Resources */,
 				16ABE8CA23E5EA750065D873 /* FilterSectionHeader.xib in Resources */,
+				16ABE8F823E6562B0065D873 /* Geometria-Bold.otf in Resources */,
+				16ABE8F623E656240065D873 /* CharterITC Italic.otf in Resources */,
+				16ABE90323E6562B0065D873 /* Geometria-Medium.otf in Resources */,
 				165DD6D223E39A0D0068D76E /* LaunchScreen.storyboard in Resources */,
+				16ABE90523E6562B0065D873 /* Geometria-Thin.otf in Resources */,
+				16ABE90623E6562B0065D873 /* Geometria-ThinItalic.otf in Resources */,
+				16ABE90123E6562B0065D873 /* Geometria-Light.otf in Resources */,
 				165DD6CF23E39A0D0068D76E /* Assets.xcassets in Resources */,
+				16ABE8F423E6561E0065D873 /* CharterITC Bold Italic.otf in Resources */,
+				16ABE90723E6562B0065D873 /* Geometria.otf in Resources */,
+				16ABE8F723E656240065D873 /* CharterITC.otf in Resources */,
+				16ABE90423E6562B0065D873 /* Geometria-MediumItalic.otf in Resources */,
 				165DD6CD23E39A0C0068D76E /* Main.storyboard in Resources */,
+				16ABE8FF23E6562B0065D873 /* Geometria-HeavyItalic.otf in Resources */,
+				16ABE8FA23E6562B0065D873 /* Geometria-ExtaBlack.otf in Resources */,
+				16ABE8FC23E6562B0065D873 /* Geometria-ExtraLight.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +516,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16ABE8D323E62B650065D873 /* DetailMapSetting.swift in Sources */,
 				165DD70423E3AA0B0068D76E /* CategoryCollectionViewCell.swift in Sources */,
 				165DD6C623E39A0C0068D76E /* AppDelegate.swift in Sources */,
 				165DD6F623E3A13C0068D76E /* Filter.swift in Sources */,
@@ -404,10 +533,12 @@
 				16ABE8BE23E5B00E0065D873 /* SortablePresenter.swift in Sources */,
 				165DD6EC23E3A0A10068D76E /* MapPresenter+TopMenu.swift in Sources */,
 				165DD6DA23E39A8A0068D76E /* MapViewController.swift in Sources */,
+				16ABE8D723E62CC30065D873 /* DetailMapPresenter.swift in Sources */,
 				165DD70F23E3AA780068D76E /* FilterTableViewCell.swift in Sources */,
 				165DD6C823E39A0C0068D76E /* SceneDelegate.swift in Sources */,
 				16ABE89523E58B590065D873 /* DropDownView.swift in Sources */,
 				16ABE8C123E5B0B60065D873 /* SortConstant.swift in Sources */,
+				16ABE8CF23E623FE0065D873 /* MapDetailViewController.swift in Sources */,
 				16ABE8C823E5EA660065D873 /* FilterSectionHeader.swift in Sources */,
 				165DD70823E3AA2D0068D76E /* SelectedFilterCollectionViewCell.swift in Sources */,
 				165DD6EE23E3A0B10068D76E /* MapPresenter+SelectedFilter.swift in Sources */,
@@ -415,6 +546,7 @@
 				165DD6E823E39F7E0068D76E /* MapViewController+Table.swift in Sources */,
 				165DD6E023E39AD80068D76E /* MapPresenter.swift in Sources */,
 				165DD71723E422280068D76E /* PresentableView.swift in Sources */,
+				16ABE8DA23E6516C0065D873 /* UIImage+Extensions.swift in Sources */,
 				165DD6F223E3A0C20068D76E /* MapPresenter+Product.swift in Sources */,
 				165DD6F823E3A1450068D76E /* Product.swift in Sources */,
 			);
