@@ -25,8 +25,11 @@ extension MapPresenter: ViewableCategoryPresenter {
         currentCategoryId = categoryGetData(indexPath: indexPath)?.id ?? 0
         resetShownFilters()
         prepareFilterSection()
+        prepareProduct()
         view?.categoryReloadData()
         view?.filterReloadData()
+        view?.productReloadData()
+        view?.selectedFilterReloadData()
     }
     
     func categoryIsSelected(indexPath: IndexPath) -> Bool {

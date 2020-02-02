@@ -12,7 +12,8 @@ extension MapPresenter {
         var filteredProductsByKind = [Int: Set<Int>]() // kind: Set<productIds>
         
         // 1 group by
-        let groupByKind = selectedFilter.group(by: \SelectedFilter.kind)
+        let selectedFilters = getSelectedFilter()
+        guard let groupByKind = selectedFilters?.filters.group(by: \SelectedFilter.InnerFilter.kind) else { return }
         
         // 2 apply grouped by filters
         for filtersPerKind in groupByKind {
@@ -76,19 +77,19 @@ extension MapPresenter: ViewableProductPresenter {
             }
         case .priceDown:
             tmpShownProducts = tmpShownProducts.sorted {
-                $0.price < $1.price
+                $0.price > $1.price
             }
         case .priceUp:
             tmpShownProducts = tmpShownProducts.sorted {
-                $0.price > $1.price
+                $0.price < $1.price
             }
         case .manufactureDown:
             tmpShownProducts = tmpShownProducts.sorted {
-                $0.manufactureYear < $1.manufactureYear
+                $0.manufactureYear > $1.manufactureYear
             }
         case .manufactureUp:
             tmpShownProducts = tmpShownProducts.sorted {
-                $0.manufactureYear > $1.manufactureYear
+                $0.manufactureYear < $1.manufactureYear
             }
         default:
             tmpShownProducts = tmpShownProducts.sorted {

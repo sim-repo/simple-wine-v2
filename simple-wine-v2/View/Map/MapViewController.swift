@@ -10,7 +10,8 @@ class MapViewController: UIViewController {
     @IBOutlet weak var sortButton: DropDownButton!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var favouriteButton: UIButton!
-
+    @IBOutlet weak var categoryHighlightView: UIView!
+    
     
     @IBOutlet weak var selectedFilterHeightConstraint: NSLayoutConstraint!
     
@@ -18,10 +19,12 @@ class MapViewController: UIViewController {
         return MapPresenter.shared
     }
     
+    var didHightlightDefaultLocated = false
     
     override func viewDidLoad() {
         registerNib()
         selectedFilterHeightConstraint.constant = 1
+        categoryHighlightView.isHidden = true
     }
     
     
@@ -77,7 +80,20 @@ class MapViewController: UIViewController {
         presenter.favouriteDidPress()
     }
     
-    
+    func setHighlight(destination: CGPoint, duration: TimeInterval) {
+        if didHightlightDefaultLocated == false {
+            didHightlightDefaultLocated = true
+            
+            let completion: (()->Void)? = {[weak self] in
+                guard let self = self else { return }
+                self.categoryHighlightView.isHidden = false
+            }
+            categoryHighlightView.move(to: destination, duration: 0, options: .curveEaseOut, completion: completion)
+            return 
+        }
+        categoryHighlightView.move(to: destination, duration: duration, options: .curveEaseOut)
+        
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

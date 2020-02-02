@@ -7,7 +7,7 @@ class SelectedFilterCollectionViewCell: UICollectionViewCell {
     var presenter: ViewableSelectedFilterPresenter!
     var indexPath: IndexPath!
     
-    func setup(_ selectedFilter: SelectedFilter, _ presenter: ViewableSelectedFilterPresenter, _ indexPath: IndexPath) {
+    func setup(_ selectedFilter: SelectedFilter.InnerFilter, _ presenter: ViewableSelectedFilterPresenter, _ indexPath: IndexPath) {
         titleLabel.text = selectedFilter.title
         self.presenter = presenter
         self.indexPath = indexPath

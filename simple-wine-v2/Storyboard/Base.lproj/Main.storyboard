@@ -51,27 +51,16 @@
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Wn-PE-g74" userLabel="Highlight">
-                                                    <rect key="frame" x="0.0" y="58" width="212" height="2"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="2" id="0AG-ZL-DFt"/>
-                                                    </constraints>
-                                                </view>
                                             </subviews>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="8BJ-Kj-WaN" firstAttribute="centerY" secondItem="9EZ-oI-mEy" secondAttribute="centerY" id="bnY-eb-haC"/>
                                             <constraint firstAttribute="bottom" secondItem="8BJ-Kj-WaN" secondAttribute="bottom" id="cuf-Hx-dul"/>
-                                            <constraint firstItem="0Wn-PE-g74" firstAttribute="leading" secondItem="9EZ-oI-mEy" secondAttribute="leading" id="j3h-Oh-wOf"/>
                                             <constraint firstItem="8BJ-Kj-WaN" firstAttribute="leading" secondItem="9EZ-oI-mEy" secondAttribute="leading" id="pZk-rf-ZGJ"/>
-                                            <constraint firstAttribute="trailing" secondItem="0Wn-PE-g74" secondAttribute="trailing" id="r5J-Ra-Kmf"/>
-                                            <constraint firstAttribute="bottom" secondItem="0Wn-PE-g74" secondAttribute="bottom" id="tAs-PF-u9s"/>
                                             <constraint firstAttribute="trailing" secondItem="8BJ-Kj-WaN" secondAttribute="trailing" id="wG8-Xp-GAL"/>
                                         </constraints>
                                         <size key="customSize" width="212" height="60"/>
                                         <connections>
-                                            <outlet property="highlight" destination="0Wn-PE-g74" id="4tz-1e-v5q"/>
                                             <outlet property="titleLabel" destination="8BJ-Kj-WaN" id="CGp-oO-roR"/>
                                         </connections>
                                     </collectionViewCell>
@@ -81,6 +70,11 @@
                                     <outlet property="delegate" destination="5YT-60-n0b" id="cYw-dr-jyS"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="loG-cD-Z3x">
+                                <rect key="frame" x="-1" y="109" width="179" height="5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.58355963229999996" green="0.17151486869999999" blue="0.26263374090000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hu6-ew-kx6" userLabel="Search View">
                                 <rect key="frame" x="250" y="143" width="830" height="42"/>
                                 <subviews>
@@ -341,6 +335,7 @@
                     </view>
                     <connections>
                         <outlet property="categoryCollectionView" destination="TsR-FP-xXh" id="p6L-rC-ixr"/>
+                        <outlet property="categoryHighlightView" destination="loG-cD-Z3x" id="yOf-Pe-k12"/>
                         <outlet property="favouriteButton" destination="7Ka-bE-Mxj" id="djS-Zj-0kI"/>
                         <outlet property="filterTableView" destination="f7m-SK-WDd" id="Upu-nC-sDQ"/>
                         <outlet property="productTableView" destination="TlQ-gX-6Et" id="6XC-WG-0Ze"/>

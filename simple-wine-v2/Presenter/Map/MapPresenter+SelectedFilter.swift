@@ -5,19 +5,28 @@ import Foundation
 
 extension MapPresenter {
     
+    
+    func getSelectedFilter() -> SelectedFilter? {
+        var selected = selectedFilters.first(where: {$0.categoryId == currentCategoryId})
+        if selected == nil {
+            selected = SelectedFilter(categoryId: currentCategoryId)
+            selectedFilters.append(selected!)
+        }
+        return selected
+    }
+    
     func addSelectedFilter(_ filter: Filter) {
-        let selected = SelectedFilter(id: filter.id, title: filter.title, parentId: filter.parentId ?? 0, kind: filter.kindId)
-        selectedFilter.append(selected)
+        getSelectedFilter()?.append(id: filter.id, title: filter.title, parentId: filter.parentId ?? 0, kind: filter.kindId)
         view?.selectedFilterReloadData()
     }
     
     func removeSelectedFilter(_ filter: Filter) {
-        selectedFilter.removeAll(where: {$0.id == filter.id})
+        getSelectedFilter()?.remove(by: filter)
         view?.selectedFilterReloadData()
     }
     
     func removeSelectedFilter(at indexPath: IndexPath) {
-        selectedFilter.remove(at: indexPath.row)
+        getSelectedFilter()?.remove(by: indexPath)
         view?.selectedFilterReloadData()
     }
 }
@@ -27,22 +36,22 @@ extension MapPresenter {
 extension MapPresenter: ViewableSelectedFilterPresenter {
     
     func selectedFilterNumberOfRowsInSection() -> Int {
-        return selectedFilter.count
+        return getSelectedFilter()?.filters.count ?? 0
     }
     
-    func selectedFilterGetData(indexPath: IndexPath) -> SelectedFilter? {
-        return selectedFilter[indexPath.row]
+    func selectedFilterGetData(indexPath: IndexPath) -> SelectedFilter.InnerFilter? {
+        return getSelectedFilter()?.filters[indexPath.row]
     }
     
-    func selectedFilterGetIndexPath(selecteFilter: SelectedFilter) -> IndexPath?{
-        guard let idx = selectedFilter.firstIndex(where: { $0.id == selecteFilter.id })
-            else { return nil }
-        
+    func selectedFilterGetIndexPath(selecteFilter: SelectedFilter.InnerFilter) -> IndexPath?{
+        guard let idx = getSelectedFilter()?.filters.firstIndex(where: { $0.id == selecteFilter.id })
+        else { return nil }
         return IndexPath(row: idx, section: 0)
     }
     
     func selectedFilterCancelDidPress(at indexPath: IndexPath) {
-        let id = selectedFilter[indexPath.row].id
+        guard let selectedFilter = getSelectedFilter()?.filters[indexPath.row] else { return }
+        let id = selectedFilter.id
         removeSelectedFilter(at: indexPath)
         filterRemove(filterId: id)
         prepareProduct()

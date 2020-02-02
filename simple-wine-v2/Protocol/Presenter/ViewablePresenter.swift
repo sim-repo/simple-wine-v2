@@ -41,8 +41,8 @@ protocol ViewableProductPresenter {
 
 protocol ViewableSelectedFilterPresenter {
     func selectedFilterNumberOfRowsInSection() -> Int
-    func selectedFilterGetData(indexPath: IndexPath) -> SelectedFilter?
-    func selectedFilterGetIndexPath(selecteFilter: SelectedFilter) -> IndexPath?
+    func selectedFilterGetData(indexPath: IndexPath) -> SelectedFilter.InnerFilter?
+    func selectedFilterGetIndexPath(selecteFilter: SelectedFilter.InnerFilter) -> IndexPath?
     
     func selectedFilterCancelDidPress(at indexPath: IndexPath)
 }

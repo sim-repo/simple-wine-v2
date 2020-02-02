@@ -18,7 +18,7 @@ class MapPresenter {
     var detailMapSettingDataSource: [DetailMapSetting] = DetailMapSetting.list()
     
 //MARK:- selected filter
-    var selectedFilter: [SelectedFilter] = []
+    var selectedFilters: [SelectedFilter] = []
 
 //MARK:- filter
     var tmpShownFilter: [Filter] = []
@@ -34,8 +34,6 @@ class MapPresenter {
     
 //MARK:- favourites
     var favourites: [Product] = []
-    
-    
     
     private init() {
         mapSync.syncFilter(onSuccess: getOnSuccessFilter(),
@@ -59,7 +57,6 @@ extension MapPresenter: ViewableFavouriteMapPresenter {
     }
     
     func favouriteDidPress() {
-        print(favourites.count)
         let favouritePresenter = FavouritePresenter(favourites: favourites, categoryDataSource: categoryDataSource)
         view?.performFavouriteSegue(presenter: favouritePresenter)
     }

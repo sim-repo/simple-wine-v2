@@ -50,6 +50,11 @@ extension MapViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView.tag {
             case 1000:
+                if let cell = collectionView.cellForItem(at: indexPath) {
+                    let point = CGPoint(x: cell.center.x, y: cell.center.y + cell.frame.height/2)
+                    let destination = view.convert(point, from: cell.superview)
+                    setHighlight(destination: destination, duration: 0.5)
+                }
                 presenter.categoryDidPress(at: indexPath)
             break
             case 2000: break
