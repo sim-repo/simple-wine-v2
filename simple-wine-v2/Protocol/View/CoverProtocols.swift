@@ -2,8 +2,8 @@ import UIKit
 
 
 
-protocol CoverView: UIView {
-    var delegate: CoverDelegate? {get set}
+class CoverView: UIView {
+    var delegate: CoverDelegate?
 }
 
 

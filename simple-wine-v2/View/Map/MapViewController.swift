@@ -113,6 +113,10 @@ class MapViewController: UIViewController {
             dest.presenter = presenter
         }
     }
+    
+    @IBAction func pressBack(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
 }
 
 

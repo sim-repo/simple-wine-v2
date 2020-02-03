@@ -1,11 +1,9 @@
 import UIKit
 
 
-class GrandCruCover: UIView, CoverView {
+class GrandCruCover: CoverView {
 
     @IBOutlet weak var contentView: UIView!
-    
-    var delegate: CoverDelegate?
     
     
     static func nib() -> CoverView {

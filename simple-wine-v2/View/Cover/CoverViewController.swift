@@ -3,25 +3,36 @@ import UIKit
 
 class CoverViewController: UIViewController {
     
-    var coverView: CoverView?
-    
     var presenter: ViewableCoverPresenter {
         CoverPresenter.shared.setView(view: self)
         return CoverPresenter.shared
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+
         let pointEnum = presenter.getPointEnum()
         switch pointEnum {
         case .grandcru:
-            coverView = GrandCruCover.nib()
-            coverView?.delegate = self
+            let coverView = GrandCruCover.nib()
+            setupCover(coverView)
         default:
-            coverView = GrandCruCover.nib()
+            let coverView = GrandCruCover.nib()
+            setupCover(coverView)
         }
     }
+    
+    
+    private func setupCover(_ coverView: CoverView) {
+        coverView.delegate = self
+        view.addSubview(coverView)
+        coverView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        coverView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        coverView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        coverView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    }
 }
+
+
 
 //MARK:- Cover Delegate
 
@@ -45,6 +56,6 @@ extension CoverViewController: PresentableCoverView {
     }
     
     func logout() {
-        
+        navigationController?.popViewController(animated: true)
     }
 }

@@ -47,6 +47,7 @@
 		16797CB223E85723001707D3 /* PointMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16797CB123E85723001707D3 /* PointMenuPresenter.swift */; };
 		16797CB523E85C77001707D3 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16797CB423E85C77001707D3 /* AuthViewController.swift */; };
 		16797CB823E85CCB001707D3 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16797CB723E85CCB001707D3 /* AuthPresenter.swift */; };
+		16797CBA23E89FDC001707D3 /* ColorConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16797CB923E89FDC001707D3 /* ColorConstant.swift */; };
 		16ABE89523E58B590065D873 /* DropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABE89423E58B590065D873 /* DropDownView.swift */; };
 		16ABE89723E58CD50065D873 /* DropDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABE89623E58CD50065D873 /* DropDownButton.swift */; };
 		16ABE8BE23E5B00E0065D873 /* SortablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABE8BD23E5B00E0065D873 /* SortablePresenter.swift */; };
@@ -128,6 +129,7 @@
 		16797CB123E85723001707D3 /* PointMenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointMenuPresenter.swift; sourceTree = "<group>"; };
 		16797CB423E85C77001707D3 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		16797CB723E85CCB001707D3 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
+		16797CB923E89FDC001707D3 /* ColorConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstant.swift; sourceTree = "<group>"; };
 		16ABE89423E58B590065D873 /* DropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownView.swift; sourceTree = "<group>"; };
 		16ABE89623E58CD50065D873 /* DropDownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownButton.swift; sourceTree = "<group>"; };
 		16ABE8BD23E5B00E0065D873 /* SortablePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortablePresenter.swift; sourceTree = "<group>"; };
@@ -487,6 +489,7 @@
 			children = (
 				16ABE8C023E5B0B60065D873 /* SortConstant.swift */,
 				16DBA85523E82A0E0088052B /* PointConstant.swift */,
+				16797CB923E89FDC001707D3 /* ColorConstant.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -664,6 +667,7 @@
 				165DD70423E3AA0B0068D76E /* CategoryCollectionViewCell.swift in Sources */,
 				165DD6C623E39A0C0068D76E /* AppDelegate.swift in Sources */,
 				16520E0D23E7440300AA3576 /* SelectedFilter.swift in Sources */,
+				16797CBA23E89FDC001707D3 /* ColorConstant.swift in Sources */,
 				16520E3623E7962300AA3576 /* FavouriteDetailViewController.swift in Sources */,
 				165DD6F623E3A13C0068D76E /* Filter.swift in Sources */,
 				165DD72323E42FD70068D76E /* PresentableMapSync.swift in Sources */,
