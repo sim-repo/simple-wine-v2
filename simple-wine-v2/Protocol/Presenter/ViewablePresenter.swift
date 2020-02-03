@@ -75,3 +75,10 @@ protocol ViewableFavouritePresenter {
     func setView(view: PresentableFavouriteView) 
     func productDidPressDetail(indexPath: IndexPath)
 }
+
+
+//MARK:- Detail Favourite
+protocol ViewableDetailFavouritePresenter {
+    func getAttribute() -> String
+    func getProduct() -> Product?
+}

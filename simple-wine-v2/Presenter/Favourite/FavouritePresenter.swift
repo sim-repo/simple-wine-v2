@@ -1,6 +1,11 @@
 import Foundation
 
 
+protocol FavouritePresenterDelegate {
+    func getFavouriteAttributeName(_ kindId: Int, _ productAttributeIds: [Int]) -> String
+}
+
+
 class FavouritePresenter {
     
     weak var view: PresentableFavouriteView?
@@ -9,14 +14,18 @@ class FavouritePresenter {
     
     var categoryDataSource: [Category]?
     
-    
     var productsByCategory = [IndexPath: Product]()
     var sectionTitle = [Int:String]() //section:title
+    var detailMapSettings: [DetailMapSetting]
+    
+    var delegate: FavouritePresenterDelegate
     
     
-    init(favourites: [Product], categoryDataSource: [Category]) {
+    init(favourites: [Product], categoryDataSource: [Category], delegate: FavouritePresenterDelegate, detailMapSettings: [DetailMapSetting]) {
         self.categoryDataSource = categoryDataSource
         self.favourites = favourites
+        self.delegate = delegate
+        self.detailMapSettings = detailMapSettings
         fillProductsByCategory(favourites: favourites)
         fillSectionTitle(favourites: favourites)
     }
@@ -84,8 +93,17 @@ extension FavouritePresenter: ViewableFavouritePresenter {
     }
     
     func productDidPressDetail(indexPath: IndexPath) {
-        guard let product = getData(indexPath: indexPath) else {return}
-        let favouriteDetailPresenter = FavouriteDetailPresenter(product: product)
+        guard let product = getData(indexPath: indexPath) else { return }
+        guard let detailMapSetting = detailMapSettings.first(where: {$0.categoryId == product.categoryId}) else { return }
+        
+        let favouriteDetailPresenter = FavouriteDetailPresenter(product: product, detailMapSetting: detailMapSetting, delegate: self)
         view?.performFavouriteDetailSegue(presenter: favouriteDetailPresenter)
+    }
+}
+
+
+extension FavouritePresenter: FavouriteDetailPresenterDelegate {
+    func getAttributeName(kindId: Int, productAttributeIds: [Int]) -> String {
+        return delegate.getFavouriteAttributeName(kindId, productAttributeIds)
     }
 }

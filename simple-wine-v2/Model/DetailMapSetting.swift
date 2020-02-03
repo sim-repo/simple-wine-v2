@@ -17,7 +17,9 @@ class DetailMapSetting {
     
     static func list() -> [DetailMapSetting] {
         return [
-            DetailMapSetting(categoryId: 0, kindIds: [1,4,5,6], prefix: ["Цвет", "Сорт Винограда", "Объем", "Производитель"], icons: [nil,"WineGrapes",nil, nil])
+            DetailMapSetting(categoryId: 0, kindIds: [1,4,5,6], prefix: ["Цвет", "Сорт Винограда", "Объем", "Производитель"], icons: [nil,"WineGrapes",nil, nil]),
+            
+            DetailMapSetting(categoryId: 1, kindIds: [7,10,11,12], prefix: ["Цвет", "Сахар", "Объем", "Производитель"], icons: [nil,"WineGrapes",nil, nil]),
         ]
     }
 }

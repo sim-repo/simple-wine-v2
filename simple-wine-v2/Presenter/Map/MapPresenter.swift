@@ -4,37 +4,37 @@ import Foundation
 class MapPresenter {
     
     
-   static var shared = MapPresenter()
+    static var shared = MapPresenter()
     
     weak var view: PresentableMapView?
     var mapSync: PresentableMapSync = MapSync.shared
     
     
-//MARK:- datasources
+    //MARK:- datasources
     var categoryDataSource: [Category] = Category.list()
     var filterDataSource: [Filter] = []
     var productDataSource: [Product] = Product.list0() + Product.list1()
     var detailMapSettingDataSource: [DetailMapSetting] = DetailMapSetting.list()
     
-//MARK:- selected filter
+    //MARK:- selected filter
     var selectedFilters: [SelectedFilter] = []
-
-//MARK:- filter
+    
+    //MARK:- filter
     var tmpShownFilter: [Filter] = []
     var tmpFilterSectionTitle: [Int:String] = [:] //section: parent title
     var tmpFilterSection: [IndexPath:Filter] = [:]
     
-//MARK:- product
+    //MARK:- product
     var tmpShownProducts: [Product] = [] //product id: Product
     var tmpShownProductsWhenSearching: [Product] = [] // used when searching
-
-//MARK:- category
+    
+    //MARK:- category
     var currentCategoryId = 0
     
-//MARK:- favourites
+    //MARK:- favourites
     var favourites: [Product] = []
     
-//MARK:- sorting
+    //MARK:- sorting
     var currentSortEnum: SortEnum = .ourCase
     
     
@@ -71,10 +71,15 @@ extension MapPresenter: ViewableFavouriteMapPresenter {
     }
     
     func favouriteDidPress() {
-        let favouritePresenter = FavouritePresenter(favourites: favourites, categoryDataSource: categoryDataSource)
+        let favouritePresenter = FavouritePresenter(favourites: favourites,
+                                                    categoryDataSource: categoryDataSource,
+                                                    delegate: self,
+                                                    detailMapSettings: detailMapSettingDataSource)
         view?.performFavouriteSegue(presenter: favouritePresenter)
     }
 }
+
+
 
 
 //MARK:- SyncableMapPresenter
@@ -108,13 +113,48 @@ extension MapPresenter: SortablePresenter {
     }
 }
 
+//MARK:- FavouritePresenterDelegate
+
+extension MapPresenter: FavouritePresenterDelegate {
+    func getFavouriteAttributeName(_ kindId: Int, _ productAttributeIds: [Int]) -> String {
+         return searchAttributeName(kindId, productAttributeIds)
+    }
+}
 
 //MARK:- DetailMapPresenterDelegate
 
 extension MapPresenter: DetailMapPresenterDelegate {
     
     func getAttributeName(kindId: Int, productAttributeIds: [Int]) -> String {
+        return searchAttributeName(kindId, productAttributeIds)
+    }
+    
+    
+    
+    func favouriteDidPressLike(product: Product, isLike: Bool) {
         
+        product.isLiked = isLike
+        
+        if isLike {
+            if favourites.contains(where: {$0.id == product.id}) == false {
+                favourites.append(product)
+            }
+        } else {
+            favourites = favourites.filter({$0.id != product.id})
+        }
+        view?.favouriteNumberReload(number: favourites.count)
+        if let indexPath = productGetIndexPath(product: product) {
+            view?.productReloadData(at: indexPath)
+        }
+    }
+}
+
+
+//MARK:- MapPresenter
+
+extension MapPresenter {
+    
+    private func searchAttributeName(_ kindId: Int, _ productAttributeIds: [Int]) -> String {
         var buffer: [Int:String] = [:]
         for attributeId in productAttributeIds {
             if let (level, name) = searchRequired(kindId: kindId, attributeId: attributeId) {
@@ -130,22 +170,5 @@ extension MapPresenter: DetailMapPresenterDelegate {
             return (filter.level, filter.title)
         }
         return nil
-    }
-    
-    func favouriteDidPressLike(product: Product, isLike: Bool) {
-        
-        product.isLiked = isLike
-        
-        if isLike {
-            if favourites.contains(where: {$0.id == product.id}) == false {
-                favourites.append(product)
-            }
-        } else {
-            favourites = favourites.filter({$0.id != product.id})
-        }
-        view?.favouriteNumberReload(number: favourites.count)
-        if let indexPath = productGetIndexPath(product: product) {
-          view?.productReloadData(at: indexPath)
-        }
     }
 }

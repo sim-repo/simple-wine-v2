@@ -23,6 +23,13 @@ class FavouriteViewController: UIViewController {
     @IBAction func pressBack(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest = segue.destination as? FavouriteDetailViewController,
+            let presenter = sender as? FavouriteDetailPresenter {
+            dest.setup(presenter: presenter)
+        }
+    }
 }
 
 
@@ -60,6 +67,11 @@ extension FavouriteViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        presenter.productDidPressDetail(indexPath: indexPath)
+    }
 }
 
 
@@ -69,8 +81,8 @@ extension FavouriteViewController: PresentableFavouriteView {
         tableView.reloadData()
     }
     
-    func performFavouriteDetailSegue(presenter: FavouriteDetailPresenter) {
-        
+    func performFavouriteDetailSegue(presenter: ViewableDetailFavouritePresenter) {
+        performSegue(withIdentifier: "showFavouriteDetailSegue", sender: presenter)
     }
 }
 

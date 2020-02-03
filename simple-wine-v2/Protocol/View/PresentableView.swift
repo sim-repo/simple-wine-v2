@@ -17,5 +17,5 @@ protocol PresentableMapView: class {
 
 protocol PresentableFavouriteView: class {
     func reloadData()
-    func performFavouriteDetailSegue(presenter: FavouriteDetailPresenter)
+    func performFavouriteDetailSegue(presenter: ViewableDetailFavouritePresenter)
 }

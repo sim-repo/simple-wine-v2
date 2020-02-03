@@ -11,7 +11,7 @@ class MapViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var favouriteButton: UIButton!
     @IBOutlet weak var categoryHighlightView: UIView!
-    
+    @IBOutlet weak var backButton: UIButton!
     
     @IBOutlet weak var selectedFilterHeightConstraint: NSLayoutConstraint!
     
@@ -28,7 +28,7 @@ class MapViewController: UIViewController {
     }
     
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         presenter.setView(view: self)
         setupTables()
         setupCollections()
@@ -36,6 +36,7 @@ class MapViewController: UIViewController {
         setupSortButton()
         setupSearchBar()
         setupFavouriteNumber()
+        setupBackButton()
     }
     
     private func setupTables(){
@@ -69,6 +70,11 @@ class MapViewController: UIViewController {
     private func setupFavouriteNumber() {
         let count = presenter.getFavouriteNumber()
         favouriteButton.setTitle("Выбрано: \(count)", for: .normal)
+    }
+    
+    private func setupBackButton(){
+        let image = getSystemImage(name: "arrow.left.circle", pointSize: 20, color: #colorLiteral(red: 0.3537644148, green: 0.2710422873, blue: 0.2512474954, alpha: 1) )
+        backButton.setImage(image, for: .normal)
     }
     
     private func registerNib(){
