@@ -41,6 +41,12 @@
 		165DD72023E42F780068D76E /* MapSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165DD71F23E42F780068D76E /* MapSync.swift */; };
 		165DD72323E42FD70068D76E /* PresentableMapSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165DD72223E42FD70068D76E /* PresentableMapSync.swift */; };
 		165DD72823E46D300068D76E /* Sequences+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165DD72723E46D300068D76E /* Sequences+Extensions.swift */; };
+		16797CAA23E84622001707D3 /* GrandCruCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16797CA923E84622001707D3 /* GrandCruCover.swift */; };
+		16797CAC23E84B1F001707D3 /* CoverProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16797CAB23E84B1F001707D3 /* CoverProtocols.swift */; };
+		16797CB023E85620001707D3 /* PointMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16797CAF23E85620001707D3 /* PointMenuViewController.swift */; };
+		16797CB223E85723001707D3 /* PointMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16797CB123E85723001707D3 /* PointMenuPresenter.swift */; };
+		16797CB523E85C77001707D3 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16797CB423E85C77001707D3 /* AuthViewController.swift */; };
+		16797CB823E85CCB001707D3 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16797CB723E85CCB001707D3 /* AuthPresenter.swift */; };
 		16ABE89523E58B590065D873 /* DropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABE89423E58B590065D873 /* DropDownView.swift */; };
 		16ABE89723E58CD50065D873 /* DropDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABE89623E58CD50065D873 /* DropDownButton.swift */; };
 		16ABE8BE23E5B00E0065D873 /* SortablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABE8BD23E5B00E0065D873 /* SortablePresenter.swift */; };
@@ -72,6 +78,11 @@
 		16ABE90623E6562B0065D873 /* Geometria-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 16ABE8E023E655FA0065D873 /* Geometria-ThinItalic.otf */; };
 		16ABE90723E6562B0065D873 /* Geometria.otf in Resources */ = {isa = PBXBuildFile; fileRef = 16ABE8E423E655FB0065D873 /* Geometria.otf */; };
 		16ABE90823E6562B0065D873 /* LucidaGrande.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16ABE8F223E655FC0065D873 /* LucidaGrande.ttf */; };
+		16DBA84F23E823450088052B /* CoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DBA84E23E823450088052B /* CoverViewController.swift */; };
+		16DBA85223E823730088052B /* CoverPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DBA85123E823730088052B /* CoverPresenter.swift */; };
+		16DBA85423E827430088052B /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DBA85323E827430088052B /* Point.swift */; };
+		16DBA85623E82A0E0088052B /* PointConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DBA85523E82A0E0088052B /* PointConstant.swift */; };
+		16DBA85C23E8426B0088052B /* GrandCruCover.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16DBA85A23E8426B0088052B /* GrandCruCover.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +122,12 @@
 		165DD71F23E42F780068D76E /* MapSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSync.swift; sourceTree = "<group>"; };
 		165DD72223E42FD70068D76E /* PresentableMapSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableMapSync.swift; sourceTree = "<group>"; };
 		165DD72723E46D300068D76E /* Sequences+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequences+Extensions.swift"; sourceTree = "<group>"; };
+		16797CA923E84622001707D3 /* GrandCruCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrandCruCover.swift; sourceTree = "<group>"; };
+		16797CAB23E84B1F001707D3 /* CoverProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverProtocols.swift; sourceTree = "<group>"; };
+		16797CAF23E85620001707D3 /* PointMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointMenuViewController.swift; sourceTree = "<group>"; };
+		16797CB123E85723001707D3 /* PointMenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointMenuPresenter.swift; sourceTree = "<group>"; };
+		16797CB423E85C77001707D3 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		16797CB723E85CCB001707D3 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
 		16ABE89423E58B590065D873 /* DropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownView.swift; sourceTree = "<group>"; };
 		16ABE89623E58CD50065D873 /* DropDownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownButton.swift; sourceTree = "<group>"; };
 		16ABE8BD23E5B00E0065D873 /* SortablePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortablePresenter.swift; sourceTree = "<group>"; };
@@ -142,6 +159,11 @@
 		16ABE8F123E655FC0065D873 /* Geometria-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geometria-Italic.otf"; sourceTree = "<group>"; };
 		16ABE8F223E655FC0065D873 /* LucidaGrande.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LucidaGrande.ttf; sourceTree = "<group>"; };
 		16ABE8F323E655FC0065D873 /* Geometria-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geometria-Thin.otf"; sourceTree = "<group>"; };
+		16DBA84E23E823450088052B /* CoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverViewController.swift; sourceTree = "<group>"; };
+		16DBA85123E823730088052B /* CoverPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverPresenter.swift; sourceTree = "<group>"; };
+		16DBA85323E827430088052B /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		16DBA85523E82A0E0088052B /* PointConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointConstant.swift; sourceTree = "<group>"; };
+		16DBA85A23E8426B0088052B /* GrandCruCover.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GrandCruCover.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +259,9 @@
 		165DD6DB23E39A9F0068D76E /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				16797CAD23E850C8001707D3 /* Point Menu */,
+				16797CB623E85CBA001707D3 /* Auth */,
+				16DBA85023E823690088052B /* Cover */,
 				16520DF823E6EEA900AA3576 /* Favourite */,
 				16520DFE23E6F28F00AA3576 /* Favourite Detail */,
 				16ABE8D423E62C930065D873 /* Map */,
@@ -248,6 +273,9 @@
 		165DD6DC23E39AA70068D76E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				16797CAE23E8560F001707D3 /* Point Menu */,
+				16797CB323E85C55001707D3 /* Auth */,
+				16DBA84D23E822D50088052B /* Cover */,
 				16520DF523E6ED0D00AA3576 /* Favourite */,
 				16520DFD23E6F26C00AA3576 /* Favourite Detail */,
 				165DD6DE23E39ABA0068D76E /* Map */,
@@ -263,6 +291,7 @@
 				165DD6F523E3A13C0068D76E /* Filter.swift */,
 				165DD6F723E3A1450068D76E /* Product.swift */,
 				16ABE8D223E62B650065D873 /* DetailMapSetting.swift */,
+				16DBA85323E827430088052B /* Point.swift */,
 				16520E0C23E7440300AA3576 /* SelectedFilter.swift */,
 			);
 			path = Model;
@@ -320,6 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				16520DFB23E6F1DB00AA3576 /* PresentableView.swift */,
+				16797CAB23E84B1F001707D3 /* CoverProtocols.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -403,6 +433,38 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		16797CAD23E850C8001707D3 /* Point Menu */ = {
+			isa = PBXGroup;
+			children = (
+				16797CB123E85723001707D3 /* PointMenuPresenter.swift */,
+			);
+			path = "Point Menu";
+			sourceTree = "<group>";
+		};
+		16797CAE23E8560F001707D3 /* Point Menu */ = {
+			isa = PBXGroup;
+			children = (
+				16797CAF23E85620001707D3 /* PointMenuViewController.swift */,
+			);
+			path = "Point Menu";
+			sourceTree = "<group>";
+		};
+		16797CB323E85C55001707D3 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				16797CB423E85C77001707D3 /* AuthViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		16797CB623E85CBA001707D3 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				16797CB723E85CCB001707D3 /* AuthPresenter.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		16ABE89223E58B2C0065D873 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -424,6 +486,7 @@
 			isa = PBXGroup;
 			children = (
 				16ABE8C023E5B0B60065D873 /* SortConstant.swift */,
+				16DBA85523E82A0E0088052B /* PointConstant.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -484,6 +547,24 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		16DBA84D23E822D50088052B /* Cover */ = {
+			isa = PBXGroup;
+			children = (
+				16797CA923E84622001707D3 /* GrandCruCover.swift */,
+				16DBA85A23E8426B0088052B /* GrandCruCover.xib */,
+				16DBA84E23E823450088052B /* CoverViewController.swift */,
+			);
+			path = Cover;
+			sourceTree = "<group>";
+		};
+		16DBA85023E823690088052B /* Cover */ = {
+			isa = PBXGroup;
+			children = (
+				16DBA85123E823730088052B /* CoverPresenter.swift */,
+			);
+			path = Cover;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -542,6 +623,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16DBA85C23E8426B0088052B /* GrandCruCover.xib in Resources */,
 				16ABE8F923E6562B0065D873 /* Geometria-BoldItalic.otf in Resources */,
 				16ABE8FD23E6562B0065D873 /* Geometria-ExtraLightItalic.otf in Resources */,
 				16ABE8F523E656210065D873 /* CharterITC Bold.otf in Resources */,
@@ -589,29 +671,39 @@
 				16520DFA23E6EEB900AA3576 /* FavouritePresenter.swift in Sources */,
 				165DD71423E3AA940068D76E /* ProductTableViewCell.swift in Sources */,
 				16520E0023E6F2BF00AA3576 /* FavouriteDetailPresenter.swift in Sources */,
+				16797CAA23E84622001707D3 /* GrandCruCover.swift in Sources */,
 				165DD70023E3A69D0068D76E /* ViewablePresenter.swift in Sources */,
 				165DD6F423E3A1140068D76E /* Category.swift in Sources */,
 				165DD72023E42F780068D76E /* MapSync.swift in Sources */,
 				16520DFC23E6F1DB00AA3576 /* PresentableView.swift in Sources */,
+				16797CB523E85C77001707D3 /* AuthViewController.swift in Sources */,
 				16ABE89723E58CD50065D873 /* DropDownButton.swift in Sources */,
+				16DBA85423E827430088052B /* Point.swift in Sources */,
 				165DD71D23E42E0A0068D76E /* SyncablePresenter.swift in Sources */,
+				16DBA85223E823730088052B /* CoverPresenter.swift in Sources */,
+				16797CAC23E84B1F001707D3 /* CoverProtocols.swift in Sources */,
 				165DD6F023E3A0BA0068D76E /* MapPresenter+SideMenu.swift in Sources */,
 				16ABE8BE23E5B00E0065D873 /* SortablePresenter.swift in Sources */,
+				16DBA85623E82A0E0088052B /* PointConstant.swift in Sources */,
 				165DD6EC23E3A0A10068D76E /* MapPresenter+TopMenu.swift in Sources */,
 				165DD6DA23E39A8A0068D76E /* MapViewController.swift in Sources */,
 				16520E3423E76DF800AA3576 /* UIView+Extentions.swift in Sources */,
 				16ABE8D723E62CC30065D873 /* DetailMapPresenter.swift in Sources */,
+				16797CB823E85CCB001707D3 /* AuthPresenter.swift in Sources */,
 				165DD70F23E3AA780068D76E /* FilterTableViewCell.swift in Sources */,
 				165DD6C823E39A0C0068D76E /* SceneDelegate.swift in Sources */,
 				16520E0B23E71F9B00AA3576 /* FavouriteSectionHeader.swift in Sources */,
 				16ABE89523E58B590065D873 /* DropDownView.swift in Sources */,
+				16797CB023E85620001707D3 /* PointMenuViewController.swift in Sources */,
 				16ABE8C123E5B0B60065D873 /* SortConstant.swift in Sources */,
 				16ABE8CF23E623FE0065D873 /* MapDetailViewController.swift in Sources */,
+				16DBA84F23E823450088052B /* CoverViewController.swift in Sources */,
 				16ABE8C823E5EA660065D873 /* FilterSectionHeader.swift in Sources */,
 				165DD70823E3AA2D0068D76E /* SelectedFilterCollectionViewCell.swift in Sources */,
 				165DD6EE23E3A0B10068D76E /* MapPresenter+SelectedFilter.swift in Sources */,
 				165DD6E423E39F3F0068D76E /* MapViewController+Collection.swift in Sources */,
 				165DD6E823E39F7E0068D76E /* MapViewController+Table.swift in Sources */,
+				16797CB223E85723001707D3 /* PointMenuPresenter.swift in Sources */,
 				165DD6E023E39AD80068D76E /* MapPresenter.swift in Sources */,
 				16520DF723E6ED7B00AA3576 /* FavouriteViewController.swift in Sources */,
 				16ABE8DA23E6516C0065D873 /* UIImage+Extensions.swift in Sources */,

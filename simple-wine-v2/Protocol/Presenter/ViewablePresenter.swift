@@ -39,6 +39,7 @@ protocol ViewableProductPresenter {
     func productDidPressDetail(indexPath: IndexPath)
 }
 
+
 protocol ViewableSelectedFilterPresenter {
     func selectedFilterNumberOfRowsInSection() -> Int
     func selectedFilterGetData(indexPath: IndexPath) -> SelectedFilter.InnerFilter?
@@ -81,4 +82,30 @@ protocol ViewableFavouritePresenter {
 protocol ViewableDetailFavouritePresenter {
     func getAttribute() -> String
     func getProduct() -> Product?
+}
+
+
+
+//MARK:- Cover
+protocol ViewableCoverPresenter {
+    func setView(view: PresentableCoverView)
+    func getPointEnum() -> PointEnum
+    
+    func didPressEnter()
+    func didLogout()
+}
+
+
+//MARK:- Point Menu
+protocol ViewablePointMenuPresenter {
+    func setView(view: PresentablePointMenuView)
+    func didPressEnter(pointEnum: PointEnum)
+}
+
+//MARK:- Auth
+protocol ViewableAuthPresenter {
+    func setView(view: PresentableAuthView)
+    func getLogoImageURL() -> String
+    
+    func didPressSignIn(login: String, password: String)
 }
