@@ -1,15 +1,14 @@
 import UIKit
 
 
-class GrandCruCover: CoverView {
+class KuznetskyCover: CoverView {
 
     @IBOutlet weak var backButton: UIButton!
     
     static func nib() -> CoverView {
-        let nib = UINib(nibName: "GrandCruCover", bundle: nil)
-        return nib.instantiate(withOwner: nil, options: nil)[0] as! GrandCruCover
+        let nib = UINib(nibName: "KuznetskyCover", bundle: nil)
+        return nib.instantiate(withOwner: nil, options: nil)[0] as! KuznetskyCover
     }
-    
     
     override func setupOutlets(){
         let image = getSystemImage(name: "arrow.left.circle", pointSize: Theme.buttonSize, color: Theme.buttonCloseColor)
@@ -20,7 +19,8 @@ class GrandCruCover: CoverView {
         delegate?.didPressEnter()
     }
     
-    @IBAction func pressLogout(_ sender: Any) {
+    @IBAction func pressBack(_ sender: Any) {
         delegate?.didPressLogout()
     }
+    
 }

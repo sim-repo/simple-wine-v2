@@ -15,6 +15,12 @@ class CoverViewController: UIViewController {
         case .grandcru:
             let coverView = GrandCruCover.nib()
             setupCover(coverView)
+        case .kuznetskiymost:
+            let coverView = KuznetskyCover.nib()
+            setupCover(coverView)
+        case .depo:
+            let coverView = DepoCover.nib()
+            setupCover(coverView)
         default:
             let coverView = GrandCruCover.nib()
             setupCover(coverView)
@@ -23,6 +29,8 @@ class CoverViewController: UIViewController {
     
     
     private func setupCover(_ coverView: CoverView) {
+        coverView.translatesAutoresizingMaskIntoConstraints = false
+        coverView.setupOutlets()
         coverView.delegate = self
         view.addSubview(coverView)
         coverView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true

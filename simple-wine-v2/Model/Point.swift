@@ -14,7 +14,9 @@ class Point {
     
     static func list()->[Point] {
         return [
-            Point(id: PointEnum.grandcru, name: "Grand Cru", logoOnLightImageURL: "logo2_grancru_on_light")
+            Point(id: PointEnum.grandcru, name: "Grand Cru", logoOnLightImageURL: "logo2_grancru_on_light"),
+            Point(id: PointEnum.kuznetskiymost, name: "Кузнецкий Мост", logoOnLightImageURL: "logo2_kuznetsky_on_light"),
+            Point(id: PointEnum.depo, name: "Депо", logoOnLightImageURL: "logo_depo_on_dark"),
         ]
     }
 }

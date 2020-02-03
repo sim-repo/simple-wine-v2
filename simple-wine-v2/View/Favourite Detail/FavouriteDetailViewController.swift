@@ -36,7 +36,7 @@ class FavouriteDetailViewController: UIViewController {
     
     
     private func setCloseButton(){
-        let image = getSystemImage(name: "xmark.octagon", pointSize: 20, color: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
+        let image = getSystemImage(name: "xmark.octagon", pointSize: Theme.buttonSize, color: Theme.buttonCloseColor)
         closeButton.setImage(image, for: .normal)
     }
 }

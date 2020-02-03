@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="1194" height="834"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bkg_grancru" translatesAutoresizingMaskIntoConstraints="NO" id="Ovx-q7-Mw1">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bkg_grancru" translatesAutoresizingMaskIntoConstraints="NO" id="Ovx-q7-Mw1">
                     <rect key="frame" x="0.0" y="0.0" width="1194" height="834"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sx7-Jj-TTG">
@@ -84,13 +84,13 @@
                         <constraint firstAttribute="trailing" secondItem="J6P-Yn-Bl2" secondAttribute="trailing" constant="20" symbolic="YES" id="jdl-6O-xYs"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WOr-In-kQu">
-                    <rect key="frame" x="20" y="20" width="70" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WOr-In-kQu">
+                    <rect key="frame" x="30" y="30" width="50" height="50"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="0Xl-iZ-oxk"/>
-                        <constraint firstAttribute="width" constant="70" id="Zql-mQ-ryB"/>
+                        <constraint firstAttribute="height" constant="50" id="0Xl-iZ-oxk"/>
+                        <constraint firstAttribute="width" constant="50" id="Zql-mQ-ryB"/>
                     </constraints>
-                    <state key="normal" title="Выход">
+                    <state key="normal" image="arrow.left.circle" catalog="system">
                         <color key="titleColor" red="0.97000211479999998" green="0.83286058900000004" blue="0.64328747990000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <connections>
@@ -102,10 +102,10 @@
             <constraints>
                 <constraint firstItem="sx7-Jj-TTG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="AY3-r1-TnQ"/>
                 <constraint firstAttribute="trailing" secondItem="Ovx-q7-Mw1" secondAttribute="trailing" id="BHE-ta-SSj"/>
-                <constraint firstItem="WOr-In-kQu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Hk2-4L-96Z"/>
+                <constraint firstItem="WOr-In-kQu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="Hk2-4L-96Z"/>
                 <constraint firstAttribute="bottom" secondItem="Ovx-q7-Mw1" secondAttribute="bottom" id="JAL-21-WfS"/>
                 <constraint firstItem="sx7-Jj-TTG" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="LwO-jy-QGV"/>
-                <constraint firstItem="WOr-In-kQu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="UMe-wr-LzB"/>
+                <constraint firstItem="WOr-In-kQu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="UMe-wr-LzB"/>
                 <constraint firstAttribute="trailing" secondItem="sx7-Jj-TTG" secondAttribute="trailing" constant="50" id="Ygf-5m-hso"/>
                 <constraint firstItem="sx7-Jj-TTG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="45" id="adI-5Y-4pJ"/>
                 <constraint firstItem="Ovx-q7-Mw1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bxZ-hh-xMF"/>
@@ -114,12 +114,13 @@
                 <constraint firstItem="sx7-Jj-TTG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="z3i-AX-ZR3"/>
             </constraints>
             <connections>
-                <outlet property="contentView" destination="sx7-Jj-TTG" id="Yxm-vb-a9k"/>
+                <outlet property="backButton" destination="WOr-In-kQu" id="I76-mC-oqZ"/>
             </connections>
             <point key="canvasLocation" x="138.69346733668343" y="152.5179856115108"/>
         </view>
     </objects>
     <resources>
+        <image name="arrow.left.circle" catalog="system" width="64" height="60"/>
         <image name="award1_grancru" width="29" height="53"/>
         <image name="award2_grancru" width="51" height="51"/>
         <image name="bkg_grancru" width="683" height="512.5"/>

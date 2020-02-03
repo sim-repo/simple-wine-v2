@@ -48,6 +48,10 @@
 		16797CB523E85C77001707D3 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16797CB423E85C77001707D3 /* AuthViewController.swift */; };
 		16797CB823E85CCB001707D3 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16797CB723E85CCB001707D3 /* AuthPresenter.swift */; };
 		16797CBA23E89FDC001707D3 /* ColorConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16797CB923E89FDC001707D3 /* ColorConstant.swift */; };
+		16797CBC23E8BEFF001707D3 /* KuznetskyCover.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16797CBB23E8BEFF001707D3 /* KuznetskyCover.xib */; };
+		16797CBE23E8C17A001707D3 /* KuznetskyCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16797CBD23E8C17A001707D3 /* KuznetskyCover.swift */; };
+		16797CC023E8C9E2001707D3 /* DepoCover.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16797CBF23E8C9E2001707D3 /* DepoCover.xib */; };
+		16797CC223E8CAD3001707D3 /* DepoCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16797CC123E8CAD3001707D3 /* DepoCover.swift */; };
 		16ABE89523E58B590065D873 /* DropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABE89423E58B590065D873 /* DropDownView.swift */; };
 		16ABE89723E58CD50065D873 /* DropDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABE89623E58CD50065D873 /* DropDownButton.swift */; };
 		16ABE8BE23E5B00E0065D873 /* SortablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABE8BD23E5B00E0065D873 /* SortablePresenter.swift */; };
@@ -130,6 +134,10 @@
 		16797CB423E85C77001707D3 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		16797CB723E85CCB001707D3 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
 		16797CB923E89FDC001707D3 /* ColorConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstant.swift; sourceTree = "<group>"; };
+		16797CBB23E8BEFF001707D3 /* KuznetskyCover.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KuznetskyCover.xib; sourceTree = "<group>"; };
+		16797CBD23E8C17A001707D3 /* KuznetskyCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KuznetskyCover.swift; sourceTree = "<group>"; };
+		16797CBF23E8C9E2001707D3 /* DepoCover.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DepoCover.xib; sourceTree = "<group>"; };
+		16797CC123E8CAD3001707D3 /* DepoCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepoCover.swift; sourceTree = "<group>"; };
 		16ABE89423E58B590065D873 /* DropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownView.swift; sourceTree = "<group>"; };
 		16ABE89623E58CD50065D873 /* DropDownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownButton.swift; sourceTree = "<group>"; };
 		16ABE8BD23E5B00E0065D873 /* SortablePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortablePresenter.swift; sourceTree = "<group>"; };
@@ -553,9 +561,13 @@
 		16DBA84D23E822D50088052B /* Cover */ = {
 			isa = PBXGroup;
 			children = (
-				16797CA923E84622001707D3 /* GrandCruCover.swift */,
-				16DBA85A23E8426B0088052B /* GrandCruCover.xib */,
 				16DBA84E23E823450088052B /* CoverViewController.swift */,
+				16DBA85A23E8426B0088052B /* GrandCruCover.xib */,
+				16797CBB23E8BEFF001707D3 /* KuznetskyCover.xib */,
+				16797CBF23E8C9E2001707D3 /* DepoCover.xib */,
+				16797CA923E84622001707D3 /* GrandCruCover.swift */,
+				16797CBD23E8C17A001707D3 /* KuznetskyCover.swift */,
+				16797CC123E8CAD3001707D3 /* DepoCover.swift */,
 			);
 			path = Cover;
 			sourceTree = "<group>";
@@ -635,6 +647,7 @@
 				16ABE90023E6562B0065D873 /* Geometria-Italic.otf in Resources */,
 				16ABE8FE23E6562B0065D873 /* Geometria-Heavy.otf in Resources */,
 				16ABE90823E6562B0065D873 /* LucidaGrande.ttf in Resources */,
+				16797CBC23E8BEFF001707D3 /* KuznetskyCover.xib in Resources */,
 				16ABE8CA23E5EA750065D873 /* FilterSectionHeader.xib in Resources */,
 				16ABE8F823E6562B0065D873 /* Geometria-Bold.otf in Resources */,
 				16ABE8F623E656240065D873 /* CharterITC Italic.otf in Resources */,
@@ -643,6 +656,7 @@
 				16ABE90523E6562B0065D873 /* Geometria-Thin.otf in Resources */,
 				16ABE90623E6562B0065D873 /* Geometria-ThinItalic.otf in Resources */,
 				16ABE90123E6562B0065D873 /* Geometria-Light.otf in Resources */,
+				16797CC023E8C9E2001707D3 /* DepoCover.xib in Resources */,
 				165DD6CF23E39A0D0068D76E /* Assets.xcassets in Resources */,
 				16ABE8F423E6561E0065D873 /* CharterITC Bold Italic.otf in Resources */,
 				16ABE90723E6562B0065D873 /* Geometria.otf in Resources */,
@@ -669,8 +683,10 @@
 				16520E0D23E7440300AA3576 /* SelectedFilter.swift in Sources */,
 				16797CBA23E89FDC001707D3 /* ColorConstant.swift in Sources */,
 				16520E3623E7962300AA3576 /* FavouriteDetailViewController.swift in Sources */,
+				16797CBE23E8C17A001707D3 /* KuznetskyCover.swift in Sources */,
 				165DD6F623E3A13C0068D76E /* Filter.swift in Sources */,
 				165DD72323E42FD70068D76E /* PresentableMapSync.swift in Sources */,
+				16797CC223E8CAD3001707D3 /* DepoCover.swift in Sources */,
 				165DD72823E46D300068D76E /* Sequences+Extensions.swift in Sources */,
 				16520DFA23E6EEB900AA3576 /* FavouritePresenter.swift in Sources */,
 				165DD71423E3AA940068D76E /* ProductTableViewCell.swift in Sources */,
