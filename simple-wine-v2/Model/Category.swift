@@ -1,7 +1,7 @@
 import Foundation
 
 
-class Category {
+class Category: Codable {
     
     var id = 0
     var title = ""
@@ -12,6 +12,30 @@ class Category {
         self.id = id
         self.title = title
         self.imageURL = imageURL
+    }
+    
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case title
+        case imageURL
+        case kinds
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(self.id, forKey: .id)
+        try container.encode(self.title, forKey: .title)
+        try container.encode(self.imageURL, forKey: .imageURL)
+        try container.encode(self.kinds, forKey: .kinds)
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(Int.self, forKey: .id)
+        title = try container.decode(String.self, forKey: .title)
+        imageURL = try container.decode(String.self, forKey: .imageURL)
+        kinds = try container.decode([Int].self, forKey: .kinds)
     }
     
     

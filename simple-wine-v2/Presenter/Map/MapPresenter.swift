@@ -9,6 +9,8 @@ class MapPresenter {
     weak var view: PresentableMapView?
     var mapSync: PresentableMapSync = MapSync.shared
     
+    //MARK:-
+    var currentPointEnum: PointEnum!
     
     //MARK:- datasources
     var categoryDataSource: [Category] = Category.list()
@@ -38,11 +40,22 @@ class MapPresenter {
     var currentSortEnum: SortEnum = .ourCase
     
     
-    private init() {
-        mapSync.syncFilter(onSuccess: getOnSuccessFilter(),
-                           onError: getOnErrorFilter())
-        
-        fillAll()
+    private init() {}
+    
+    func setup(pointEnum: PointEnum) {
+        self.currentPointEnum = pointEnum
+    }
+    
+    func preload(pointEnum: PointEnum) {
+        if currentPointEnum == nil {
+            currentPointEnum = pointEnum
+        }
+        SERIAL_THREAD { [weak self] in
+            guard let self = self else { return }
+            self.mapSync.syncFilter(pointEnum: self.currentPointEnum,
+                                    onSuccess: self.getOnSuccessFilter(),
+                                    onError: self.getOnErrorFilter())
+        }
     }
     
     func fillAll() {
@@ -50,7 +63,6 @@ class MapPresenter {
         productSort(by: currentSortEnum)
     }
 }
-
 
 
 //MARK:- ViewableMapPresenter

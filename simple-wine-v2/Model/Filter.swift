@@ -1,11 +1,11 @@
 import Foundation
 
 
-class Filter {
+class Filter: Codable {
     var id = 0
     var title = ""
     var parentId: Int?
-    var pointEnum: PointEnum
+    var pointEnum: PointEnum = .unknown
     var kindId = 0
     var categoryId = 0
     
@@ -13,6 +13,13 @@ class Filter {
     var parentTitle: String? // calc
     var selected = false
     
+    var pointId = "" {
+        willSet {
+            if let point = PointEnum.init(rawValue: newValue) {
+                pointEnum = point
+            }
+        }
+    }
     
     init(id: Int, pointEnum: PointEnum, title: String, parentId: Int?, level: Int, parentTitle: String?, kind: Int, categoryId: Int){
         self.id = id
@@ -23,6 +30,7 @@ class Filter {
         self.parentTitle = parentTitle
         self.kindId = kind
         self.categoryId = categoryId
+        pointId = pointEnum.rawValue
         validate()
     }
     
@@ -34,6 +42,42 @@ class Filter {
                 return
         }
     }
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case title
+        case parentId
+        case pointId
+        case kindId
+        case categoryId
+        case level
+        case parentTitle
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(self.id, forKey: .id)
+        try container.encode(self.title, forKey: .title)
+        try container.encode(self.parentId, forKey: .parentId)
+        try container.encode(self.pointId, forKey: .pointId)
+        try container.encode(self.kindId, forKey: .kindId)
+        try container.encode(self.categoryId, forKey: .categoryId)
+        try container.encode(self.level, forKey: .level)
+        try container.encode(self.parentTitle, forKey: .parentTitle)
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(Int.self, forKey: .id)
+        title = try container.decode(String.self, forKey: .title)
+        parentId = try container.decode(Int?.self, forKey: .parentId)
+        pointId = try container.decode(String.self, forKey: .pointId)
+        kindId = try container.decode(Int.self, forKey: .kindId)
+        categoryId = try container.decode(Int.self, forKey: .categoryId)
+        level = try container.decode(Int.self, forKey: .level)
+        parentTitle = try container.decode(String?.self, forKey: .parentTitle)
+    }
+    
     
     static func list0() -> [Filter] {
         return [

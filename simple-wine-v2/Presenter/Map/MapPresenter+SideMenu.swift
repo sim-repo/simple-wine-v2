@@ -109,6 +109,7 @@ extension MapPresenter {
         
         let onSuccessFilter: ((_ filters: [Filter]) -> Void)? = { [weak self] filters in
             self?.setFilterDataSource(filters: filters)
+            self?.fillAll()
         }
         return onSuccessFilter
     }

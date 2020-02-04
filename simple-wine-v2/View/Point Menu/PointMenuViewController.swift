@@ -15,6 +15,7 @@ class PointMenuViewController: UIViewController {
     override func viewDidLoad() {
         setupButtons()
     }
+   
     
     private func setupButtons(){
         let image = getSystemImage(name: "arrow.right.circle", pointSize: Theme.buttonSize, color: Theme.buttonArrowColor)

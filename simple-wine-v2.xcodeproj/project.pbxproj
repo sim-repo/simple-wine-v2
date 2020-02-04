@@ -52,6 +52,10 @@
 		16797CBE23E8C17A001707D3 /* KuznetskyCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16797CBD23E8C17A001707D3 /* KuznetskyCover.swift */; };
 		16797CC023E8C9E2001707D3 /* DepoCover.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16797CBF23E8C9E2001707D3 /* DepoCover.xib */; };
 		16797CC223E8CAD3001707D3 /* DepoCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16797CC123E8CAD3001707D3 /* DepoCover.swift */; };
+		16797CC423E8D379001707D3 /* ThreadConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16797CC323E8D378001707D3 /* ThreadConstant.swift */; };
+		16797CC723E8D7B4001707D3 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16797CC623E8D7B4001707D3 /* Response.swift */; };
+		16797CC923E8ED62001707D3 /* Test.json in Resources */ = {isa = PBXBuildFile; fileRef = 16797CC823E8ED62001707D3 /* Test.json */; };
+		16797CCD23E8F69F001707D3 /* TestParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16797CCC23E8F69F001707D3 /* TestParse.swift */; };
 		16ABE89523E58B590065D873 /* DropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABE89423E58B590065D873 /* DropDownView.swift */; };
 		16ABE89723E58CD50065D873 /* DropDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABE89623E58CD50065D873 /* DropDownButton.swift */; };
 		16ABE8BE23E5B00E0065D873 /* SortablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABE8BD23E5B00E0065D873 /* SortablePresenter.swift */; };
@@ -138,6 +142,10 @@
 		16797CBD23E8C17A001707D3 /* KuznetskyCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KuznetskyCover.swift; sourceTree = "<group>"; };
 		16797CBF23E8C9E2001707D3 /* DepoCover.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DepoCover.xib; sourceTree = "<group>"; };
 		16797CC123E8CAD3001707D3 /* DepoCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepoCover.swift; sourceTree = "<group>"; };
+		16797CC323E8D378001707D3 /* ThreadConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadConstant.swift; sourceTree = "<group>"; };
+		16797CC623E8D7B4001707D3 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		16797CC823E8ED62001707D3 /* Test.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Test.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
+		16797CCC23E8F69F001707D3 /* TestParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestParse.swift; sourceTree = "<group>"; };
 		16ABE89423E58B590065D873 /* DropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownView.swift; sourceTree = "<group>"; };
 		16ABE89623E58CD50065D873 /* DropDownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownButton.swift; sourceTree = "<group>"; };
 		16ABE8BD23E5B00E0065D873 /* SortablePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortablePresenter.swift; sourceTree = "<group>"; };
@@ -248,10 +256,11 @@
 		165DD6C423E39A0C0068D76E /* simple-wine-v2 */ = {
 			isa = PBXGroup;
 			children = (
+				16797CCA23E8F67A001707D3 /* Test */,
 				16ABE8BF23E5B0960065D873 /* Constant */,
+				165DD71823E42B510068D76E /* Service */,
 				16ABE89223E58B2C0065D873 /* UI */,
 				165DD72623E46D1D0068D76E /* Helper */,
-				165DD71823E42B510068D76E /* Service */,
 				165DD6FC23E3A65C0068D76E /* Protocol */,
 				165DD6DD23E39AAD0068D76E /* Model */,
 				165DD6DC23E39AA70068D76E /* View */,
@@ -303,6 +312,7 @@
 				16ABE8D223E62B650065D873 /* DetailMapSetting.swift */,
 				16DBA85323E827430088052B /* Point.swift */,
 				16520E0C23E7440300AA3576 /* SelectedFilter.swift */,
+				16797CC623E8D7B4001707D3 /* Response.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -475,6 +485,23 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
+		16797CCA23E8F67A001707D3 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				16797CCB23E8F681001707D3 /* Parse */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		16797CCB23E8F681001707D3 /* Parse */ = {
+			isa = PBXGroup;
+			children = (
+				16797CC823E8ED62001707D3 /* Test.json */,
+				16797CCC23E8F69F001707D3 /* TestParse.swift */,
+			);
+			path = Parse;
+			sourceTree = "<group>";
+		};
 		16ABE89223E58B2C0065D873 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -498,6 +525,7 @@
 				16ABE8C023E5B0B60065D873 /* SortConstant.swift */,
 				16DBA85523E82A0E0088052B /* PointConstant.swift */,
 				16797CB923E89FDC001707D3 /* ColorConstant.swift */,
+				16797CC323E8D378001707D3 /* ThreadConstant.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -643,6 +671,7 @@
 				16ABE8FD23E6562B0065D873 /* Geometria-ExtraLightItalic.otf in Resources */,
 				16ABE8F523E656210065D873 /* CharterITC Bold.otf in Resources */,
 				16ABE8FB23E6562B0065D873 /* Geometria-ExtraBlackItalic.otf in Resources */,
+				16797CC923E8ED62001707D3 /* Test.json in Resources */,
 				16ABE90223E6562B0065D873 /* Geometria-LightItalic.otf in Resources */,
 				16ABE90023E6562B0065D873 /* Geometria-Italic.otf in Resources */,
 				16ABE8FE23E6562B0065D873 /* Geometria-Heavy.otf in Resources */,
@@ -689,6 +718,7 @@
 				16797CC223E8CAD3001707D3 /* DepoCover.swift in Sources */,
 				165DD72823E46D300068D76E /* Sequences+Extensions.swift in Sources */,
 				16520DFA23E6EEB900AA3576 /* FavouritePresenter.swift in Sources */,
+				16797CCD23E8F69F001707D3 /* TestParse.swift in Sources */,
 				165DD71423E3AA940068D76E /* ProductTableViewCell.swift in Sources */,
 				16520E0023E6F2BF00AA3576 /* FavouriteDetailPresenter.swift in Sources */,
 				16797CAA23E84622001707D3 /* GrandCruCover.swift in Sources */,
@@ -705,6 +735,7 @@
 				165DD6F023E3A0BA0068D76E /* MapPresenter+SideMenu.swift in Sources */,
 				16ABE8BE23E5B00E0065D873 /* SortablePresenter.swift in Sources */,
 				16DBA85623E82A0E0088052B /* PointConstant.swift in Sources */,
+				16797CC723E8D7B4001707D3 /* Response.swift in Sources */,
 				165DD6EC23E3A0A10068D76E /* MapPresenter+TopMenu.swift in Sources */,
 				165DD6DA23E39A8A0068D76E /* MapViewController.swift in Sources */,
 				16520E3423E76DF800AA3576 /* UIView+Extentions.swift in Sources */,
@@ -719,6 +750,7 @@
 				16ABE8CF23E623FE0065D873 /* MapDetailViewController.swift in Sources */,
 				16DBA84F23E823450088052B /* CoverViewController.swift in Sources */,
 				16ABE8C823E5EA660065D873 /* FilterSectionHeader.swift in Sources */,
+				16797CC423E8D379001707D3 /* ThreadConstant.swift in Sources */,
 				165DD70823E3AA2D0068D76E /* SelectedFilterCollectionViewCell.swift in Sources */,
 				165DD6EE23E3A0B10068D76E /* MapPresenter+SelectedFilter.swift in Sources */,
 				165DD6E423E39F3F0068D76E /* MapViewController+Collection.swift in Sources */,

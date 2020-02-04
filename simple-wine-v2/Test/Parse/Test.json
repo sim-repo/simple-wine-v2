@@ -1,0 +1,1941 @@
+{
+  "points" : [
+    {
+      "pointId" : "grandcru",
+      "name" : "Grand Cru",
+      "logoOnLightImageURL" : "logo2_grancru_on_light"
+    },
+    {
+      "pointId" : "kuznetskiymost",
+      "name" : "Кузнецкий Мост",
+      "logoOnLightImageURL" : "logo2_kuznetsky_on_light"
+    },
+    {
+      "pointId" : "depo",
+      "name" : "Депо",
+      "logoOnLightImageURL" : "logo_depo_on_dark"
+    }
+  ],
+  "filters" : [
+    {
+      "parentId" : null,
+      "pointId" : "grandcru",
+      "kindId" : 1,
+      "id" : 0,
+      "parentTitle" : null,
+      "level" : 0,
+      "title" : "Цвет",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : null,
+      "pointId" : "grandcru",
+      "kindId" : 2,
+      "id" : 1,
+      "parentTitle" : null,
+      "level" : 0,
+      "title" : "Страна",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : null,
+      "pointId" : "grandcru",
+      "kindId" : 3,
+      "id" : 2,
+      "parentTitle" : null,
+      "level" : 0,
+      "title" : "Цена",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : null,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 3,
+      "parentTitle" : null,
+      "level" : 0,
+      "title" : "Сорт Винограда",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : null,
+      "pointId" : "grandcru",
+      "kindId" : 5,
+      "id" : 4,
+      "parentTitle" : null,
+      "level" : 0,
+      "title" : "Объем",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : null,
+      "pointId" : "grandcru",
+      "kindId" : 6,
+      "id" : 5,
+      "parentTitle" : null,
+      "level" : 0,
+      "title" : "Производитель",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 0,
+      "pointId" : "grandcru",
+      "kindId" : 1,
+      "id" : 6,
+      "parentTitle" : "Цвет",
+      "level" : 1,
+      "title" : "Красное",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 0,
+      "pointId" : "grandcru",
+      "kindId" : 1,
+      "id" : 7,
+      "parentTitle" : "Цвет",
+      "level" : 1,
+      "title" : "Белое",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 0,
+      "pointId" : "grandcru",
+      "kindId" : 1,
+      "id" : 8,
+      "parentTitle" : "Цвет",
+      "level" : 1,
+      "title" : "Розовое",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 1,
+      "pointId" : "grandcru",
+      "kindId" : 2,
+      "id" : 9,
+      "parentTitle" : "Страна",
+      "level" : 1,
+      "title" : "Испания",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 1,
+      "pointId" : "grandcru",
+      "kindId" : 2,
+      "id" : 10,
+      "parentTitle" : "Страна",
+      "level" : 1,
+      "title" : "Франция",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 1,
+      "pointId" : "grandcru",
+      "kindId" : 2,
+      "id" : 11,
+      "parentTitle" : "Страна",
+      "level" : 1,
+      "title" : "Италия",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 10,
+      "pointId" : "grandcru",
+      "kindId" : 2,
+      "id" : 12,
+      "parentTitle" : "Франция",
+      "level" : 2,
+      "title" : "Долина Луары",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 10,
+      "pointId" : "grandcru",
+      "kindId" : 2,
+      "id" : 13,
+      "parentTitle" : "Франция",
+      "level" : 2,
+      "title" : "Бургундия",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 10,
+      "pointId" : "grandcru",
+      "kindId" : 2,
+      "id" : 14,
+      "parentTitle" : "Франция",
+      "level" : 2,
+      "title" : "Аквитания",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 11,
+      "pointId" : "grandcru",
+      "kindId" : 2,
+      "id" : 15,
+      "parentTitle" : "Италия",
+      "level" : 2,
+      "title" : "Пьемонт",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 11,
+      "pointId" : "grandcru",
+      "kindId" : 2,
+      "id" : 16,
+      "parentTitle" : "Италия",
+      "level" : 2,
+      "title" : "Лацио",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 11,
+      "pointId" : "grandcru",
+      "kindId" : 2,
+      "id" : 17,
+      "parentTitle" : "Италия",
+      "level" : 2,
+      "title" : "Абруццо",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 9,
+      "pointId" : "grandcru",
+      "kindId" : 2,
+      "id" : 18,
+      "parentTitle" : "Испания",
+      "level" : 2,
+      "title" : "Валенсия",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 9,
+      "pointId" : "grandcru",
+      "kindId" : 2,
+      "id" : 19,
+      "parentTitle" : "Испания",
+      "level" : 2,
+      "title" : "Ла Манча",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 9,
+      "pointId" : "grandcru",
+      "kindId" : 2,
+      "id" : 20,
+      "parentTitle" : "Испания",
+      "level" : 2,
+      "title" : "Риоха",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 2,
+      "pointId" : "grandcru",
+      "kindId" : 3,
+      "id" : 21,
+      "parentTitle" : "Цена",
+      "level" : 1,
+      "title" : "до 1 500 ₽",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 2,
+      "pointId" : "grandcru",
+      "kindId" : 3,
+      "id" : 22,
+      "parentTitle" : "Цена",
+      "level" : 1,
+      "title" : "от 1 500 до 3 000 ₽",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 2,
+      "pointId" : "grandcru",
+      "kindId" : 3,
+      "id" : 23,
+      "parentTitle" : "Цена",
+      "level" : 1,
+      "title" : "от 3 000 до 5 000 ₽",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 2,
+      "pointId" : "grandcru",
+      "kindId" : 3,
+      "id" : 24,
+      "parentTitle" : "Цена",
+      "level" : 1,
+      "title" : "от 10 000 ₽",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 25,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "алиберне",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 26,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "аликанте",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 27,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "альбариньо",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 28,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "альянико",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 29,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "амарал",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 30,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "ансоника",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 31,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "аринто",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 32,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "арнеис",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 33,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "асал",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 34,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "барбера",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 35,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "бастардо магарачский",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 36,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "белые сорта винограда",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 37,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "блауфренкиш",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 38,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "боваледду",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 39,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "бонарда",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 40,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "боррасал",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 41,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "бурбуленк",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 42,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "бьянколлела",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 43,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "верделло",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 44,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "вердехо",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 45,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "вердиккио",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 46,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "верментино",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 47,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "весполина",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 48,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "виньяо",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 49,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "виозиньо",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 50,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "вионье",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 51,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "витовска",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 52,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "виура",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 53,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "гальоппо",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 54,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "гаме",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 55,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "гарганега",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 56,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "гарнача",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 57,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "гевюрцтраминер",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 58,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "годельо",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 59,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "грасиано",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 60,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "греканико",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 62,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "греко",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 63,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "грилло",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 64,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "джинестра",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 65,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "зинфандель",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 66,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "каберло",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 67,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "каберне совиньон",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 68,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "каберне фран",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 3,
+      "pointId" : "grandcru",
+      "kindId" : 4,
+      "id" : 69,
+      "parentTitle" : "Сорт Винограда",
+      "level" : 1,
+      "title" : "канайоло",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 4,
+      "pointId" : "grandcru",
+      "kindId" : 5,
+      "id" : 70,
+      "parentTitle" : "Объем",
+      "level" : 1,
+      "title" : "3",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 4,
+      "pointId" : "grandcru",
+      "kindId" : 5,
+      "id" : 71,
+      "parentTitle" : "Объем",
+      "level" : 1,
+      "title" : "6",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 4,
+      "pointId" : "grandcru",
+      "kindId" : 5,
+      "id" : 72,
+      "parentTitle" : "Объем",
+      "level" : 1,
+      "title" : "0.187",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 4,
+      "pointId" : "grandcru",
+      "kindId" : 5,
+      "id" : 73,
+      "parentTitle" : "Объем",
+      "level" : 1,
+      "title" : "0.2",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 4,
+      "pointId" : "grandcru",
+      "kindId" : 5,
+      "id" : 74,
+      "parentTitle" : "Объем",
+      "level" : 1,
+      "title" : "0.375",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 4,
+      "pointId" : "grandcru",
+      "kindId" : 5,
+      "id" : 75,
+      "parentTitle" : "Объем",
+      "level" : 1,
+      "title" : "0.5",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 4,
+      "pointId" : "grandcru",
+      "kindId" : 5,
+      "id" : 76,
+      "parentTitle" : "Объем",
+      "level" : 1,
+      "title" : "0.7",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 4,
+      "pointId" : "grandcru",
+      "kindId" : 5,
+      "id" : 77,
+      "parentTitle" : "Объем",
+      "level" : 1,
+      "title" : "0.73",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 4,
+      "pointId" : "grandcru",
+      "kindId" : 5,
+      "id" : 78,
+      "parentTitle" : "Объем",
+      "level" : 1,
+      "title" : "0.75",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 4,
+      "pointId" : "grandcru",
+      "kindId" : 5,
+      "id" : 79,
+      "parentTitle" : "Объем",
+      "level" : 1,
+      "title" : "1.5",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 5,
+      "pointId" : "grandcru",
+      "kindId" : 6,
+      "id" : 80,
+      "parentTitle" : "Производитель",
+      "level" : 1,
+      "title" : "Cantine Marisa Cuomo",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 5,
+      "pointId" : "grandcru",
+      "kindId" : 6,
+      "id" : 81,
+      "parentTitle" : "Производитель",
+      "level" : 1,
+      "title" : "Capannelle",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 5,
+      "pointId" : "grandcru",
+      "kindId" : 6,
+      "id" : 82,
+      "parentTitle" : "Производитель",
+      "level" : 1,
+      "title" : "Dino Illuminati",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 5,
+      "pointId" : "grandcru",
+      "kindId" : 6,
+      "id" : 83,
+      "parentTitle" : "Производитель",
+      "level" : 1,
+      "title" : "Adegas Gran Vinum",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 5,
+      "pointId" : "grandcru",
+      "kindId" : 6,
+      "id" : 84,
+      "parentTitle" : "Производитель",
+      "level" : 1,
+      "title" : "Bodegas Alion",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 5,
+      "pointId" : "grandcru",
+      "kindId" : 6,
+      "id" : 85,
+      "parentTitle" : "Производитель",
+      "level" : 1,
+      "title" : "Bodegas Hermanos Sastre",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 5,
+      "pointId" : "grandcru",
+      "kindId" : 6,
+      "id" : 86,
+      "parentTitle" : "Производитель",
+      "level" : 1,
+      "title" : "Bonneau du Martray",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 5,
+      "pointId" : "grandcru",
+      "kindId" : 6,
+      "id" : 87,
+      "parentTitle" : "Производитель",
+      "level" : 1,
+      "title" : "Chateau Brane-Cantenac",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 5,
+      "pointId" : "grandcru",
+      "kindId" : 6,
+      "id" : 88,
+      "parentTitle" : "Производитель",
+      "level" : 1,
+      "title" : "Chateau Fourcas Hosten",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : 5,
+      "pointId" : "grandcru",
+      "kindId" : 6,
+      "id" : 89,
+      "parentTitle" : "Производитель",
+      "level" : 1,
+      "title" : "Julien Brocard",
+      "categoryId" : 0
+    },
+    {
+      "parentId" : null,
+      "pointId" : "grandcru",
+      "kindId" : 7,
+      "id" : 90,
+      "parentTitle" : null,
+      "level" : 0,
+      "title" : "Цвет",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : null,
+      "pointId" : "grandcru",
+      "kindId" : 8,
+      "id" : 91,
+      "parentTitle" : null,
+      "level" : 0,
+      "title" : "Страна",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : null,
+      "pointId" : "grandcru",
+      "kindId" : 9,
+      "id" : 92,
+      "parentTitle" : null,
+      "level" : 0,
+      "title" : "Цена",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : null,
+      "pointId" : "grandcru",
+      "kindId" : 10,
+      "id" : 93,
+      "parentTitle" : null,
+      "level" : 0,
+      "title" : "Сахар",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : null,
+      "pointId" : "grandcru",
+      "kindId" : 11,
+      "id" : 94,
+      "parentTitle" : null,
+      "level" : 0,
+      "title" : "Объем",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : null,
+      "pointId" : "grandcru",
+      "kindId" : 12,
+      "id" : 95,
+      "parentTitle" : null,
+      "level" : 0,
+      "title" : "Производитель",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 90,
+      "pointId" : "grandcru",
+      "kindId" : 7,
+      "id" : 96,
+      "parentTitle" : "Цвет",
+      "level" : 1,
+      "title" : "Белое",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 90,
+      "pointId" : "grandcru",
+      "kindId" : 7,
+      "id" : 97,
+      "parentTitle" : "Цвет",
+      "level" : 1,
+      "title" : "Розовое",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 91,
+      "pointId" : "grandcru",
+      "kindId" : 8,
+      "id" : 98,
+      "parentTitle" : "Страна",
+      "level" : 1,
+      "title" : "Испания",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 91,
+      "pointId" : "grandcru",
+      "kindId" : 8,
+      "id" : 99,
+      "parentTitle" : "Страна",
+      "level" : 1,
+      "title" : "Италия",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 91,
+      "pointId" : "grandcru",
+      "kindId" : 8,
+      "id" : 100,
+      "parentTitle" : "Страна",
+      "level" : 1,
+      "title" : "Франция",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 91,
+      "pointId" : "grandcru",
+      "kindId" : 8,
+      "id" : 101,
+      "parentTitle" : "Страна",
+      "level" : 1,
+      "title" : "Соединенное Королевство",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 91,
+      "pointId" : "grandcru",
+      "kindId" : 8,
+      "id" : 102,
+      "parentTitle" : "Страна",
+      "level" : 1,
+      "title" : "Россия",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 100,
+      "pointId" : "grandcru",
+      "kindId" : 8,
+      "id" : 103,
+      "parentTitle" : "Франция",
+      "level" : 2,
+      "title" : "Долина Луары",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 100,
+      "pointId" : "grandcru",
+      "kindId" : 8,
+      "id" : 104,
+      "parentTitle" : "Франция",
+      "level" : 2,
+      "title" : "Бургундия",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 100,
+      "pointId" : "grandcru",
+      "kindId" : 8,
+      "id" : 105,
+      "parentTitle" : "Франция",
+      "level" : 2,
+      "title" : "Аквитания",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 99,
+      "pointId" : "grandcru",
+      "kindId" : 8,
+      "id" : 106,
+      "parentTitle" : "Италия",
+      "level" : 2,
+      "title" : "Пьемонт",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 99,
+      "pointId" : "grandcru",
+      "kindId" : 8,
+      "id" : 107,
+      "parentTitle" : "Италия",
+      "level" : 2,
+      "title" : "Лацио",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 99,
+      "pointId" : "grandcru",
+      "kindId" : 8,
+      "id" : 108,
+      "parentTitle" : "Италия",
+      "level" : 2,
+      "title" : "Абруццо",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 98,
+      "pointId" : "grandcru",
+      "kindId" : 8,
+      "id" : 109,
+      "parentTitle" : "Испания",
+      "level" : 2,
+      "title" : "Валенсия",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 98,
+      "pointId" : "grandcru",
+      "kindId" : 8,
+      "id" : 110,
+      "parentTitle" : "Испания",
+      "level" : 2,
+      "title" : "Ла Манча",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 98,
+      "pointId" : "grandcru",
+      "kindId" : 8,
+      "id" : 111,
+      "parentTitle" : "Испания",
+      "level" : 2,
+      "title" : "Риоха",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 101,
+      "pointId" : "grandcru",
+      "kindId" : 8,
+      "id" : 112,
+      "parentTitle" : "Соединенное Королевство",
+      "level" : 2,
+      "title" : "Уэссекс",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 101,
+      "pointId" : "grandcru",
+      "kindId" : 8,
+      "id" : 113,
+      "parentTitle" : "Соединенное Королевство",
+      "level" : 2,
+      "title" : "Лондон",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 102,
+      "pointId" : "grandcru",
+      "kindId" : 8,
+      "id" : 114,
+      "parentTitle" : "Россия",
+      "level" : 2,
+      "title" : "Крым",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 102,
+      "pointId" : "grandcru",
+      "kindId" : 8,
+      "id" : 115,
+      "parentTitle" : "Россия",
+      "level" : 2,
+      "title" : "Краснодар",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 92,
+      "pointId" : "grandcru",
+      "kindId" : 9,
+      "id" : 116,
+      "parentTitle" : "Цена",
+      "level" : 1,
+      "title" : "до 1 500 ₽",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 92,
+      "pointId" : "grandcru",
+      "kindId" : 9,
+      "id" : 117,
+      "parentTitle" : "Цена",
+      "level" : 1,
+      "title" : "от 1 500 до 3 000 ₽",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 92,
+      "pointId" : "grandcru",
+      "kindId" : 9,
+      "id" : 118,
+      "parentTitle" : "Цена",
+      "level" : 1,
+      "title" : "от 3 000 до 5 000 ₽",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 92,
+      "pointId" : "grandcru",
+      "kindId" : 9,
+      "id" : 119,
+      "parentTitle" : "Цена",
+      "level" : 1,
+      "title" : "от 10 000 ₽",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 93,
+      "pointId" : "grandcru",
+      "kindId" : 10,
+      "id" : 120,
+      "parentTitle" : "Сахар",
+      "level" : 1,
+      "title" : "полусладкое",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 93,
+      "pointId" : "grandcru",
+      "kindId" : 10,
+      "id" : 121,
+      "parentTitle" : "Сахар",
+      "level" : 1,
+      "title" : "полусухое",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 93,
+      "pointId" : "grandcru",
+      "kindId" : 10,
+      "id" : 122,
+      "parentTitle" : "Сахар",
+      "level" : 1,
+      "title" : "сладкое",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 93,
+      "pointId" : "grandcru",
+      "kindId" : 10,
+      "id" : 123,
+      "parentTitle" : "Сахар",
+      "level" : 1,
+      "title" : "сухое",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 94,
+      "pointId" : "grandcru",
+      "kindId" : 11,
+      "id" : 124,
+      "parentTitle" : "Объем",
+      "level" : 1,
+      "title" : "3",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 94,
+      "pointId" : "grandcru",
+      "kindId" : 11,
+      "id" : 125,
+      "parentTitle" : "Объем",
+      "level" : 1,
+      "title" : "6",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 94,
+      "pointId" : "grandcru",
+      "kindId" : 11,
+      "id" : 126,
+      "parentTitle" : "Объем",
+      "level" : 1,
+      "title" : "0.187",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 94,
+      "pointId" : "grandcru",
+      "kindId" : 11,
+      "id" : 127,
+      "parentTitle" : "Объем",
+      "level" : 1,
+      "title" : "0.2",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 94,
+      "pointId" : "grandcru",
+      "kindId" : 11,
+      "id" : 128,
+      "parentTitle" : "Объем",
+      "level" : 1,
+      "title" : "0.375",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 94,
+      "pointId" : "grandcru",
+      "kindId" : 11,
+      "id" : 129,
+      "parentTitle" : "Объем",
+      "level" : 1,
+      "title" : "0.5",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 94,
+      "pointId" : "grandcru",
+      "kindId" : 11,
+      "id" : 130,
+      "parentTitle" : "Объем",
+      "level" : 1,
+      "title" : "0.7",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 94,
+      "pointId" : "grandcru",
+      "kindId" : 11,
+      "id" : 131,
+      "parentTitle" : "Объем",
+      "level" : 1,
+      "title" : "0.73",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 94,
+      "pointId" : "grandcru",
+      "kindId" : 11,
+      "id" : 132,
+      "parentTitle" : "Объем",
+      "level" : 1,
+      "title" : "0.75",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 94,
+      "pointId" : "grandcru",
+      "kindId" : 11,
+      "id" : 133,
+      "parentTitle" : "Объем",
+      "level" : 1,
+      "title" : "1.5",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 95,
+      "pointId" : "grandcru",
+      "kindId" : 12,
+      "id" : 134,
+      "parentTitle" : "Производитель",
+      "level" : 1,
+      "title" : "Braida",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 95,
+      "pointId" : "grandcru",
+      "kindId" : 12,
+      "id" : 135,
+      "parentTitle" : "Производитель",
+      "level" : 1,
+      "title" : "Casa Coste Piane",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 95,
+      "pointId" : "grandcru",
+      "kindId" : 12,
+      "id" : 136,
+      "parentTitle" : "Производитель",
+      "level" : 1,
+      "title" : "Chanoine",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 95,
+      "pointId" : "grandcru",
+      "kindId" : 12,
+      "id" : 137,
+      "parentTitle" : "Производитель",
+      "level" : 1,
+      "title" : "Pierre Gimonnet & Fils",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 95,
+      "pointId" : "grandcru",
+      "kindId" : 12,
+      "id" : 138,
+      "parentTitle" : "Производитель",
+      "level" : 1,
+      "title" : "Geoffroy",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 95,
+      "pointId" : "grandcru",
+      "kindId" : 12,
+      "id" : 139,
+      "parentTitle" : "Производитель",
+      "level" : 1,
+      "title" : "Lanson",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 95,
+      "pointId" : "grandcru",
+      "kindId" : 12,
+      "id" : 140,
+      "parentTitle" : "Производитель",
+      "level" : 1,
+      "title" : "Jerome Prevost",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 95,
+      "pointId" : "grandcru",
+      "kindId" : 12,
+      "id" : 141,
+      "parentTitle" : "Производитель",
+      "level" : 1,
+      "title" : "Domaine Bott-Geyl",
+      "categoryId" : 1
+    },
+    {
+      "parentId" : 95,
+      "pointId" : "grandcru",
+      "kindId" : 12,
+      "id" : 142,
+      "parentTitle" : "Производитель",
+      "level" : 1,
+      "title" : "Les Celliers Jean d'Alibert",
+      "categoryId" : 1
+    }
+  ],
+  "categories" : [
+    {
+      "id" : 0,
+      "title" : "Вино",
+      "imageURL" : "logo-wines2",
+      "kinds" : [
+
+      ]
+    },
+    {
+      "id" : 1,
+      "title" : "Шампанское и Игристое",
+      "imageURL" : "shampane-logo",
+      "kinds" : [
+
+      ]
+    },
+    {
+      "id" : 2,
+      "title" : "Крепкие Напитки",
+      "imageURL" : "drink-logo",
+      "kinds" : [
+
+      ]
+    },
+    {
+      "id" : 3,
+      "title" : "Винные Сеты",
+      "imageURL" : "Set-Logo",
+      "kinds" : [
+
+      ]
+    },
+    {
+      "id" : 4,
+      "title" : "Вода и Соки",
+      "imageURL" : "juice",
+      "kinds" : [
+
+      ]
+    }
+  ],
+  "detailMapSetting" : [
+    {
+      "kindIds" : [
+        1,
+        4,
+        5,
+        6
+      ],
+      "categoryId" : 0,
+      "prefix" : [
+        "Цвет",
+        "Сорт Винограда",
+        "Объем",
+        "Производитель"
+      ],
+      "icons" : [
+        null,
+        "WineGrapes",
+        null,
+        null
+      ]
+    },
+    {
+      "kindIds" : [
+        7,
+        10,
+        11,
+        12
+      ],
+      "categoryId" : 1,
+      "prefix" : [
+        "Цвет",
+        "Сахар",
+        "Объем",
+        "Производитель"
+      ],
+      "icons" : [
+        null,
+        "WineGrapes",
+        null,
+        null
+      ]
+    }
+  ],
+  "products" : [
+    {
+      "id" : 0,
+      "bigDesc" : "Вина из Франции ценятся очень высоко и считаются эталоном среди других алкогольных напитков. Легендарные производители Бордо, Бургундии, Прованса и других винодельческих областей известны своими восхитительными французскими винами всему миру. В ассортименте интернет-витрины SimpleWine представлены хорошие демократичные и великолепные премиальные экземпляры от одних из лучших хозяйств страны.",
+      "pointId" : "grandcru",
+      "manufactureYear" : 2015,
+      "oldPrice" : 12,
+      "popularity" : 100,
+      "desc" : "Год: 2015г.\nРегион: Бургундия \n999 ₽ \nСорт: бьянколлела \nОбъем: 0.375 \nПроизводитель: Chateau Brane-Cantenac",
+      "attributeIds" : [
+        6,
+        10,
+        13,
+        21,
+        42,
+        74,
+        87
+      ],
+      "price" : 999,
+      "imageURL" : "redwine1",
+      "isLiked" : false,
+      "name" : "Красное Французское Вино",
+      "categoryId" : 0
+    },
+    {
+      "id" : 1,
+      "bigDesc" : "Вина из Франции ценятся очень высоко и считаются эталоном среди других алкогольных напитков. Легендарные производители Бордо, Бургундии, Прованса и других винодельческих областей известны своими восхитительными французскими винами всему миру. В ассортименте интернет-витрины SimpleWine представлены хорошие демократичные и великолепные премиальные экземпляры от одних из лучших хозяйств страны.",
+      "pointId" : "grandcru",
+      "manufactureYear" : 2012,
+      "oldPrice" : 14,
+      "popularity" : 40,
+      "desc" : "Год: 2012г.\nРегион: Пьемонт \n1700 ₽ \nСорт: вердиккио\nОбъем: 0.73 \nПроизводитель: Cantine Marisa Cuomo",
+      "attributeIds" : [
+        7,
+        11,
+        15,
+        22,
+        45,
+        77,
+        80
+      ],
+      "price" : 1700,
+      "imageURL" : "white1",
+      "isLiked" : false,
+      "name" : "Белое Итальянское Вино",
+      "categoryId" : 0
+    },
+    {
+      "id" : 2,
+      "bigDesc" : "Вина из Франции ценятся очень высоко и считаются эталоном среди других алкогольных напитков. Легендарные производители Бордо, Бургундии, Прованса и других винодельческих областей известны своими восхитительными французскими винами всему миру. В ассортименте интернет-витрины SimpleWine представлены хорошие демократичные и великолепные премиальные экземпляры от одних из лучших хозяйств страны.",
+      "pointId" : "grandcru",
+      "manufactureYear" : 2019,
+      "oldPrice" : 15,
+      "popularity" : 75,
+      "desc" : "Год: 2019г.\nРегион: Валенсия \n60 000 ₽ \nСорт: гальоппо\nОбъем: 0.73 \nПроизводитель: ",
+      "attributeIds" : [
+        8,
+        9,
+        18,
+        24,
+        53,
+        77
+      ],
+      "price" : 60000,
+      "imageURL" : "pink",
+      "isLiked" : false,
+      "name" : "Розовое Испанское Вино",
+      "categoryId" : 0
+    },
+    {
+      "id" : 3,
+      "bigDesc" : "Вина из Франции ценятся очень высоко и считаются эталоном среди других алкогольных напитков. Легендарные производители Бордо, Бургундии, Прованса и других винодельческих областей известны своими восхитительными французскими винами всему миру. В ассортименте интернет-витрины SimpleWine представлены хорошие демократичные и великолепные премиальные экземпляры от одних из лучших хозяйств страны.",
+      "pointId" : "grandcru",
+      "manufactureYear" : 2016,
+      "oldPrice" : 16,
+      "popularity" : 80,
+      "desc" : "Год: 2016г.\nРегион: Бургундия \n4500 ₽ \nСорт: барбера\nОбъем: 0.5 \nПроизводитель: Chateau Fourcas Hosten",
+      "attributeIds" : [
+        6,
+        10,
+        13,
+        23,
+        34,
+        75,
+        88
+      ],
+      "price" : 4500,
+      "imageURL" : "red2",
+      "isLiked" : false,
+      "name" : "Красное Французское Вино 2",
+      "categoryId" : 0
+    },
+    {
+      "id" : 4,
+      "bigDesc" : "Вина из Франции ценятся очень высоко и считаются эталоном среди других алкогольных напитков. Легендарные производители Бордо, Бургундии, Прованса и других винодельческих областей известны своими восхитительными французскими винами всему миру. В ассортименте интернет-витрины SimpleWine представлены хорошие демократичные и великолепные премиальные экземпляры от одних из лучших хозяйств страны.",
+      "pointId" : "grandcru",
+      "manufactureYear" : 2016,
+      "oldPrice" : 17,
+      "popularity" : 30,
+      "desc" : "Год: 2016г.\nРегион: Лацио \n650 ₽ \nСорт: бонарда\nОбъем: 0.7 \nПроизводитель: Capannelle",
+      "attributeIds" : [
+        7,
+        11,
+        16,
+        21,
+        39,
+        76,
+        81
+      ],
+      "price" : 650,
+      "imageURL" : "wine4",
+      "isLiked" : false,
+      "name" : "Белое Итальянское Вино",
+      "categoryId" : 0
+    },
+    {
+      "id" : 5,
+      "bigDesc" : "Вина из Франции ценятся очень высоко и считаются эталоном среди других алкогольных напитков. Легендарные производители Бордо, Бургундии, Прованса и других винодельческих областей известны своими восхитительными французскими винами всему миру. В ассортименте интернет-витрины SimpleWine представлены хорошие демократичные и великолепные премиальные экземпляры от одних из лучших хозяйств страны.",
+      "pointId" : "grandcru",
+      "manufactureYear" : 2013,
+      "oldPrice" : 18,
+      "popularity" : 50,
+      "desc" : "Год: 2013г.\nРегион: Лацио \n2900 ₽ \nСорт: арнеис\nОбъем: 0.187 \nПроизводитель: Dino Illuminati ",
+      "attributeIds" : [
+        6,
+        11,
+        16,
+        22,
+        32,
+        72,
+        82
+      ],
+      "price" : 2900,
+      "imageURL" : "red6",
+      "isLiked" : false,
+      "name" : "Красное Итальянское Вино",
+      "categoryId" : 0
+    },
+    {
+      "id" : 6,
+      "bigDesc" : "Вина из Франции ценятся очень высоко и считаются эталоном среди других алкогольных напитков. Легендарные производители Бордо, Бургундии, Прованса и других винодельческих областей известны своими восхитительными французскими винами всему миру. В ассортименте интернет-витрины SimpleWine представлены хорошие демократичные и великолепные премиальные экземпляры от одних из лучших хозяйств страны.",
+      "pointId" : "grandcru",
+      "manufactureYear" : 2011,
+      "oldPrice" : 18,
+      "popularity" : 60,
+      "desc" : "Год: 2011г.\nРегион: Риоха \n3000 ₽ \nСорт: альянико\nОбъем: 1.5 \nПроизводитель: Adegas Gran Vinum ",
+      "attributeIds" : [
+        6,
+        9,
+        20,
+        23,
+        28,
+        79,
+        83
+      ],
+      "price" : 3000,
+      "imageURL" : "red3",
+      "isLiked" : false,
+      "name" : "Красное Испанское Вино 1",
+      "categoryId" : 0
+    },
+    {
+      "id" : 7,
+      "bigDesc" : "Вина из Франции ценятся очень высоко и считаются эталоном среди других алкогольных напитков. Легендарные производители Бордо, Бургундии, Прованса и других винодельческих областей известны своими восхитительными французскими винами всему миру. В ассортименте интернет-витрины SimpleWine представлены хорошие демократичные и великолепные премиальные экземпляры от одних из лучших хозяйств страны.",
+      "pointId" : "grandcru",
+      "manufactureYear" : 2010,
+      "oldPrice" : 18,
+      "popularity" : 80,
+      "desc" : "Год: 2010г.\nРегион: Ла Манча \n2100 ₽ \nСорт: алиберне\nОбъем: 1.5 \nПроизводитель: Bodegas Alion",
+      "attributeIds" : [
+        6,
+        9,
+        19,
+        22,
+        25,
+        79,
+        84
+      ],
+      "price" : 2100,
+      "imageURL" : "red4",
+      "isLiked" : false,
+      "name" : "Красное Испанское Вино 2",
+      "categoryId" : 0
+    },
+    {
+      "id" : 8,
+      "bigDesc" : "Вина из Франции ценятся очень высоко и считаются эталоном среди других алкогольных напитков. Легендарные производители Бордо, Бургундии, Прованса и других винодельческих областей известны своими восхитительными французскими винами всему миру. В ассортименте интернет-витрины SimpleWine представлены хорошие демократичные и великолепные премиальные экземпляры от одних из лучших хозяйств страны.",
+      "pointId" : "grandcru",
+      "manufactureYear" : 2005,
+      "oldPrice" : 18,
+      "popularity" : 70,
+      "desc" : "Год: 2005г.\nРегион: Валенсия\n15 000 ₽ \nСорт: бонарда\nОбъем: 0.375 \nПроизводитель: Bodegas Hermanos Sastre",
+      "attributeIds" : [
+        6,
+        9,
+        18,
+        24,
+        39,
+        74,
+        85
+      ],
+      "price" : 15000,
+      "imageURL" : "red5",
+      "isLiked" : false,
+      "name" : "Красное Испанское Вино 3",
+      "categoryId" : 0
+    },
+    {
+      "id" : 9,
+      "bigDesc" : "Вина из Франции ценятся очень высоко и считаются эталоном среди других алкогольных напитков. Легендарные производители Бордо, Бургундии, Прованса и других винодельческих областей известны своими восхитительными французскими винами всему миру. В ассортименте интернет-витрины SimpleWine представлены хорошие демократичные и великолепные премиальные экземпляры от одних из лучших хозяйств страны.",
+      "pointId" : "grandcru",
+      "manufactureYear" : 1990,
+      "oldPrice" : 12,
+      "popularity" : 100,
+      "desc" : "Год: 1990г.\nРегион: Бургундия \n999 ₽ \nСахар: полусладкое \nОбъем: 0.375 \nПроизводитель: Braida",
+      "attributeIds" : [
+        96,
+        100,
+        104,
+        116,
+        120,
+        128,
+        134
+      ],
+      "price" : 999,
+      "imageURL" : "redwine1",
+      "isLiked" : false,
+      "name" : "Белое Французское Шампанское",
+      "categoryId" : 1
+    },
+    {
+      "id" : 10,
+      "bigDesc" : "Вина из Франции ценятся очень высоко и считаются эталоном среди других алкогольных напитков. Легендарные производители Бордо, Бургундии, Прованса и других винодельческих областей известны своими восхитительными французскими винами всему миру. В ассортименте интернет-витрины SimpleWine представлены хорошие демократичные и великолепные премиальные экземпляры от одних из лучших хозяйств страны.",
+      "pointId" : "grandcru",
+      "manufactureYear" : 2003,
+      "oldPrice" : 14,
+      "popularity" : 40,
+      "desc" : "Год: 2003г.\nРегион: Пьемонт \n1700 ₽ \nСахар: полусухое\nОбъем: 0.73 \nПроизводитель: Casa Coste Piane",
+      "attributeIds" : [
+        96,
+        99,
+        106,
+        117,
+        121,
+        129,
+        135
+      ],
+      "price" : 1700,
+      "imageURL" : "white1",
+      "isLiked" : false,
+      "name" : "Белое Итальянское Шампанское",
+      "categoryId" : 1
+    },
+    {
+      "id" : 11,
+      "bigDesc" : "Вина из Франции ценятся очень высоко и считаются эталоном среди других алкогольных напитков. Легендарные производители Бордо, Бургундии, Прованса и других винодельческих областей известны своими восхитительными французскими винами всему миру. В ассортименте интернет-витрины SimpleWine представлены хорошие демократичные и великолепные премиальные экземпляры от одних из лучших хозяйств страны.",
+      "pointId" : "grandcru",
+      "manufactureYear" : 2006,
+      "oldPrice" : 15,
+      "popularity" : 75,
+      "desc" : "Год: 2006г.\nРегион: Валенсия \n60 000 ₽ \nСахар: сладкое\nОбъем: 0.73 \nПроизводитель: Chanoine",
+      "attributeIds" : [
+        97,
+        98,
+        109,
+        122,
+        131,
+        136
+      ],
+      "price" : 60000,
+      "imageURL" : "pink",
+      "isLiked" : false,
+      "name" : "Розовое Испанское Шампанское",
+      "categoryId" : 1
+    },
+    {
+      "id" : 12,
+      "bigDesc" : "Вина из Франции ценятся очень высоко и считаются эталоном среди других алкогольных напитков. Легендарные производители Бордо, Бургундии, Прованса и других винодельческих областей известны своими восхитительными французскими винами всему миру. В ассортименте интернет-витрины SimpleWine представлены хорошие демократичные и великолепные премиальные экземпляры от одних из лучших хозяйств страны.",
+      "pointId" : "grandcru",
+      "manufactureYear" : 2015,
+      "oldPrice" : 16,
+      "popularity" : 80,
+      "desc" : "Год: 2015г.\nРегион: Бургундия \n4500 ₽ \nСахар: сухое\nОбъем: 0.5 \nПроизводитель: Pierre Gimonnet & Fils",
+      "attributeIds" : [
+        97,
+        100,
+        104,
+        118,
+        123,
+        129,
+        137
+      ],
+      "price" : 4500,
+      "imageURL" : "red2",
+      "isLiked" : false,
+      "name" : "Розовое Французское Шампанское 2",
+      "categoryId" : 1
+    },
+    {
+      "id" : 13,
+      "bigDesc" : "Вина из Франции ценятся очень высоко и считаются эталоном среди других алкогольных напитков. Легендарные производители Бордо, Бургундии, Прованса и других винодельческих областей известны своими восхитительными французскими винами всему миру. В ассортименте интернет-витрины SimpleWine представлены хорошие демократичные и великолепные премиальные экземпляры от одних из лучших хозяйств страны.",
+      "pointId" : "grandcru",
+      "manufactureYear" : 2011,
+      "oldPrice" : 17,
+      "popularity" : 30,
+      "desc" : "Год: 2011г.\nРегион: Лацио \n650 ₽ \nСахар: полусладкое\nОбъем: 0.7 \nПроизводитель: Geoffroy",
+      "attributeIds" : [
+        96,
+        99,
+        107,
+        116,
+        120,
+        130,
+        138
+      ],
+      "price" : 650,
+      "imageURL" : "wine4",
+      "isLiked" : false,
+      "name" : "Белое Итальянское Шампанское",
+      "categoryId" : 1
+    },
+    {
+      "id" : 14,
+      "bigDesc" : "Вина из Франции ценятся очень высоко и считаются эталоном среди других алкогольных напитков. Легендарные производители Бордо, Бургундии, Прованса и других винодельческих областей известны своими восхитительными французскими винами всему миру. В ассортименте интернет-витрины SimpleWine представлены хорошие демократичные и великолепные премиальные экземпляры от одних из лучших хозяйств страны.",
+      "pointId" : "grandcru",
+      "manufactureYear" : 2008,
+      "oldPrice" : 18,
+      "popularity" : 50,
+      "desc" : "Год: 2008г.\nРегион: Лацио \n2900 ₽ \nСахар: полусухое\nОбъем: 0.187 \nПроизводитель: Lanson",
+      "attributeIds" : [
+        97,
+        99,
+        107,
+        117,
+        121,
+        126,
+        139
+      ],
+      "price" : 2900,
+      "imageURL" : "red6",
+      "isLiked" : false,
+      "name" : "Розовое Итальянское Шампанское",
+      "categoryId" : 1
+    },
+    {
+      "id" : 15,
+      "bigDesc" : "Вина из Франции ценятся очень высоко и считаются эталоном среди других алкогольных напитков. Легендарные производители Бордо, Бургундии, Прованса и других винодельческих областей известны своими восхитительными французскими винами всему миру. В ассортименте интернет-витрины SimpleWine представлены хорошие демократичные и великолепные премиальные экземпляры от одних из лучших хозяйств страны.",
+      "pointId" : "grandcru",
+      "manufactureYear" : 2007,
+      "oldPrice" : 18,
+      "popularity" : 60,
+      "desc" : "Год: 2007г.\nРегион: Риоха \n3000 ₽ \nСахар: сладкое\nОбъем: 1.5 \nПроизводитель: Jerome Prevost ",
+      "attributeIds" : [
+        97,
+        98,
+        111,
+        118,
+        122,
+        133,
+        140
+      ],
+      "price" : 3000,
+      "imageURL" : "red3",
+      "isLiked" : false,
+      "name" : "Розовое Испанское Шампанское 1",
+      "categoryId" : 1
+    },
+    {
+      "id" : 16,
+      "bigDesc" : "Вина из Франции ценятся очень высоко и считаются эталоном среди других алкогольных напитков. Легендарные производители Бордо, Бургундии, Прованса и других винодельческих областей известны своими восхитительными французскими винами всему миру. В ассортименте интернет-витрины SimpleWine представлены хорошие демократичные и великолепные премиальные экземпляры от одних из лучших хозяйств страны.",
+      "pointId" : "grandcru",
+      "manufactureYear" : 2005,
+      "oldPrice" : 18,
+      "popularity" : 80,
+      "desc" : "Год: 2005г.\nРегион: Ла Манча \n2100 ₽ \nСахар: сухое\nОбъем: 1.5 \nПроизводитель: Domaine Bott-Geyl",
+      "attributeIds" : [
+        97,
+        98,
+        110,
+        117,
+        123,
+        133,
+        141
+      ],
+      "price" : 2100,
+      "imageURL" : "red4",
+      "isLiked" : false,
+      "name" : "Розовое Испанское Шампанское 2",
+      "categoryId" : 1
+    },
+    {
+      "id" : 17,
+      "bigDesc" : "Вина из Франции ценятся очень высоко и считаются эталоном среди других алкогольных напитков. Легендарные производители Бордо, Бургундии, Прованса и других винодельческих областей известны своими восхитительными французскими винами всему миру. В ассортименте интернет-витрины SimpleWine представлены хорошие демократичные и великолепные премиальные экземпляры от одних из лучших хозяйств страны.",
+      "pointId" : "grandcru",
+      "manufactureYear" : 2005,
+      "oldPrice" : 18,
+      "popularity" : 70,
+      "desc" : "Год: 2005г.\nРегион: Валенсия\n15 000 ₽ \nСахар: полусухое\nОбъем: 0.375 \nПроизводитель: Les Celliers Jean d'Alibert",
+      "attributeIds" : [
+        96,
+        98,
+        109,
+        119,
+        121,
+        128,
+        142
+      ],
+      "price" : 15000,
+      "imageURL" : "red5",
+      "isLiked" : false,
+      "name" : "Белое Испанское Шампанское 3",
+      "categoryId" : 1
+    }
+  ]
+}

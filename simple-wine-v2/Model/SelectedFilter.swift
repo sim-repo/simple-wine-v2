@@ -9,7 +9,7 @@ class SelectedFilter {
     init(categoryId: Int) {
         self.categoryId = categoryId
     }
-
+    
     func append(id: Int, title: String, parentId: Int, kind: Int) {
         let filter = InnerFilter(id: id, parentId: parentId, title: title, kind: kind)
         filters.append(filter)

@@ -24,6 +24,9 @@ extension PointMenuPresenter: ViewablePointMenuPresenter {
     
     func didPressEnter(pointEnum: PointEnum) {
         selectedPoint = points.first(where: {$0.id == pointEnum})
+        
+        MapPresenter.shared.preload(pointEnum: pointEnum)
+        
         AuthPresenter.shared.setup(point: selectedPoint!)
         view?.enter()
     }

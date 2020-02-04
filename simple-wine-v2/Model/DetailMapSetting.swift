@@ -1,7 +1,7 @@
 import Foundation
 
 
-class DetailMapSetting {
+class DetailMapSetting: Codable {
     
     var categoryId = 0
     var kindIds: [Int] = []
@@ -14,6 +14,34 @@ class DetailMapSetting {
         self.prefix = prefix
         self.icons = icons
     }
+    
+    
+    
+    required init(from decoder: Decoder) throws {
+       let container = try decoder.container(keyedBy: CodingKeys.self)
+       categoryId = try container.decode(Int.self, forKey: .categoryId)
+       kindIds = try container.decode([Int].self, forKey: .kindIds)
+       prefix = try container.decode([String].self, forKey: .prefix)
+       icons = try container.decode([String?].self, forKey: .icons)
+     }
+    
+    
+    enum CodingKeys: String, CodingKey {
+        case categoryId
+        case kindIds
+        case prefix
+        case icons
+    }
+
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(self.categoryId, forKey: .categoryId)
+        try container.encode(self.kindIds, forKey: .kindIds)
+        try container.encode(self.prefix, forKey: .prefix)
+        try container.encode(self.icons, forKey: .icons)
+    }
+    
     
     static func list() -> [DetailMapSetting] {
         return [
