@@ -3,16 +3,17 @@ import Foundation
 
 class PointMenuPresenter {
     
-    private init(){
-        // fill points from sync
-        points = Point.list()
-    }
+    private init(){}
     
     static var shared = PointMenuPresenter()
     
     var view: PresentablePointMenuView?
-    var points: [Point]
+    var points: [Point]?
     var selectedPoint: Point?
+    
+    func setup(_ points: [Point]) {
+        self.points = points
+    }
 }
 
 
@@ -23,11 +24,17 @@ extension PointMenuPresenter: ViewablePointMenuPresenter {
     }
     
     func didPressEnter(pointEnum: PointEnum) {
-        selectedPoint = points.first(where: {$0.id == pointEnum})
-        
-        MapPresenter.shared.preload(pointEnum: pointEnum)
-        
-        AuthPresenter.shared.setup(point: selectedPoint!)
-        view?.enter()
+
+        if points == nil {
+            Setter.shared.allSync(by: pointEnum) { [weak self] in
+                guard let self = self else { return }
+                self.view?.enter()
+            }
+        } else {
+            Setter.shared.allSync(by: pointEnum)
+            let point = points!.first(where: {$0.id == pointEnum})!
+            AuthPresenter.shared.setup(point: point)
+            view?.enter()
+        }
     }
 }

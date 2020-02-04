@@ -36,9 +36,3 @@ extension MapPresenter: ViewableCategoryPresenter {
         return currentCategoryId == indexPath.row
     }
 }
-
-
-//MARK:- Called by Sync
-extension MapPresenter {
-    
-}

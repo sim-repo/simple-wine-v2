@@ -134,10 +134,3 @@ extension MapPresenter: ViewableProductPresenter {
         view?.performMapDetailSegue(presenter: detailMapPresenter)
     }
 }
-
-
-//MARK:- Called by Sync
-
-extension MapPresenter {
-    
-}

@@ -13,10 +13,10 @@ class MapPresenter {
     var currentPointEnum: PointEnum!
     
     //MARK:- datasources
-    var categoryDataSource: [Category] = Category.list()
+    var categoryDataSource: [Category] = []
     var filterDataSource: [Filter] = []
-    var productDataSource: [Product] = Product.list0() + Product.list1()
-    var detailMapSettingDataSource: [DetailMapSetting] = DetailMapSetting.list()
+    var productDataSource: [Product] = []
+    var detailMapSettingDataSource: [DetailMapSetting] = []
     
     //MARK:- selected filter
     var selectedFilters: [SelectedFilter] = []
@@ -46,6 +46,7 @@ class MapPresenter {
         self.currentPointEnum = pointEnum
     }
     
+    
     func preload(pointEnum: PointEnum) {
         if currentPointEnum == nil {
             currentPointEnum = pointEnum
@@ -65,7 +66,7 @@ class MapPresenter {
 }
 
 
-//MARK:- ViewableMapPresenter
+//MARK:- Viewable
 
 extension MapPresenter: ViewableMapPresenter {
     func setView(view: PresentableMapView) {
@@ -74,7 +75,7 @@ extension MapPresenter: ViewableMapPresenter {
 }
 
 
-//MARK:- ViewableFavouriteMapPresenter
+//MARK:- Viewable Favourite
 
 extension MapPresenter: ViewableFavouriteMapPresenter {
     
@@ -94,9 +95,23 @@ extension MapPresenter: ViewableFavouriteMapPresenter {
 
 
 
-//MARK:- SyncableMapPresenter
+//MARK:- Syncable
 
 extension MapPresenter: SyncableMapPresenter {
+    
+    func setAllDataSources(pointEnum: PointEnum,
+                           categories: [Category],
+                           filters: [Filter],
+                           products: [Product],
+                           detailMapSettings: [DetailMapSetting]) {
+        currentPointEnum = pointEnum
+        categoryDataSource = categories
+        filterDataSource = filters
+        productDataSource = products
+        detailMapSettingDataSource = detailMapSettings
+        fillAll()
+    }
+
     
     func setFilterDataSource(filters: [Filter]) {
         filterDataSource = filters
@@ -115,7 +130,7 @@ extension MapPresenter: SyncableMapPresenter {
 }
 
 
-//MARK:- SortablePresenter
+//MARK:- Sortable
 
 extension MapPresenter: SortablePresenter {
     func didSortSelect(sortEnum: SortEnum) {
@@ -125,7 +140,7 @@ extension MapPresenter: SortablePresenter {
     }
 }
 
-//MARK:- FavouritePresenterDelegate
+//MARK:- Favourite Presenter Delegate
 
 extension MapPresenter: FavouritePresenterDelegate {
     func getFavouriteAttributeName(_ kindId: Int, _ productAttributeIds: [Int]) -> String {
@@ -133,7 +148,7 @@ extension MapPresenter: FavouritePresenterDelegate {
     }
 }
 
-//MARK:- DetailMapPresenterDelegate
+//MARK:- Detail Map Presenter Delegate
 
 extension MapPresenter: DetailMapPresenterDelegate {
     
@@ -162,7 +177,7 @@ extension MapPresenter: DetailMapPresenterDelegate {
 }
 
 
-//MARK:- MapPresenter
+//MARK:- Attributes
 
 extension MapPresenter {
     
@@ -184,3 +199,4 @@ extension MapPresenter {
         return nil
     }
 }
+

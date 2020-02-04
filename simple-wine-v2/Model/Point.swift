@@ -6,13 +6,7 @@ class Point: Codable{
     var name = ""
     var logoOnLightImageURL = ""
     
-    var pointId = "" {
-        willSet {
-            if let pointEnum = PointEnum.init(rawValue: newValue) {
-                id = pointEnum
-            }
-        }
-    }
+    var pointId = ""
     
     init(id: PointEnum, name: String, logoOnLightImageURL: String) {
         self.id = id
@@ -24,6 +18,9 @@ class Point: Codable{
     required init(from decoder: Decoder) throws {
        let container = try decoder.container(keyedBy: CodingKeys.self)
        pointId = try container.decode(String.self, forKey: .pointId)
+       guard let pointEnum = PointEnum.init(rawValue: pointId) else { return }
+       id = pointEnum
+       
        name = try container.decode(String.self, forKey: .name)
        logoOnLightImageURL = try container.decode(String.self, forKey: .logoOnLightImageURL)
      }

@@ -59,9 +59,3 @@ extension MapPresenter: ViewableSelectedFilterPresenter {
         view?.productReloadData()
     }
 }
-
-
-//MARK:- Called by Sync
-extension MapPresenter {
-    
-}

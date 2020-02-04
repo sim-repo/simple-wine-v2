@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,12 @@
 		16520E0D23E7440300AA3576 /* SelectedFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16520E0C23E7440300AA3576 /* SelectedFilter.swift */; };
 		16520E3423E76DF800AA3576 /* UIView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16520E3323E76DF800AA3576 /* UIView+Extentions.swift */; };
 		16520E3623E7962300AA3576 /* FavouriteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16520E3523E7962300AA3576 /* FavouriteDetailViewController.swift */; };
+		165D638B23E9C20C00428AB1 /* AlamofireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D638A23E9C20C00428AB1 /* AlamofireService.swift */; };
+		165D638D23E9C68500428AB1 /* AllSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D638C23E9C68500428AB1 /* AllSync.swift */; };
+		165D639023E9C6DA00428AB1 /* Setter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D638F23E9C6DA00428AB1 /* Setter.swift */; };
+		165D639223E9C9E400428AB1 /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D639123E9C9E400428AB1 /* TypeAliases.swift */; };
+		165D639423E9D26700428AB1 /* PointsSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D639323E9D26700428AB1 /* PointsSync.swift */; };
+		165D639823E9DF2C00428AB1 /* ParseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D639723E9DF2C00428AB1 /* ParseService.swift */; };
 		165DD6C623E39A0C0068D76E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165DD6C523E39A0C0068D76E /* AppDelegate.swift */; };
 		165DD6C823E39A0C0068D76E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165DD6C723E39A0C0068D76E /* SceneDelegate.swift */; };
 		165DD6CD23E39A0C0068D76E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165DD6CB23E39A0C0068D76E /* Main.storyboard */; };
@@ -92,6 +98,7 @@
 		16DBA85423E827430088052B /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DBA85323E827430088052B /* Point.swift */; };
 		16DBA85623E82A0E0088052B /* PointConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DBA85523E82A0E0088052B /* PointConstant.swift */; };
 		16DBA85C23E8426B0088052B /* GrandCruCover.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16DBA85A23E8426B0088052B /* GrandCruCover.xib */; };
+		D5CA5FA5429D21B6B18E5A44 /* Pods_simple_wine_v2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7279243E76EF54B08F73F05 /* Pods_simple_wine_v2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +111,12 @@
 		16520E0C23E7440300AA3576 /* SelectedFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedFilter.swift; sourceTree = "<group>"; };
 		16520E3323E76DF800AA3576 /* UIView+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extentions.swift"; sourceTree = "<group>"; };
 		16520E3523E7962300AA3576 /* FavouriteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteDetailViewController.swift; sourceTree = "<group>"; };
+		165D638A23E9C20C00428AB1 /* AlamofireService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireService.swift; sourceTree = "<group>"; };
+		165D638C23E9C68500428AB1 /* AllSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSync.swift; sourceTree = "<group>"; };
+		165D638F23E9C6DA00428AB1 /* Setter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setter.swift; sourceTree = "<group>"; };
+		165D639123E9C9E400428AB1 /* TypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
+		165D639323E9D26700428AB1 /* PointsSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsSync.swift; sourceTree = "<group>"; };
+		165D639723E9DF2C00428AB1 /* ParseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseService.swift; sourceTree = "<group>"; };
 		165DD6C223E39A0C0068D76E /* simple-wine-v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "simple-wine-v2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		165DD6C523E39A0C0068D76E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		165DD6C723E39A0C0068D76E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -182,6 +195,9 @@
 		16DBA85323E827430088052B /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		16DBA85523E82A0E0088052B /* PointConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointConstant.swift; sourceTree = "<group>"; };
 		16DBA85A23E8426B0088052B /* GrandCruCover.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GrandCruCover.xib; sourceTree = "<group>"; };
+		4A7265334B0A66442C1DF066 /* Pods-simple-wine-v2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simple-wine-v2.debug.xcconfig"; path = "Target Support Files/Pods-simple-wine-v2/Pods-simple-wine-v2.debug.xcconfig"; sourceTree = "<group>"; };
+		9BF400A9755BC9C1036D441C /* Pods-simple-wine-v2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simple-wine-v2.release.xcconfig"; path = "Target Support Files/Pods-simple-wine-v2/Pods-simple-wine-v2.release.xcconfig"; sourceTree = "<group>"; };
+		B7279243E76EF54B08F73F05 /* Pods_simple_wine_v2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_simple_wine_v2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +205,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5CA5FA5429D21B6B18E5A44 /* Pods_simple_wine_v2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,11 +254,37 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		165D638823E97C1F00428AB1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				165D638A23E9C20C00428AB1 /* AlamofireService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		165D638E23E9C6CF00428AB1 /* Setter */ = {
+			isa = PBXGroup;
+			children = (
+				165D638F23E9C6DA00428AB1 /* Setter.swift */,
+			);
+			path = Setter;
+			sourceTree = "<group>";
+		};
+		165D639623E9DF1E00428AB1 /* Parse */ = {
+			isa = PBXGroup;
+			children = (
+				165D639723E9DF2C00428AB1 /* ParseService.swift */,
+			);
+			path = Parse;
+			sourceTree = "<group>";
+		};
 		165DD6B923E39A0C0068D76E = {
 			isa = PBXGroup;
 			children = (
 				165DD6C423E39A0C0068D76E /* simple-wine-v2 */,
 				165DD6C323E39A0C0068D76E /* Products */,
+				FEB70F85FDB0A225F3529013 /* Pods */,
+				ECE25878875D76AE5F51B40A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -422,7 +465,10 @@
 		165DD71823E42B510068D76E /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				165D639623E9DF1E00428AB1 /* Parse */,
+				165D638E23E9C6CF00428AB1 /* Setter */,
 				165DD71E23E42F550068D76E /* Sync */,
+				165D638823E97C1F00428AB1 /* Network */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -430,6 +476,8 @@
 		165DD71E23E42F550068D76E /* Sync */ = {
 			isa = PBXGroup;
 			children = (
+				165D638C23E9C68500428AB1 /* AllSync.swift */,
+				165D639323E9D26700428AB1 /* PointsSync.swift */,
 				165DD71F23E42F780068D76E /* MapSync.swift */,
 			);
 			path = Sync;
@@ -526,6 +574,7 @@
 				16DBA85523E82A0E0088052B /* PointConstant.swift */,
 				16797CB923E89FDC001707D3 /* ColorConstant.swift */,
 				16797CC323E8D378001707D3 /* ThreadConstant.swift */,
+				165D639123E9C9E400428AB1 /* TypeAliases.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -608,6 +657,23 @@
 			path = Cover;
 			sourceTree = "<group>";
 		};
+		ECE25878875D76AE5F51B40A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B7279243E76EF54B08F73F05 /* Pods_simple_wine_v2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FEB70F85FDB0A225F3529013 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4A7265334B0A66442C1DF066 /* Pods-simple-wine-v2.debug.xcconfig */,
+				9BF400A9755BC9C1036D441C /* Pods-simple-wine-v2.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -615,9 +681,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 165DD6D623E39A0D0068D76E /* Build configuration list for PBXNativeTarget "simple-wine-v2" */;
 			buildPhases = (
+				D335C2842AFC15D6F99E2959 /* [CP] Check Pods Manifest.lock */,
 				165DD6BE23E39A0C0068D76E /* Sources */,
 				165DD6BF23E39A0C0068D76E /* Frameworks */,
 				165DD6C023E39A0C0068D76E /* Resources */,
+				EB474A109EE665115CF87D63 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -700,6 +768,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D335C2842AFC15D6F99E2959 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-simple-wine-v2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB474A109EE665115CF87D63 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-simple-wine-v2/Pods-simple-wine-v2-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-simple-wine-v2/Pods-simple-wine-v2-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-simple-wine-v2/Pods-simple-wine-v2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		165DD6BE23E39A0C0068D76E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -708,6 +818,7 @@
 				16ABE8D323E62B650065D873 /* DetailMapSetting.swift in Sources */,
 				16520E0523E6FED900AA3576 /* FavouriteTableViewCell.swift in Sources */,
 				165DD70423E3AA0B0068D76E /* CategoryCollectionViewCell.swift in Sources */,
+				165D639423E9D26700428AB1 /* PointsSync.swift in Sources */,
 				165DD6C623E39A0C0068D76E /* AppDelegate.swift in Sources */,
 				16520E0D23E7440300AA3576 /* SelectedFilter.swift in Sources */,
 				16797CBA23E89FDC001707D3 /* ColorConstant.swift in Sources */,
@@ -721,6 +832,7 @@
 				16797CCD23E8F69F001707D3 /* TestParse.swift in Sources */,
 				165DD71423E3AA940068D76E /* ProductTableViewCell.swift in Sources */,
 				16520E0023E6F2BF00AA3576 /* FavouriteDetailPresenter.swift in Sources */,
+				165D638B23E9C20C00428AB1 /* AlamofireService.swift in Sources */,
 				16797CAA23E84622001707D3 /* GrandCruCover.swift in Sources */,
 				165DD70023E3A69D0068D76E /* ViewablePresenter.swift in Sources */,
 				165DD6F423E3A1140068D76E /* Category.swift in Sources */,
@@ -740,6 +852,7 @@
 				165DD6DA23E39A8A0068D76E /* MapViewController.swift in Sources */,
 				16520E3423E76DF800AA3576 /* UIView+Extentions.swift in Sources */,
 				16ABE8D723E62CC30065D873 /* DetailMapPresenter.swift in Sources */,
+				165D639023E9C6DA00428AB1 /* Setter.swift in Sources */,
 				16797CB823E85CCB001707D3 /* AuthPresenter.swift in Sources */,
 				165DD70F23E3AA780068D76E /* FilterTableViewCell.swift in Sources */,
 				165DD6C823E39A0C0068D76E /* SceneDelegate.swift in Sources */,
@@ -751,11 +864,14 @@
 				16DBA84F23E823450088052B /* CoverViewController.swift in Sources */,
 				16ABE8C823E5EA660065D873 /* FilterSectionHeader.swift in Sources */,
 				16797CC423E8D379001707D3 /* ThreadConstant.swift in Sources */,
+				165D639223E9C9E400428AB1 /* TypeAliases.swift in Sources */,
 				165DD70823E3AA2D0068D76E /* SelectedFilterCollectionViewCell.swift in Sources */,
 				165DD6EE23E3A0B10068D76E /* MapPresenter+SelectedFilter.swift in Sources */,
 				165DD6E423E39F3F0068D76E /* MapViewController+Collection.swift in Sources */,
+				165D639823E9DF2C00428AB1 /* ParseService.swift in Sources */,
 				165DD6E823E39F7E0068D76E /* MapViewController+Table.swift in Sources */,
 				16797CB223E85723001707D3 /* PointMenuPresenter.swift in Sources */,
+				165D638D23E9C68500428AB1 /* AllSync.swift in Sources */,
 				165DD6E023E39AD80068D76E /* MapPresenter.swift in Sources */,
 				16520DF723E6ED7B00AA3576 /* FavouriteViewController.swift in Sources */,
 				16ABE8DA23E6516C0065D873 /* UIImage+Extensions.swift in Sources */,
@@ -902,6 +1018,7 @@
 		};
 		165DD6D723E39A0D0068D76E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A7265334B0A66442C1DF066 /* Pods-simple-wine-v2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -920,6 +1037,7 @@
 		};
 		165DD6D823E39A0D0068D76E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BF400A9755BC9C1036D441C /* Pods-simple-wine-v2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
