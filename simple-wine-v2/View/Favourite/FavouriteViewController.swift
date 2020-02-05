@@ -21,7 +21,7 @@ class FavouriteViewController: UIViewController {
     }
     
     @IBAction func pressBack(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -58,7 +58,7 @@ extension FavouriteViewController: UITableViewDataSource, UITableViewDelegate {
         if sectionTitle != "" {
             cell.categoryTitleLabel.text = presenter.getSectionTitle(section: section)
             cell.itemsNumberLabel.text = "\(presenter.numberOfRowsInSection(section: section))"
-            cell.contentView.backgroundColor = #colorLiteral(red: 0.935985744, green: 0.9304216504, blue: 0.9402627349, alpha: 1)
+            cell.contentView.backgroundColor = #colorLiteral(red: 0.83934021, green: 0.833522141, blue: 0.7933818102, alpha: 1)
             return cell
         }
         return nil

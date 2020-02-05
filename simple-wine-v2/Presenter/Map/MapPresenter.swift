@@ -109,6 +109,8 @@ extension MapPresenter: SyncableMapPresenter {
         filterDataSource = filters
         productDataSource = products
         detailMapSettingDataSource = detailMapSettings
+        resetShownFilters()
+        prepareFilterSection()
         fillAll()
     }
 

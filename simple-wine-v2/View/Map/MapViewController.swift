@@ -43,28 +43,29 @@ class MapViewController: UIViewController {
         filterTableView.allowsSelection = false
         productTableView.allowsSelection = false
         
-        productTableView.layer.borderColor = #colorLiteral(red: 0.8819957972, green: 0.8767530322, blue: 0.8860259652, alpha: 1)
+        productTableView.layer.borderColor = #colorLiteral(red: 0.664042294, green: 0.660097301, blue: 0.6670764089, alpha: 1)
         productTableView.layer.borderWidth = 1.0
     }
     
     private func setupCollections(){
-        categoryCollectionView.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        categoryCollectionView.layer.borderColor = #colorLiteral(red: 0.664042294, green: 0.660097301, blue: 0.6670764089, alpha: 1)
         categoryCollectionView.layer.borderWidth = 1.0
     }
     
     private func setupSearchView(){
         searchView.layer.borderWidth = 1
-        searchView.layer.borderColor = #colorLiteral(red: 0.8819957972, green: 0.8767530322, blue: 0.8860259652, alpha: 1)
+        searchView.layer.borderColor = #colorLiteral(red: 0.664042294, green: 0.660097301, blue: 0.6670764089, alpha: 1)
     }
     
     private func setupSortButton(){
         sortButton.setupPresenter(sortablePresenter: presenter)
         sortButton.layer.borderWidth = 1
-        sortButton.layer.borderColor = #colorLiteral(red: 0.8819957972, green: 0.8767530322, blue: 0.8860259652, alpha: 1)
+        sortButton.layer.borderColor = #colorLiteral(red: 0.664042294, green: 0.660097301, blue: 0.6670764089, alpha: 1)
     }
     
     private func setupSearchBar(){
         searchBar.delegate = self
+        searchBar.barTintColor = #colorLiteral(red: 0.8830244541, green: 0.8787537813, blue: 0.8263712525, alpha: 1)
     }
     
     private func setupFavouriteNumber() {
@@ -174,7 +175,6 @@ extension MapViewController: UISearchBarDelegate {
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        print("begin searchBarTextDidEndEditing")
         searchBar.resignFirstResponder()
     }
     

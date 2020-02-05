@@ -6,7 +6,7 @@ class FilterTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleButton: UIButton!
     @IBOutlet weak var filterButton: UIButton!
-    
+  
     var presenter: ViewableFilterPresenter!
     var indexPath: IndexPath!
     var didSelect = false
@@ -32,12 +32,12 @@ class FilterTableViewCell: UITableViewCell {
     
     @IBAction func doPressTitle(_ sender: Any) {
         
-        UIView.animateKeyframes(withDuration: 0.3, delay: 0, options: .calculationModeCubic, animations: {
+        UIView.animateKeyframes(withDuration: 0.2, delay: 0, options: .calculationModeCubic, animations: {
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/2) {
-                self.titleButton.backgroundColor = #colorLiteral(red: 0.7988784909, green: 0.8025768399, blue: 0.8116125464, alpha: 1)
+                self.contentView.backgroundColor = #colorLiteral(red: 0.7920138836, green: 0.7865242958, blue: 0.7486471534, alpha: 1)
             }
             UIView.addKeyframe(withRelativeStartTime: 1/2, relativeDuration: 1/2) {
-                self.titleButton.backgroundColor = .white
+                self.contentView.backgroundColor = #colorLiteral(red: 0.8830244541, green: 0.8787537813, blue: 0.8263712525, alpha: 1)
             }
         },
         completion: {_ in

@@ -26,6 +26,20 @@ class TestParse {
     }
     
     
+    func encode(response: Response){
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        do {
+            if let data = try? encoder.encode(response) {
+                print(String(data: data, encoding: .utf8)!)
+            }
+        } catch (let err) {
+            print(err.localizedDescription)
+        }
+    }
+    
+    
+    
     func decode(data: Data) {
         do {
             

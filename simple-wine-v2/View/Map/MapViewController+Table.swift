@@ -51,13 +51,17 @@ extension MapViewController: UITableViewDataSource , UITableViewDelegate{
     }
     
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         switch tableView.tag {
         case 3000:
             let cell = tableView.dequeueReusableHeaderFooterView(withIdentifier: FilterSectionHeader.reuseIdentifier) as! FilterSectionHeader
             cell.title.text = presenter.filterGetSectionTitle(section: section)
-            cell.contentView.backgroundColor = #colorLiteral(red: 0.935985744, green: 0.9304216504, blue: 0.9402627349, alpha: 1)
+            cell.contentView.backgroundColor = #colorLiteral(red: 0.8085502982, green: 0.8029457927, blue: 0.7642779946, alpha: 1)
             return cell
         case 4000:
             return UIView()

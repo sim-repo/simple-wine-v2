@@ -22,6 +22,7 @@
 		165D639223E9C9E400428AB1 /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D639123E9C9E400428AB1 /* TypeAliases.swift */; };
 		165D639423E9D26700428AB1 /* PointsSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D639323E9D26700428AB1 /* PointsSync.swift */; };
 		165D639823E9DF2C00428AB1 /* ParseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D639723E9DF2C00428AB1 /* ParseService.swift */; };
+		165D639B23E9EA3400428AB1 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D639A23E9EA3400428AB1 /* TestData.swift */; };
 		165DD6C623E39A0C0068D76E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165DD6C523E39A0C0068D76E /* AppDelegate.swift */; };
 		165DD6C823E39A0C0068D76E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165DD6C723E39A0C0068D76E /* SceneDelegate.swift */; };
 		165DD6CD23E39A0C0068D76E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165DD6CB23E39A0C0068D76E /* Main.storyboard */; };
@@ -117,6 +118,7 @@
 		165D639123E9C9E400428AB1 /* TypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
 		165D639323E9D26700428AB1 /* PointsSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsSync.swift; sourceTree = "<group>"; };
 		165D639723E9DF2C00428AB1 /* ParseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseService.swift; sourceTree = "<group>"; };
+		165D639A23E9EA3400428AB1 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		165DD6C223E39A0C0068D76E /* simple-wine-v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "simple-wine-v2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		165DD6C523E39A0C0068D76E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		165DD6C723E39A0C0068D76E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -276,6 +278,14 @@
 				165D639723E9DF2C00428AB1 /* ParseService.swift */,
 			);
 			path = Parse;
+			sourceTree = "<group>";
+		};
+		165D639923E9EA1C00428AB1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				165D639A23E9EA3400428AB1 /* TestData.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		165DD6B923E39A0C0068D76E = {
@@ -536,6 +546,7 @@
 		16797CCA23E8F67A001707D3 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				165D639923E9EA1C00428AB1 /* Data */,
 				16797CCB23E8F681001707D3 /* Parse */,
 			);
 			path = Test;
@@ -869,6 +880,7 @@
 				165DD6EE23E3A0B10068D76E /* MapPresenter+SelectedFilter.swift in Sources */,
 				165DD6E423E39F3F0068D76E /* MapViewController+Collection.swift in Sources */,
 				165D639823E9DF2C00428AB1 /* ParseService.swift in Sources */,
+				165D639B23E9EA3400428AB1 /* TestData.swift in Sources */,
 				165DD6E823E39F7E0068D76E /* MapViewController+Table.swift in Sources */,
 				16797CB223E85723001707D3 /* PointMenuPresenter.swift in Sources */,
 				165D638D23E9C68500428AB1 /* AllSync.swift in Sources */,
@@ -1024,6 +1036,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78S4SSQ86F;
 				INFOPLIST_FILE = "simple-wine-v2/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1043,6 +1056,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78S4SSQ86F;
 				INFOPLIST_FILE = "simple-wine-v2/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

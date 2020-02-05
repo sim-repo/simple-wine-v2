@@ -11,7 +11,7 @@ class AllSync {
                     _ onError: setterOnError) {
         
         
-        let urlPath = "http://185.219.42.85:3000/all"
+        let urlPath = "http://185.219.42.85:3000/all2"
         
         let params: Parameters = [
             "pointId": pointEnum.rawValue
