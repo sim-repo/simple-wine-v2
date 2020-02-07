@@ -18,7 +18,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bkg_grancru" translatesAutoresizingMaskIntoConstraints="NO" id="Ovx-q7-Mw1">
-                    <rect key="frame" x="0.0" y="0.0" width="1194" height="834"/>
+                    <rect key="frame" x="-1" y="-1" width="1195" height="835"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sx7-Jj-TTG">
                     <rect key="frame" x="50" y="45" width="1094" height="744"/>
@@ -37,13 +37,12 @@
                                 <constraint firstAttribute="height" constant="52" id="x6y-hi-wnt"/>
                             </constraints>
                         </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="facebook_grancru" translatesAutoresizingMaskIntoConstraints="NO" id="2De-j2-thI">
-                            <rect key="frame" x="246" y="688" width="240" height="53"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="instagramm_grancru" translatesAutoresizingMaskIntoConstraints="NO" id="Rmz-YB-Xns">
-                            <rect key="frame" x="548" y="669" width="240" height="86"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook_grancru" translatesAutoresizingMaskIntoConstraints="NO" id="2De-j2-thI">
+                            <rect key="frame" x="208" y="688" width="240" height="53"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="240" id="7HC-DV-zJa"/>
+                                <constraint firstAttribute="height" constant="53" id="nHu-Ln-4E6"/>
+                            </constraints>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_grancru_on_dark" translatesAutoresizingMaskIntoConstraints="NO" id="lbK-dU-Lyu">
                             <rect key="frame" x="297" y="309.5" width="500" height="125"/>
@@ -69,15 +68,26 @@
                                 <action selector="pressEnter:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="BJC-r5-I5G"/>
                             </connections>
                         </button>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="instagramm_grancru" translatesAutoresizingMaskIntoConstraints="NO" id="Rmz-YB-Xns">
+                            <rect key="frame" x="646" y="688" width="240" height="53"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="53" id="JxO-x7-2xx"/>
+                                <constraint firstAttribute="width" constant="240" id="tQu-GI-f5Q"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="lbK-dU-Lyu" firstAttribute="centerX" secondItem="sx7-Jj-TTG" secondAttribute="centerX" id="1DL-ND-lmf"/>
                         <constraint firstItem="VGG-ol-5bP" firstAttribute="height" secondItem="lbK-dU-Lyu" secondAttribute="height" multiplier="0.776" id="6W1-Ca-5MP"/>
+                        <constraint firstItem="2De-j2-thI" firstAttribute="centerX" secondItem="sx7-Jj-TTG" secondAttribute="centerX" multiplier="0.6" id="Cyx-OM-Rfg"/>
                         <constraint firstItem="VGG-ol-5bP" firstAttribute="width" secondItem="lbK-dU-Lyu" secondAttribute="width" multiplier="0.5" id="DyC-Hi-P4E"/>
+                        <constraint firstAttribute="bottom" secondItem="2De-j2-thI" secondAttribute="bottom" constant="3" id="G9L-fe-aAw"/>
+                        <constraint firstAttribute="bottom" secondItem="Rmz-YB-Xns" secondAttribute="bottom" constant="3" id="GJt-Ng-V6W"/>
                         <constraint firstAttribute="bottom" secondItem="J6P-Yn-Bl2" secondAttribute="bottom" constant="20" symbolic="YES" id="GVL-D1-cOO"/>
                         <constraint firstAttribute="bottom" secondItem="zch-IF-unD" secondAttribute="bottom" constant="20" symbolic="YES" id="Q4K-AL-02p"/>
                         <constraint firstItem="zch-IF-unD" firstAttribute="leading" secondItem="sx7-Jj-TTG" secondAttribute="leading" constant="20" symbolic="YES" id="TRW-m8-ZQJ"/>
+                        <constraint firstItem="Rmz-YB-Xns" firstAttribute="centerX" secondItem="sx7-Jj-TTG" secondAttribute="centerX" multiplier="1.4" id="Z3M-FT-r00"/>
                         <constraint firstItem="VGG-ol-5bP" firstAttribute="top" secondItem="lbK-dU-Lyu" secondAttribute="top" id="fsV-kC-e1D"/>
                         <constraint firstItem="VGG-ol-5bP" firstAttribute="trailing" secondItem="lbK-dU-Lyu" secondAttribute="trailing" id="hf7-1M-eOZ"/>
                         <constraint firstItem="lbK-dU-Lyu" firstAttribute="centerY" secondItem="sx7-Jj-TTG" secondAttribute="centerY" id="jXf-Pz-hyl"/>
@@ -108,8 +118,8 @@
                 <constraint firstItem="WOr-In-kQu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="UMe-wr-LzB"/>
                 <constraint firstAttribute="trailing" secondItem="sx7-Jj-TTG" secondAttribute="trailing" constant="50" id="Ygf-5m-hso"/>
                 <constraint firstItem="sx7-Jj-TTG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="45" id="adI-5Y-4pJ"/>
-                <constraint firstItem="Ovx-q7-Mw1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bxZ-hh-xMF"/>
-                <constraint firstItem="Ovx-q7-Mw1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rVm-9S-Juf"/>
+                <constraint firstItem="Ovx-q7-Mw1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="-1" id="bxZ-hh-xMF"/>
+                <constraint firstItem="Ovx-q7-Mw1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="-1" id="rVm-9S-Juf"/>
                 <constraint firstAttribute="bottom" secondItem="sx7-Jj-TTG" secondAttribute="bottom" constant="45" id="uOX-FO-pUL"/>
                 <constraint firstItem="sx7-Jj-TTG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="z3i-AX-ZR3"/>
             </constraints>

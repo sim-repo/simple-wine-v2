@@ -274,7 +274,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fTZ-gR-Hun" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-211.66666666666666" y="20"/>
+            <point key="canvasLocation" x="-184" y="20"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="ZyC-4h-6oF">
@@ -777,7 +777,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="acf-k3-nIG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="596.66666666666663" y="-669.62962962962956"/>
+            <point key="canvasLocation" x="1314" y="-716"/>
         </scene>
         <!--Favourite Detail View Controller-->
         <scene sceneID="ewJ-nZ-qFx">
@@ -871,7 +871,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rdi-Ar-6bJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1366.6666666666667" y="-670.37037037037032"/>
+            <point key="canvasLocation" x="2036" y="-869"/>
         </scene>
         <!--Map Detail View Controller-->
         <scene sceneID="f8x-J4-6tF">
@@ -913,13 +913,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attributes" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VUZ-ed-C4Y">
-                                <rect key="frame" x="382" y="174" width="322" height="15"/>
-                                <fontDescription key="fontDescription" name="Geometria-Medium" family="Geometria" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Big Desc" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBO-xM-1lg">
-                                <rect key="frame" x="382" y="221" width="322" height="15"/>
+                                <rect key="frame" x="382" y="206" width="322" height="15"/>
                                 <fontDescription key="fontDescription" name="Geometria-Medium" family="Geometria" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -937,25 +931,33 @@
                                     <action selector="pressLike:" destination="aTk-jw-brz" eventType="touchUpInside" id="ky3-U7-4ru"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBO-xM-1lg">
+                                <rect key="frame" x="36" y="591" width="640" height="143"/>
+                                <string key="text">Вино — один из самых благородных и многогранных напитков в мире. В интернет-витрине SimpleWine представлена одна из лучших коллекций тихих и игристых вин со всего света: популярные крупные бренды, преимущественно семейные, вина от бутиковых хозяйств с небольшими объемами производства, культовые и особо ценные экземпляры Simple Collection, специально отобранные нашими экспертами, а также органика, биодинамика и вина с сертификатами sustainable, собранные в отдельном разделе Green Selection.</string>
+                                <fontDescription key="fontDescription" name="Geometria-Medium" family="Geometria" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.88232958319999999" green="0.87884145979999995" blue="0.8314031959" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="XSf-Ku-S15" firstAttribute="bottom" secondItem="qBO-xM-1lg" secondAttribute="bottom" constant="36" id="3PS-3C-1js"/>
+                            <constraint firstItem="qBO-xM-1lg" firstAttribute="top" secondItem="zUH-qC-zh6" secondAttribute="bottom" constant="36" id="3id-Al-Hkh"/>
                             <constraint firstItem="XSf-Ku-S15" firstAttribute="trailing" secondItem="VUZ-ed-C4Y" secondAttribute="trailing" constant="8" id="6Y8-CW-uMa"/>
                             <constraint firstItem="HSZ-gn-12J" firstAttribute="leading" secondItem="zUH-qC-zh6" secondAttribute="trailing" constant="16" id="7jV-TT-psn"/>
+                            <constraint firstItem="qBO-xM-1lg" firstAttribute="leading" secondItem="XSf-Ku-S15" secondAttribute="leading" constant="36" id="DIs-pq-K2d"/>
                             <constraint firstItem="XSf-Ku-S15" firstAttribute="trailing" secondItem="HSZ-gn-12J" secondAttribute="trailing" constant="8" id="IbC-Zi-AQg"/>
                             <constraint firstItem="XSf-Ku-S15" firstAttribute="trailing" secondItem="aiq-rh-pLM" secondAttribute="trailing" constant="16" id="Ja1-Si-RPr"/>
                             <constraint firstItem="aiq-rh-pLM" firstAttribute="top" secondItem="XSf-Ku-S15" secondAttribute="top" constant="16" id="Ob8-RA-bZP"/>
                             <constraint firstItem="aVr-jl-8da" firstAttribute="leading" secondItem="XSf-Ku-S15" secondAttribute="leading" constant="50" id="PJg-nG-oDI"/>
-                            <constraint firstItem="qBO-xM-1lg" firstAttribute="top" secondItem="VUZ-ed-C4Y" secondAttribute="bottom" constant="32" id="Pam-wX-3eQ"/>
                             <constraint firstItem="zUH-qC-zh6" firstAttribute="top" secondItem="XSf-Ku-S15" secondAttribute="top" constant="80" id="SoS-MP-U2f"/>
                             <constraint firstItem="XSf-Ku-S15" firstAttribute="trailing" secondItem="pC6-vN-4ev" secondAttribute="trailing" constant="8" id="W02-cn-bFy"/>
-                            <constraint firstItem="XSf-Ku-S15" firstAttribute="trailing" secondItem="qBO-xM-1lg" secondAttribute="trailing" constant="8" id="WK1-8Z-Xbs"/>
                             <constraint firstItem="pC6-vN-4ev" firstAttribute="leading" secondItem="zUH-qC-zh6" secondAttribute="trailing" constant="16" id="WQd-NR-Dfv"/>
-                            <constraint firstItem="VUZ-ed-C4Y" firstAttribute="top" secondItem="pC6-vN-4ev" secondAttribute="bottom" constant="32" id="WQy-wS-cLa"/>
+                            <constraint firstItem="VUZ-ed-C4Y" firstAttribute="top" secondItem="pC6-vN-4ev" secondAttribute="bottom" constant="64" id="WQy-wS-cLa"/>
                             <constraint firstItem="pC6-vN-4ev" firstAttribute="top" secondItem="HSZ-gn-12J" secondAttribute="bottom" constant="16" id="cEU-2N-Irt"/>
                             <constraint firstItem="aVr-jl-8da" firstAttribute="top" secondItem="XSf-Ku-S15" secondAttribute="top" constant="50" id="dDt-WG-sqH"/>
                             <constraint firstItem="VUZ-ed-C4Y" firstAttribute="leading" secondItem="zUH-qC-zh6" secondAttribute="trailing" constant="16" id="eQe-cP-eew"/>
-                            <constraint firstItem="qBO-xM-1lg" firstAttribute="leading" secondItem="zUH-qC-zh6" secondAttribute="trailing" constant="16" id="r70-Fg-k0N"/>
+                            <constraint firstItem="XSf-Ku-S15" firstAttribute="trailing" secondItem="qBO-xM-1lg" secondAttribute="trailing" constant="36" id="oMk-Rh-8OE"/>
                             <constraint firstItem="zUH-qC-zh6" firstAttribute="leading" secondItem="XSf-Ku-S15" secondAttribute="leading" constant="16" id="xlQ-o7-iKx"/>
                             <constraint firstItem="HSZ-gn-12J" firstAttribute="top" secondItem="zUH-qC-zh6" secondAttribute="top" id="ydp-RX-Kwi"/>
                         </constraints>

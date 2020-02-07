@@ -28,7 +28,8 @@ class MapDetailViewController: UIViewController {
         originalNameLabel.text = product.name + ", \(product.manufactureYear)г."
         russianNameLabel.text = product.name
         attributesLabel.text = presenter.getAttribute()
-        bigDescLabel.text = product.bigDesc
+       // bigDescLabel.text = product.bigDesc
+        bigDescLabel.text = "Вино — один из самых благородных и многогранных напитков в мире. В интернет-витрине SimpleWine представлена одна из лучших коллекций тихих и игристых вин со всего света: популярные крупные бренды, преимущественно семейные, вина от бутиковых хозяйств с небольшими объемами производства, культовые и особо ценные экземпляры Simple Collection, специально отобранные нашими экспертами, а также органика, биодинамика и вина с сертификатами sustainable, собранные в отдельном разделе Green Selection."
     }
     
     private func setCloseButton(){

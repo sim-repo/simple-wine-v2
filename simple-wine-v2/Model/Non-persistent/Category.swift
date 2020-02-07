@@ -1,12 +1,11 @@
 import Foundation
 
 
-class Category: Codable {
+class Category: Codable, PersistableModel {
     
     var id = 0
     var title = ""
     var imageURL = ""
-    var kinds: [Int] = []
     
     init(id: Int, title: String, imageURL: String){
         self.id = id
@@ -15,11 +14,13 @@ class Category: Codable {
     }
     
     
+    
+    //MARK:- Codable >>
+    
     enum CodingKeys: String, CodingKey {
         case id
         case title
         case imageURL
-        case kinds
     }
     
     func encode(to encoder: Encoder) throws {
@@ -27,7 +28,6 @@ class Category: Codable {
         try container.encode(self.id, forKey: .id)
         try container.encode(self.title, forKey: .title)
         try container.encode(self.imageURL, forKey: .imageURL)
-        try container.encode(self.kinds, forKey: .kinds)
     }
     
     required init(from decoder: Decoder) throws {
@@ -35,9 +35,11 @@ class Category: Codable {
         id = try container.decode(Int.self, forKey: .id)
         title = try container.decode(String.self, forKey: .title)
         imageURL = try container.decode(String.self, forKey: .imageURL)
-        kinds = try container.decode([Int].self, forKey: .kinds)
     }
     
+    
+    
+    //MARK:- for testing only
     
     static func list() -> [Category] {
         return [

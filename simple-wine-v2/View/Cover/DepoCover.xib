@@ -148,6 +148,7 @@
                             <rect key="frame" x="636.5" y="643" width="261.5" height="30"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
+                                <action selector="pressEnter:" destination="iN0-l3-epB" eventType="touchUpInside" id="G7V-Ue-d9S"/>
                                 <action selector="wineCardButtonPressed:" destination="-2" eventType="touchUpInside" id="Rib-nd-FDm"/>
                             </connections>
                         </button>

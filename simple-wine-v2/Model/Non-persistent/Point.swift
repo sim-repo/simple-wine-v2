@@ -1,6 +1,6 @@
 import Foundation
 
-class Point: Codable{
+class Point: Codable, PersistableModel {
 
     var id: PointEnum = .unknown
     var name = ""
@@ -14,6 +14,9 @@ class Point: Codable{
         self.logoOnLightImageURL = logoOnLightImageURL
         pointId = id.rawValue
     }
+    
+    
+    //MARK:- Codable >> 
     
     required init(from decoder: Decoder) throws {
        let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -40,6 +43,8 @@ class Point: Codable{
         try container.encode(self.logoOnLightImageURL, forKey: .logoOnLightImageURL)
     }
     
+    
+    //MARK:- for testing only
     static func list()->[Point] {
         return [
             Point(id: PointEnum.grandcru, name: "Grand Cru", logoOnLightImageURL: "logo2_grancru_on_light"),

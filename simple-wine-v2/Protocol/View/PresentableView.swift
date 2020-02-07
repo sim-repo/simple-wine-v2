@@ -42,4 +42,7 @@ protocol PresentableAuthView: class {
 
 protocol PresentablePointMenuView: class {
     func enter()
+    func startWaitIndicator()
+    func stopWaitIndicator()
+    func showAlert(text: String)
 }

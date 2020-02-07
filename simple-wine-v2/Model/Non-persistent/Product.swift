@@ -1,7 +1,7 @@
 import Foundation
 
 
-class Product: Codable {
+class Product: Codable, PersistableModel  {
     
     var id = 0
     var name = ""
@@ -20,13 +20,7 @@ class Product: Codable {
     var isLiked = false
     
     
-    var pointId = "" {
-        willSet {
-            if let point = PointEnum.init(rawValue: newValue) {
-                pointEnum = point
-            }
-        }
-    }
+    var pointId = ""
     
     
     init(id: Int, name: String, pointEnum: PointEnum, categoryId: Int, desc: String, price: Double, oldPrice: Double, attributeIds: [Int], imageURL: String, popularity: Int, manufactureYear: Int){
@@ -44,6 +38,9 @@ class Product: Codable {
         pointId = pointEnum.rawValue
     }
     
+    
+    
+    //MARK:- Codable >>
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -94,10 +91,14 @@ class Product: Codable {
         imageURL = try container.decode(String.self, forKey: .imageURL)
         manufactureYear = try container.decode(Int.self, forKey: .manufactureYear)
         isLiked = try container.decode(Bool.self, forKey: .isLiked)
+        guard let pointEnum = PointEnum.init(rawValue: pointId) else { return }
+        self.pointEnum = pointEnum
     }
     
     
     
+    
+    //MARK:- for testing only
     
     static func list0() -> [Product] {
         return [

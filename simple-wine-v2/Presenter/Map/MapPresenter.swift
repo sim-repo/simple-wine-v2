@@ -42,16 +42,12 @@ class MapPresenter {
     
     private init() {}
     
-    func setup(pointEnum: PointEnum) {
-        self.currentPointEnum = pointEnum
-    }
-    
     
     func preload(pointEnum: PointEnum) {
         if currentPointEnum == nil {
             currentPointEnum = pointEnum
         }
-        SERIAL_THREAD { [weak self] in
+        ThreadConstant.SERIAL_THREAD { [weak self] in
             guard let self = self else { return }
             self.mapSync.syncFilter(pointEnum: self.currentPointEnum,
                                     onSuccess: self.getOnSuccessFilter(),
@@ -95,16 +91,19 @@ extension MapPresenter: ViewableFavouriteMapPresenter {
 
 
 
-//MARK:- Syncable
+//MARK:- Setterable
 
-extension MapPresenter: SyncableMapPresenter {
+extension MapPresenter: SetterableMapPresenter {
     
-    func setAllDataSources(pointEnum: PointEnum,
-                           categories: [Category],
+    
+    func setCurrentPoint(pointEnum: PointEnum) {
+        self.currentPointEnum = pointEnum
+    }
+    
+    func setAllDataSources(categories: [Category],
                            filters: [Filter],
                            products: [Product],
                            detailMapSettings: [DetailMapSetting]) {
-        currentPointEnum = pointEnum
         categoryDataSource = categories
         filterDataSource = filters
         productDataSource = products

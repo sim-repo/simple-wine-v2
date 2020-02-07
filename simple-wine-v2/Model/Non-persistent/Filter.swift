@@ -1,7 +1,7 @@
 import Foundation
 
 
-class Filter: Codable {
+class Filter: Codable, PersistableModel  {
     var id = 0
     var title = ""
     var parentId: Int?
@@ -13,13 +13,7 @@ class Filter: Codable {
     var parentTitle: String? // calc
     var selected = false
     
-    var pointId = "" {
-        willSet {
-            if let point = PointEnum.init(rawValue: newValue) {
-                pointEnum = point
-            }
-        }
-    }
+    var pointId = ""
     
     init(id: Int, pointEnum: PointEnum, title: String, parentId: Int?, level: Int, parentTitle: String?, kind: Int, categoryId: Int){
         self.id = id
@@ -42,6 +36,9 @@ class Filter: Codable {
                 return
         }
     }
+    
+    
+    //MARK:- Codable >> 
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -72,6 +69,8 @@ class Filter: Codable {
         title = try container.decode(String.self, forKey: .title)
         parentId = try container.decode(Int?.self, forKey: .parentId)
         pointId = try container.decode(String.self, forKey: .pointId)
+        guard let pointEnum = PointEnum.init(rawValue: pointId) else { return }
+        self.pointEnum = pointEnum
         kindId = try container.decode(Int.self, forKey: .kindId)
         categoryId = try container.decode(Int.self, forKey: .categoryId)
         level = try container.decode(Int.self, forKey: .level)
@@ -79,6 +78,9 @@ class Filter: Codable {
     }
     
     
+    
+    //MARK:- for testing only
+
     static func list0() -> [Filter] {
         return [
             Filter(id: 0, pointEnum: .grandcru, title: "Цвет", parentId: nil, level: 0, parentTitle: nil, kind: 1, categoryId: 0),

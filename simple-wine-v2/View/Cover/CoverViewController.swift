@@ -3,13 +3,15 @@ import UIKit
 
 class CoverViewController: UIViewController {
     
+
+    
     var presenter: ViewableCoverPresenter {
         CoverPresenter.shared.setView(view: self)
         return CoverPresenter.shared
     }
     
     override func viewWillAppear(_ animated: Bool) {
-
+        
         let pointEnum = presenter.getPointEnum()
         switch pointEnum {
         case .grandcru:

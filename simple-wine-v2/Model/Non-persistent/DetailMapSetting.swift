@@ -1,7 +1,7 @@
 import Foundation
 
 
-class DetailMapSetting: Codable {
+class DetailMapSetting: Codable, PersistableModel  {
     
     var categoryId = 0
     var kindIds: [Int] = []
@@ -16,6 +16,8 @@ class DetailMapSetting: Codable {
     }
     
     
+    
+    //MARK:- Codable >> 
     
     required init(from decoder: Decoder) throws {
        let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -42,6 +44,8 @@ class DetailMapSetting: Codable {
         try container.encode(self.icons, forKey: .icons)
     }
     
+    
+    //MARK:- for testing only
     
     static func list() -> [DetailMapSetting] {
         return [

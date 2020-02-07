@@ -1,27 +1,21 @@
-import Foundation
+import UIKit
 
 
 class Setter {
     
     private init(){}
     static var shared = Setter()
-    
-    
-    var currentPointEnum: PointEnum = .unknown
-    
-    
+
     // on success
-    private func getOnSuccess(_ pointEnum: PointEnum, _ completion: (()->Void)? = nil ) -> setterOnSuccess {
+    private func getOnSuccess(_ completion: (()->Void)? = nil ) -> setterOnSuccess {
         
         let completion: setterOnSuccess = { points, categories, filters, products, detailMapSettings in
-                              
-            PointMenuPresenter.shared.setup(points)
+                     
+            // point menu
+            (PointMenuPresenter.shared as SetterablePointMenuPresenter).setup(points)
             
-            guard let point = points.first(where: {$0.id == pointEnum}) else { return }
-            AuthPresenter.shared.setup(point: point)
-            
-            (MapPresenter.shared as SyncableMapPresenter).setAllDataSources(
-                pointEnum: pointEnum,
+            // map
+            (MapPresenter.shared as SetterableMapPresenter).setAllDataSources(
                 categories: categories,
                 filters: filters,
                 products: products,
@@ -36,36 +30,26 @@ class Setter {
     // on error
     private func getOnError() -> setterOnError {
         let completion: setterOnError = { error in
-            print(error)
+            (PointMenuPresenter.shared as SetterablePointMenuPresenter).stopWaitIndicator()
+            (PointMenuPresenter.shared as SetterablePointMenuPresenter).showAlert(text: error )
         }
         return completion
     }
     
 
     
-    func allSync(by pointEnum: PointEnum, _ completion: (()->Void)? = nil) {
-        currentPointEnum = pointEnum
-        AllSync.shared.syncFilter(by: pointEnum, getOnSuccess(pointEnum, completion), getOnError())
+    func allSync(_ completion: (()->Void)? = nil) {
+        AllSync.shared.sync(getOnSuccess(completion), getOnError())
     }
 }
 
 
-
-//MARK:- Points
-
+//MARK:- point has being selected
 extension Setter {
     
-    // on success
-    private func getOnSuccess_Points() -> setterOnSuccess_Points {
-        
-        let completion: setterOnSuccess_Points = { points in
-            PointMenuPresenter.shared.setup(points)
-        }
-        return completion
-    }
-    
-    
-    func pointsSync() {
-        PointsSync.shared.sync(getOnSuccess_Points() , getOnError())
+    func pointMenuDidSelect(point: Point, _ completion: (()->Void)? = nil) {
+        (AuthPresenter.shared as SetterableAuthPresenter).setCurrentPoint(point: point)
+        (MapPresenter.shared as SetterableMapPresenter).setCurrentPoint(pointEnum: point.id)
+        completion?()
     }
 }

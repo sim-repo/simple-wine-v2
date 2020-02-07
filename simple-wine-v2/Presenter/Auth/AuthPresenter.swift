@@ -8,15 +8,12 @@ class AuthPresenter {
     
     var point: Point!
     var view: PresentableAuthView?
-    
-    func setup(point: Point) {
-        self.point = point
-    }
 }
 
 
+//MARK:- Viewable
 extension AuthPresenter: ViewableAuthPresenter {
-
+    
     func setView(view: PresentableAuthView) {
         self.view = view
     }
@@ -31,5 +28,13 @@ extension AuthPresenter: ViewableAuthPresenter {
         //TODO check login
         CoverPresenter.shared.setup(point: point)
         view?.enter()
+    }
+}
+
+//MARK:- Setterable
+extension AuthPresenter: SetterableAuthPresenter {
+    
+    func setCurrentPoint(point: Point) {
+        self.point = point
     }
 }
