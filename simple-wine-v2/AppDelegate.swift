@@ -1,6 +1,5 @@
 import UIKit
 
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -11,17 +10,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return window
     }()
 
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         UNUserNotificationCenter.current().delegate = self
         
+        
+        WebsocketService.shared.wsConnect()
+        
         Setter.shared.allSync()
+        
+        KingfisherConfiguration.shared.setup()
         
         // bkg update config:
         UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalMinimum)
     
         return true
     }
+
 
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         // Start background fetch
@@ -30,7 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
      }
 }
-
 
 
 
@@ -45,11 +50,8 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     }
     
     func postNotification(_ message: String) {
-
-         // if background fetch, let the user know that there's data for them
-
          let content = UNMutableNotificationContent()
-         content.title = "MyApp"
+         content.title = "Винотека"
          content.body = message
          let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
          let notification = UNNotificationRequest(identifier: "timer", content: content, trigger: trigger)

@@ -59,7 +59,7 @@ class SpinnerViewController: UIViewController {
         ani.centerXAnchor.constraint(equalTo: childView.centerXAnchor).isActive = true
         ani.centerYAnchor.constraint(equalTo: childView.centerYAnchor).isActive = true
     
-        DispatchQueue.main.asyncAfter(deadline: .now() + NetworkConstant.timeout) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + NetworkConfiguration.timeout) { [weak self] in
             guard let self = self else { return }
             self.showSimpleAlert()
         }

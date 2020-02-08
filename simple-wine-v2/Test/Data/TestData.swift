@@ -32,15 +32,15 @@ class TestData {
 //            print("category: \(filter.categoryId), filter: \(filter.id), title: \(filter.title), parent: \(filter.parentId)")
 //        }
 //        
-        for product in products {
-            print("name: \(product.name), desc: \(product.price), attr: \(product.desc)")
-        }
+//        for product in products {
+//            print("name: \(product.name), desc: \(product.price), attr: \(product.desc)")
+//        }
 //
-//        let points = Point.list()
-//        let mapSettings = DetailMapSetting.list()
-//
-//        let response = Response(points: points, categories: categories, filters: filters, products: products, detailMapSetting: mapSettings)
-//        TestParse.shared.encode(response: response)
+        let points = Point.list()
+        let mapSettings = DetailMapSetting.list()
+
+        let response = Response(points: points, categories: categories, filters: filters, products: products, detailMapSetting: mapSettings)
+        TestParse.shared.encode(response: response)
     }
     
     
@@ -215,7 +215,7 @@ class TestData {
                               price: Double(price),
                               oldPrice: Double(price + 300),
                               attributeIds: [filterId],
-                              imageURL: "redwine1",
+                              imageURL: "http://185.219.42.85:3000/Images/red2.png",
                               popularity: popularity,
                               manufactureYear: year)
         productId += 1

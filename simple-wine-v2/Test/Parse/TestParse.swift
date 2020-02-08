@@ -6,7 +6,8 @@ class TestParse {
     private init(){}
     static var shared = TestParse()
     
-    var socket = WebSocket(url: URL(string: "ws://185.219.42.85:1337/")!, protocols: ["chat"])
+    var socket = WebSocket(url: URL(string: NetworkConfiguration.wsBasePath + "/")!, protocols: ["chat"])
+    
     
     func wsConnect() {
         socket.delegate = self
@@ -20,7 +21,7 @@ class TestParse {
             if let data = try? encoder.encode(Response.single()) {
                 print(String(data: data, encoding: .utf8)!)
             }
-        } catch (let err) {
+        } catch let err {
             print(err.localizedDescription)
         }
     }
@@ -33,7 +34,7 @@ class TestParse {
             if let data = try? encoder.encode(response) {
                 print(String(data: data, encoding: .utf8)!)
             }
-        } catch (let err) {
+        } catch let err {
             print(err.localizedDescription)
         }
     }
@@ -75,6 +76,7 @@ class TestParse {
             print(error)
         }
     }
+    
     
     func decode(){
         guard let path = Bundle.main.path(forResource: "Test", ofType: "json") else { return }
@@ -118,6 +120,7 @@ class TestParse {
 
 
 extension TestParse: WebSocketDelegate {
+    
     func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
         
     }
@@ -128,8 +131,6 @@ extension TestParse: WebSocketDelegate {
     }
     
     func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
-        print("SOCKET DISCONNECTED")
-        print("SOCKET DISCONNECTED")
         print("SOCKET DISCONNECTED")
     }
     
@@ -148,17 +149,15 @@ extension TestParse: WebSocketDelegate {
             let messageAuthor = messageData["author"] as? String,
             let messageText = messageData["text"] as? String {
             
-            print("MESSAGE RECEIVED: \(messageText)")
+                print("MESSAGE RECEIVED: \(messageText)")
         }
         
         
         // 2
         if messageType == "bigdata" {
-            print("BIG DATA")
             if let messageData = jsonDict["data"] as? String {
-                let d: Data? = messageData.data(using: .utf8) // non-nil
+                let d: Data? = messageData.data(using: .utf8)
                 decode(data: d!)
-                // wsLoadCategories(messageData)
             }
         }
     }

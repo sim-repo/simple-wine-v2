@@ -52,7 +52,7 @@ extension MapPresenter: ViewableFilterPresenter {
     
     // getters
     func filterNumberOfSections() -> Int {
-        return tmpFilterSectionTitle.count > 0 ? tmpFilterSectionTitle.count + 1 : 1
+        return tmpFilterSectionTitle.count > 0 ? tmpFilterSectionTitle.count : 1
     }
     
     func filterNumberOfRowsInSection(section: Int) -> Int {
@@ -70,11 +70,11 @@ extension MapPresenter: ViewableFilterPresenter {
     }
     
     func filterGetSectionTitle(section: Int) -> String {
-        guard tmpFilterSectionTitle.count > 0
-            else {
-                return "Фильтры"
+        if section == 0 {
+            return "Фильтры"
         }
-        return tmpFilterSectionTitle[section] ?? "Фильтры"
+        let title = tmpFilterSectionTitle[section] ?? ""
+        return title
     }
     
     //setters

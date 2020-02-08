@@ -1,7 +1,5 @@
 import Foundation
 
-
-
 class MapSync: PresentableMapSync {
 
     private init(){}

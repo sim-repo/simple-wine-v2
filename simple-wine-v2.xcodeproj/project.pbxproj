@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		162144F223EEC238008C7AD0 /* KingfisherConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162144F123EEC238008C7AD0 /* KingfisherConfiguration.swift */; };
+		162144F523EEC9AC008C7AD0 /* WebsocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162144F423EEC9AC008C7AD0 /* WebsocketService.swift */; };
+		162144FF23EEDC6D008C7AD0 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 162144FE23EEDC6D008C7AD0 /* Starscream.framework */; };
 		1644726E23ECB45C00DEDD2B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1644726D23ECB45C00DEDD2B /* NetworkService.swift */; };
 		1644727023ECBF9500DEDD2B /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1644726F23ECBF9500DEDD2B /* Session.swift */; };
 		1644727523ECC76500DEDD2B /* RealmBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1644727423ECC76500DEDD2B /* RealmBase.swift */; };
@@ -19,11 +22,11 @@
 		1644728A23ECD0A900DEDD2B /* RealmToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1644728923ECD0A900DEDD2B /* RealmToken.swift */; };
 		1644728C23ED759100DEDD2B /* RealmPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1644728B23ED759100DEDD2B /* RealmPoint.swift */; };
 		1644728F23ED86D700DEDD2B /* PersistableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1644728E23ED86D700DEDD2B /* PersistableModel.swift */; };
-		1644729323ED901B00DEDD2B /* NetworkConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1644729223ED901B00DEDD2B /* NetworkConstant.swift */; };
+		1644729323ED901B00DEDD2B /* NetworkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1644729223ED901B00DEDD2B /* NetworkConfiguration.swift */; };
 		1644729723EDAC2C00DEDD2B /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1644729623EDAC2C00DEDD2B /* SpinnerViewController.swift */; };
 		1644729923EDAC4B00DEDD2B /* WaitIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1644729823EDAC4B00DEDD2B /* WaitIndicator.swift */; };
 		1644729C23EDAFEB00DEDD2B /* SetterablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1644729B23EDAFEB00DEDD2B /* SetterablePresenter.swift */; };
-		1644729E23EE0C4D00DEDD2B /* FetchConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1644729D23EE0C4D00DEDD2B /* FetchConstant.swift */; };
+		1644729E23EE0C4D00DEDD2B /* FetchConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1644729D23EE0C4D00DEDD2B /* FetchConfiguration.swift */; };
 		164472A023EE0CBC00DEDD2B /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1644729F23EE0CBC00DEDD2B /* Date+Extensions.swift */; };
 		164472A223EE0D7B00DEDD2B /* SchedulableSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164472A123EE0D7B00DEDD2B /* SchedulableSync.swift */; };
 		164472A423EE194A00DEDD2B /* BkgAllSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164472A323EE194A00DEDD2B /* BkgAllSync.swift */; };
@@ -119,6 +122,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		162144F123EEC238008C7AD0 /* KingfisherConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KingfisherConfiguration.swift; sourceTree = "<group>"; };
+		162144F423EEC9AC008C7AD0 /* WebsocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsocketService.swift; sourceTree = "<group>"; };
+		162144F623EEDC1A008C7AD0 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		162144FA23EEDC5E008C7AD0 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		162144FE23EEDC6D008C7AD0 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1644726D23ECB45C00DEDD2B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		1644726F23ECBF9500DEDD2B /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		1644727423ECC76500DEDD2B /* RealmBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmBase.swift; sourceTree = "<group>"; };
@@ -131,11 +139,11 @@
 		1644728923ECD0A900DEDD2B /* RealmToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmToken.swift; sourceTree = "<group>"; };
 		1644728B23ED759100DEDD2B /* RealmPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPoint.swift; sourceTree = "<group>"; };
 		1644728E23ED86D700DEDD2B /* PersistableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistableModel.swift; sourceTree = "<group>"; };
-		1644729223ED901B00DEDD2B /* NetworkConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstant.swift; sourceTree = "<group>"; };
+		1644729223ED901B00DEDD2B /* NetworkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfiguration.swift; sourceTree = "<group>"; };
 		1644729623EDAC2C00DEDD2B /* SpinnerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		1644729823EDAC4B00DEDD2B /* WaitIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitIndicator.swift; sourceTree = "<group>"; };
 		1644729B23EDAFEB00DEDD2B /* SetterablePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetterablePresenter.swift; sourceTree = "<group>"; };
-		1644729D23EE0C4D00DEDD2B /* FetchConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchConstant.swift; sourceTree = "<group>"; };
+		1644729D23EE0C4D00DEDD2B /* FetchConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchConfiguration.swift; sourceTree = "<group>"; };
 		1644729F23EE0CBC00DEDD2B /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		164472A123EE0D7B00DEDD2B /* SchedulableSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulableSync.swift; sourceTree = "<group>"; };
 		164472A323EE194A00DEDD2B /* BkgAllSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BkgAllSync.swift; sourceTree = "<group>"; };
@@ -240,12 +248,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5CA5FA5429D21B6B18E5A44 /* Pods_simple_wine_v2.framework in Frameworks */,
+				162144FF23EEDC6D008C7AD0 /* Starscream.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		162144F023EEC1B2008C7AD0 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				162144F123EEC238008C7AD0 /* KingfisherConfiguration.swift */,
+				1644729223ED901B00DEDD2B /* NetworkConfiguration.swift */,
+				1644729D23EE0C4D00DEDD2B /* FetchConfiguration.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		162144F323EEC98C008C7AD0 /* Websocket */ = {
+			isa = PBXGroup;
+			children = (
+				162144F423EEC9AC008C7AD0 /* WebsocketService.swift */,
+			);
+			path = Websocket;
+			sourceTree = "<group>";
+		};
 		1644727123ECC70600DEDD2B /* Non-persistent */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,6 +432,7 @@
 			children = (
 				16797CCA23E8F67A001707D3 /* Test */,
 				16ABE8BF23E5B0960065D873 /* Constant */,
+				162144F023EEC1B2008C7AD0 /* Configuration */,
 				165DD71823E42B510068D76E /* Service */,
 				16ABE89223E58B2C0065D873 /* UI */,
 				165DD72623E46D1D0068D76E /* Helper */,
@@ -564,6 +592,7 @@
 		165DD71823E42B510068D76E /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				162144F323EEC98C008C7AD0 /* Websocket */,
 				1644728623ECD00F00DEDD2B /* Logger */,
 				1644728223ECCD2C00DEDD2B /* Realm */,
 				165D639623E9DF1E00428AB1 /* Parse */,
@@ -680,8 +709,6 @@
 				16797CB923E89FDC001707D3 /* ColorConstant.swift */,
 				16797CC323E8D378001707D3 /* ThreadConstant.swift */,
 				165D639123E9C9E400428AB1 /* TypeAliases.swift */,
-				1644729223ED901B00DEDD2B /* NetworkConstant.swift */,
-				1644729D23EE0C4D00DEDD2B /* FetchConstant.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -767,6 +794,9 @@
 		ECE25878875D76AE5F51B40A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				162144FE23EEDC6D008C7AD0 /* Starscream.framework */,
+				162144FA23EEDC5E008C7AD0 /* Starscream.framework */,
+				162144F623EEDC1A008C7AD0 /* Starscream.framework */,
 				B7279243E76EF54B08F73F05 /* Pods_simple_wine_v2.framework */,
 			);
 			name = Frameworks;
@@ -924,6 +954,7 @@
 			files = (
 				164472A223EE0D7B00DEDD2B /* SchedulableSync.swift in Sources */,
 				1644729923EDAC4B00DEDD2B /* WaitIndicator.swift in Sources */,
+				162144F523EEC9AC008C7AD0 /* WebsocketService.swift in Sources */,
 				16ABE8D323E62B650065D873 /* DetailMapSetting.swift in Sources */,
 				16520E0523E6FED900AA3576 /* FavouriteTableViewCell.swift in Sources */,
 				165DD70423E3AA0B0068D76E /* CategoryCollectionViewCell.swift in Sources */,
@@ -961,7 +992,7 @@
 				1644727E23ECCBAA00DEDD2B /* RealmProduct.swift in Sources */,
 				164472A423EE194A00DEDD2B /* BkgAllSync.swift in Sources */,
 				16DBA85223E823730088052B /* CoverPresenter.swift in Sources */,
-				1644729E23EE0C4D00DEDD2B /* FetchConstant.swift in Sources */,
+				1644729E23EE0C4D00DEDD2B /* FetchConfiguration.swift in Sources */,
 				16797CAC23E84B1F001707D3 /* CoverProtocols.swift in Sources */,
 				165DD6F023E3A0BA0068D76E /* MapPresenter+SideMenu.swift in Sources */,
 				16ABE8BE23E5B00E0065D873 /* SortablePresenter.swift in Sources */,
@@ -984,12 +1015,13 @@
 				16DBA84F23E823450088052B /* CoverViewController.swift in Sources */,
 				16ABE8C823E5EA660065D873 /* FilterSectionHeader.swift in Sources */,
 				16797CC423E8D379001707D3 /* ThreadConstant.swift in Sources */,
-				1644729323ED901B00DEDD2B /* NetworkConstant.swift in Sources */,
+				1644729323ED901B00DEDD2B /* NetworkConfiguration.swift in Sources */,
 				165D639223E9C9E400428AB1 /* TypeAliases.swift in Sources */,
 				165DD70823E3AA2D0068D76E /* SelectedFilterCollectionViewCell.swift in Sources */,
 				165DD6EE23E3A0B10068D76E /* MapPresenter+SelectedFilter.swift in Sources */,
 				165DD6E423E39F3F0068D76E /* MapViewController+Collection.swift in Sources */,
 				1644727523ECC76500DEDD2B /* RealmBase.swift in Sources */,
+				162144F223EEC238008C7AD0 /* KingfisherConfiguration.swift in Sources */,
 				165D639823E9DF2C00428AB1 /* ParseService.swift in Sources */,
 				165D639B23E9EA3400428AB1 /* TestData.swift in Sources */,
 				165DD6E823E39F7E0068D76E /* MapViewController+Table.swift in Sources */,

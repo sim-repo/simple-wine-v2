@@ -15,7 +15,7 @@ class AllSync {
         
         let interval = Date().timeIntervalSince(getLastSyncDate() ?? Date.yesterday)
         
-        if interval > FetchConstant.intervalBeforeUpdating {
+        if interval > FetchConfiguration.intervalBeforeUpdating {
             loadFromNetwork(onSuccess, onError)
             return
         }
@@ -41,7 +41,7 @@ class AllSync {
                                 _ onError: setterOnError) -> (()->Void)? {
         return {[weak self] in
             guard let self = self else { return }
-            let url = NetworkConstant.getFullPath(path: "all2")
+            let url = NetworkConfiguration.getFullPath(path: "all2")
             var request = URLRequest(url: url)
             request.httpMethod = "GET"
             NetworkService.requestAll(request, onSuccess, onError, self.getOnSuccess())
@@ -100,7 +100,7 @@ extension AllSync {
         NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(note:)), name: .reachabilityChanged, object: reachability)
         do{
           try reachability.startNotifier()
-        }catch{
+        } catch {
           print("could not start reachability notifier")
         }
     }

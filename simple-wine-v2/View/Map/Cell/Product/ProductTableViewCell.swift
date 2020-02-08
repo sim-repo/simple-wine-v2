@@ -14,7 +14,7 @@ class ProductTableViewCell: UITableViewCell {
     var product: Product?
     
     func setup(_ product: Product, presenter: ViewableProductPresenter, indexPath: IndexPath) {
-        itemImageView.image = UIImage(named: product.imageURL)
+        itemImageView.kf.setImage(with: URL(string: product.imageURL))
         titleLabel.text = product.name
         textView.text = product.desc
         self.indexPath = indexPath

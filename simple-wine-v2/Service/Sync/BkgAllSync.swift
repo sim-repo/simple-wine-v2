@@ -12,8 +12,8 @@ class BkgAllSync {
     ) {
         let interval = Date().timeIntervalSince(getLastSyncDate() ?? Date.yesterday)
         
-        if interval > FetchConstant.intervalBeforeUpdating {
-            let url = NetworkConstant.getFullPath(path: "all2")
+        if interval > FetchConfiguration.intervalBeforeUpdating {
+            let url = NetworkConfiguration.getFullPath(path: "all2")
             var request = URLRequest(url: url)
             request.httpMethod = "GET"
             self.appCompletion = appCompletion

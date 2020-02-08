@@ -54,7 +54,7 @@ struct Logger {
     // for debug purpose only: fast way to enable console logging by area
     enum PrintLogEnum: Int {
         
-        case realm, presenter, sync, bkgSync, login, warning
+        case realm, presenter, sync, bkgSync, login, warning, websocket
            
         var print: Bool {
            switch self {
@@ -68,6 +68,8 @@ struct Logger {
                return true
            case .login:
                return false
+           case .websocket:
+               return true
            case .warning:
                return false
            }

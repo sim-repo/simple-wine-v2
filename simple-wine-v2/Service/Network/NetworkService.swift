@@ -26,14 +26,14 @@ struct NetworkService {
     static func tryAgain(taskEnum: TaskEnum, err: String){
         guard let trying = runningTask[taskEnum] else { return }
         trying.dispatchGroup?.leave()
-        guard trying.tryCount < NetworkConstant.maxRetryNumber
+        guard trying.tryCount < NetworkConfiguration.maxRetryNumber
             else {
                 requestDidFinish(taskEnum: taskEnum)
                 trying.onError?(err)
                 return
         }
         
-        DispatchQueue.global().asyncAfter(deadline: .now() + .milliseconds(NetworkConstant.waitForNextTrying), qos: .userInteractive) {
+        DispatchQueue.global().asyncAfter(deadline: .now() + .milliseconds(NetworkConfiguration.waitForNextTrying), qos: .userInteractive) {
             trying.tryCount += 1
             trying.dispatchGroup?.enter()
             trying.task?()

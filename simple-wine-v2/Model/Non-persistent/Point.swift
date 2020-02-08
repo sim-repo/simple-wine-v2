@@ -47,9 +47,10 @@ class Point: Codable, PersistableModel {
     //MARK:- for testing only
     static func list()->[Point] {
         return [
-            Point(id: PointEnum.grandcru, name: "Grand Cru", logoOnLightImageURL: "logo2_grancru_on_light"),
-            Point(id: PointEnum.kuznetskiymost, name: "Кузнецкий Мост", logoOnLightImageURL: "logo2_kuznetsky_on_light"),
-            Point(id: PointEnum.depo, name: "Депо", logoOnLightImageURL: "logo_depo_on_dark"),
+            Point(id: PointEnum.grandcru, name: "Grand Cru", logoOnLightImageURL: "http://185.219.42.85:3000/Images/logo2_grancru_on_light.png"),
+            Point(id: PointEnum.kuznetskiymost, name: "Кузнецкий Мост", logoOnLightImageURL: "http://185.219.42.85:3000/Images/logo2_kuznetsky_on_light3x.png"),
+            Point(id: PointEnum.depo, name: "Депо", logoOnLightImageURL: "http://185.219.42.85:3000/Images/logo_depo_on_dark3x.png"),
         ]
     }
 }
+

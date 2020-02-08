@@ -1,7 +1,7 @@
 import Foundation
 
 
-struct FetchConstant {
+struct FetchConfiguration {
     
     static let intervalBeforeUpdating = 60.0*30 //in min
     static var intervalBkgMode: TimeInterval = 1

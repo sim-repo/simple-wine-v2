@@ -1,5 +1,5 @@
 import UIKit
-
+import Kingfisher
 
 class AuthViewController: UIViewController{
     
@@ -39,7 +39,7 @@ class AuthViewController: UIViewController{
     }
     
     private func setLogo(){
-        logoImageView.image = UIImage(named: presenter.getLogoImageURL())
+        logoImageView.kf.setImage(with: URL(string: presenter.getLogoImageURL()))
     }
     
     @IBAction func pressBack(_ sender: Any) {
