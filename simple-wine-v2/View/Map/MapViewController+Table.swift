@@ -60,8 +60,7 @@ extension MapViewController: UITableViewDataSource , UITableViewDelegate{
         switch tableView.tag {
         case 3000:
             let cell = tableView.dequeueReusableHeaderFooterView(withIdentifier: FilterSectionHeader.reuseIdentifier) as! FilterSectionHeader
-            cell.title.text = presenter.filterGetSectionTitle(section: section)
-            cell.contentView.backgroundColor = #colorLiteral(red: 0.8085502982, green: 0.8029457927, blue: 0.7642779946, alpha: 1)
+            cell.contentView.backgroundColor = Theme.bkg
             return cell
         case 4000:
             return UIView()
@@ -73,7 +72,7 @@ extension MapViewController: UITableViewDataSource , UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch tableView.tag {
         case 3000:
-            return 42
+            return section > 0 ? 20 : 0
         case 4000:
             return 0
         default:

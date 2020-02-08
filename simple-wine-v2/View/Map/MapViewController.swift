@@ -2,16 +2,22 @@ import UIKit
 
 class MapViewController: UIViewController {
     
+    @IBOutlet var backgroundView: UIView!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var selectedFilterCollectionView: UICollectionView!
     @IBOutlet weak var filterTableView: UITableView!
     @IBOutlet weak var productTableView: UITableView!
     @IBOutlet weak var searchView: UIView!
-    @IBOutlet weak var sortButton: DropDownButton!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var favouriteButton: UIButton!
     @IBOutlet weak var categoryHighlightView: UIView!
     @IBOutlet weak var backButton: UIButton!
+    
+    @IBOutlet weak var productMainView: UIView!
+    @IBOutlet weak var separator1TopMenuView: UIView!
+    @IBOutlet weak var separator2TopMenuView: UIView!
+    
+    
     
     @IBOutlet weak var selectedFilterHeightConstraint: NSLayoutConstraint!
     
@@ -23,49 +29,65 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         registerNib()
-        selectedFilterHeightConstraint.constant = 1
+        selectedFilterHeightConstraint.constant = 0 //disabled 1
         categoryHighlightView.isHidden = true
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         presenter.setView(view: self)
+        backgroundView.backgroundColor = Theme.bkg
         setupTables()
         setupCollections()
         setupSearchView()
-        setupSortButton()
         setupSearchBar()
         setupFavouriteNumber()
         setupBackButton()
+        setupSeparator()
+        setupProductMainContainerView()
     }
     
     private func setupTables(){
         filterTableView.allowsSelection = false
         productTableView.allowsSelection = false
         
-        productTableView.layer.borderColor = #colorLiteral(red: 0.664042294, green: 0.660097301, blue: 0.6670764089, alpha: 1)
-        productTableView.layer.borderWidth = 1.0
+        productTableView.layer.borderColor = Theme.borderOnBkg.cgColor
+        productTableView.layer.borderWidth = 0.0
+        
+        filterTableView.backgroundColor = Theme.bkg
+        productTableView.backgroundColor = Theme.bkg
     }
     
     private func setupCollections(){
-        categoryCollectionView.layer.borderColor = #colorLiteral(red: 0.664042294, green: 0.660097301, blue: 0.6670764089, alpha: 1)
-        categoryCollectionView.layer.borderWidth = 1.0
+        //categoryCollectionView.layer.borderColor = Theme.borderOnBkg.cgColor
+       // categoryCollectionView.layer.borderWidth = 1.0
+        
+        categoryCollectionView.backgroundColor = Theme.bkg
+        selectedFilterCollectionView.backgroundColor = Theme.bkg
+    }
+    
+    private func setupProductMainContainerView(){
+        productMainView.addPieceOfShadow()
+        //productMainView.hideShadow(isHidden: true)
+        productMainView.backgroundColor = Theme.bkg
+    }
+    
+    private func setupSeparator(){
+        separator1TopMenuView.backgroundColor = Theme.borderOnBkg
+        separator2TopMenuView.backgroundColor = Theme.borderOnBkg
     }
     
     private func setupSearchView(){
-        searchView.layer.borderWidth = 1
-        searchView.layer.borderColor = #colorLiteral(red: 0.664042294, green: 0.660097301, blue: 0.6670764089, alpha: 1)
-    }
-    
-    private func setupSortButton(){
-        sortButton.setupPresenter(sortablePresenter: presenter)
-        sortButton.layer.borderWidth = 1
-        sortButton.layer.borderColor = #colorLiteral(red: 0.664042294, green: 0.660097301, blue: 0.6670764089, alpha: 1)
+     //   searchView.layer.borderWidth = 1
+       // searchView.layer.borderColor = Theme.borderOnBkg.cgColor
     }
     
     private func setupSearchBar(){
         searchBar.delegate = self
-        searchBar.barTintColor = #colorLiteral(red: 0.8830244541, green: 0.8787537813, blue: 0.8263712525, alpha: 1)
+        searchBar.barTintColor = .white
+        searchBar.searchBarStyle = .minimal
+        searchBar.layer.borderWidth = 0
+        searchBar.layer.borderColor = UIColor.clear.cgColor
     }
     
     private func setupFavouriteNumber() {
@@ -138,9 +160,9 @@ extension MapViewController: PresentableMapView {
     
     func selectedFilterReloadData() {
         if self.presenter.selectedFilterNumberOfRowsInSection() > 0 {
-            self.selectedFilterHeightConstraint.constant = 30
+            self.selectedFilterHeightConstraint.constant = 0 // disabled 30
         } else {
-            self.selectedFilterHeightConstraint.constant = 1
+            self.selectedFilterHeightConstraint.constant = 0 //disabled 1
         }
         self.selectedFilterCollectionView.reloadData()
     }
