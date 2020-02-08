@@ -34,11 +34,8 @@ class AuthViewController: UIViewController{
     }
     
     private func setButtons(){
-        let image = getSystemImage(name: "arrow.right.circle", pointSize: Theme.buttonSize, color: Theme.buttonArrowColor)
-        enterButton.setImage(image, for: .normal)
-        
-        let image2 = getSystemImage(name: "arrow.left.circle", pointSize: Theme.buttonSize, color: Theme.buttonArrowColor)
-        backButton.setImage(image2, for: .normal)
+        enterButton.setImage(UIImage(named: "RightArrowButton"), for: .normal)
+        backButton.setImage(UIImage(named: "LeftArrowButton"), for: .normal)
     }
     
     private func setLogo(){

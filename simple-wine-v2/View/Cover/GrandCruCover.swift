@@ -12,8 +12,7 @@ class GrandCruCover: CoverView {
     
     
     override func setupOutlets(){
-        let image = getSystemImage(name: "arrow.left.circle", pointSize: Theme.buttonSize, color: Theme.buttonCloseColor)
-        backButton.setImage(image, for: .normal)
+        backButton.setImage(UIImage(named: "LeftArrowButton"), for: .normal)
     }
     
     @IBAction func pressEnter(_ sender: Any) {

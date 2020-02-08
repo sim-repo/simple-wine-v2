@@ -27,7 +27,11 @@ class FilterTableViewCell: UITableViewCell {
              filterButton.isHidden = hidden
         }
        
-        filterButton.setImage(UIImage(systemName: didSelect ? "square.fill" : "square"), for: .normal)
+        if #available(iOS 13.0, *) {
+            filterButton.setImage(UIImage(systemName: didSelect ? "square.fill" : "square"), for: .normal)
+        } else {
+            filterButton.setImage(UIImage(named: didSelect ? "checkbox.fill" : "checkbox"), for: .normal)
+        }
     }
     
     @IBAction func doPressTitle(_ sender: Any) {

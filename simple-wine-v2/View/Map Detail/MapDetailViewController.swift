@@ -33,12 +33,11 @@ class MapDetailViewController: UIViewController {
     }
     
     private func setCloseButton(){
-        let image = getSystemImage(name: "xmark.octagon", pointSize: 20, color: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
-        closeButton.setImage(image, for: .normal)
+        closeButton.setImage(UIImage(named: "RedCrossButton"), for: .normal)
     }
     
     private func setLikeButton(isLiked: Bool) {
-        let image = getSystemImage(name: "heart", pointSize: 20, color:  isLiked ? #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1) : #colorLiteral(red: 0.7517493367, green: 0.7518768311, blue: 0.751732409, alpha: 1) )
+        let image = UIImage(named: isLiked ? "LikeButton" : "DislikeButton")
         likeButton.setImage(image, for: .normal)
     }
     

@@ -16,8 +16,7 @@ class FavouriteViewController: UIViewController {
     }
     
     private func setupOutlets(){
-        let image = getSystemImage(name: "arrow.left.circle", pointSize: 20, color: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1))
-        backButton.setImage(image, for: .normal)
+        backButton.setImage(UIImage(named: "LeftArrowButton"), for: .normal)
     }
     
     @IBAction func pressBack(_ sender: Any) {

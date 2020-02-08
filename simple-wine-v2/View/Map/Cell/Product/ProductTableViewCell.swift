@@ -35,7 +35,7 @@ class ProductTableViewCell: UITableViewCell {
     }
     
     private func setLikeButton(isLiked: Bool) {
-        let image = getSystemImage(name: "heart", pointSize: 12, color:  isLiked ? #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1) : #colorLiteral(red: 0.7517493367, green: 0.7518768311, blue: 0.751732409, alpha: 1) )
+        let image = UIImage(named: isLiked ? "LikeButton" : "DislikeButton")
         likeButton.setImage(image, for: .normal)
     }
 }

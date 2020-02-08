@@ -54,7 +54,7 @@ struct Logger {
     // for debug purpose only: fast way to enable console logging by area
     enum PrintLogEnum: Int {
         
-        case realm, presenter, presenterCallsFromSync, presenterCallsFromView, sync, network, viewReloadData, login, pagination, warning
+        case realm, presenter, sync, bkgSync, login, warning
            
         var print: Bool {
            switch self {
@@ -62,19 +62,11 @@ struct Logger {
                return true
            case .presenter:
                return false
-           case .presenterCallsFromSync:
-               return false
-           case .presenterCallsFromView:
-               return false
            case .sync:
                return false
-           case .network:
-               return false
-           case .viewReloadData:
-               return false
+           case .bkgSync:
+               return true
            case .login:
-               return false
-           case .pagination:
                return false
            case .warning:
                return false

@@ -9,6 +9,7 @@ struct NetworkConstant {
     static let maxRetryNumber = 3
     static let waitForNextTrying = 50 // in millisec
     
+    
     static func getFullPath(path: String) -> URL {
         let url = URL(string: basePath + "/" + path)
         return url!

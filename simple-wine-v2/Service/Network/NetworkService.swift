@@ -28,6 +28,7 @@ struct NetworkService {
         trying.dispatchGroup?.leave()
         guard trying.tryCount < NetworkConstant.maxRetryNumber
             else {
+                requestDidFinish(taskEnum: taskEnum)
                 trying.onError?(err)
                 return
         }
@@ -38,6 +39,11 @@ struct NetworkService {
             trying.task?()
         }
      }
+    
+    
+    static func requestDidFinish(taskEnum: TaskEnum){
+        runningTask[taskEnum] = nil
+    }
     
     
     static func runner(taskEnum: TaskEnum, task: (() -> Void)?, onError: setterOnError, dispatchGroup: DispatchGroup) {
@@ -80,6 +86,7 @@ extension NetworkService {
                 
             dispatchGroup.leave()
             // TODO: add threads
+            requestDidFinish(taskEnum: .all)
             onSuccess?(resp.points, resp.categories, resp.filters, resp.products, resp.detailMapSetting)
             syncOnSuccess?(resp.points, resp.categories, resp.filters, resp.products, resp.detailMapSetting)
             }.resume()

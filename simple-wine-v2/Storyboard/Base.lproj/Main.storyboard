@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="G3c-Wo-JUd">
     <device id="ipad10_2" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -39,7 +40,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="Hkt-no-beJ"/>
                                                     <constraint firstAttribute="width" constant="50" id="Jxw-GR-i5r"/>
                                                 </constraints>
-                                                <state key="normal" image="arrow.right.circle" catalog="system"/>
+                                                <state key="normal" image="MenuRightArrowButton"/>
                                                 <connections>
                                                     <action selector="pressGrandCru:" destination="MWt-qT-u33" eventType="touchUpInside" id="0we-LO-qVN"/>
                                                 </connections>
@@ -73,8 +74,8 @@
                                                 <rect key="frame" x="65" y="52.5" width="950" height="138"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Tk-UP-2f3">
-                                                <rect key="frame" x="1028" y="110.5" width="20" height="22"/>
-                                                <state key="normal" image="arrow.right.circle" catalog="system"/>
+                                                <rect key="frame" x="952" y="73.5" width="96" height="96"/>
+                                                <state key="normal" image="MenuRightArrowButton"/>
                                                 <connections>
                                                     <action selector="pressKuznetsky:" destination="MWt-qT-u33" eventType="touchUpInside" id="X1O-yc-Uft"/>
                                                 </connections>
@@ -102,8 +103,8 @@
                                         <rect key="frame" x="0.0" y="520" width="1080" height="290"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1iW-ne-obK">
-                                                <rect key="frame" x="1028" y="134" width="20" height="22"/>
-                                                <state key="normal" image="arrow.right.circle" catalog="system"/>
+                                                <rect key="frame" x="952" y="97" width="96" height="96"/>
+                                                <state key="normal" image="MenuRightArrowButton"/>
                                                 <connections>
                                                     <action selector="pressDepo:" destination="MWt-qT-u33" eventType="touchUpInside" id="5JI-p4-JMY"/>
                                                 </connections>
@@ -183,7 +184,7 @@
                                                     <constraint firstAttribute="width" constant="50" id="Ftc-3M-zsx"/>
                                                     <constraint firstAttribute="height" constant="50" id="fbf-DC-4Pq"/>
                                                 </constraints>
-                                                <state key="normal" image="arrow.left.circle" catalog="system"/>
+                                                <state key="normal" image="LeftArrowButton"/>
                                                 <connections>
                                                     <action selector="pressBack:" destination="R3N-At-WD7" eventType="touchUpInside" id="vbU-aT-pqg"/>
                                                 </connections>
@@ -202,7 +203,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="4qF-WE-21r"/>
                                                     <constraint firstAttribute="width" constant="30" id="UYF-fD-aYy"/>
                                                 </constraints>
-                                                <state key="normal" image="arrow.right.circle" catalog="system"/>
+                                                <state key="normal" image="MenuRightArrowButton"/>
                                                 <connections>
                                                     <action selector="pressSignIn:" destination="R3N-At-WD7" eventType="touchUpInside" id="snU-iq-kA7"/>
                                                 </connections>
@@ -388,7 +389,7 @@
                                                         <constraint firstAttribute="width" constant="25" id="TgR-4n-UBc"/>
                                                     </constraints>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <state key="normal" image="xmark.octagon" catalog="system"/>
+                                                    <state key="normal" image="RedCrossButton"/>
                                                     <connections>
                                                         <action selector="doPressFilterCancel:" destination="ZbE-L2-aZf" eventType="touchUpInside" id="VpR-HR-sxd"/>
                                                     </connections>
@@ -444,7 +445,7 @@
                                                         <constraint firstAttribute="width" constant="30" id="c5E-6e-H3D"/>
                                                     </constraints>
                                                     <color key="tintColor" red="0.1034065673" green="0.1034065673" blue="0.1034065673" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <state key="normal" image="square" catalog="system"/>
+                                                    <state key="normal" image="checkbox"/>
                                                     <connections>
                                                         <action selector="doPressFilter:" destination="Tc2-x2-t7V" eventType="touchUpInside" id="zoK-Eo-BdO"/>
                                                     </connections>
@@ -516,7 +517,7 @@
                                                         <constraint firstAttribute="height" constant="50" id="9hy-3d-SR6"/>
                                                     </constraints>
                                                     <color key="tintColor" red="0.67294574873096447" green="0.67294574873096447" blue="0.67294574873096447" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <state key="normal" image="heart" catalog="system"/>
+                                                    <state key="normal" image="DislikeButton"/>
                                                     <connections>
                                                         <action selector="doPressLike:" destination="vHQ-ao-G0M" eventType="touchUpInside" id="qMy-SQ-IRk"/>
                                                     </connections>
@@ -590,9 +591,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Viz-BF-UZy">
-                                <rect key="frame" x="20" y="20" width="20" height="22"/>
+                                <rect key="frame" x="20" y="18" width="26" height="26"/>
                                 <color key="tintColor" red="0.34083518400000001" green="0.27424863170000002" blue="0.25492493490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" image="arrow.left.circle" catalog="system">
+                                <state key="normal" image="LeftArrowButton">
                                     <color key="titleColor" red="0.34083518400000001" green="0.27424863170000002" blue="0.25492493490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
@@ -751,7 +752,7 @@
                                     <constraint firstAttribute="height" constant="40" id="NwY-E3-Jdh"/>
                                     <constraint firstAttribute="width" constant="40" id="hg9-g7-IR5"/>
                                 </constraints>
-                                <state key="normal" image="arrow.left.circle" catalog="system"/>
+                                <state key="normal" image="LeftArrowButton"/>
                                 <connections>
                                     <action selector="pressBack:" destination="Ufx-PZ-dgS" eventType="touchUpInside" id="qQi-3g-3kk"/>
                                 </connections>
@@ -817,7 +818,7 @@
                                             <constraint firstAttribute="width" constant="50" id="vuG-Io-meu"/>
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="xmark.octagon" catalog="system"/>
+                                        <state key="normal" image="RedCrossButton"/>
                                         <connections>
                                             <action selector="pressClose:" destination="aTk-jw-brz" eventType="touchUpInside" id="rZX-iu-G4O"/>
                                             <action selector="pressClose:" destination="QA0-e2-ojc" eventType="touchUpInside" id="wNc-O5-B4z"/>
@@ -907,7 +908,7 @@
                                     <constraint firstAttribute="width" constant="50" id="lUP-PZ-5ky"/>
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="xmark.octagon" catalog="system"/>
+                                <state key="normal" image="RedCrossButton"/>
                                 <connections>
                                     <action selector="pressClose:" destination="aTk-jw-brz" eventType="touchUpInside" id="KTf-TT-BW6"/>
                                 </connections>
@@ -926,7 +927,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" image="heart" catalog="system"/>
+                                <state key="normal" image="DislikeButton"/>
                                 <connections>
                                     <action selector="pressLike:" destination="aTk-jw-brz" eventType="touchUpInside" id="ky3-U7-4ru"/>
                                 </connections>
@@ -997,13 +998,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.left.circle" catalog="system" width="64" height="60"/>
-        <image name="arrow.right.circle" catalog="system" width="64" height="60"/>
-        <image name="heart" catalog="system" width="64" height="54"/>
+        <image name="DislikeButton" width="28" height="27"/>
+        <image name="LeftArrowButton" width="26" height="26"/>
+        <image name="MenuRightArrowButton" width="48" height="48"/>
+        <image name="RedCrossButton" width="20" height="20"/>
+        <image name="checkbox" width="36" height="36"/>
         <image name="logo2_grancru_on_light" width="196" height="84.5"/>
         <image name="logo2_kuznetsky_on_light" width="475" height="69"/>
         <image name="logo_depo_on_dark" width="475" height="72.5"/>
-        <image name="square" catalog="system" width="64" height="56"/>
-        <image name="xmark.octagon" catalog="system" width="64" height="56"/>
     </resources>
 </document>

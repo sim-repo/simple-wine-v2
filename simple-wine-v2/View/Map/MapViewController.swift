@@ -74,8 +74,7 @@ class MapViewController: UIViewController {
     }
     
     private func setupBackButton(){
-        let image = getSystemImage(name: "arrow.left.circle", pointSize: 20, color: #colorLiteral(red: 0.3537644148, green: 0.2710422873, blue: 0.2512474954, alpha: 1) )
-        backButton.setImage(image, for: .normal)
+        backButton.setImage(UIImage(named: "LeftArrowButton"), for: .normal)
     }
     
     private func registerNib(){

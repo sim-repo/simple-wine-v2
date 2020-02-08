@@ -20,44 +20,54 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <key>NSAllowsArbitraryLoads</key>
-        <true/>
-        <key>NSExceptionDomains</key>
-        <dict>
-            <key>simplewine.ru</key>
-            <dict>
-                <key>NSIncludesSubdomains</key>
-                <true/>
-                <key>NSThirdPartyExceptionAllowsInsecureHTTPLoads</key>
-                <true/>
-                <key>NSThirdPartyExceptionMinimumTLSVersion</key>
-                <string>TLSv1.2</string>
-                <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
-                <false/>
-            </dict>
-        </dict>
-    </dict>
-	<key>UIApplicationSceneManifest</key>
+	<key>NSAppTransportSecurity</key>
 	<dict>
-		<key>UIApplicationSupportsMultipleScenes</key>
-		<false/>
-		<key>UISceneConfigurations</key>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
 		<dict>
-			<key>UIWindowSceneSessionRoleApplication</key>
-			<array>
-				<dict>
-					<key>UISceneConfigurationName</key>
-					<string>Default Configuration</string>
-					<key>UISceneDelegateClassName</key>
-					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
-					<key>UISceneStoryboardFile</key>
-					<string>Main</string>
-				</dict>
-			</array>
+			<key>simplewine.ru</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSThirdPartyExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSThirdPartyExceptionMinimumTLSVersion</key>
+				<string>TLSv1.2</string>
+				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+				<false/>
+			</dict>
 		</dict>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>CharterITC Bold Italic.otf</string>
+		<string>LucidaGrande.ttf</string>
+		<string>CharterITC Bold.otf</string>
+		<string>CharterITC Italic.otf</string>
+		<string>CharterITC.otf</string>
+		<string>Geometria.otf</string>
+		<string>Geometria-ThinItalic.otf</string>
+		<string>Geometria-Bold.otf</string>
+		<string>Geometria-BoldItalic.otf</string>
+		<string>Geometria-ExtaBlack.otf</string>
+		<string>Geometria-ExtraBlackItalic.otf</string>
+		<string>Geometria-ExtraLight.otf</string>
+		<string>Geometria-ExtraLightItalic.otf</string>
+		<string>Geometria-Heavy.otf</string>
+		<string>Geometria-HeavyItalic.otf</string>
+		<string>Geometria-Italic.otf</string>
+		<string>Geometria-Light.otf</string>
+		<string>Geometria-LightItalic.otf</string>
+		<string>Geometria-Medium.otf</string>
+		<string>Geometria-MediumItalic.otf</string>
+		<string>Geometria-Thin.otf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>processing</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -74,29 +84,5 @@
 	<array>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 	</array>
-    <key>UIAppFonts</key>
-    <array>
-        <string>CharterITC Bold Italic.otf</string>
-        <string>LucidaGrande.ttf</string>
-        <string>CharterITC Bold.otf</string>
-        <string>CharterITC Italic.otf</string>
-        <string>CharterITC.otf</string>
-        <string>Geometria.otf</string>
-        <string>Geometria-ThinItalic.otf</string>
-        <string>Geometria-Bold.otf</string>
-        <string>Geometria-BoldItalic.otf</string>
-        <string>Geometria-ExtaBlack.otf</string>
-        <string>Geometria-ExtraBlackItalic.otf</string>
-        <string>Geometria-ExtraLight.otf</string>
-        <string>Geometria-ExtraLightItalic.otf</string>
-        <string>Geometria-Heavy.otf</string>
-        <string>Geometria-HeavyItalic.otf</string>
-        <string>Geometria-Italic.otf</string>
-        <string>Geometria-Light.otf</string>
-        <string>Geometria-LightItalic.otf</string>
-        <string>Geometria-Medium.otf</string>
-        <string>Geometria-MediumItalic.otf</string>
-        <string>Geometria-Thin.otf</string>
-    </array>
 </dict>
 </plist>

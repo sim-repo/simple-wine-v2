@@ -23,18 +23,27 @@ class PointMenuViewController: UIViewController {
     override func viewDidLoad() {
         setupButtons()
         let _ = presenter
+        setupNotification()
     }
    
     
     private func setupButtons(){
-        let image = getSystemImage(name: "arrow.right.circle", pointSize: Theme.buttonSize, color: Theme.buttonArrowColor)
-        grandcruButton.setImage(image, for: .normal)
-        
-        let image2 = getSystemImage(name: "arrow.right.circle", pointSize: Theme.buttonSize, color: Theme.buttonArrowColor)
-        kuznetskyButton.setImage(image2, for: .normal)
-        
-        let image3 = getSystemImage(name: "arrow.right.circle", pointSize: Theme.buttonSize, color: Theme.buttonArrowColor)
-        depoButton.setImage(image3, for: .normal)
+        grandcruButton.setImage(UIImage(named: "RightArrowButton"), for: .normal)
+        kuznetskyButton.setImage(UIImage(named: "RightArrowButton"), for: .normal)
+        depoButton.setImage(UIImage(named: "RightArrowButton"), for: .normal)
+    }
+    
+    
+    private func setupNotification() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.sound, .alert]) { granted, error in
+            if !granted {
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: nil, message: "Need notification", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
     }
     
 
@@ -57,6 +66,8 @@ class PointMenuViewController: UIViewController {
     }
 }
 
+
+// Presentable
 extension PointMenuViewController: PresentablePointMenuView {
 
     func enter() {

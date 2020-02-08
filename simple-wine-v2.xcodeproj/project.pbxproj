@@ -23,6 +23,10 @@
 		1644729723EDAC2C00DEDD2B /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1644729623EDAC2C00DEDD2B /* SpinnerViewController.swift */; };
 		1644729923EDAC4B00DEDD2B /* WaitIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1644729823EDAC4B00DEDD2B /* WaitIndicator.swift */; };
 		1644729C23EDAFEB00DEDD2B /* SetterablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1644729B23EDAFEB00DEDD2B /* SetterablePresenter.swift */; };
+		1644729E23EE0C4D00DEDD2B /* FetchConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1644729D23EE0C4D00DEDD2B /* FetchConstant.swift */; };
+		164472A023EE0CBC00DEDD2B /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1644729F23EE0CBC00DEDD2B /* Date+Extensions.swift */; };
+		164472A223EE0D7B00DEDD2B /* SchedulableSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164472A123EE0D7B00DEDD2B /* SchedulableSync.swift */; };
+		164472A423EE194A00DEDD2B /* BkgAllSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164472A323EE194A00DEDD2B /* BkgAllSync.swift */; };
 		16520DF723E6ED7B00AA3576 /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16520DF623E6ED7B00AA3576 /* FavouriteViewController.swift */; };
 		16520DFA23E6EEB900AA3576 /* FavouritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16520DF923E6EEB900AA3576 /* FavouritePresenter.swift */; };
 		16520DFC23E6F1DB00AA3576 /* PresentableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16520DFB23E6F1DB00AA3576 /* PresentableView.swift */; };
@@ -38,7 +42,6 @@
 		165D639823E9DF2C00428AB1 /* ParseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D639723E9DF2C00428AB1 /* ParseService.swift */; };
 		165D639B23E9EA3400428AB1 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D639A23E9EA3400428AB1 /* TestData.swift */; };
 		165DD6C623E39A0C0068D76E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165DD6C523E39A0C0068D76E /* AppDelegate.swift */; };
-		165DD6C823E39A0C0068D76E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165DD6C723E39A0C0068D76E /* SceneDelegate.swift */; };
 		165DD6CD23E39A0C0068D76E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165DD6CB23E39A0C0068D76E /* Main.storyboard */; };
 		165DD6CF23E39A0D0068D76E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 165DD6CE23E39A0D0068D76E /* Assets.xcassets */; };
 		165DD6D223E39A0D0068D76E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165DD6D023E39A0D0068D76E /* LaunchScreen.storyboard */; };
@@ -132,6 +135,10 @@
 		1644729623EDAC2C00DEDD2B /* SpinnerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		1644729823EDAC4B00DEDD2B /* WaitIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitIndicator.swift; sourceTree = "<group>"; };
 		1644729B23EDAFEB00DEDD2B /* SetterablePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetterablePresenter.swift; sourceTree = "<group>"; };
+		1644729D23EE0C4D00DEDD2B /* FetchConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchConstant.swift; sourceTree = "<group>"; };
+		1644729F23EE0CBC00DEDD2B /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		164472A123EE0D7B00DEDD2B /* SchedulableSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulableSync.swift; sourceTree = "<group>"; };
+		164472A323EE194A00DEDD2B /* BkgAllSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BkgAllSync.swift; sourceTree = "<group>"; };
 		16520DF623E6ED7B00AA3576 /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
 		16520DF923E6EEB900AA3576 /* FavouritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritePresenter.swift; sourceTree = "<group>"; };
 		16520DFB23E6F1DB00AA3576 /* PresentableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentableView.swift; sourceTree = "<group>"; };
@@ -148,7 +155,6 @@
 		165D639A23E9EA3400428AB1 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		165DD6C223E39A0C0068D76E /* simple-wine-v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "simple-wine-v2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		165DD6C523E39A0C0068D76E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		165DD6C723E39A0C0068D76E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		165DD6CC23E39A0C0068D76E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		165DD6CE23E39A0D0068D76E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		165DD6D123E39A0D0068D76E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -409,7 +415,6 @@
 				165DD6E123E39AF20068D76E /* Storyboard */,
 				165DD6E223E39B080068D76E /* Resources */,
 				165DD6C523E39A0C0068D76E /* AppDelegate.swift */,
-				165DD6C723E39A0C0068D76E /* SceneDelegate.swift */,
 				165DD6D023E39A0D0068D76E /* LaunchScreen.storyboard */,
 				165DD6D323E39A0D0068D76E /* Info.plist */,
 			);
@@ -573,6 +578,7 @@
 			isa = PBXGroup;
 			children = (
 				165D638C23E9C68500428AB1 /* AllSync.swift */,
+				164472A323EE194A00DEDD2B /* BkgAllSync.swift */,
 				165DD71F23E42F780068D76E /* MapSync.swift */,
 			);
 			path = Sync;
@@ -582,6 +588,7 @@
 			isa = PBXGroup;
 			children = (
 				165DD72223E42FD70068D76E /* PresentableMapSync.swift */,
+				164472A123EE0D7B00DEDD2B /* SchedulableSync.swift */,
 			);
 			path = Sync;
 			sourceTree = "<group>";
@@ -592,6 +599,7 @@
 				165DD72723E46D300068D76E /* Sequences+Extensions.swift */,
 				16ABE8D923E6516C0065D873 /* UIImage+Extensions.swift */,
 				16520E3323E76DF800AA3576 /* UIView+Extentions.swift */,
+				1644729F23EE0CBC00DEDD2B /* Date+Extensions.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -673,6 +681,7 @@
 				16797CC323E8D378001707D3 /* ThreadConstant.swift */,
 				165D639123E9C9E400428AB1 /* TypeAliases.swift */,
 				1644729223ED901B00DEDD2B /* NetworkConstant.swift */,
+				1644729D23EE0C4D00DEDD2B /* FetchConstant.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -913,6 +922,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				164472A223EE0D7B00DEDD2B /* SchedulableSync.swift in Sources */,
 				1644729923EDAC4B00DEDD2B /* WaitIndicator.swift in Sources */,
 				16ABE8D323E62B650065D873 /* DetailMapSetting.swift in Sources */,
 				16520E0523E6FED900AA3576 /* FavouriteTableViewCell.swift in Sources */,
@@ -942,13 +952,16 @@
 				165DD72023E42F780068D76E /* MapSync.swift in Sources */,
 				1644729C23EDAFEB00DEDD2B /* SetterablePresenter.swift in Sources */,
 				1644728823ECD01B00DEDD2B /* LoggerService.swift in Sources */,
+				164472A023EE0CBC00DEDD2B /* Date+Extensions.swift in Sources */,
 				1644727C23ECCAAA00DEDD2B /* RealmFilter.swift in Sources */,
 				16520DFC23E6F1DB00AA3576 /* PresentableView.swift in Sources */,
 				16797CB523E85C77001707D3 /* AuthViewController.swift in Sources */,
 				16ABE89723E58CD50065D873 /* DropDownButton.swift in Sources */,
 				16DBA85423E827430088052B /* Point.swift in Sources */,
 				1644727E23ECCBAA00DEDD2B /* RealmProduct.swift in Sources */,
+				164472A423EE194A00DEDD2B /* BkgAllSync.swift in Sources */,
 				16DBA85223E823730088052B /* CoverPresenter.swift in Sources */,
+				1644729E23EE0C4D00DEDD2B /* FetchConstant.swift in Sources */,
 				16797CAC23E84B1F001707D3 /* CoverProtocols.swift in Sources */,
 				165DD6F023E3A0BA0068D76E /* MapPresenter+SideMenu.swift in Sources */,
 				16ABE8BE23E5B00E0065D873 /* SortablePresenter.swift in Sources */,
@@ -962,7 +975,6 @@
 				165D639023E9C6DA00428AB1 /* Setter.swift in Sources */,
 				16797CB823E85CCB001707D3 /* AuthPresenter.swift in Sources */,
 				165DD70F23E3AA780068D76E /* FilterTableViewCell.swift in Sources */,
-				165DD6C823E39A0C0068D76E /* SceneDelegate.swift in Sources */,
 				16520E0B23E71F9B00AA3576 /* FavouriteSectionHeader.swift in Sources */,
 				1644726E23ECB45C00DEDD2B /* NetworkService.swift in Sources */,
 				16ABE89523E58B590065D873 /* DropDownView.swift in Sources */,
@@ -1136,7 +1148,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78S4SSQ86F;
 				INFOPLIST_FILE = "simple-wine-v2/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1156,7 +1168,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78S4SSQ86F;
 				INFOPLIST_FILE = "simple-wine-v2/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

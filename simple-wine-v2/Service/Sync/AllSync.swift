@@ -13,15 +13,28 @@ class AllSync {
     func sync(_ onSuccess: setterOnSuccess,
               _ onError: setterOnError) {
         
+        let interval = Date().timeIntervalSince(getLastSyncDate() ?? Date.yesterday)
+        
+        if interval > FetchConstant.intervalBeforeUpdating {
+            loadFromNetwork(onSuccess, onError)
+            return
+        }
+        
         if loadFromRealm(onSuccess,
                          onError) {
             return
         }
+        
+        loadFromNetwork(onSuccess, onError)
+    }
+    
+    
+    private func loadFromNetwork(_ onSuccess: setterOnSuccess,
+                                 _ onError: setterOnError) {
         onErr = onError
         closure = getSyncClosure(onSuccess, onError)
         setReachabilityNotifier()
     }
-    
     
     
     private func getSyncClosure(_ onSuccess: setterOnSuccess,
@@ -55,6 +68,7 @@ extension AllSync {
             self.reachability.stopNotifier()
             NotificationCenter.default.removeObserver(self, name: .reachabilityChanged, object: self.reachability)
             self.closure = nil
+            self.setLastSyncDate(date: Date())
         }
         return completion
     }
@@ -112,5 +126,17 @@ extension AllSync {
           default: break
       }
     }
-        
+}
+
+//MARK:- SchedulableSync Support
+
+extension AllSync: SchedulableSync {
+    
+    func getLastSyncDate() -> Date? {
+        return UserDefaults.standard.value(forKey: String(describing: AllSync.self)) as? Date
+    }
+    
+    func setLastSyncDate(date: Date) {
+        UserDefaults.standard.setValue(date, forKey: String(describing: AllSync.self))
+    }
 }

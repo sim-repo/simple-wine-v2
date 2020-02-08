@@ -36,10 +36,22 @@ class Setter {
         return completion
     }
     
+    // on error
+    private func getBkgOnError(_ appCompletion: ((_ newData: Bool) -> Void)? = nil) -> setterOnError {
+        let completion: setterOnError = { error in
+            appCompletion?(false)
+        }
+        return completion
+    }
 
+    
     
     func allSync(_ completion: (()->Void)? = nil) {
         AllSync.shared.sync(getOnSuccess(completion), getOnError())
+    }
+    
+    func bkgAllSync(appCompletion: ((_ newData: Bool) -> Void)? = nil) {
+        BkgAllSync.shared.sync(getOnSuccess(), getBkgOnError(appCompletion), appCompletion)
     }
 }
 
