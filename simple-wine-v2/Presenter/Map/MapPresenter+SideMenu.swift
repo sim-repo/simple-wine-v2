@@ -11,7 +11,9 @@ extension MapPresenter {
     
     func prepareShownFilters(by parent: Filter) {
         
-        let filters = filterDataSource.filter{$0.parentId == parent.id && $0.categoryId == currentCategoryId}
+        let isPrice = menuMapEnum == .classic ? false : true
+        
+        let filters = filterDataSource.filter{$0.parentId == parent.id && $0.categoryId == currentCategoryId && $0.isPrice == isPrice}
         
         for filter in filters {
             tmpShownFilter.append(filter)
@@ -90,6 +92,7 @@ extension MapPresenter: ViewableFilterPresenter {
         prepareProduct()
         view?.productReloadData()
     }
+    
     
     func titleDidPress(at indexPath: IndexPath) {
         guard let filter = filterGetData(indexPath: indexPath) else { return }

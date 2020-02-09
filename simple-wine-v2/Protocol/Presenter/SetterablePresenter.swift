@@ -32,3 +32,10 @@ protocol SetterablePointMenuPresenter {
 protocol SetterableAuthPresenter {
     func setCurrentPoint(point: Point)
 }
+
+
+//MARK:- Auth
+
+protocol SetterableMapMenuPresenter {
+    func setCurrentPoint(point: Point)
+}

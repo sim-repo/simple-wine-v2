@@ -10,4 +10,5 @@ class RealmFilter: RealmBase {
     @objc dynamic var level: Int = 0
     @objc dynamic var parentTitle: String = ""
     @objc dynamic var selected = false
+    @objc dynamic var isPrice = false
 }

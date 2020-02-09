@@ -121,6 +121,7 @@ class RealmService {
             realmFilter.categoryId = filter.categoryId
             realmFilter.level = filter.level
             realmFilter.parentTitle = filter.parentTitle ?? ""
+            realmFilter.isPrice = filter.isPrice //# >> проект: тупые менеджера
             objects.append(realmFilter)
         }
         save(items: objects, update: true)
@@ -268,6 +269,7 @@ class RealmService {
                                 parentTitle: parentTitle,
                                 kind: kindId,
                                 categoryId: categoryId)
+            filter.isPrice = obj.isPrice //# >> проект: тупые менеджера
             filters.append(filter)
         }
         return filters

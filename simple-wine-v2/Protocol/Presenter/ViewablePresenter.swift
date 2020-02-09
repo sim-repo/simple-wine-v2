@@ -109,3 +109,12 @@ protocol ViewableAuthPresenter {
     
     func didPressSignIn(login: String, password: String)
 }
+
+
+//MARK:- Map Menu
+protocol ViewableMapMenuPresenter {
+    func setView(view: PresentableMapMenuView)
+    func getLogoImageURL() -> String
+    func didPressClassicMenuItem()
+    func didPressPriceMenuItem()
+}

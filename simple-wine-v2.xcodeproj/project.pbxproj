@@ -10,6 +10,11 @@
 		162144F223EEC238008C7AD0 /* KingfisherConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162144F123EEC238008C7AD0 /* KingfisherConfiguration.swift */; };
 		162144F523EEC9AC008C7AD0 /* WebsocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162144F423EEC9AC008C7AD0 /* WebsocketService.swift */; };
 		162144FF23EEDC6D008C7AD0 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 162144FE23EEDC6D008C7AD0 /* Starscream.framework */; };
+		1621450323EF56D4008C7AD0 /* ProjectTagConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1621450223EF56D4008C7AD0 /* ProjectTagConstant.swift */; };
+		1621450523EF58F6008C7AD0 /* TestData2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1621450423EF58F6008C7AD0 /* TestData2.swift */; };
+		1621450823F07445008C7AD0 /* MapMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1621450723F07445008C7AD0 /* MapMenuViewController.swift */; };
+		1621450B23F0754B008C7AD0 /* MapMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1621450A23F0754B008C7AD0 /* MapMenuPresenter.swift */; };
+		1621450D23F079DE008C7AD0 /* MenuMapConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1621450C23F079DE008C7AD0 /* MenuMapConstant.swift */; };
 		1644726E23ECB45C00DEDD2B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1644726D23ECB45C00DEDD2B /* NetworkService.swift */; };
 		1644727023ECBF9500DEDD2B /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1644726F23ECBF9500DEDD2B /* Session.swift */; };
 		1644727523ECC76500DEDD2B /* RealmBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1644727423ECC76500DEDD2B /* RealmBase.swift */; };
@@ -127,6 +132,11 @@
 		162144F623EEDC1A008C7AD0 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		162144FA23EEDC5E008C7AD0 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		162144FE23EEDC6D008C7AD0 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1621450223EF56D4008C7AD0 /* ProjectTagConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTagConstant.swift; sourceTree = "<group>"; };
+		1621450423EF58F6008C7AD0 /* TestData2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData2.swift; sourceTree = "<group>"; };
+		1621450723F07445008C7AD0 /* MapMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMenuViewController.swift; sourceTree = "<group>"; };
+		1621450A23F0754B008C7AD0 /* MapMenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMenuPresenter.swift; sourceTree = "<group>"; };
+		1621450C23F079DE008C7AD0 /* MenuMapConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuMapConstant.swift; sourceTree = "<group>"; };
 		1644726D23ECB45C00DEDD2B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		1644726F23ECBF9500DEDD2B /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		1644727423ECC76500DEDD2B /* RealmBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmBase.swift; sourceTree = "<group>"; };
@@ -273,6 +283,22 @@
 			path = Websocket;
 			sourceTree = "<group>";
 		};
+		1621450623F07426008C7AD0 /* Map Menu */ = {
+			isa = PBXGroup;
+			children = (
+				1621450723F07445008C7AD0 /* MapMenuViewController.swift */,
+			);
+			path = "Map Menu";
+			sourceTree = "<group>";
+		};
+		1621450923F07539008C7AD0 /* Map Menu */ = {
+			isa = PBXGroup;
+			children = (
+				1621450A23F0754B008C7AD0 /* MapMenuPresenter.swift */,
+			);
+			path = "Map Menu";
+			sourceTree = "<group>";
+		};
 		1644727123ECC70600DEDD2B /* Non-persistent */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,6 +431,7 @@
 			isa = PBXGroup;
 			children = (
 				165D639A23E9EA3400428AB1 /* TestData.swift */,
+				1621450423EF58F6008C7AD0 /* TestData2.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -455,10 +482,11 @@
 				16797CAD23E850C8001707D3 /* Point Menu */,
 				16797CB623E85CBA001707D3 /* Auth */,
 				16DBA85023E823690088052B /* Cover */,
-				16520DF823E6EEA900AA3576 /* Favourite */,
-				16520DFE23E6F28F00AA3576 /* Favourite Detail */,
+				1621450923F07539008C7AD0 /* Map Menu */,
 				16ABE8D423E62C930065D873 /* Map */,
 				16ABE8D523E62CA10065D873 /* Map Detail */,
+				16520DF823E6EEA900AA3576 /* Favourite */,
+				16520DFE23E6F28F00AA3576 /* Favourite Detail */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -469,10 +497,11 @@
 				16797CAE23E8560F001707D3 /* Point Menu */,
 				16797CB323E85C55001707D3 /* Auth */,
 				16DBA84D23E822D50088052B /* Cover */,
-				16520DF523E6ED0D00AA3576 /* Favourite */,
-				16520DFD23E6F26C00AA3576 /* Favourite Detail */,
+				1621450623F07426008C7AD0 /* Map Menu */,
 				165DD6DE23E39ABA0068D76E /* Map */,
 				16ABE8CD23E623CA0065D873 /* Map Detail */,
+				16520DF523E6ED0D00AA3576 /* Favourite */,
+				16520DFD23E6F26C00AA3576 /* Favourite Detail */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -709,6 +738,8 @@
 				16797CB923E89FDC001707D3 /* ColorConstant.swift */,
 				16797CC323E8D378001707D3 /* ThreadConstant.swift */,
 				165D639123E9C9E400428AB1 /* TypeAliases.swift */,
+				1621450C23F079DE008C7AD0 /* MenuMapConstant.swift */,
+				1621450223EF56D4008C7AD0 /* ProjectTagConstant.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -956,6 +987,7 @@
 				1644729923EDAC4B00DEDD2B /* WaitIndicator.swift in Sources */,
 				162144F523EEC9AC008C7AD0 /* WebsocketService.swift in Sources */,
 				16ABE8D323E62B650065D873 /* DetailMapSetting.swift in Sources */,
+				1621450523EF58F6008C7AD0 /* TestData2.swift in Sources */,
 				16520E0523E6FED900AA3576 /* FavouriteTableViewCell.swift in Sources */,
 				165DD70423E3AA0B0068D76E /* CategoryCollectionViewCell.swift in Sources */,
 				165DD6C623E39A0C0068D76E /* AppDelegate.swift in Sources */,
@@ -968,6 +1000,7 @@
 				165DD6F623E3A13C0068D76E /* Filter.swift in Sources */,
 				165DD72323E42FD70068D76E /* PresentableMapSync.swift in Sources */,
 				16797CC223E8CAD3001707D3 /* DepoCover.swift in Sources */,
+				1621450323EF56D4008C7AD0 /* ProjectTagConstant.swift in Sources */,
 				1644728A23ECD0A900DEDD2B /* RealmToken.swift in Sources */,
 				165DD72823E46D300068D76E /* Sequences+Extensions.swift in Sources */,
 				16520DFA23E6EEB900AA3576 /* FavouritePresenter.swift in Sources */,
@@ -980,6 +1013,7 @@
 				165DD70023E3A69D0068D76E /* ViewablePresenter.swift in Sources */,
 				1644727023ECBF9500DEDD2B /* Session.swift in Sources */,
 				165DD6F423E3A1140068D76E /* Category.swift in Sources */,
+				1621450B23F0754B008C7AD0 /* MapMenuPresenter.swift in Sources */,
 				165DD72023E42F780068D76E /* MapSync.swift in Sources */,
 				1644729C23EDAFEB00DEDD2B /* SetterablePresenter.swift in Sources */,
 				1644728823ECD01B00DEDD2B /* LoggerService.swift in Sources */,
@@ -991,9 +1025,11 @@
 				16DBA85423E827430088052B /* Point.swift in Sources */,
 				1644727E23ECCBAA00DEDD2B /* RealmProduct.swift in Sources */,
 				164472A423EE194A00DEDD2B /* BkgAllSync.swift in Sources */,
+				1621450D23F079DE008C7AD0 /* MenuMapConstant.swift in Sources */,
 				16DBA85223E823730088052B /* CoverPresenter.swift in Sources */,
 				1644729E23EE0C4D00DEDD2B /* FetchConfiguration.swift in Sources */,
 				16797CAC23E84B1F001707D3 /* CoverProtocols.swift in Sources */,
+				1621450823F07445008C7AD0 /* MapMenuViewController.swift in Sources */,
 				165DD6F023E3A0BA0068D76E /* MapPresenter+SideMenu.swift in Sources */,
 				16ABE8BE23E5B00E0065D873 /* SortablePresenter.swift in Sources */,
 				16DBA85623E82A0E0088052B /* PointConstant.swift in Sources */,

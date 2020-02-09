@@ -147,41 +147,57 @@ extension MapViewController: PresentableMapView {
 
     
     func filterReloadData() {
-        filterTableView.reloadData()
+        ThreadConstant.UI_THREAD {
+            self.filterTableView.reloadData()
+        }
     }
     
     func productReloadData(at indexPath: IndexPath) {
-        productTableView.reloadRows(at: [indexPath], with: .automatic)
+        ThreadConstant.UI_THREAD {
+           self.productTableView.reloadRows(at: [indexPath], with: .automatic)
+        }
     }
     
     func productReloadData() {
-        productTableView.reloadData()
+        ThreadConstant.UI_THREAD {
+           self.productTableView.reloadData()
+        }
     }
     
     func selectedFilterReloadData() {
-        if self.presenter.selectedFilterNumberOfRowsInSection() > 0 {
-            self.selectedFilterHeightConstraint.constant = 0 // disabled 30
-        } else {
-            self.selectedFilterHeightConstraint.constant = 0 //disabled 1
+        ThreadConstant.UI_THREAD {
+            if self.presenter.selectedFilterNumberOfRowsInSection() > 0 {
+                self.selectedFilterHeightConstraint.constant = 0 // disabled 30
+            } else {
+                self.selectedFilterHeightConstraint.constant = 0 //disabled 1
+            }
+            self.selectedFilterCollectionView.reloadData()
         }
-        self.selectedFilterCollectionView.reloadData()
     }
     
     func categoryReloadData() {
-        categoryCollectionView.reloadData()
+        ThreadConstant.UI_THREAD {
+            self.categoryCollectionView.reloadData()
+        }
     }
     
    func performMapDetailSegue(presenter: DetailMapPresenter) {
-        performSegue(withIdentifier: "showDetailSegue", sender: presenter)
+        ThreadConstant.UI_THREAD {
+            self.performSegue(withIdentifier: "showDetailSegue", sender: presenter)
+        }
     }
     
     func performFavouriteSegue(presenter: FavouritePresenter) {
-        performSegue(withIdentifier: "showFavouriteSegue", sender: presenter)
+        ThreadConstant.UI_THREAD {
+            self.performSegue(withIdentifier: "showFavouriteSegue", sender: presenter)
+        }
     }
     
     func favouriteNumberReload(number: Int) {
-        favouriteButton.setTitle("Выбрано: \(number)", for: .normal)
-        view.layoutIfNeeded()
+        ThreadConstant.UI_THREAD {
+            self.favouriteButton.setTitle("Выбрано: \(number)", for: .normal)
+            self.view.layoutIfNeeded()
+        }
     }
     
 }

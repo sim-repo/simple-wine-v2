@@ -39,6 +39,9 @@ class MapPresenter {
     //MARK:- sorting
     var currentSortEnum: SortEnum = .ourCase
     
+    //MARK:- selected map: classic or price
+    var menuMapEnum: MenuMapEnum = .classic
+    
     
     private init() {}
     
@@ -58,6 +61,10 @@ class MapPresenter {
     func fillAll() {
         tmpShownProducts = productDataSource.filter{ $0.categoryId == currentCategoryId}
         productSort(by: currentSortEnum)
+    }
+    
+    func setup(menuMapEnum: MenuMapEnum) {
+        self.menuMapEnum = menuMapEnum
     }
 }
 

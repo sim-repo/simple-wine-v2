@@ -41,7 +41,7 @@ class AllSync {
                                 _ onError: setterOnError) -> (()->Void)? {
         return {[weak self] in
             guard let self = self else { return }
-            let url = NetworkConfiguration.getFullPath(path: "all2")
+            let url = NetworkConfiguration.getFullPath(path: "all3")
             var request = URLRequest(url: url)
             request.httpMethod = "GET"
             NetworkService.requestAll(request, onSuccess, onError, self.getOnSuccess())

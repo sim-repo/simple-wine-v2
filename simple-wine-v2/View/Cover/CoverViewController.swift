@@ -62,7 +62,7 @@ extension CoverViewController: CoverDelegate {
 extension CoverViewController: PresentableCoverView {
     
     func enter() {
-        performSegue(withIdentifier: "showMapSegue", sender: nil)
+        performSegue(withIdentifier: "showMenuMapSegue", sender: nil)
     }
     
     func logout() {

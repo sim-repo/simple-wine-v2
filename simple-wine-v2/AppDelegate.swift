@@ -15,11 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UNUserNotificationCenter.current().delegate = self
         
+
+//        TestData2.shared.start()
         
         WebsocketService.shared.wsConnect()
-        
+
         Setter.shared.allSync()
-        
+
         KingfisherConfiguration.shared.setup()
         
         // bkg update config:

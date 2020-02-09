@@ -44,17 +44,5 @@ class Response: Codable {
         try container.encode(detailMapSetting, forKey: .detailMapSetting)
     }
     
-    
-    
-    static func single() -> Response {
-        
-        let points = Point.list()
-        let categories = Category.list()
-        let filters = Filter.list0() + Filter.list1()
-        let products = Product.list0() + Product.list1()
-        let mapSettings = DetailMapSetting.list()
-        let response = Response(points: points, categories: categories, filters: filters, products: products, detailMapSetting: mapSettings)
-        return response
-    }
 }
 

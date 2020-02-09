@@ -16,6 +16,8 @@ extension MapPresenter {
     }
     
     func addSelectedFilter(_ filter: Filter) {
+        selectedFilters.removeAll() // >> #проект: тупые менеджера
+        
         getSelectedFilter()?.append(id: filter.id, title: filter.title, parentId: filter.parentId ?? 0, kind: filter.kindId)
         view?.selectedFilterReloadData()
     }

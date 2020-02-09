@@ -46,3 +46,9 @@ protocol PresentablePointMenuView: class {
     func stopWaitIndicator()
     func showAlert(text: String)
 }
+
+
+//MARK:- Map Menu View
+protocol PresentableMapMenuView: class {
+    func enter()
+}

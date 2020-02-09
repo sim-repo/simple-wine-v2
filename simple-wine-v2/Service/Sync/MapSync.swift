@@ -9,7 +9,7 @@ class MapSync: PresentableMapSync {
                     onSuccess: (([Filter]) -> Void)?,
                     onError: ((String) -> Void)?) {
         
-        onSuccess?(Filter.list0() + Filter.list1())
+      //  onSuccess?(Filter.list0() + Filter.list1())
     }
 }
 
