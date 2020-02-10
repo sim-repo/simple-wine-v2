@@ -18,6 +18,7 @@
 		1621450F23F0AFE9008C7AD0 /* ProductSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1621450E23F0AFE9008C7AD0 /* ProductSectionHeader.xib */; };
 		1621451123F0AFF8008C7AD0 /* ProductSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1621451023F0AFF8008C7AD0 /* ProductSectionHeader.swift */; };
 		1621451323F0BA85008C7AD0 /* UIColor + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1621451223F0BA85008C7AD0 /* UIColor + Extensions.swift */; };
+		1621451523F0DF4F008C7AD0 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1621451423F0DF4F008C7AD0 /* Formatter.swift */; };
 		1644726E23ECB45C00DEDD2B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1644726D23ECB45C00DEDD2B /* NetworkService.swift */; };
 		1644727023ECBF9500DEDD2B /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1644726F23ECBF9500DEDD2B /* Session.swift */; };
 		1644727523ECC76500DEDD2B /* RealmBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1644727423ECC76500DEDD2B /* RealmBase.swift */; };
@@ -70,8 +71,6 @@
 		165DD70423E3AA0B0068D76E /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165DD70223E3AA0B0068D76E /* CategoryCollectionViewCell.swift */; };
 		165DD70F23E3AA780068D76E /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165DD70D23E3AA780068D76E /* FilterTableViewCell.swift */; };
 		165DD71423E3AA940068D76E /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165DD71223E3AA940068D76E /* ProductTableViewCell.swift */; };
-		165DD72023E42F780068D76E /* MapSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165DD71F23E42F780068D76E /* MapSync.swift */; };
-		165DD72323E42FD70068D76E /* PresentableMapSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165DD72223E42FD70068D76E /* PresentableMapSync.swift */; };
 		165DD72823E46D300068D76E /* Sequences+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165DD72723E46D300068D76E /* Sequences+Extensions.swift */; };
 		16797CAA23E84622001707D3 /* GrandCruCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16797CA923E84622001707D3 /* GrandCruCover.swift */; };
 		16797CAC23E84B1F001707D3 /* CoverProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16797CAB23E84B1F001707D3 /* CoverProtocols.swift */; };
@@ -141,6 +140,7 @@
 		1621450E23F0AFE9008C7AD0 /* ProductSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductSectionHeader.xib; sourceTree = "<group>"; };
 		1621451023F0AFF8008C7AD0 /* ProductSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSectionHeader.swift; sourceTree = "<group>"; };
 		1621451223F0BA85008C7AD0 /* UIColor + Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor + Extensions.swift"; sourceTree = "<group>"; };
+		1621451423F0DF4F008C7AD0 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		1644726D23ECB45C00DEDD2B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		1644726F23ECBF9500DEDD2B /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		1644727423ECC76500DEDD2B /* RealmBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmBase.swift; sourceTree = "<group>"; };
@@ -195,8 +195,6 @@
 		165DD70223E3AA0B0068D76E /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		165DD70D23E3AA780068D76E /* FilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
 		165DD71223E3AA940068D76E /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
-		165DD71F23E42F780068D76E /* MapSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSync.swift; sourceTree = "<group>"; };
-		165DD72223E42FD70068D76E /* PresentableMapSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableMapSync.swift; sourceTree = "<group>"; };
 		165DD72723E46D300068D76E /* Sequences+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequences+Extensions.swift"; sourceTree = "<group>"; };
 		16797CA923E84622001707D3 /* GrandCruCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrandCruCover.swift; sourceTree = "<group>"; };
 		16797CAB23E84B1F001707D3 /* CoverProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverProtocols.swift; sourceTree = "<group>"; };
@@ -632,7 +630,6 @@
 			children = (
 				165D638C23E9C68500428AB1 /* AllSync.swift */,
 				164472A323EE194A00DEDD2B /* BkgAllSync.swift */,
-				165DD71F23E42F780068D76E /* MapSync.swift */,
 			);
 			path = Sync;
 			sourceTree = "<group>";
@@ -640,7 +637,6 @@
 		165DD72123E42FC10068D76E /* Sync */ = {
 			isa = PBXGroup;
 			children = (
-				165DD72223E42FD70068D76E /* PresentableMapSync.swift */,
 				164472A123EE0D7B00DEDD2B /* SchedulableSync.swift */,
 			);
 			path = Sync;
@@ -654,6 +650,7 @@
 				16ABE8D923E6516C0065D873 /* UIImage+Extensions.swift */,
 				16520E3323E76DF800AA3576 /* UIView+Extentions.swift */,
 				1644729F23EE0CBC00DEDD2B /* Date+Extensions.swift */,
+				1621451423F0DF4F008C7AD0 /* Formatter.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -994,7 +991,6 @@
 				16797CBE23E8C17A001707D3 /* KuznetskyCover.swift in Sources */,
 				1644728423ECCEAD00DEDD2B /* RealmService.swift in Sources */,
 				165DD6F623E3A13C0068D76E /* Filter.swift in Sources */,
-				165DD72323E42FD70068D76E /* PresentableMapSync.swift in Sources */,
 				16797CC223E8CAD3001707D3 /* DepoCover.swift in Sources */,
 				1621450323EF56D4008C7AD0 /* ProjectTagConstant.swift in Sources */,
 				1644728A23ECD0A900DEDD2B /* RealmToken.swift in Sources */,
@@ -1011,7 +1007,6 @@
 				1644727023ECBF9500DEDD2B /* Session.swift in Sources */,
 				165DD6F423E3A1140068D76E /* Category.swift in Sources */,
 				1621450B23F0754B008C7AD0 /* MapMenuPresenter.swift in Sources */,
-				165DD72023E42F780068D76E /* MapSync.swift in Sources */,
 				1644729C23EDAFEB00DEDD2B /* SetterablePresenter.swift in Sources */,
 				1644728823ECD01B00DEDD2B /* LoggerService.swift in Sources */,
 				164472A023EE0CBC00DEDD2B /* Date+Extensions.swift in Sources */,
@@ -1043,6 +1038,7 @@
 				1644726E23ECB45C00DEDD2B /* NetworkService.swift in Sources */,
 				16ABE89523E58B590065D873 /* DropDownView.swift in Sources */,
 				16797CB023E85620001707D3 /* PointMenuViewController.swift in Sources */,
+				1621451523F0DF4F008C7AD0 /* Formatter.swift in Sources */,
 				16ABE8C123E5B0B60065D873 /* SortConstant.swift in Sources */,
 				16ABE8CF23E623FE0065D873 /* MapDetailViewController.swift in Sources */,
 				16DBA84F23E823450088052B /* CoverViewController.swift in Sources */,

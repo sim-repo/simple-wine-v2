@@ -15,7 +15,9 @@ class ProductTableViewCell: UITableViewCell {
         titleLabel.font = Theme.geometriaRegular(ofSize: 16)
         titleLabel.textColor = Theme.unselected
         
-        priceLabel.text = "\(product.price) ₽"
+        let formattedPrice =  Formatter.priceFormat(price: NSNumber(value: Int(product.price)), localeIdentifier: "ru_RU")
+        
+        priceLabel.text = formattedPrice
         priceLabel.font = Theme.geometriaRegular(ofSize: 16)
         priceLabel.textColor = Theme.unselected
         

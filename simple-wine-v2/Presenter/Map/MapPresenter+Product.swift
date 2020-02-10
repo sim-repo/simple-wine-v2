@@ -8,10 +8,10 @@ extension MapPresenter {
     func prepareProduct() {
         tmpShownProducts.removeAll()
         tmpShownProductSectionTitle.removeAll()
+        tmpShownProductsByFilter.removeAll()
         guard selectedFilter != nil else { return }
         
         tmpShownProducts = productDataSource.filter{$0.attributeIds.contains(selectedFilter.id)}
-        productSort(by: currentSortEnum)
         fillProductsByFilter()
     }
     
@@ -24,7 +24,10 @@ extension MapPresenter {
         if childFilters.isEmpty == false {
             for (section, filter) in childFilters.enumerated() {
                 tmpShownProductSectionTitle[section] = filter.title
-                let products = productDataSource.filter{ $0.attributeIds.contains(filter.id) }
+                var products = productDataSource.filter{ $0.attributeIds.contains(filter.id) }
+                
+                products = products.sorted { $0.price < $1.price }
+                
                 for (row, product) in products.enumerated() {
                     tmpShownProductsByFilter[IndexPath(row: row, section: section)] = product
                 }
@@ -62,36 +65,6 @@ extension MapPresenter: ViewableProductPresenter {
                 return ""
         }
         return tmpShownProductSectionTitle[section] ?? ""
-    }
-    
-    func productSort(by sortEnum: SortEnum) {
-        guard tmpShownProducts.count > 0 else { return }
-        switch sortEnum {
-        case .popularity:
-            tmpShownProducts = tmpShownProducts.sorted {
-                $0.popularity > $1.popularity
-            }
-        case .priceDown:
-            tmpShownProducts = tmpShownProducts.sorted {
-                $0.price > $1.price
-            }
-        case .priceUp:
-            tmpShownProducts = tmpShownProducts.sorted {
-                $0.price < $1.price
-            }
-        case .manufactureDown:
-            tmpShownProducts = tmpShownProducts.sorted {
-                $0.manufactureYear > $1.manufactureYear
-            }
-        case .manufactureUp:
-            tmpShownProducts = tmpShownProducts.sorted {
-                $0.manufactureYear < $1.manufactureYear
-            }
-        default:
-            tmpShownProducts = tmpShownProducts.sorted {
-                $0.name < $1.name
-            }
-        }
     }
     
     func productSearchTextDidBeginEditing() {

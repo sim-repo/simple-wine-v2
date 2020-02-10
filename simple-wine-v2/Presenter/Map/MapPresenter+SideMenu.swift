@@ -5,6 +5,13 @@ import Foundation
 
 extension MapPresenter {
     
+    func getMaxLevel() -> Int {
+        var maxLevel = filterDataSource.filter{$0.categoryId == currentCategoryId && $0.kindId == selectedFilter.kindId}.compactMap({$0.level}).max() ?? 0
+        maxLevel += 1
+        return maxLevel
+    }
+    
+    
     func resetShownFilters() {
         tmpShownFilter = filterDataSource.filter{$0.level == 0 && $0.categoryId == currentCategoryId}
     }
@@ -19,6 +26,7 @@ extension MapPresenter {
             tmpShownFilter.append(filter)
         }
     }
+    
     
     func prepareFilterSection() {
         tmpFilterSectionTitle.removeAll()
@@ -44,10 +52,11 @@ extension MapPresenter {
 //MARK:- Called by View
 
 extension MapPresenter: ViewableFilterPresenter {
-
+    
     // getters
     func filterNumberOfSections() -> Int {
-        return tmpFilterSectionTitle.count > 0 ? tmpFilterSectionTitle.count : 1
+        let maxLevel = getMaxLevel()
+        return maxLevel > 1 ? maxLevel-1 : maxLevel
     }
     
     func filterNumberOfRowsInSection(section: Int) -> Int {
@@ -90,41 +99,25 @@ extension MapPresenter: ViewableFilterPresenter {
     func filterDidPress(at indexPath: IndexPath) {
         guard let filter = filterGetData(indexPath: indexPath) else { return }
         selectedFilter = filter
+        
+        tmpShownFilter = tmpShownFilter.filter{$0.level <= filter.level}
+        prepareShownFilters(by: selectedFilter)
+        
+        let maxLevel = getMaxLevel()
+        if maxLevel > 2 {
+            let isPrice = menuMapEnum == .classic ? false : true  //# >> проект: тупые менеджера
+            if let childFilter = filterDataSource.first(where: { $0.parentId == selectedFilter.id  && $0.isPrice == isPrice}) {
+                selectedFilter = childFilter
+            }
+        }
+        
+        prepareFilterSection()
+        view?.filterReloadData()
+        
         prepareProduct()
         view?.productReloadData()
         view?.setFilterTitle(title: selectedFilter.title, volume: selectedFilter.volume.rawValue + " л")
     }
     
-    
-    func titleDidPress(at indexPath: IndexPath) {
-        guard let filter = filterGetData(indexPath: indexPath) else { return }
-        tmpShownFilter = tmpShownFilter.filter{$0.level <= filter.level}
-        prepareShownFilters(by: filter)
-        prepareFilterSection()
-        view?.filterReloadData()
-    }
 }
 
-
-//MARK:- Called by Sync
-
-extension MapPresenter {
-    
-    func getOnSuccessFilter() -> ((_ filters: [Filter]) -> Void)?  {
-        
-        let onSuccessFilter: ((_ filters: [Filter]) -> Void)? = { [weak self] filters in
-            self?.setFilterDataSource(filters: filters)
-            self?.fillAll()
-        }
-        return onSuccessFilter
-    }
-    
-    func getOnErrorFilter() -> ((_ error: String) -> Void)?  {
-        
-        let onErrorFilter: ((_ error: String) -> Void)? = { [weak self] error in
-            //log
-        }
-        return onErrorFilter
-    }
-    
-}

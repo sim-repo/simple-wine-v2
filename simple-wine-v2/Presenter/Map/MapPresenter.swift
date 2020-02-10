@@ -3,11 +3,9 @@ import Foundation
 
 class MapPresenter {
     
-    
     static var shared = MapPresenter()
     
     weak var view: PresentableMapView?
-    var mapSync: PresentableMapSync = MapSync.shared
     
     //MARK:-
     var currentPointEnum: PointEnum!
@@ -40,32 +38,13 @@ class MapPresenter {
     var favourites: [Product] = []
     
     //MARK:- sorting
-    var currentSortEnum: SortEnum = .ourCase
+    var currentSortEnum: SortEnum = .priceUp
     
     //MARK:- selected map: classic or price
     var menuMapEnum: MenuMapEnum = .classic
     
-    
-    private init() {}
-   
-    
-    func preload(pointEnum: PointEnum) {
-        if currentPointEnum == nil {
-            currentPointEnum = pointEnum
-        }
-        ThreadConstant.SERIAL_THREAD { [weak self] in
-            guard let self = self else { return }
-            self.mapSync.syncFilter(pointEnum: self.currentPointEnum,
-                                    onSuccess: self.getOnSuccessFilter(),
-                                    onError: self.getOnErrorFilter())
-        }
-    }
-    
-    func fillAll() {
-        tmpShownProducts = productDataSource.filter{ $0.categoryId == currentCategoryId}
-        productSort(by: currentSortEnum)
-    }
-    
+    private init(){}
+
     func setup(menuMapEnum: MenuMapEnum) {
         self.menuMapEnum = menuMapEnum
     }
@@ -91,7 +70,7 @@ extension MapPresenter: ViewableMapPresenter {
         resetShownFilters()
         prepareFilterSection()
         prepareProduct()
-        self.view?.setFilterTitle(title: selectedFilter.title, volume: selectedFilter.volume.rawValue)
+        self.view?.setFilterTitle(title: selectedFilter.title, volume: selectedFilter.volume.rawValue + " л")
     }
     
     func back() {
@@ -162,16 +141,6 @@ extension MapPresenter: SetterableMapPresenter {
     }
 }
 
-
-//MARK:- Sortable
-
-extension MapPresenter: SortablePresenter {
-    func didSortSelect(sortEnum: SortEnum) {
-        currentSortEnum = sortEnum
-        productSort(by: sortEnum)
-        view?.productReloadData()
-    }
-}
 
 //MARK:- Favourite Presenter Delegate
 

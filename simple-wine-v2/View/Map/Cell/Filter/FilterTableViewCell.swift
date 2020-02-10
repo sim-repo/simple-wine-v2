@@ -20,7 +20,6 @@ class FilterTableViewCell: UITableViewCell {
     }
     
     @IBAction func doPressTitle(_ sender: Any) {
-        presenter.titleDidPress(at: indexPath)
         presenter.filterDidPress(at: indexPath)
     }
 }

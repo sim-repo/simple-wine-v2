@@ -25,9 +25,19 @@ extension MapPresenter: ViewableCategoryPresenter {
         currentCategoryId = categoryGetData(indexPath: indexPath)?.id ?? 0
         resetShownFilters()
         selectedFilter = filterDataSource.first(where: {$0.categoryId == currentCategoryId})
+        prepareShownFilters(by: selectedFilter)
+        
+        let maxLevel = getMaxLevel()
+        if maxLevel > 2 {
+            let isPrice = menuMapEnum == .classic ? false : true  //# >> проект: тупые менеджера
+            if let childFilter = filterDataSource.first(where: { $0.parentId == selectedFilter.id  && $0.isPrice == isPrice}) {
+                selectedFilter = childFilter
+            }
+        }
+        
         prepareFilterSection()
         prepareProduct()
-        view?.setFilterTitle(title: selectedFilter.title, volume: selectedFilter.volume.rawValue)
+        view?.setFilterTitle(title: selectedFilter.title, volume: selectedFilter.volume.rawValue + " л")
         view?.categoryReloadData()
         view?.filterReloadData()
         view?.productReloadData()

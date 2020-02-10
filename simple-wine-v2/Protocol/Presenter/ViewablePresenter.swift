@@ -29,7 +29,6 @@ protocol ViewableFilterPresenter {
     
     
     func filterDidPress(at indexPath: IndexPath)
-    func titleDidPress(at indexPath: IndexPath)
 }
 
 
