@@ -2,6 +2,7 @@ import UIKit
 
 class FavouriteViewController: UIViewController {
     
+    @IBOutlet var bkgView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var backButton: UIButton!
     
@@ -16,6 +17,7 @@ class FavouriteViewController: UIViewController {
     }
     
     private func setupOutlets(){
+        bkgView.backgroundColor = Theme.bkgFavouriteDetail
         backButton.setImage(UIImage(named: "LeftArrowButton"), for: .normal)
     }
     
@@ -57,7 +59,7 @@ extension FavouriteViewController: UITableViewDataSource, UITableViewDelegate {
         if sectionTitle != "" {
             cell.categoryTitleLabel.text = presenter.getSectionTitle(section: section)
             cell.itemsNumberLabel.text = "\(presenter.numberOfRowsInSection(section: section))"
-            cell.contentView.backgroundColor = #colorLiteral(red: 0.83934021, green: 0.833522141, blue: 0.7933818102, alpha: 1)
+            cell.contentView.backgroundColor = Theme.bkgFavouriteSectionHeader
             return cell
         }
         return nil

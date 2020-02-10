@@ -53,6 +53,12 @@ extension MapViewController: UITableViewDataSource , UITableViewDelegate{
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch tableView.tag {
+            case 4000:
+                presenter.productDidPressDetail(indexPath: indexPath)
+            default: break
+        }
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

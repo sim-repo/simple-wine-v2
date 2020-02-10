@@ -49,7 +49,7 @@ class MapViewController: UIViewController {
     
     private func setupTables(){
         filterTableView.allowsSelection = false
-        productTableView.allowsSelection = false
+        productTableView.allowsSelection = true
         
         productTableView.layer.borderColor = Theme.borderOnBkg.cgColor
         productTableView.layer.borderWidth = 0.0

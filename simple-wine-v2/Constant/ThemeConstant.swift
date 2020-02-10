@@ -7,6 +7,9 @@ struct Theme {
     static let selectedFilterMenuItem = #colorLiteral(red: 0.6451660991, green: 0.5660883784, blue: 0.5325201154, alpha: 1)
     static let unselected = UIColor.rgba(64, 64, 64)
     static var selected = UIColor.rgba(164, 32, 63)
+    static let bkgMapDetail: UIColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+    static let bkgFavouriteDetail: UIColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+    static let bkgFavouriteSectionHeader: UIColor = #colorLiteral(red: 0.9152057767, green: 0.9097653031, blue: 0.9193876982, alpha: 1)
     
     
     private struct AppCustomFontNames {

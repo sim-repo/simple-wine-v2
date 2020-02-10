@@ -1,9 +1,10 @@
 import UIKit
-
+import Kingfisher
 
 
 class MapDetailViewController: UIViewController {
 
+    @IBOutlet var bkgView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var originalNameLabel: UILabel!
     @IBOutlet weak var russianNameLabel: UILabel!
@@ -19,12 +20,16 @@ class MapDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bkgView.backgroundColor = Theme.bkgMapDetail
         guard let presenter = presenter else { return }
         guard let product = presenter.getProduct() else { return }
         isLike = product.isLiked
         setCloseButton()
         setLikeButton(isLiked: product.isLiked)
-        imageView.image = UIImage(named: product.imageURL)
+        
+        let url = URL(string: product.imageURL)
+        imageView.kf.setImage(with: url)
+        
         originalNameLabel.text = product.name + ", \(product.manufactureYear)г."
         russianNameLabel.text = product.name
         attributesLabel.text = presenter.getAttribute()

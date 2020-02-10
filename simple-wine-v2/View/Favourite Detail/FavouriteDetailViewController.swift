@@ -1,7 +1,9 @@
 import UIKit
+import Kingfisher
 
 class FavouriteDetailViewController: UIViewController {
 
+    @IBOutlet weak var bkgView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var originalNameLabel: UILabel!
     @IBOutlet weak var russianNameLabel: UILabel!
@@ -15,9 +17,15 @@ class FavouriteDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        bkgView.backgroundColor = Theme.bkg
+    
         setCloseButton()
         guard let product = product, let presenter = presenter else { return }
-        imageView.image = UIImage(named: product.imageURL)
+        
+        let url = URL(string: product.imageURL)
+        imageView.kf.setImage(with: url)
+        
         originalNameLabel.text = product.name + ", \(product.manufactureYear)г."
         russianNameLabel.text = product.name
         attributesLabel.text = presenter.getAttribute()
