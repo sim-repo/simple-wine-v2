@@ -19,7 +19,7 @@ class MapPresenter {
     var detailMapSettingDataSource: [DetailMapSetting] = []
     
     //MARK:- selected filter
-    var selectedFilters: [SelectedFilter] = []
+    var selectedFilter: Filter!
     
     //MARK:- filter
     var tmpShownFilter: [Filter] = []
@@ -29,6 +29,9 @@ class MapPresenter {
     //MARK:- product
     var tmpShownProducts: [Product] = [] //product id: Product
     var tmpShownProductsWhenSearching: [Product] = [] // used when searching
+    
+    var tmpShownProductsByFilter = [IndexPath: Product]()
+    var tmpShownProductSectionTitle: [Int:String] = [:] //section: parent title
     
     //MARK:- category
     var currentCategoryId = 0
@@ -44,7 +47,7 @@ class MapPresenter {
     
     
     private init() {}
-    
+   
     
     func preload(pointEnum: PointEnum) {
         if currentPointEnum == nil {
@@ -72,11 +75,34 @@ class MapPresenter {
 //MARK:- Viewable
 
 extension MapPresenter: ViewableMapPresenter {
+    
+    func getMainTitle() -> String {
+        switch menuMapEnum {
+        case .classic:
+            return "Классическая винная карта"
+        default:
+            return "Винная карта по цене"
+        }
+    }
+    
     func setView(view: PresentableMapView) {
         self.view = view
+        selectedFilter = filterDataSource.first
+        resetShownFilters()
+        prepareFilterSection()
+        prepareProduct()
+        self.view?.setFilterTitle(title: selectedFilter.title, volume: selectedFilter.volume.rawValue)
+    }
+    
+    func back() {
+        selectedFilter = nil
+        tmpShownProducts.removeAll()
+        tmpShownProductsWhenSearching.removeAll()
+        tmpShownFilter.removeAll()
+        tmpFilterSectionTitle.removeAll()
+        tmpFilterSection.removeAll()
     }
 }
-
 
 //MARK:- Viewable Favourite
 
@@ -115,14 +141,13 @@ extension MapPresenter: SetterableMapPresenter {
         filterDataSource = filters
         productDataSource = products
         detailMapSettingDataSource = detailMapSettings
-        resetShownFilters()
-        prepareFilterSection()
-        fillAll()
+        selectedFilter = filters.first
     }
 
     
     func setFilterDataSource(filters: [Filter]) {
         filterDataSource = filters
+        selectedFilter = filters.first
         resetShownFilters()
         prepareFilterSection()
         view?.filterReloadData()
@@ -163,8 +188,6 @@ extension MapPresenter: DetailMapPresenterDelegate {
     func getAttributeName(kindId: Int, productAttributeIds: [Int]) -> String {
         return searchAttributeName(kindId, productAttributeIds)
     }
-    
-    
     
     func favouriteDidPressLike(product: Product, isLike: Bool) {
         

@@ -11,9 +11,9 @@ extension MapPresenter {
     
     func prepareShownFilters(by parent: Filter) {
         
-        let isPrice = menuMapEnum == .classic ? false : true
+        let isPrice = menuMapEnum == .classic ? false : true  //# >> проект: тупые менеджера
         
-        let filters = filterDataSource.filter{$0.parentId == parent.id && $0.categoryId == currentCategoryId && $0.isPrice == isPrice}
+        let filters = filterDataSource.filter{ $0.parentId == parent.id && $0.categoryId == currentCategoryId && $0.isPrice == isPrice }
         
         for filter in filters {
             tmpShownFilter.append(filter)
@@ -38,20 +38,13 @@ extension MapPresenter {
             }
         }
     }
-    
-    func filterRemove(filterId: Int) {
-        guard let filter = filterDataSource.first(where: {$0.id == filterId}) else { return }
-        filter.selected = false
-        view?.filterReloadData()
-    }
-    
 }
 
 
 //MARK:- Called by View
 
 extension MapPresenter: ViewableFilterPresenter {
-    
+
     // getters
     func filterNumberOfSections() -> Int {
         return tmpFilterSectionTitle.count > 0 ? tmpFilterSectionTitle.count : 1
@@ -79,18 +72,27 @@ extension MapPresenter: ViewableFilterPresenter {
         return title
     }
     
+    func filterIsSelected(filter: Filter) -> Bool {
+        guard let selected = selectedFilter
+            else { return false }
+        
+        if let parentId = selected.parentId,
+            let parentFilter = filterDataSource.first(where: {$0.id == parentId}) {
+            if parentFilter.id == filter.id {
+                return true
+            }
+        }
+        return filter.id == selected.id
+    }
+    
+    
     //setters
     func filterDidPress(at indexPath: IndexPath) {
         guard let filter = filterGetData(indexPath: indexPath) else { return }
-        filter.selected = !filter.selected
-        
-        if filter.selected {
-            addSelectedFilter(filter)
-        } else {
-            removeSelectedFilter(filter)
-        }
+        selectedFilter = filter
         prepareProduct()
         view?.productReloadData()
+        view?.setFilterTitle(title: selectedFilter.title, volume: selectedFilter.volume.rawValue + " л")
     }
     
     

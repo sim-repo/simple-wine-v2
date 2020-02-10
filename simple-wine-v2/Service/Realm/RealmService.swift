@@ -122,6 +122,7 @@ class RealmService {
             realmFilter.level = filter.level
             realmFilter.parentTitle = filter.parentTitle ?? ""
             realmFilter.isPrice = filter.isPrice //# >> проект: тупые менеджера
+            realmFilter.volume = filter.volume.rawValue
             objects.append(realmFilter)
         }
         save(items: objects, update: true)
@@ -270,6 +271,9 @@ class RealmService {
                                 kind: kindId,
                                 categoryId: categoryId)
             filter.isPrice = obj.isPrice //# >> проект: тупые менеджера
+            if let vol = FilterVolumeEnum.init(rawValue: obj.volume) {
+                filter.volume = vol
+            }
             filters.append(filter)
         }
         return filters

@@ -10,12 +10,13 @@ class FilterTableViewCell: UITableViewCell {
     var indexPath: IndexPath!
     var didSelect = false
     
-    func setup(_ filter: Filter, _ presenter: ViewableFilterPresenter, _ indexPath: IndexPath) {
+    func setup(_ filter: Filter, _ presenter: ViewableFilterPresenter, _ indexPath: IndexPath, _ isSelected: Bool) {
         titleButton.setTitle(filter.title, for: .normal)
         self.presenter = presenter
         self.indexPath = indexPath
         titleButton.showsTouchWhenHighlighted = true
-        didSelect = filter.selected
+        let color = isSelected ? Theme.selected : Theme.unselected
+        titleButton.setTitleColor(color, for: .normal)
     }
     
     @IBAction func doPressTitle(_ sender: Any) {

@@ -21,7 +21,7 @@ extension MapViewController: UITableViewDataSource , UITableViewDelegate{
         case 3000:
             return presenter.filterNumberOfRowsInSection(section: section)
         case 4000:
-            return presenter.productNumberOfRowsInSection()
+            return presenter.productNumberOfRowsInSection(section: section)
         default:
             return 1
         }
@@ -34,7 +34,8 @@ extension MapViewController: UITableViewDataSource , UITableViewDelegate{
         case 3000:
             let cell = tableView.dequeueReusableCell(withIdentifier: "FilterTableViewCell", for: indexPath) as! FilterTableViewCell
             if let filter = presenter.filterGetData(indexPath: indexPath) {
-                cell.setup(filter, presenter, indexPath)
+                let isSelected = presenter.filterIsSelected(filter: filter)
+                cell.setup(filter, presenter, indexPath, isSelected)
             }
             return cell
             
@@ -63,7 +64,12 @@ extension MapViewController: UITableViewDataSource , UITableViewDelegate{
             cell.contentView.backgroundColor = Theme.bkg
             return cell
         case 4000:
-            return UIView()
+             let cell = tableView.dequeueReusableHeaderFooterView(withIdentifier: ProductSectionHeader.reuseIdentifier) as! ProductSectionHeader
+             cell.titleLabel.text = (presenter as ViewableProductPresenter).getSectionTitle(section: section)
+             cell.titleLabel.font = Theme.charterBold(ofSize: 17)
+             cell.titleLabel.textColor = Theme.unselected
+             cell.contentView.backgroundColor = Theme.bkg
+             return cell
         default:
             return UIView()
         }
@@ -74,7 +80,7 @@ extension MapViewController: UITableViewDataSource , UITableViewDelegate{
         case 3000:
             return section > 0 ? 20 : 0
         case 4000:
-            return 0
+            return 60
         default:
             return 0
         }

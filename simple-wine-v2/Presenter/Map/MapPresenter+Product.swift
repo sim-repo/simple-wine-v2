@@ -6,50 +6,30 @@ import Foundation
 extension MapPresenter {
     
     func prepareProduct() {
-        
         tmpShownProducts.removeAll()
+        tmpShownProductSectionTitle.removeAll()
+        guard selectedFilter != nil else { return }
         
-        guard let selectedFilters = getSelectedFilter(),
-            selectedFilters.filters.count > 0
-        else {
-            fillAll()
-            return
-        }
+        tmpShownProducts = productDataSource.filter{$0.attributeIds.contains(selectedFilter.id)}
+        productSort(by: currentSortEnum)
+        fillProductsByFilter()
+    }
+    
+    
+    private func fillProductsByFilter() {
         
+        let isPrice = menuMapEnum == .classic ? false : true  //# >> проект: тупые менеджера
         
-        var filteredProductsByKind = [Int: Set<Int>]() // kind: Set<productIds>
-        
-        // 1 group by
-        let groupByKind = selectedFilters.filters.group(by: \SelectedFilter.InnerFilter.kind)
-        
-        // 2 apply grouped by filters
-        for filtersPerKind in groupByKind {
-            
-            let filters = filtersPerKind.values
-            for filter in filters {
-                
-                let products = productDataSource.filter{$0.attributeIds.contains(filter.id)}
-                products.forEach{ product in
-                    var set = filteredProductsByKind[filtersPerKind.key]
-                    if set == nil {
-                        set = Set<Int>()
-                    }
-                    set?.insert(product.id)
-                    filteredProductsByKind[filtersPerKind.key] = set
+        let childFilters = filterDataSource.filter{ $0.parentId == selectedFilter.id && $0.isPrice == isPrice }
+        if childFilters.isEmpty == false {
+            for (section, filter) in childFilters.enumerated() {
+                tmpShownProductSectionTitle[section] = filter.title
+                let products = productDataSource.filter{ $0.attributeIds.contains(filter.id) }
+                for (row, product) in products.enumerated() {
+                    tmpShownProductsByFilter[IndexPath(row: row, section: section)] = product
                 }
             }
         }
-        let sets = filteredProductsByKind.map{$0.value}
-        guard !sets.isEmpty else { return }
-        var resultSet = sets[0]
-        for (_, set) in sets.enumerated() {
-            resultSet = resultSet.intersection(set)
-        }
-        for id in resultSet {
-            let product = productDataSource.first(where:{$0.id == id})
-            tmpShownProducts.append(product!)
-        }
-        productSort(by: currentSortEnum)
     }
 }
 
@@ -59,22 +39,29 @@ extension MapPresenter {
 extension MapPresenter: ViewableProductPresenter {
     
     func productNumberSections() -> Int {
-        return 1
+        return tmpShownProductSectionTitle.count > 0 ? tmpShownProductSectionTitle.count : 1
     }
     
-    func productNumberOfRowsInSection() -> Int {
-        return tmpShownProducts.count
+    func productNumberOfRowsInSection(section: Int) -> Int {
+        let items = tmpShownProductsByFilter.filter{$0.key.section == section}
+        return items.count
     }
     
     func productGetData(indexPath: IndexPath) -> Product? {
-        return tmpShownProducts[indexPath.row]
+        return tmpShownProductsByFilter[indexPath]
     }
     
-    func productGetIndexPath(product: Product) -> IndexPath?{
-        if let idx = tmpShownProducts.firstIndex(where: {$0.id == product.id}) {
-            return IndexPath(row: idx, section: 0)
+    func productGetIndexPath(product: Product) -> IndexPath? {
+        let dict = tmpShownProductsByFilter.first(where: {$0.value.id == product.id})
+        return dict?.key
+    }
+    
+    func getSectionTitle(section: Int) -> String {
+        guard tmpShownProductSectionTitle.count > 0
+            else {
+                return ""
         }
-        return nil
+        return tmpShownProductSectionTitle[section] ?? ""
     }
     
     func productSort(by sortEnum: SortEnum) {

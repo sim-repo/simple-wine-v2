@@ -24,12 +24,13 @@ extension MapPresenter: ViewableCategoryPresenter {
     func categoryDidPress(at indexPath: IndexPath) {
         currentCategoryId = categoryGetData(indexPath: indexPath)?.id ?? 0
         resetShownFilters()
+        selectedFilter = filterDataSource.first(where: {$0.categoryId == currentCategoryId})
         prepareFilterSection()
         prepareProduct()
+        view?.setFilterTitle(title: selectedFilter.title, volume: selectedFilter.volume.rawValue)
         view?.categoryReloadData()
         view?.filterReloadData()
         view?.productReloadData()
-        view?.selectedFilterReloadData()
     }
     
     func categoryIsSelected(indexPath: IndexPath) -> Bool {

@@ -4,7 +4,10 @@ import Foundation
 //MARK:- Map
 protocol ViewableMapPresenter {
     func setView(view: PresentableMapView)
+    func getMainTitle() -> String
+    func back()
 }
+
 
 protocol ViewableCategoryPresenter {
     func categoryNumberOfRowsInSection() -> Int
@@ -22,6 +25,8 @@ protocol ViewableFilterPresenter {
     func filterGetData(indexPath: IndexPath) -> Filter?
     func filterGetIndexPath(category: Category) -> IndexPath?
     func filterGetSectionTitle(section: Int) -> String
+    func filterIsSelected(filter: Filter) -> Bool
+    
     
     func filterDidPress(at indexPath: IndexPath)
     func titleDidPress(at indexPath: IndexPath)
@@ -30,9 +35,10 @@ protocol ViewableFilterPresenter {
 
 protocol ViewableProductPresenter {
     func productNumberSections() -> Int
-    func productNumberOfRowsInSection() -> Int
+    func productNumberOfRowsInSection(section: Int) -> Int
     func productGetData(indexPath: IndexPath) -> Product?
     func productGetIndexPath(product: Product) -> IndexPath?
+    func getSectionTitle(section: Int) -> String
     
     func productSearchTextDidBeginEditing()
     func productSearchTextDidChange(textSearch: String)
@@ -40,21 +46,13 @@ protocol ViewableProductPresenter {
 }
 
 
-protocol ViewableSelectedFilterPresenter {
-    func selectedFilterNumberOfRowsInSection() -> Int
-    func selectedFilterGetData(indexPath: IndexPath) -> SelectedFilter.InnerFilter?
-    func selectedFilterGetIndexPath(selecteFilter: SelectedFilter.InnerFilter) -> IndexPath?
-    
-    func selectedFilterCancelDidPress(at indexPath: IndexPath)
-}
-
 protocol ViewableFavouriteMapPresenter {
     func getFavouriteNumber() -> Int
     func favouriteDidPress()
 }
 
 
-//MARK:- DetailMap
+//MARK:- Detail Map
 protocol ViewableDetailMapPresenter {
     func getAttribute() -> String
     func getProduct() -> Product?

@@ -12,8 +12,6 @@ extension MapViewController: UICollectionViewDataSource {
         switch collectionView.tag {
             case 1000:
                 return presenter.categoryNumberOfRowsInSection()
-            case 2000:
-                return presenter.selectedFilterNumberOfRowsInSection()
             default:
                 return 0
         }
@@ -31,13 +29,6 @@ extension MapViewController: UICollectionViewDataSource {
                 }
                 return cell
             
-            case 2000:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectedFilterCollectionViewCell", for: indexPath) as! SelectedFilterCollectionViewCell
-                if let selectedFilter = presenter.selectedFilterGetData(indexPath: indexPath) {
-                    cell.setup(selectedFilter, presenter, indexPath)
-                }
-                return cell
-            
             default:
                 return UICollectionViewCell()
         }
@@ -50,16 +41,8 @@ extension MapViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView.tag {
             case 1000:
-                if let cell = collectionView.cellForItem(at: indexPath) {
-                    let point = CGPoint(x: cell.center.x, y: cell.center.y + cell.frame.height/2)
-                    let destination = view.convert(point, from: cell.superview)
-                    setHighlight(destination: destination, duration: 0.5)
-                }
                 presenter.categoryDidPress(at: indexPath)
-            break
-            case 2000: break
             default: break
         }
     }
-    
 }

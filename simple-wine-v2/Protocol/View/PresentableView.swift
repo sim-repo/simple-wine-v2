@@ -7,11 +7,11 @@ protocol PresentableMapView: class {
     func filterReloadData()
     func productReloadData()
     func productReloadData(at indexPath: IndexPath)
-    func selectedFilterReloadData()
     func categoryReloadData()
     func performMapDetailSegue(presenter: DetailMapPresenter)
     func performFavouriteSegue(presenter: FavouritePresenter)
     func favouriteNumberReload(number: Int)
+    func setFilterTitle(title: String, volume: String)
 }
 
 

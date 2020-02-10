@@ -37,7 +37,7 @@ class PointMenuViewController: UIViewController {
     private func setupNotification() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.sound, .alert]) { granted, error in
             if !granted {
-                DispatchQueue.main.async {
+                ThreadConstant.UI_THREAD {
                     let alert = UIAlertController(title: nil, message: "Need notification", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
@@ -84,11 +84,13 @@ extension PointMenuViewController: PresentablePointMenuView {
     }
     
     func showAlert(text: String) {
-        let alert = UIAlertController(title: "Что-то пошло не так..",
-                                      message: text,
-                                      preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        ThreadConstant.UI_THREAD {
+             let alert = UIAlertController(title: "Что-то пошло не так..",
+                                                     message: text,
+                                                     preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 }
 

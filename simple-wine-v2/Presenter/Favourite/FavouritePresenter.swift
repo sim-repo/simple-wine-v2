@@ -52,7 +52,7 @@ class FavouritePresenter {
                for (row, val) in products.enumerated() {
                    productsByCategory[IndexPath(row: row, section: section)] = val
                }
-           }
+        }
     }
 }
 
@@ -75,7 +75,7 @@ extension FavouritePresenter: ViewableFavouritePresenter {
     }
     
     func getIndexPath(product: Product) -> IndexPath? {
-         let dict = productsByCategory.first(where: {$0.value.id == product.id})
+        let dict = productsByCategory.first(where: {$0.value.id == product.id})
         return dict?.key
     }
     

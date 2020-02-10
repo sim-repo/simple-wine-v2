@@ -349,6 +349,7 @@ class TestData2 {
             for (level0FilterIndex, level0FilterTitle) in filterCategory.getLevel0().enumerated() {
                 kindId += 1
                 let filterLevel0 = Filter(id: filterId, pointEnum: pointEnum, title: level0FilterTitle, parentId: nil, level: 0, parentTitle: nil, kind: kindId, categoryId: categoryIndex)
+                filterLevel0.volume = .v_075
                 filters.append(filterLevel0)
                 filterId += 1
                 
@@ -368,6 +369,7 @@ class TestData2 {
                 for (level1FilterIndex, level1FilterTitle) in filterCategory.getLevel1Price(by: level0FilterIndex).enumerated() {
                     let filterLevelPrice = Filter(id: filterId, pointEnum: pointEnum, title: level1FilterTitle, parentId: filterLevel0.id, level: 1, parentTitle: filterLevel0.title, kind: kindId, categoryId: categoryIndex)
                     filterLevelPrice.isPrice = true
+                    filterLevelPrice.volume = .v_075
                     filters.append(filterLevelPrice)
                     filterId += 1
                 }
@@ -376,6 +378,7 @@ class TestData2 {
                 
                 for (level1FilterIndex, level1FilterTitle) in filterCategory.getLevel1(by: level0FilterIndex).enumerated() {
                     let filterLevel1 = Filter(id: filterId, pointEnum: pointEnum, title: level1FilterTitle, parentId: filterLevel0.id, level: 1, parentTitle: filterLevel0.title, kind: kindId, categoryId: categoryIndex)
+                    filterLevel1.volume = .v_075
                     filters.append(filterLevel1)
                     
                     
@@ -396,7 +399,7 @@ class TestData2 {
                     
                     for (_, level2FilterTitle) in filterCategory.getLevel2(by: level0FilterIndex, by: level1FilterIndex).enumerated() {
                         let filterLevel2 = Filter(id: filterId, pointEnum: pointEnum, title: level2FilterTitle, parentId: filterLevel1.id, level: 2, parentTitle: filterLevel1.title, kind: kindId, categoryId: categoryIndex)
-                        
+                        filterLevel2.volume = .v_075
                         filters.append(filterLevel2)
                         for _ in 0...2 {
                             let product = createProduct(name: level0FilterTitle + " #\(productId)",
