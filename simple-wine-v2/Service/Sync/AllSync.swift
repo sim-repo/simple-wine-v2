@@ -77,16 +77,12 @@ extension AllSync {
     private func loadFromRealm(_ onSuccess: setterOnSuccess,
                                _ onError: setterOnError) -> Bool {
         
-        guard let points = RealmService.loadPoints(),
-        let categories = RealmService.loadCategories(),
-        let filters = RealmService.loadFilters(),
-        let products = RealmService.loadProducts(),
-        let settings = RealmService.loadDetailMapSettings()
+        guard let points = RealmService.loadPoints()
         else {
             return false
         }
         // TODO: add threads
-        onSuccess?(points, categories, filters, products, settings)
+        onSuccess?(points)
         return true
     }
 }

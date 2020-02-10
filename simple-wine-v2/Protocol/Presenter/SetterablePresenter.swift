@@ -9,12 +9,9 @@ protocol SetterableMapPresenter {
                            products: [Product],
                            detailMapSettings: [DetailMapSetting])
     
-    
-    
-    func setCategoryDataSource(categories: [Category])
-    func setFilterDataSource(filters: [Filter])
-    func setProductDataSource(products: [Product])
     func setCurrentPoint(pointEnum: PointEnum)
+    
+    func clear()
 }
 
 //MARK:- Point Menu

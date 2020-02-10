@@ -87,10 +87,6 @@
 		16797CC723E8D7B4001707D3 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16797CC623E8D7B4001707D3 /* Response.swift */; };
 		16797CC923E8ED62001707D3 /* Test.json in Resources */ = {isa = PBXBuildFile; fileRef = 16797CC823E8ED62001707D3 /* Test.json */; };
 		16797CCD23E8F69F001707D3 /* TestParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16797CCC23E8F69F001707D3 /* TestParse.swift */; };
-		16ABE89523E58B590065D873 /* DropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABE89423E58B590065D873 /* DropDownView.swift */; };
-		16ABE89723E58CD50065D873 /* DropDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABE89623E58CD50065D873 /* DropDownButton.swift */; };
-		16ABE8BE23E5B00E0065D873 /* SortablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABE8BD23E5B00E0065D873 /* SortablePresenter.swift */; };
-		16ABE8C123E5B0B60065D873 /* SortConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABE8C023E5B0B60065D873 /* SortConstant.swift */; };
 		16ABE8C823E5EA660065D873 /* FilterSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABE8C723E5EA660065D873 /* FilterSectionHeader.swift */; };
 		16ABE8CA23E5EA750065D873 /* FilterSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16ABE8C923E5EA750065D873 /* FilterSectionHeader.xib */; };
 		16ABE8CF23E623FE0065D873 /* MapDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABE8CE23E623FE0065D873 /* MapDetailViewController.swift */; };
@@ -211,10 +207,6 @@
 		16797CC623E8D7B4001707D3 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		16797CC823E8ED62001707D3 /* Test.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Test.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		16797CCC23E8F69F001707D3 /* TestParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestParse.swift; sourceTree = "<group>"; };
-		16ABE89423E58B590065D873 /* DropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownView.swift; sourceTree = "<group>"; };
-		16ABE89623E58CD50065D873 /* DropDownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownButton.swift; sourceTree = "<group>"; };
-		16ABE8BD23E5B00E0065D873 /* SortablePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortablePresenter.swift; sourceTree = "<group>"; };
-		16ABE8C023E5B0B60065D873 /* SortConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortConstant.swift; sourceTree = "<group>"; };
 		16ABE8C723E5EA660065D873 /* FilterSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSectionHeader.swift; sourceTree = "<group>"; };
 		16ABE8C923E5EA750065D873 /* FilterSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterSectionHeader.xib; sourceTree = "<group>"; };
 		16ABE8CE23E623FE0065D873 /* MapDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailViewController.swift; sourceTree = "<group>"; };
@@ -558,7 +550,6 @@
 			isa = PBXGroup;
 			children = (
 				165DD6FF23E3A69D0068D76E /* ViewablePresenter.swift */,
-				16ABE8BD23E5B00E0065D873 /* SortablePresenter.swift */,
 				1644729B23EDAFEB00DEDD2B /* SetterablePresenter.swift */,
 			);
 			path = Presenter;
@@ -709,24 +700,13 @@
 			isa = PBXGroup;
 			children = (
 				1644729523EDAC2100DEDD2B /* waiter */,
-				16ABE89323E58B330065D873 /* drop-down menu */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		16ABE89323E58B330065D873 /* drop-down menu */ = {
-			isa = PBXGroup;
-			children = (
-				16ABE89423E58B590065D873 /* DropDownView.swift */,
-				16ABE89623E58CD50065D873 /* DropDownButton.swift */,
-			);
-			path = "drop-down menu";
 			sourceTree = "<group>";
 		};
 		16ABE8BF23E5B0960065D873 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
-				16ABE8C023E5B0B60065D873 /* SortConstant.swift */,
 				16DBA85523E82A0E0088052B /* PointConstant.swift */,
 				16797CB923E89FDC001707D3 /* ThemeConstant.swift */,
 				16797CC323E8D378001707D3 /* ThreadConstant.swift */,
@@ -1013,7 +993,6 @@
 				1644727C23ECCAAA00DEDD2B /* RealmFilter.swift in Sources */,
 				16520DFC23E6F1DB00AA3576 /* PresentableView.swift in Sources */,
 				16797CB523E85C77001707D3 /* AuthViewController.swift in Sources */,
-				16ABE89723E58CD50065D873 /* DropDownButton.swift in Sources */,
 				16DBA85423E827430088052B /* Point.swift in Sources */,
 				1644727E23ECCBAA00DEDD2B /* RealmProduct.swift in Sources */,
 				164472A423EE194A00DEDD2B /* BkgAllSync.swift in Sources */,
@@ -1023,7 +1002,6 @@
 				16797CAC23E84B1F001707D3 /* CoverProtocols.swift in Sources */,
 				1621450823F07445008C7AD0 /* MapMenuViewController.swift in Sources */,
 				165DD6F023E3A0BA0068D76E /* MapPresenter+SideMenu.swift in Sources */,
-				16ABE8BE23E5B00E0065D873 /* SortablePresenter.swift in Sources */,
 				16DBA85623E82A0E0088052B /* PointConstant.swift in Sources */,
 				16797CC723E8D7B4001707D3 /* Response.swift in Sources */,
 				1644727723ECC77800DEDD2B /* RealmCategory.swift in Sources */,
@@ -1036,10 +1014,8 @@
 				165DD70F23E3AA780068D76E /* FilterTableViewCell.swift in Sources */,
 				16520E0B23E71F9B00AA3576 /* FavouriteSectionHeader.swift in Sources */,
 				1644726E23ECB45C00DEDD2B /* NetworkService.swift in Sources */,
-				16ABE89523E58B590065D873 /* DropDownView.swift in Sources */,
 				16797CB023E85620001707D3 /* PointMenuViewController.swift in Sources */,
 				1621451523F0DF4F008C7AD0 /* Formatter.swift in Sources */,
-				16ABE8C123E5B0B60065D873 /* SortConstant.swift in Sources */,
 				16ABE8CF23E623FE0065D873 /* MapDetailViewController.swift in Sources */,
 				16DBA84F23E823450088052B /* CoverViewController.swift in Sources */,
 				16ABE8C823E5EA660065D873 /* FilterSectionHeader.swift in Sources */,

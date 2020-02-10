@@ -45,19 +45,23 @@ extension MapPresenter: ViewableProductPresenter {
         return tmpShownProductSectionTitle.count > 0 ? tmpShownProductSectionTitle.count : 1
     }
     
+    
     func productNumberOfRowsInSection(section: Int) -> Int {
         let items = tmpShownProductsByFilter.filter{$0.key.section == section}
         return items.count
     }
     
+    
     func productGetData(indexPath: IndexPath) -> Product? {
         return tmpShownProductsByFilter[indexPath]
     }
+    
     
     func productGetIndexPath(product: Product) -> IndexPath? {
         let dict = tmpShownProductsByFilter.first(where: {$0.value.id == product.id})
         return dict?.key
     }
+    
     
     func getSectionTitle(section: Int) -> String {
         guard tmpShownProductSectionTitle.count > 0
@@ -67,12 +71,13 @@ extension MapPresenter: ViewableProductPresenter {
         return tmpShownProductSectionTitle[section] ?? ""
     }
     
+    
     func productSearchTextDidBeginEditing() {
         tmpShownProductsWhenSearching = tmpShownProducts
     }
     
+    
     func productSearchTextDidChange(textSearch: String) {
-        
         if textSearch == "" {
             tmpShownProducts = tmpShownProductsWhenSearching
         } else {
@@ -83,6 +88,7 @@ extension MapPresenter: ViewableProductPresenter {
         }
         view?.productReloadData()
     }
+    
     
     func productDidPressDetail(indexPath: IndexPath) {
         let detailMapPresenter = DetailMapPresenter()

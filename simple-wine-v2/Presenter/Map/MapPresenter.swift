@@ -37,9 +37,6 @@ class MapPresenter {
     //MARK:- favourites
     var favourites: [Product] = []
     
-    //MARK:- sorting
-    var currentSortEnum: SortEnum = .priceUp
-    
     //MARK:- selected map: classic or price
     var menuMapEnum: MenuMapEnum = .classic
     
@@ -67,10 +64,9 @@ extension MapPresenter: ViewableMapPresenter {
     func setView(view: PresentableMapView) {
         self.view = view
         selectedFilter = filterDataSource.first
-        resetShownFilters()
-        prepareFilterSection()
-        prepareProduct()
-        self.view?.setFilterTitle(title: selectedFilter.title, volume: selectedFilter.volume.rawValue + " л")
+        categoryDidPress(at: IndexPath(row: 0, section: 0 ))
+        guard let selected = selectedFilter else { return }
+        self.view?.setFilterTitle(title: selected.title, volume: selected.volume.rawValue + " л")
     }
     
     func back() {
@@ -80,6 +76,8 @@ extension MapPresenter: ViewableMapPresenter {
         tmpShownFilter.removeAll()
         tmpFilterSectionTitle.removeAll()
         tmpFilterSection.removeAll()
+        tmpShownProductsByFilter.removeAll()
+        tmpShownProductSectionTitle.removeAll()
     }
 }
 
@@ -106,8 +104,7 @@ extension MapPresenter: ViewableFavouriteMapPresenter {
 //MARK:- Setterable
 
 extension MapPresenter: SetterableMapPresenter {
-    
-    
+
     func setCurrentPoint(pointEnum: PointEnum) {
         self.currentPointEnum = pointEnum
     }
@@ -122,22 +119,22 @@ extension MapPresenter: SetterableMapPresenter {
         detailMapSettingDataSource = detailMapSettings
         selectedFilter = filters.first
     }
+    
+    func clear() {
+        selectedFilter = nil
+        categoryDataSource.removeAll()
+        filterDataSource.removeAll()
+        productDataSource.removeAll()
+        detailMapSettingDataSource.removeAll()
 
-    
-    func setFilterDataSource(filters: [Filter]) {
-        filterDataSource = filters
-        selectedFilter = filters.first
-        resetShownFilters()
-        prepareFilterSection()
-        view?.filterReloadData()
-    }
-    
-    func setCategoryDataSource(categories: [Category]) {
-        categoryDataSource = categories
-    }
-    
-    func setProductDataSource(products: [Product]) {
-        productDataSource = products
+        tmpShownProducts.removeAll()
+        tmpShownProductsWhenSearching.removeAll()
+        tmpShownFilter.removeAll()
+        tmpFilterSectionTitle.removeAll()
+        tmpFilterSection.removeAll()
+        tmpShownProductsByFilter.removeAll()
+        tmpShownProductSectionTitle.removeAll()
+        favourites.removeAll()
     }
 }
 

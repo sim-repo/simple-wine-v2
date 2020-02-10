@@ -9,18 +9,9 @@ class Setter {
     // on success
     private func getOnSuccess(_ completion: (()->Void)? = nil ) -> setterOnSuccess {
         
-        let completion: setterOnSuccess = { points, categories, filters, products, detailMapSettings in
-                     
+        let completion: setterOnSuccess = { points in
             // point menu
             (PointMenuPresenter.shared as SetterablePointMenuPresenter).setup(points)
-            
-            // map
-            (MapPresenter.shared as SetterableMapPresenter).setAllDataSources(
-                categories: categories,
-                filters: filters,
-                products: products,
-                detailMapSettings: detailMapSettings
-            )
             completion?()
         }
         return completion
@@ -60,6 +51,28 @@ class Setter {
 extension Setter {
     
     func pointMenuDidSelect(point: Point, _ completion: (()->Void)? = nil) {
+        
+        // map
+        let categories = RealmService.loadCategories(pointEnum: point.id)
+        let filters = RealmService.loadFilters(pointEnum: point.id)
+        let products = RealmService.loadProducts(pointEnum: point.id)
+        let settings = RealmService.loadDetailMapSettings()
+        
+        (MapPresenter.shared as SetterableMapPresenter).clear()
+        
+        if categories?.isEmpty == false,
+        filters?.isEmpty == false,
+        products?.isEmpty == false,
+        settings?.isEmpty == false {
+            (MapPresenter.shared as SetterableMapPresenter).setAllDataSources(
+                categories: categories!,
+                filters: filters!,
+                products: products!,
+                detailMapSettings: settings!
+            )
+        } else {
+            (PointMenuPresenter.shared as SetterablePointMenuPresenter).showAlert(text: "Нет данных по \(point.name).\nПроверьте интернет-соединение или обратитесь к службе поддержки" )
+        }
         (AuthPresenter.shared as SetterableAuthPresenter).setCurrentPoint(point: point)
         (MapMenuPresenter.shared as SetterableMapMenuPresenter).setCurrentPoint(point: point)
         (MapPresenter.shared as SetterableMapPresenter).setCurrentPoint(pointEnum: point.id)

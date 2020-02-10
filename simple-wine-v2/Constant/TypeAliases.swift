@@ -4,7 +4,7 @@ import Foundation
 //MARK:- Setter
 
 //all
-typealias setterOnSuccess =  (([Point],[Category],[Filter],[Product],[DetailMapSetting]) -> Void)?
+typealias setterOnSuccess =  (([Point]) -> Void)?
 typealias setterOnError =  ((String) -> Void)?
 
 

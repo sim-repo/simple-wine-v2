@@ -16,25 +16,28 @@ class RealmService {
     }
     
     
-    public static func loadCategories() -> [Category]? {
+    public static func loadCategories(pointEnum: PointEnum) -> [Category]? {
         guard let realm = getInstance(.unsafe) else { return nil }
-        let objects: Results<RealmCategory> = realm.objects(RealmCategory.self)
+        let filter = "pointEnum = '\(pointEnum.rawValue)'"
+        let objects: Results<RealmCategory> = realm.objects(RealmCategory.self).filter(filter)
         let categories = realmToCategories(objects)
         return categories
     }
     
     
-    public static func loadFilters() -> [Filter]? {
+    public static func loadFilters(pointEnum: PointEnum) -> [Filter]? {
         guard let realm = getInstance(.unsafe) else { return nil }
-        let objects: Results<RealmFilter> = realm.objects(RealmFilter.self)
+        let filter = "pointEnum = '\(pointEnum.rawValue)'"
+        let objects: Results<RealmFilter> = realm.objects(RealmFilter.self).filter(filter)
         let filters = realmToFilters(objects)
         return filters
     }
     
     
-    public static func loadProducts() -> [Product]? {
+    public static func loadProducts(pointEnum: PointEnum) -> [Product]? {
         guard let realm = getInstance(.unsafe) else { return nil }
-        let objects: Results<RealmProduct> = realm.objects(RealmProduct.self)
+        let filter = "pointEnum = '\(pointEnum.rawValue)'"
+        let objects: Results<RealmProduct> = realm.objects(RealmProduct.self).filter(filter)
         let products = realmToProducts(objects)
         return products
     }
@@ -101,7 +104,7 @@ class RealmService {
             let realmCategory = RealmCategory()
             realmCategory.id = category.id
             realmCategory.title = category.title
-            realmCategory.imageURL = category.imageURL
+            realmCategory.pointEnum = category.pointId
             objects.append(realmCategory)
         }
         save(items: objects, update: true)
@@ -239,8 +242,8 @@ class RealmService {
         for obj in objects {
             let id = obj.id
             let title = obj.title
-            let imageURL = obj.imageURL
-            let category = Category(id: id, title: title, imageURL: imageURL)
+            let pointEnum: PointEnum = PointEnum.init(rawValue: obj.pointEnum) ?? .unknown
+            let category = Category(id: id, title: title, pointEnum: pointEnum)
             categories.append(category)
         }
         return categories

@@ -16,12 +16,12 @@ class TestData {
     // point independed
     static func getCategories() -> [Category] {
         return [
-            Category(id: 0, title: "Игристое", imageURL: "logo-wines2"),
-            Category(id: 1, title: "Шампанское",  imageURL: "shampane-logo"),
-            Category(id: 2, title: "Вино",  imageURL: "drink-logo"),
-            Category(id: 3, title: "Десертное",  imageURL: "Set-Logo"),
-            Category(id: 4, title: "Half-Bottle",  imageURL: "juice"),
-            Category(id: 5, title: "Magnum",  imageURL: "juice")
+            Category(id: 0, title: "Игристое", pointEnum: .grandcru),
+            Category(id: 1, title: "Шампанское", pointEnum: .grandcru),
+            Category(id: 2, title: "Вино", pointEnum: .grandcru),
+            Category(id: 3, title: "Десертное", pointEnum: .grandcru),
+            Category(id: 4, title: "Half-Bottle", pointEnum: .grandcru),
+            Category(id: 5, title: "Magnum", pointEnum: .grandcru)
         ]
     }
     

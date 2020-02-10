@@ -28,39 +28,58 @@ class TestData2 {
     // point independed
     static func getCategories() -> [Category] {
         return [
-            Category(id: 0, title: "Игристое", imageURL: "logo-wines2"),
-            Category(id: 1, title: "Шампанское",  imageURL: "shampane-logo"),
-            Category(id: 2, title: "Вино",  imageURL: "drink-logo"),
-            Category(id: 3, title: "Десертное",  imageURL: "Set-Logo"),
-            Category(id: 4, title: "Half-Bottle",  imageURL: "juice"),
-            Category(id: 5, title: "Magnum",  imageURL: "juice")
+            Category(id: 0, title: "Игристое", pointEnum: .grandcru),
+            Category(id: 1, title: "Шампанское", pointEnum: .grandcru),
+            Category(id: 2, title: "Вино", pointEnum: .grandcru),
+            Category(id: 3, title: "Десертное", pointEnum: .grandcru),
+            Category(id: 4, title: "Half-Bottle", pointEnum: .grandcru),
+            Category(id: 5, title: "Magnum",  pointEnum: .grandcru),
+            
+            Category(id: 6, title: "Игристое",  pointEnum: .kuznetskiymost),
+            Category(id: 7, title: "Шампанское",  pointEnum: .kuznetskiymost),
+            Category(id: 8, title: "Вино",  pointEnum: .kuznetskiymost),
+            Category(id: 9, title: "Десертное", pointEnum: .kuznetskiymost),
+            Category(id: 10, title: "Half-Bottle",  pointEnum: .kuznetskiymost),
+            Category(id: 11, title: "Magnum",  pointEnum: .kuznetskiymost),
+            
+            Category(id: 12, title: "Игристое",  pointEnum: .depo),
+            Category(id: 13, title: "Шампанское",  pointEnum: .depo),
+            Category(id: 14, title: "Вино",   pointEnum: .depo),
+            Category(id: 15, title: "Десертное",  pointEnum: .depo),
+            Category(id: 16, title: "Half-Bottle",  pointEnum: .depo),
+            Category(id: 17, title: "Magnum",  pointEnum: .depo)
         ]
     }
     
     
     func start() {
         createFilter(pointEnum: .grandcru)
-//        for filter in filters {
-//            print("category: \(filter.categoryId), filter: \(filter.id), title: \(filter.title), parent: \(filter.parentId)")
-//        }
-//        
-//        for product in products {
-//            print("name: \(product.name), desc: \(product.price), attr: \(product.desc)")
-//        }
-//        
-                let points = Point.list()
-                let mapSettings = DetailMapSetting.list()
+        createFilter(pointEnum: .kuznetskiymost)
+        createFilter(pointEnum: .depo)
         
-                let response = Response(points: points, categories: categories, filters: filters, products: products, detailMapSetting: mapSettings)
-                TestParse.shared.encode(response: response)
+        
+        
+        //        for filter in filters {
+        //            print("category: \(filter.categoryId), filter: \(filter.id), title: \(filter.title), parent: \(filter.parentId)")
+        //        }
+        //
+        //        for product in products {
+        //            print("name: \(product.name), desc: \(product.price), attr: \(product.desc)")
+        //        }
+        //
+        let points = Point.list()
+        let mapSettings = DetailMapSetting.list()
+        
+        let response = Response(points: points, categories: categories, filters: filters, products: products, detailMapSetting: mapSettings)
+        TestParse.shared.encode(response: response)
     }
     
     
     
     // "Игристое"
     class FilterCategory0: CategoryFilterProtocol {
-
-    
+        
+        
         func getLevel0() -> [String] {
             return ["Белое","Розовое","Десертное","Magnum"]
         }
@@ -80,7 +99,7 @@ class TestData2 {
             }
             return []
         }
-
+        
         func getLevel2(by indexOfLevel0: Int, by indexOfLevel1: Int) -> [String] {
             return []
         }
@@ -344,11 +363,16 @@ class TestData2 {
     
     private func createFilter(pointEnum: PointEnum) {
         
+        let currentCategories = categories.filter({$0.pointEnum == pointEnum})
+        
+        
         for (categoryIndex, filterCategory) in filterCategories.enumerated() {
+            
+            let currentCategory = currentCategories[categoryIndex]
             
             for (level0FilterIndex, level0FilterTitle) in filterCategory.getLevel0().enumerated() {
                 kindId += 1
-                let filterLevel0 = Filter(id: filterId, pointEnum: pointEnum, title: level0FilterTitle, parentId: nil, level: 0, parentTitle: nil, kind: kindId, categoryId: categoryIndex)
+                let filterLevel0 = Filter(id: filterId, pointEnum: pointEnum, title: level0FilterTitle, parentId: nil, level: 0, parentTitle: nil, kind: kindId, categoryId: currentCategory.id)
                 filterLevel0.volume = .v_075
                 filters.append(filterLevel0)
                 filterId += 1
@@ -357,37 +381,61 @@ class TestData2 {
                 
                 if filterCategory.getLevel1(by: level0FilterIndex).count == 0 {
                     for _ in 0...2 {
-                       let product = createProduct(name: level0FilterTitle + " #\(productId)",
-                           categoryId: categoryIndex,
-                           filterId: filterLevel0.id,
-                           pointEnum: .grandcru)
+                        let product = createProduct(name: level0FilterTitle + " #\(productId)",
+                            categoryId: currentCategory.id,
+                            filterId: filterLevel0.id,
+                            pointEnum: pointEnum)
                         products.append(product)
                     }
                 }
                 
                 
                 for (level1FilterIndex, level1FilterTitle) in filterCategory.getLevel1Price(by: level0FilterIndex).enumerated() {
-                    let filterLevelPrice = Filter(id: filterId, pointEnum: pointEnum, title: level1FilterTitle, parentId: filterLevel0.id, level: 1, parentTitle: filterLevel0.title, kind: kindId, categoryId: categoryIndex)
+                    let filterLevelPrice = Filter(id: filterId, pointEnum: pointEnum, title: level1FilterTitle, parentId: filterLevel0.id, level: 1, parentTitle: filterLevel0.title, kind: kindId, categoryId: currentCategory.id)
                     filterLevelPrice.isPrice = true
                     filterLevelPrice.volume = .v_075
                     filters.append(filterLevelPrice)
                     filterId += 1
+                    
+                    for (level2FilterIndex, level2FilterTitle) in filterCategory.getLevel1(by: level1FilterIndex).enumerated() {
+                        let filterLevel2 = Filter(id: filterId, pointEnum: pointEnum, title: level2FilterTitle, parentId: filterLevelPrice.id, level: 2, parentTitle: filterLevelPrice.title, kind: kindId, categoryId: currentCategory.id)
+                        filterLevel2.volume = .v_075
+                        filterLevel2.isPrice = true
+                        filters.append(filterLevel2)
+                        filterId += 1
+                        
+                        for _ in 0...2 {
+                            let product = createProduct(name: level0FilterTitle + " #\(productId)",
+                                categoryId: currentCategory.id,
+                                filterId: filterLevel0.id,
+                                pointEnum: pointEnum)
+                            addAttribute(product: product, filterId: filterLevelPrice.id, attrName: "Цена", attrValue: level1FilterTitle)
+                            addAttribute(product: product, filterId: filterLevel2.id, attrName: level0FilterTitle, attrValue: level2FilterTitle)
+                            products.append(product)
+                        }
+                    }
                 }
                 
                 
                 
+                
+                
+                
+                
+                
+                
                 for (level1FilterIndex, level1FilterTitle) in filterCategory.getLevel1(by: level0FilterIndex).enumerated() {
-                    let filterLevel1 = Filter(id: filterId, pointEnum: pointEnum, title: level1FilterTitle, parentId: filterLevel0.id, level: 1, parentTitle: filterLevel0.title, kind: kindId, categoryId: categoryIndex)
+                    let filterLevel1 = Filter(id: filterId, pointEnum: pointEnum, title: level1FilterTitle, parentId: filterLevel0.id, level: 1, parentTitle: filterLevel0.title, kind: kindId, categoryId: currentCategory.id)
                     filterLevel1.volume = .v_075
                     filters.append(filterLevel1)
                     
                     
                     if filterCategory.getLevel2(by: level0FilterIndex, by: level1FilterIndex).count == 0 {
                         for _ in 0...2 {
-                           let product = createProduct(name: level0FilterTitle + " #\(productId)",
-                               categoryId: categoryIndex,
-                               filterId: filterLevel0.id,
-                               pointEnum: .grandcru)
+                            let product = createProduct(name: level0FilterTitle + " #\(productId)",
+                                categoryId: currentCategory.id,
+                                filterId: filterLevel0.id,
+                                pointEnum: pointEnum)
                             addAttribute(product: product, filterId: filterLevel1.id, attrName: level0FilterTitle, attrValue: level1FilterTitle)
                             products.append(product)
                         }
@@ -398,14 +446,14 @@ class TestData2 {
                     
                     
                     for (_, level2FilterTitle) in filterCategory.getLevel2(by: level0FilterIndex, by: level1FilterIndex).enumerated() {
-                        let filterLevel2 = Filter(id: filterId, pointEnum: pointEnum, title: level2FilterTitle, parentId: filterLevel1.id, level: 2, parentTitle: filterLevel1.title, kind: kindId, categoryId: categoryIndex)
+                        let filterLevel2 = Filter(id: filterId, pointEnum: pointEnum, title: level2FilterTitle, parentId: filterLevel1.id, level: 2, parentTitle: filterLevel1.title, kind: kindId, categoryId: currentCategory.id)
                         filterLevel2.volume = .v_075
                         filters.append(filterLevel2)
                         for _ in 0...2 {
                             let product = createProduct(name: level0FilterTitle + " #\(productId)",
-                                categoryId: categoryIndex,
+                                categoryId: currentCategory.id,
                                 filterId: filterLevel0.id,
-                                pointEnum: .grandcru)
+                                pointEnum: pointEnum)
                             
                             addAttribute(product: product, filterId: filterLevel1.id, attrName: level0FilterTitle, attrValue: level1FilterTitle)
                             addAttribute(product: product, filterId: filterLevel2.id, attrName: level1FilterTitle, attrValue: level2FilterTitle)
@@ -442,7 +490,7 @@ class TestData2 {
         }
         
     }
-
+    
     private func createProduct(name: String,
                                categoryId: Int,
                                filterId: Int,

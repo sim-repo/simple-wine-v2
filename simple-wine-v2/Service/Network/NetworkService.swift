@@ -87,7 +87,7 @@ extension NetworkService {
             dispatchGroup.leave()
             // TODO: add threads
             requestDidFinish(taskEnum: .all)
-            onSuccess?(resp.points, resp.categories, resp.filters, resp.products, resp.detailMapSetting)
+            onSuccess?(resp.points)
             syncOnSuccess?(resp.points, resp.categories, resp.filters, resp.products, resp.detailMapSetting)
             }.resume()
         }
