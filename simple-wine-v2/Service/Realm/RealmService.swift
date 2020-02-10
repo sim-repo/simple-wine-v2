@@ -139,17 +139,21 @@ class RealmService {
             let realmProduct = RealmProduct()
             realmProduct.id = product.id
             realmProduct.name = product.name
+            realmProduct.nameRU = product.nameRU
+            realmProduct.volume = product.volume
             realmProduct.categoryId = product.categoryId
             realmProduct.pointEnum = product.pointEnum.rawValue
             realmProduct.desc = product.desc
-            realmProduct.bigDesc = product.bigDesc
             realmProduct.price = product.price
-            realmProduct.oldPrice = product.oldPrice
-            realmProduct.popularity = product.popularity
+            realmProduct.volume = product.volume
             realmProduct.attributeIds.append(objectsIn: product.attributeIds)
             realmProduct.imageURL = product.imageURL
             realmProduct.manufactureYear = product.manufactureYear
-            realmProduct.isLiked = product.isLiked
+            realmProduct.grapes = product.grapes
+            realmProduct.country = product.country
+            realmProduct.countryIconURL = product.countryIconURL
+            realmProduct.color = product.color.rawValue
+            realmProduct.sugar = product.sugar.rawValue
             objects.append(realmProduct)
         }
         save(items: objects, update: true)
@@ -291,17 +295,23 @@ class RealmService {
         for obj in objects {
             let id = obj.id
             let name = obj.name
+            let nameRU = obj.nameRU
             let categoryId = obj.categoryId
             let pointEnum: PointEnum = PointEnum.init(rawValue: obj.pointEnum) ?? .unknown
             let desc = obj.desc
-            let bigDesc = obj.bigDesc
             let price = obj.price
-            let oldPrice = obj.oldPrice
-            let popularity = obj.popularity
+            let volume = obj.volume
             let attributeIds = Array(obj.attributeIds)
             let imageURL = obj.imageURL
             let manufactureYear = obj.manufactureYear
-            let isLiked = obj.isLiked
+            let color = obj.color
+            let colorEnum = ProductColorEnum.init(rawValue: color) ?? .unknown
+            let country = obj.country
+            let countryIconURL = obj.countryIconURL
+            let grapes = obj.grapes
+            let sugar = obj.sugar
+            let sugarEnum = ProductSugarEnum.init(rawValue: sugar) ?? .unknown
+               
             
             let product = Product(id: id,
                                   name: name,
@@ -309,13 +319,18 @@ class RealmService {
                                   categoryId: categoryId,
                                   desc: desc,
                                   price: price,
-                                  oldPrice: oldPrice,
                                   attributeIds: attributeIds,
                                   imageURL: imageURL,
-                                  popularity: popularity,
-                                  manufactureYear: manufactureYear)
-            product.bigDesc = bigDesc
-            product.isLiked = isLiked
+                                  manufactureYear: manufactureYear,
+                                  nameRU: nameRU,
+                                  volume: volume,
+                                  grapes: grapes,
+                                  color: colorEnum,
+                                  country: country,
+                                  countryIconURL: countryIconURL,
+                                  sugar: sugarEnum
+                                  )
+            
             products.append(product)
         }
         return products

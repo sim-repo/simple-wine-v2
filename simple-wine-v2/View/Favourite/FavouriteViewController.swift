@@ -5,6 +5,8 @@ class FavouriteViewController: UIViewController {
     @IBOutlet var bkgView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var removeAllButton: UIButton!
     
     var presenter: ViewableFavouritePresenter!
     
@@ -19,6 +21,11 @@ class FavouriteViewController: UIViewController {
     private func setupOutlets(){
         bkgView.backgroundColor = Theme.bkgFavouriteDetail
         backButton.setImage(UIImage(named: "LeftArrowButton"), for: .normal)
+
+        titleLabel.textColor = Theme.unselected
+        titleLabel.font = Theme.charterBold(ofSize: 17)
+        
+        removeAllButton.setTitleColor(Theme.unselected, for: .normal)
     }
     
     @IBAction func pressBack(_ sender: Any) {
@@ -30,6 +37,12 @@ class FavouriteViewController: UIViewController {
             let presenter = sender as? FavouriteDetailPresenter {
             dest.setup(presenter: presenter)
         }
+    }
+    
+    
+    @IBAction func pressRemoveAll(_ sender: Any) {
+        presenter.removeAll()
+        navigationController?.popViewController(animated: true)
     }
 }
 

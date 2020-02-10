@@ -72,6 +72,7 @@ protocol ViewableFavouritePresenter {
     
     func setView(view: PresentableFavouriteView) 
     func productDidPressDetail(indexPath: IndexPath)
+    func removeAll()
 }
 
 

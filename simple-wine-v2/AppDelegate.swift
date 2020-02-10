@@ -14,16 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         UNUserNotificationCenter.current().delegate = self
-        
-//
-  //  TestData2.shared.start()
+    
+      //  TestData2.shared.start()
 
         WebsocketService.shared.wsConnect()
 
         Setter.shared.allSync()
 
         KingfisherConfiguration.shared.setup()
-//
         // bkg update config:
         UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalMinimum)
     

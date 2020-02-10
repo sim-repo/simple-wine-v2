@@ -92,10 +92,15 @@ class TestData {
             filters.append(filter)
             filterId += 1
             for _ in 0...300 {
-                let product = createProduct(name: category.title + " #\(productId)",
+                let product = createProduct(name: category.title + " #\(productId)", nameRU: category.title + " #\(productId)",
                     categoryId: category.id,
-                    filterId: filter.id,
-                    pointEnum: .grandcru)
+                    filterId: filter.id, volume: "0.75",
+                    pointEnum: .grandcru,
+                    grapes: "",
+                    color: .pink,
+                    country: "",
+                    countryIconURL: "")
+                    
                 products.append(product)
             }
             createSubFilters(parentfilter: filter, root: root.colors, useSubSubFilter: false)
@@ -197,9 +202,15 @@ class TestData {
     
     
     private func createProduct(name: String,
+                               nameRU: String,
                                categoryId: Int,
                                filterId: Int,
-                               pointEnum: PointEnum
+                               volume: String,
+                               pointEnum: PointEnum,
+                               grapes: String,
+                               color: ProductColorEnum,
+                               country: String,
+                               countryIconURL: String
     ) -> Product {
         
         let popularity = Int.random(in: 0 ..< 100)
@@ -213,11 +224,17 @@ class TestData {
                               categoryId: categoryId,
                               desc: "",
                               price: Double(price),
-                              oldPrice: Double(price + 300),
                               attributeIds: [filterId],
                               imageURL: "http://185.219.42.85:3000/Images/red2.png",
-                              popularity: popularity,
-                              manufactureYear: year)
+                              manufactureYear: year,
+                              nameRU: nameRU,
+                              volume: volume,
+                              grapes: grapes,
+                              color: color,
+                              country: country,
+                              countryIconURL: countryIconURL,
+                              sugar: .dry
+                              )
         productId += 1
         return product
     }

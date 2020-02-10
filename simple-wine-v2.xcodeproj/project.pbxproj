@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16148EF623F185C5001E1A1F /* ProductConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16148EF523F185C5001E1A1F /* ProductConstant.swift */; };
 		162144F223EEC238008C7AD0 /* KingfisherConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162144F123EEC238008C7AD0 /* KingfisherConfiguration.swift */; };
 		162144F523EEC9AC008C7AD0 /* WebsocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162144F423EEC9AC008C7AD0 /* WebsocketService.swift */; };
 		162144FF23EEDC6D008C7AD0 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 162144FE23EEDC6D008C7AD0 /* Starscream.framework */; };
@@ -123,6 +124,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		16148EF523F185C5001E1A1F /* ProductConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductConstant.swift; sourceTree = "<group>"; };
 		162144F123EEC238008C7AD0 /* KingfisherConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KingfisherConfiguration.swift; sourceTree = "<group>"; };
 		162144F423EEC9AC008C7AD0 /* WebsocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsocketService.swift; sourceTree = "<group>"; };
 		162144F623EEDC1A008C7AD0 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -713,6 +715,7 @@
 				165D639123E9C9E400428AB1 /* TypeAliases.swift */,
 				1621450C23F079DE008C7AD0 /* MenuMapConstant.swift */,
 				1621450223EF56D4008C7AD0 /* ProjectTagConstant.swift */,
+				16148EF523F185C5001E1A1F /* ProductConstant.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -1029,6 +1032,7 @@
 				165D639B23E9EA3400428AB1 /* TestData.swift in Sources */,
 				165DD6E823E39F7E0068D76E /* MapViewController+Table.swift in Sources */,
 				1621451323F0BA85008C7AD0 /* UIColor + Extensions.swift in Sources */,
+				16148EF623F185C5001E1A1F /* ProductConstant.swift in Sources */,
 				16797CB223E85723001707D3 /* PointMenuPresenter.swift in Sources */,
 				165D638D23E9C68500428AB1 /* AllSync.swift in Sources */,
 				165DD6E023E39AD80068D76E /* MapPresenter.swift in Sources */,

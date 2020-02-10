@@ -164,15 +164,16 @@ extension TestParse: WebSocketDelegate {
     
     
     
-    static func single() -> Response {
+    static func single() -> Response? {
         
-        let points = Point.list()
-        let categories = Category.list()
-        let filters = TestParse.list0() + TestParse.list1()
-        let products = Product.list0() + Product.list1()
-        let mapSettings = DetailMapSetting.list()
-        let response = Response(points: points, categories: categories, filters: filters, products: products, detailMapSetting: mapSettings)
-        return response
+//        let points = Point.list()
+//        let categories = Category.list()
+//        let filters = TestParse.list0() + TestParse.list1()
+//        let products = Product.list0() + Product.list1()
+//        let mapSettings = DetailMapSetting.list()
+//        let response = Response(points: points, categories: categories, filters: filters, products: products, detailMapSetting: mapSettings)
+//        return response
+        return nil
     }
     
     

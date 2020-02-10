@@ -3,6 +3,7 @@ import Foundation
 
 protocol FavouritePresenterDelegate {
     func getFavouriteAttributeName(_ kindId: Int, _ productAttributeIds: [Int]) -> String
+    func favouritesRemoveAll()
 }
 
 
@@ -27,7 +28,6 @@ class FavouritePresenter {
         self.delegate = delegate
         self.detailMapSettings = detailMapSettings
         fillProductsByCategory(favourites: favourites)
-        fillSectionTitle(favourites: favourites)
     }
     
     private func getCategoryTitle(by categoryId: Int) -> String {
@@ -35,23 +35,19 @@ class FavouritePresenter {
         return category?.title ?? ""
     }
     
-    private func fillSectionTitle(favourites: [Product]) {
-        sectionTitle = favourites.reduce(into: [Int: String]()) {
-            $0[$1.categoryId] =  getCategoryTitle(by: $1.categoryId)
-        }
-    }
-    
     private func fillProductsByCategory(favourites: [Product]) {
         
         let groupByCategory = favourites.group(by: \Product.categoryId)
         
-        for item in groupByCategory {
-               let section = item.key
-               let products = item.values
-               
-               for (row, val) in products.enumerated() {
-                   productsByCategory[IndexPath(row: row, section: section)] = val
-               }
+        for (section, item) in groupByCategory.enumerated() {
+            let products = item.values
+            if let first = item.values.first {
+                
+                sectionTitle[section] = getCategoryTitle(by: first.categoryId)
+                for (row, val) in products.enumerated() {
+                    productsByCategory[IndexPath(row: row, section: section)] = val
+                }
+            }
         }
     }
 }
@@ -59,7 +55,6 @@ class FavouritePresenter {
 
 
 extension FavouritePresenter: ViewableFavouritePresenter {
-    
     
     func numberOfSections() -> Int {
         sectionTitle.count > 0 ? sectionTitle.count : 1
@@ -99,6 +94,11 @@ extension FavouritePresenter: ViewableFavouritePresenter {
         let favouriteDetailPresenter = FavouriteDetailPresenter(product: product, detailMapSetting: detailMapSetting, delegate: self)
         view?.performFavouriteDetailSegue(presenter: favouriteDetailPresenter)
     }
+    
+    func removeAll() {
+        delegate.favouritesRemoveAll()
+    }
+    
 }
 
 

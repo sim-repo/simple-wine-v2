@@ -142,6 +142,14 @@ extension MapPresenter: SetterableMapPresenter {
 //MARK:- Favourite Presenter Delegate
 
 extension MapPresenter: FavouritePresenterDelegate {
+    
+    func favouritesRemoveAll() {
+        for product in productDataSource {
+            product.isLiked = false
+        }
+        favourites.removeAll()
+    }
+    
     func getFavouriteAttributeName(_ kindId: Int, _ productAttributeIds: [Int]) -> String {
          return searchAttributeName(kindId, productAttributeIds)
     }
