@@ -65,10 +65,9 @@ protocol ViewableDetailMapPresenter {
 protocol ViewableFavouritePresenter {
     
     func numberOfSections() -> Int
-    func numberOfRowsInSection(section: Int) -> Int
+    func numberOfRowsInSection() -> Int
     func getData(indexPath: IndexPath) -> Product?
-    func getIndexPath(product: Product) -> IndexPath?
-    func getSectionTitle(section: Int) -> String
+   // func getIndexPath(product: Product) -> IndexPath?
     
     func setView(view: PresentableFavouriteView) 
     func productDidPressDetail(indexPath: IndexPath)
@@ -78,7 +77,6 @@ protocol ViewableFavouritePresenter {
 
 //MARK:- Detail Favourite
 protocol ViewableDetailFavouritePresenter {
-    func getAttribute() -> String
     func getProduct() -> Product?
 }
 

@@ -79,21 +79,11 @@ extension MapPresenter: ViewableProductPresenter {
     }
     
     
-    func productSearchTextDidBeginEditing() {
-
-    }
+    func productSearchTextDidBeginEditing() {}
     
     
     func productSearchTextDidChange(textSearch: String) {
         fillProductsBySearch(searchText: textSearch)
-//        if textSearch == "" {
-//            tmpShownProducts = tmpShownProductsWhenSearching
-//        } else {
-//            let searched = productDataSource.filter{$0.desc.lowercased().range(of: textSearch.lowercased()) != nil }
-//            if searched.isEmpty == false {
-//                tmpShownProducts = searched
-//            }
-//        }
         view?.productReloadData()
     }
     

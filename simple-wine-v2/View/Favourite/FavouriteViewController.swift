@@ -54,7 +54,7 @@ extension FavouriteViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        presenter.numberOfRowsInSection(section: section)
+        presenter.numberOfRowsInSection()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -63,23 +63,6 @@ extension FavouriteViewController: UITableViewDataSource, UITableViewDelegate {
             cell.setup(product: product)
         }
         return cell
-    }
-    
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FavouriteSectionHeader") as! FavouriteSectionHeader
-        let sectionTitle = presenter.getSectionTitle(section: section)
-        if sectionTitle != "" {
-            cell.categoryTitleLabel.text = presenter.getSectionTitle(section: section)
-            cell.itemsNumberLabel.text = "\(presenter.numberOfRowsInSection(section: section))"
-            cell.contentView.backgroundColor = Theme.bkgFavouriteSectionHeader
-            return cell
-        }
-        return nil
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 30
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

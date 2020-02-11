@@ -97,10 +97,7 @@ extension MapPresenter: ViewableFavouriteMapPresenter {
     }
     
     func favouriteDidPress() {
-        let favouritePresenter = FavouritePresenter(favourites: favourites,
-                                                    categoryDataSource: categoryDataSource,
-                                                    delegate: self,
-                                                    detailMapSettings: detailMapSettingDataSource)
+        let favouritePresenter = FavouritePresenter(favourites: favourites, delegate: self)
         view?.performFavouriteSegue(presenter: favouritePresenter)
     }
 }
@@ -145,6 +142,9 @@ extension MapPresenter: SetterableMapPresenter {
         tmpFilterSection.removeAll()
         tmpShownProductsByFilter.removeAll()
         tmpShownProductSectionTitle.removeAll()
+    }
+    
+    func favouritesClear() {
         favourites.removeAll()
     }
 }
@@ -159,10 +159,6 @@ extension MapPresenter: FavouritePresenterDelegate {
             product.isLiked = false
         }
         favourites.removeAll()
-    }
-    
-    func getFavouriteAttributeName(_ kindId: Int, _ productAttributeIds: [Int]) -> String {
-         return searchAttributeName(kindId, productAttributeIds)
     }
 }
 

@@ -70,6 +70,8 @@ extension Setter {
     func pointMenuDidSelect(point: Point, _ completion: (()->Void)? = nil) {
         (AuthPresenter.shared as SetterableAuthPresenter).setCurrentPoint(point: point)
         (MapMenuPresenter.shared as SetterableMapMenuPresenter).setCurrentPoint(point: point)
+        
+        (MapPresenter.shared as SetterableMapPresenter).favouritesClear()
         completion?()
     }
     

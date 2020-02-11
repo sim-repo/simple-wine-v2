@@ -12,6 +12,7 @@ protocol SetterableMapPresenter {
     func setCurrentPoint(pointEnum: PointEnum)
     func setMapMenu(menuMapEnum: MenuMapEnum)
     func clear()
+    func favouritesClear()
 }
 
 //MARK:- Point Menu
