@@ -12,6 +12,10 @@ protocol PresentableMapView: class {
     func performFavouriteSegue(presenter: FavouritePresenter)
     func favouriteNumberReload(number: Int)
     func setFilterTitle(title: String, volume: String)
+    
+    func bkgPopToMapMenuView()
+    func bkgPopToCoverMenuView()
+    func bkgPopToRootView()
 }
 
 
@@ -45,6 +49,7 @@ protocol PresentablePointMenuView: class {
     func startWaitIndicator()
     func stopWaitIndicator()
     func showAlert(text: String)
+    func showAuth()
 }
 
 

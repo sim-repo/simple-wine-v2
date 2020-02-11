@@ -22,6 +22,7 @@ protocol SetterablePointMenuPresenter {
     func startWaitIndicator()
     func stopWaitIndicator()
     func showAlert(text: String)
+    func showAuth()
 }
 
 
@@ -32,7 +33,11 @@ protocol SetterableAuthPresenter {
 }
 
 
-//MARK:- Auth
+protocol SetterableCoverPresenter {
+    func setCurrentPoint(point: Point)
+}
+
+//MARK:- Map Menu
 
 protocol SetterableMapMenuPresenter {
     func setCurrentPoint(point: Point)

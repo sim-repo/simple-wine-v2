@@ -50,7 +50,7 @@ class RealmService {
     }
     
     public static func loadLogin() -> Login? {
-        guard let realm = getInstance(.unsafe) else { return nil }
+        guard let realm = getInstance(.safe) else { return nil }
         let objects: Results<RealmLogin> = realm.objects(RealmLogin.self)
         let login = realmToLogin(objects)
         return login
@@ -99,7 +99,7 @@ class RealmService {
             realmLogin.deviceId = login.deviceId
             objects.append(realmLogin)
         }
-        save(items: objects, update: true)
+        saveToSafe(items: objects, update: true)
     }
     
     
@@ -428,6 +428,21 @@ class RealmService {
         }
     }
     
+    
+    private static func saveToSafe<T: Object>(items: [T], update: Bool) {
+        let realm = getInstance(.safe)
+        do {
+            try realm?.write {
+                if update {
+                    realm?.add(items, update: .all)
+                } else {
+                    realm?.add(items)
+                }
+            }
+        } catch(let err) {
+            Logger.catchError(msg: err.localizedDescription)
+        }
+    }
     
     
     

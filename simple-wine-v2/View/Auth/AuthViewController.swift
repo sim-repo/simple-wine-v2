@@ -1,13 +1,12 @@
 import UIKit
 import Kingfisher
 
-class AuthViewController: UIViewController{
+class AuthViewController: UIViewController {
     
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var loginLabel: UITextField!
     @IBOutlet weak var passwordLabel: UITextField!
     @IBOutlet weak var enterButton: UIButton!
-    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     
     var presenter: ViewableAuthPresenter {
@@ -36,21 +35,18 @@ class AuthViewController: UIViewController{
     
     private func setButtons(){
         enterButton.setImage(UIImage(named: "RightArrowButton"), for: .normal)
-        backButton.setImage(UIImage(named: "LeftArrowButton"), for: .normal)
     }
     
     private func setLogo(){
-        logoImageView.kf.setImage(with: URL(string: presenter.getLogoImageURL()))
+        if let imageURL = presenter.getLogoImageURL() {
+            logoImageView.kf.setImage(with: URL(string: imageURL))
+        }
     }
     
     // temporary
     private func setDefaultPassword() {
         loginLabel.text = "kuznetsky.test@simplewine.ru1"
         passwordLabel.text = "4fp1AoQ8@wUX"
-    }
-    
-    @IBAction func pressBack(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func pressSignIn(_ sender: Any) {
@@ -63,7 +59,7 @@ class AuthViewController: UIViewController{
 //MARK:- PresentableAuthView
 extension AuthViewController: PresentableAuthView {
     func enter() {
-        performSegue(withIdentifier: "showCoverSegue", sender: nil)
+        navigationController?.popViewController(animated: true)
     }
 }
 

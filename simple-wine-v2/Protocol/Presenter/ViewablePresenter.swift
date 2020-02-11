@@ -102,7 +102,7 @@ protocol ViewablePointMenuPresenter {
 //MARK:- Auth
 protocol ViewableAuthPresenter {
     func setView(view: PresentableAuthView)
-    func getLogoImageURL() -> String
+    func getLogoImageURL() -> String?
     
     func didPressSignIn(login: String, password: String)
 }

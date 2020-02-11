@@ -25,7 +25,7 @@
         <!--Point Menu View Controller-->
         <scene sceneID="25z-2J-eXj">
             <objects>
-                <viewController modalTransitionStyle="partialCurl" id="MWt-qT-u33" customClass="PointMenuViewController" customModule="simple_wine_v2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" modalTransitionStyle="partialCurl" modalPresentationStyle="fullScreen" id="MWt-qT-u33" customClass="PointMenuViewController" customModule="simple_wine_v2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bxc-k2-gyO">
                         <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -164,17 +164,18 @@
                         <outlet property="kuznetskyButton" destination="8Tk-UP-2f3" id="cIk-WQ-siA"/>
                         <outlet property="progressLabel" destination="A6A-Ms-aYG" id="zyD-9S-TGp"/>
                         <outlet property="progressView" destination="GN4-2h-53R" id="PLL-6Q-JwK"/>
-                        <segue destination="R3N-At-WD7" kind="show" identifier="showAuthSegue" id="rjJ-2k-kek"/>
+                        <segue destination="rV7-QR-RfL" kind="show" identifier="showCoverSegue" id="PkN-aW-HC9"/>
+                        <segue destination="R3N-At-WD7" kind="show" identifier="showAuthSegue" id="nFA-oN-WuJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0qw-Nn-8Ik" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2191.1111111111109" y="20"/>
+            <point key="canvasLocation" x="-2210" y="-464"/>
         </scene>
         <!--Auth View Controller-->
         <scene sceneID="SY1-2T-dpn">
             <objects>
-                <viewController modalTransitionStyle="partialCurl" modalPresentationStyle="fullScreen" id="R3N-At-WD7" customClass="AuthViewController" customModule="simple_wine_v2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthViewController" id="R3N-At-WD7" customClass="AuthViewController" customModule="simple_wine_v2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1PA-0Q-tPZ">
                         <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -200,17 +201,6 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0DK-0n-qhF">
-                                                <rect key="frame" x="16" y="12" width="36" height="36"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="36" id="Ftc-3M-zsx"/>
-                                                    <constraint firstAttribute="height" constant="36" id="fbf-DC-4Pq"/>
-                                                </constraints>
-                                                <state key="normal" image="LeftArrowButton"/>
-                                                <connections>
-                                                    <action selector="pressBack:" destination="R3N-At-WD7" eventType="touchUpInside" id="vbU-aT-pqg"/>
-                                                </connections>
-                                            </button>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CkF-gv-7dO">
                                                 <rect key="frame" x="270" y="587" width="500" height="34"/>
                                                 <constraints>
@@ -234,14 +224,12 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="CkF-gv-7dO" firstAttribute="centerX" secondItem="3kt-1T-Rb1" secondAttribute="centerX" id="2n2-ua-R6x"/>
-                                            <constraint firstItem="0DK-0n-qhF" firstAttribute="leading" secondItem="3kt-1T-Rb1" secondAttribute="leading" constant="16" id="4JX-l5-aNb"/>
                                             <constraint firstItem="y2g-Gq-Gpa" firstAttribute="centerX" secondItem="3kt-1T-Rb1" secondAttribute="centerX" id="O6P-te-hmB"/>
                                             <constraint firstItem="CkF-gv-7dO" firstAttribute="top" secondItem="y2g-Gq-Gpa" secondAttribute="bottom" constant="16" id="evI-Sr-dAT"/>
                                             <constraint firstItem="lkb-vX-Hrj" firstAttribute="centerX" secondItem="3kt-1T-Rb1" secondAttribute="centerX" id="gO4-KM-FVL"/>
                                             <constraint firstItem="lkb-vX-Hrj" firstAttribute="centerY" secondItem="3kt-1T-Rb1" secondAttribute="centerY" id="iBs-r1-ScP"/>
                                             <constraint firstItem="vtH-h9-LR3" firstAttribute="leading" secondItem="CkF-gv-7dO" secondAttribute="trailing" constant="8" id="nfT-ba-Yzx"/>
                                             <constraint firstItem="y2g-Gq-Gpa" firstAttribute="top" secondItem="lkb-vX-Hrj" secondAttribute="bottom" constant="32" id="rQP-YO-VAj"/>
-                                            <constraint firstItem="0DK-0n-qhF" firstAttribute="top" secondItem="3kt-1T-Rb1" secondAttribute="topMargin" constant="4" id="wT4-6I-WuJ"/>
                                             <constraint firstItem="vtH-h9-LR3" firstAttribute="centerY" secondItem="CkF-gv-7dO" secondAttribute="centerY" id="weO-Kv-Asv"/>
                                         </constraints>
                                     </view>
@@ -267,18 +255,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="K6W-eN-3wT"/>
                     <connections>
-                        <outlet property="backButton" destination="0DK-0n-qhF" id="1KP-SC-6iV"/>
                         <outlet property="enterButton" destination="vtH-h9-LR3" id="m5y-wt-deG"/>
                         <outlet property="loginLabel" destination="y2g-Gq-Gpa" id="sMJ-rc-HQi"/>
                         <outlet property="logoImageView" destination="lkb-vX-Hrj" id="kcx-0U-Ztd"/>
                         <outlet property="passwordLabel" destination="CkF-gv-7dO" id="iqi-lS-b1M"/>
                         <outlet property="scrollView" destination="ysK-f8-YdQ" id="EOp-v7-OlS"/>
-                        <segue destination="rV7-QR-RfL" kind="show" identifier="showCoverSegue" id="5Jc-uM-d50"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iCp-uJ-76n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1421" y="20"/>
+            <point key="canvasLocation" x="-1450" y="277"/>
         </scene>
         <!--Cover View Controller-->
         <scene sceneID="2OW-8p-Q1U">
@@ -297,7 +283,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fTZ-gR-Hun" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-589" y="20"/>
+            <point key="canvasLocation" x="-621" y="-464"/>
         </scene>
         <!--Map Menu View Controller-->
         <scene sceneID="E1v-XT-jkY">

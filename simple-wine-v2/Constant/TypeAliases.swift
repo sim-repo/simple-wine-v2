@@ -9,11 +9,14 @@ typealias setterOnError =  ((String) -> Void)?
 
 
 //system device
-typealias setterSystemDeviceOnSuccess =  ((String) -> Void)?
+typealias setterSystemDeviceOnSuccess = ((String) -> Void)?
 
 //login
-typealias setterLoginOnSuccess =  ((Login) -> Void)?
+typealias setterLoginOnSuccess = ((Login) -> Void)?
 
+//token
+typealias setterTokenOnSuccess = ((Bool) -> Void)?
+typealias setterTokenOnError =  (() -> Void)?
 
 
 //MARK:- Sync

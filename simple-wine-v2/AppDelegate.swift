@@ -26,19 +26,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        // TestData2.shared.start()
 
         WebsocketService.shared.wsConnect()
-
-        Setter.shared.sysDeviceSync()
-        Setter.shared.allSync()
-
         KingfisherConfiguration.shared.setup()
 
-        
         // bkg update config:
         UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalMinimum)
     
         return true
     }
 
+    
 
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         // Start background fetch
@@ -46,6 +42,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             completionHandler(hasNewData ? .newData : .noData)
         }
      }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        MapPresenter.shared.bkgPopToCoverMenuView()
+    }
 }
 
 

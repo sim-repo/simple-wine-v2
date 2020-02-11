@@ -19,15 +19,14 @@ extension AuthPresenter: ViewableAuthPresenter {
     }
     
     
-    func getLogoImageURL() -> String {
-        return point.logoOnLightImageURL
+    func getLogoImageURL() -> String? {
+        return point?.logoOnLightImageURL
     }
     
     
     func didPressSignIn(login: String, password: String) {
         Setter.shared.authSignInDidSelect(login: login, password: password) { [weak self] in
             guard let self = self else { return }
-            CoverPresenter.shared.setup(point: self.point)
             self.view?.enter()
         }
     }

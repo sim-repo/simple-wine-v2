@@ -22,6 +22,8 @@ extension PointMenuPresenter: ViewablePointMenuPresenter {
     
     func setView(view: PresentablePointMenuView) {
         self.view = view
+        Setter.shared.tokenSync()
+        
         //if points == nil {
         //    startWaitIndicator()
       //  }
@@ -36,6 +38,8 @@ extension PointMenuPresenter: ViewablePointMenuPresenter {
         }
     }
 }
+
+
 
 //MARK:- Setterable
 extension PointMenuPresenter: SetterablePointMenuPresenter {
@@ -60,5 +64,9 @@ extension PointMenuPresenter: SetterablePointMenuPresenter {
     
     func showAlert(text: String) {
         view?.showAlert(text: text)
+    }
+    
+    func showAuth() {
+        view?.showAuth()
     }
 }

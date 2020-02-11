@@ -124,6 +124,8 @@
 		16F1FFA623F2FBC5009A3A13 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F1FFA523F2FBC5009A3A13 /* Login.swift */; };
 		16F1FFA823F2FC00009A3A13 /* RealmLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F1FFA723F2FC00009A3A13 /* RealmLogin.swift */; };
 		16F1FFAA23F30310009A3A13 /* LoginSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F1FFA923F30310009A3A13 /* LoginSync.swift */; };
+		16F1FFAC23F314D4009A3A13 /* TokenSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F1FFAB23F314D4009A3A13 /* TokenSync.swift */; };
+		16F1FFB223F3476F009A3A13 /* BackgroundablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F1FFB123F3476F009A3A13 /* BackgroundablePresenter.swift */; };
 		D5CA5FA5429D21B6B18E5A44 /* Pods_simple_wine_v2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7279243E76EF54B08F73F05 /* Pods_simple_wine_v2.framework */; };
 /* End PBXBuildFile section */
 
@@ -249,6 +251,8 @@
 		16F1FFA523F2FBC5009A3A13 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		16F1FFA723F2FC00009A3A13 /* RealmLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmLogin.swift; sourceTree = "<group>"; };
 		16F1FFA923F30310009A3A13 /* LoginSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSync.swift; sourceTree = "<group>"; };
+		16F1FFAB23F314D4009A3A13 /* TokenSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenSync.swift; sourceTree = "<group>"; };
+		16F1FFB123F3476F009A3A13 /* BackgroundablePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundablePresenter.swift; sourceTree = "<group>"; };
 		4A7265334B0A66442C1DF066 /* Pods-simple-wine-v2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simple-wine-v2.debug.xcconfig"; path = "Target Support Files/Pods-simple-wine-v2/Pods-simple-wine-v2.debug.xcconfig"; sourceTree = "<group>"; };
 		9BF400A9755BC9C1036D441C /* Pods-simple-wine-v2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simple-wine-v2.release.xcconfig"; path = "Target Support Files/Pods-simple-wine-v2/Pods-simple-wine-v2.release.xcconfig"; sourceTree = "<group>"; };
 		B7279243E76EF54B08F73F05 /* Pods_simple_wine_v2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_simple_wine_v2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -566,6 +570,7 @@
 			children = (
 				165DD6FF23E3A69D0068D76E /* ViewablePresenter.swift */,
 				1644729B23EDAFEB00DEDD2B /* SetterablePresenter.swift */,
+				16F1FFB123F3476F009A3A13 /* BackgroundablePresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -638,6 +643,7 @@
 				164472A323EE194A00DEDD2B /* BkgAllSync.swift */,
 				16F1FFA023F2F3F8009A3A13 /* SysDeviceSync.swift */,
 				16F1FFA923F30310009A3A13 /* LoginSync.swift */,
+				16F1FFAB23F314D4009A3A13 /* TokenSync.swift */,
 			);
 			path = Sync;
 			sourceTree = "<group>";
@@ -970,6 +976,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16F1FFAC23F314D4009A3A13 /* TokenSync.swift in Sources */,
 				164472A223EE0D7B00DEDD2B /* SchedulableSync.swift in Sources */,
 				16F1FFA623F2FBC5009A3A13 /* Login.swift in Sources */,
 				1644729923EDAC4B00DEDD2B /* WaitIndicator.swift in Sources */,
@@ -987,6 +994,7 @@
 				1644728423ECCEAD00DEDD2B /* RealmService.swift in Sources */,
 				165DD6F623E3A13C0068D76E /* Filter.swift in Sources */,
 				16797CC223E8CAD3001707D3 /* DepoCover.swift in Sources */,
+				16F1FFB223F3476F009A3A13 /* BackgroundablePresenter.swift in Sources */,
 				1644728A23ECD0A900DEDD2B /* RealmToken.swift in Sources */,
 				165DD72823E46D300068D76E /* Sequences+Extensions.swift in Sources */,
 				16520DFA23E6EEB900AA3576 /* FavouritePresenter.swift in Sources */,

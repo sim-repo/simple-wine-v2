@@ -11,21 +11,16 @@ class PointMenuViewController: UIViewController {
     
     var isDownloadingNow = false
     
-    var inTransition = false
-    
     var waiter: SpinnerViewController?
     
     var presenter: ViewablePointMenuPresenter {
-        PointMenuPresenter.shared.setView(view: self)
         return PointMenuPresenter.shared
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        inTransition = false
-    }
     
     override func viewDidLoad() {
          UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        presenter.setView(view: self)
         setupButtons()
         let _ = presenter
         setupNotification()
@@ -58,20 +53,14 @@ class PointMenuViewController: UIViewController {
 
 
     @IBAction func pressGrandCru(_ sender: Any) {
-        guard inTransition == false else { return }
-        inTransition = true
         presenter.didPressEnter(pointEnum: .grandcru)
     }
     
     @IBAction func pressKuznetsky(_ sender: Any) {
-        guard inTransition == false else { return }
-        inTransition = true
         presenter.didPressEnter(pointEnum: .kuznetskiymost)
     }
     
     @IBAction func pressDepo(_ sender: Any) {
-        guard inTransition == false else { return }
-        inTransition = true
         presenter.didPressEnter(pointEnum: .depo)
     }
 }
@@ -121,7 +110,7 @@ extension PointMenuViewController {
 extension PointMenuViewController: PresentablePointMenuView {
 
     func enter() {
-        performSegue(withIdentifier: "showAuthSegue", sender: nil)
+        performSegue(withIdentifier: "showCoverSegue", sender: nil)
     }
     
     func startWaitIndicator() {
@@ -141,6 +130,10 @@ extension PointMenuViewController: PresentablePointMenuView {
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
+    }
+    
+    func showAuth() {
+        performSegue(withIdentifier: "showAuthSegue", sender: nil)
     }
 }
 

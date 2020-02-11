@@ -7,12 +7,11 @@ class Setter {
     static var shared = Setter()
 
     var deviceId: String = ""
-    var login: Login?
-    
+    var tokenId: String = ""
+
 //MARK:- on success
     private func getOnSuccess(_ completion: (()->Void)? = nil ) -> setterOnSuccess {
         let completion: setterOnSuccess = { points in
-            // point menu
             (PointMenuPresenter.shared as SetterablePointMenuPresenter).setup(points)
             completion?()
         }
@@ -23,19 +22,30 @@ class Setter {
     private func getSysDeviceOnSuccess() -> setterSystemDeviceOnSuccess {
         let completion: setterSystemDeviceOnSuccess = { deviceId in
             self.deviceId = deviceId
+            (PointMenuPresenter.shared as SetterablePointMenuPresenter).showAuth()
         }
         return completion
     }
+    
     
     private func getLoginOnSuccess(_ completion: (()->Void)? = nil) -> setterLoginOnSuccess {
         let completion: setterLoginOnSuccess = { login in
-            self.login = login
             completion?()
+            self.allSync()
         }
         return completion
     }
     
     
+    private func getTokenOnSuccess(_ completion: (()->Void)? = nil) -> setterTokenOnSuccess {
+        let completion: setterTokenOnSuccess = { success in
+            if success {
+                completion?()
+                self.allSync()
+            }
+        }
+        return completion
+    }
     
     
 //MARK:- on error
@@ -46,6 +56,16 @@ class Setter {
         }
         return completion
     }
+    
+    
+    private func getTokenOnError() -> setterTokenOnError {
+        let completion: setterTokenOnError = {
+            (PointMenuPresenter.shared as SetterablePointMenuPresenter).showAuth()
+        }
+        return completion
+    }
+    
+    
     
     private func getBkgOnError(_ appCompletion: ((_ newData: Bool) -> Void)? = nil) -> setterOnError {
         let completion: setterOnError = { error in
@@ -71,6 +91,18 @@ class Setter {
     
     func loginSync(userId: String, password: String, _ completion: (()->Void)? = nil) {
         LoginSync.shared.sync(deviceId: deviceId, userId: userId, password: password, getLoginOnSuccess(completion), getOnError())
+    }
+    
+    func tokenSync(_ completion: (()->Void)? = nil) {
+        if let login = RealmService.loadLogin(),
+            login.deviceId != "",
+            login.password != "",
+            login.userId != "",
+            login.token != "" {
+            TokenSync.shared.sync(deviceId: login.deviceId, tokenId: login.token, getTokenOnSuccess(completion), getTokenOnError(), getOnError())
+        } else {
+            sysDeviceSync()
+        }
     }
 }
 
@@ -98,7 +130,7 @@ extension Setter {
     func pointMenuDidSelect(point: Point, _ completion: (()->Void)? = nil) {
         (AuthPresenter.shared as SetterableAuthPresenter).setCurrentPoint(point: point)
         (MapMenuPresenter.shared as SetterableMapMenuPresenter).setCurrentPoint(point: point)
-        
+        (CoverPresenter.shared as SetterableCoverPresenter).setCurrentPoint(point: point)
         (MapPresenter.shared as SetterableMapPresenter).favouritesClear()
         completion?()
     }
@@ -144,10 +176,4 @@ extension Setter {
         // 5 вызываем segue transition
         completion?()
     }
-    
-    
-    
-    
-    
-    
 }

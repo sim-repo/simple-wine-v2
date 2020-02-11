@@ -132,7 +132,6 @@ class MapViewController: UIViewController {
 
 
 extension MapViewController: PresentableMapView {
-
     
     func filterReloadData() {
         ThreadConstant.UI_THREAD {
@@ -182,6 +181,22 @@ extension MapViewController: PresentableMapView {
             self.filterTitleLabel.text = title
             self.volumeLabel.text = volume
         }
+    }
+    
+    
+    // before background calls
+    func bkgPopToMapMenuView() {
+        navigationController?.popViewController(animated: false)
+    }
+    
+    
+    func bkgPopToCoverMenuView() {
+        guard let vc = CoverPresenter.shared.view as? UIViewController else { return }
+        navigationController?.popToViewController(vc, animated: false)
+    }
+    
+    func bkgPopToRootView() {
+        navigationController?.popToRootViewController(animated: false)
     }
 }
 

@@ -28,6 +28,7 @@ class ParseService {
         return deviceId
     }
     
+    
     static func parseLogin(_ val: Any, userId: String, password: String, deviceId: String, onError: setterOnError) -> Login? {
         let json = JSON(val)
         let status = json["status"].stringValue
@@ -38,4 +39,20 @@ class ParseService {
         onError?(json.string ?? "Ошибка аутентификации: неверный логин или пароль, обратитесь в службу поддержки.")
         return nil
     }
+    
+    static func parseToken(_ val: Any, setterTokenOnSuccess: setterTokenOnSuccess, _ onError: setterTokenOnError, _ onAlertError: setterOnError) {
+        let json = JSON(val)
+        let status = json["status"].stringValue
+        if status == "success" {
+            setterTokenOnSuccess?(true)
+            return
+        } else {
+            if let _ = json["errors"].array {
+                onError?()
+                return
+            }
+        }
+        onAlertError?("Ошибка провеки токена: сервер вернул нераспознанные данные, обратитесь в службу поддержки.")
+    }
 }
+                                   

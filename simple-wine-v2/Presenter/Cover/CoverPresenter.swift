@@ -10,9 +10,6 @@ class CoverPresenter {
     var view: PresentableCoverView?
     var point: Point?
     
-    func setup(point: Point) {
-        self.point = point
-    }
 }
 
 
@@ -32,5 +29,11 @@ extension CoverPresenter: ViewableCoverPresenter {
     
     func didLogout() {
         view?.logout()
+    }
+}
+
+extension CoverPresenter: SetterableCoverPresenter {
+    func setCurrentPoint(point: Point) {
+        self.point = point
     }
 }

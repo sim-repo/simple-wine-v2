@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 
 class MapPresenter {
@@ -212,3 +212,18 @@ extension MapPresenter {
     }
 }
 
+
+
+extension MapPresenter: BackgroundableMapPresenter {
+    func bkgPopToMapMenuView() {
+        view?.bkgPopToMapMenuView()
+    }
+    
+    func bkgPopToCoverMenuView() {
+        view?.bkgPopToCoverMenuView()
+    }
+    
+    func bkgPopToRootView() {
+        view?.bkgPopToRootView()
+    }
+}

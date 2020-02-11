@@ -54,4 +54,23 @@ class AlamofireService {
             }
         }
     }
+    
+    
+    public static func requestToken(_ url: String,
+                                    _ headers: HTTPHeaders,
+                                    _ params: Parameters,
+                                    _ onSuccess: setterTokenOnSuccess,
+                                    _ onError: setterTokenOnError,
+                                    _ onAlertError: setterOnError
+                                    ) {
+       
+        AlamofireService.sharedManager.request(url, method: .get, parameters: params, headers: headers).responseJSON { response in
+            switch response.result {
+            case .success(let val):
+                ParseService.parseToken(val, setterTokenOnSuccess: onSuccess, onError, onAlertError)
+            case .failure(let err):
+                onAlertError?(err.localizedDescription)
+            }
+        }
+    }
 }

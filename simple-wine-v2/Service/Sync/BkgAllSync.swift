@@ -10,6 +10,9 @@ class BkgAllSync {
               _ onError: setterOnError,
               _ appCompletion: ((_ newData: Bool) -> Void)? = nil
     ) {
+        
+        MapPresenter.shared.bkgPopToRootView()
+        
         let interval = Date().timeIntervalSince(getLastSyncDate() ?? Date.yesterday)
         
         if interval > FetchConfiguration.intervalBeforeUpdating {
