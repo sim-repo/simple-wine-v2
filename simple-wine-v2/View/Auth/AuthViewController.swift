@@ -30,6 +30,7 @@ class AuthViewController: UIViewController{
         loginLabel.becomeFirstResponder()
         setButtons()
         setLogo()
+        setDefaultPassword()
         addKeyboardGesture()
     }
     
@@ -40,6 +41,12 @@ class AuthViewController: UIViewController{
     
     private func setLogo(){
         logoImageView.kf.setImage(with: URL(string: presenter.getLogoImageURL()))
+    }
+    
+    // temporary
+    private func setDefaultPassword() {
+        loginLabel.text = "kuznetsky.test@simplewine.ru1"
+        passwordLabel.text = "4fp1AoQ8@wUX"
     }
     
     @IBAction func pressBack(_ sender: Any) {

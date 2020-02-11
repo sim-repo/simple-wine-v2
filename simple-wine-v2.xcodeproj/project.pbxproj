@@ -11,7 +11,6 @@
 		162144F223EEC238008C7AD0 /* KingfisherConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162144F123EEC238008C7AD0 /* KingfisherConfiguration.swift */; };
 		162144F523EEC9AC008C7AD0 /* WebsocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162144F423EEC9AC008C7AD0 /* WebsocketService.swift */; };
 		162144FF23EEDC6D008C7AD0 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 162144FE23EEDC6D008C7AD0 /* Starscream.framework */; };
-		1621450323EF56D4008C7AD0 /* ProjectTagConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1621450223EF56D4008C7AD0 /* ProjectTagConstant.swift */; };
 		1621450523EF58F6008C7AD0 /* TestData2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1621450423EF58F6008C7AD0 /* TestData2.swift */; };
 		1621450823F07445008C7AD0 /* MapMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1621450723F07445008C7AD0 /* MapMenuViewController.swift */; };
 		1621450B23F0754B008C7AD0 /* MapMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1621450A23F0754B008C7AD0 /* MapMenuPresenter.swift */; };
@@ -120,6 +119,11 @@
 		16F1FF9A23F29B5F009A3A13 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F1FF9923F29B5F009A3A13 /* Download.swift */; };
 		16F1FF9C23F2A10C009A3A13 /* DownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F1FF9B23F2A10C009A3A13 /* DownloadService.swift */; };
 		16F1FF9F23F2A9DF009A3A13 /* DownloadableSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F1FF9E23F2A9DF009A3A13 /* DownloadableSetter.swift */; };
+		16F1FFA123F2F3F8009A3A13 /* SysDeviceSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F1FFA023F2F3F8009A3A13 /* SysDeviceSync.swift */; };
+		16F1FFA423F2F841009A3A13 /* AlamofireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F1FFA323F2F841009A3A13 /* AlamofireService.swift */; };
+		16F1FFA623F2FBC5009A3A13 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F1FFA523F2FBC5009A3A13 /* Login.swift */; };
+		16F1FFA823F2FC00009A3A13 /* RealmLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F1FFA723F2FC00009A3A13 /* RealmLogin.swift */; };
+		16F1FFAA23F30310009A3A13 /* LoginSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F1FFA923F30310009A3A13 /* LoginSync.swift */; };
 		D5CA5FA5429D21B6B18E5A44 /* Pods_simple_wine_v2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7279243E76EF54B08F73F05 /* Pods_simple_wine_v2.framework */; };
 /* End PBXBuildFile section */
 
@@ -130,7 +134,6 @@
 		162144F623EEDC1A008C7AD0 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		162144FA23EEDC5E008C7AD0 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		162144FE23EEDC6D008C7AD0 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1621450223EF56D4008C7AD0 /* ProjectTagConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTagConstant.swift; sourceTree = "<group>"; };
 		1621450423EF58F6008C7AD0 /* TestData2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData2.swift; sourceTree = "<group>"; };
 		1621450723F07445008C7AD0 /* MapMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMenuViewController.swift; sourceTree = "<group>"; };
 		1621450A23F0754B008C7AD0 /* MapMenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMenuPresenter.swift; sourceTree = "<group>"; };
@@ -241,6 +244,11 @@
 		16F1FF9923F29B5F009A3A13 /* Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
 		16F1FF9B23F2A10C009A3A13 /* DownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadService.swift; sourceTree = "<group>"; };
 		16F1FF9E23F2A9DF009A3A13 /* DownloadableSetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadableSetter.swift; sourceTree = "<group>"; };
+		16F1FFA023F2F3F8009A3A13 /* SysDeviceSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SysDeviceSync.swift; sourceTree = "<group>"; };
+		16F1FFA323F2F841009A3A13 /* AlamofireService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireService.swift; sourceTree = "<group>"; };
+		16F1FFA523F2FBC5009A3A13 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		16F1FFA723F2FC00009A3A13 /* RealmLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmLogin.swift; sourceTree = "<group>"; };
+		16F1FFA923F30310009A3A13 /* LoginSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSync.swift; sourceTree = "<group>"; };
 		4A7265334B0A66442C1DF066 /* Pods-simple-wine-v2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simple-wine-v2.debug.xcconfig"; path = "Target Support Files/Pods-simple-wine-v2/Pods-simple-wine-v2.debug.xcconfig"; sourceTree = "<group>"; };
 		9BF400A9755BC9C1036D441C /* Pods-simple-wine-v2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simple-wine-v2.release.xcconfig"; path = "Target Support Files/Pods-simple-wine-v2/Pods-simple-wine-v2.release.xcconfig"; sourceTree = "<group>"; };
 		B7279243E76EF54B08F73F05 /* Pods_simple_wine_v2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_simple_wine_v2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -303,6 +311,7 @@
 				16ABE8D223E62B650065D873 /* DetailMapSetting.swift */,
 				16520E0C23E7440300AA3576 /* SelectedFilter.swift */,
 				16797CC623E8D7B4001707D3 /* Response.swift */,
+				16F1FFA523F2FBC5009A3A13 /* Login.swift */,
 			);
 			path = "Non-persistent";
 			sourceTree = "<group>";
@@ -317,6 +326,7 @@
 				1644727D23ECCBAA00DEDD2B /* RealmProduct.swift */,
 				1644727F23ECCC6B00DEDD2B /* RealmDetailMapSetting.swift */,
 				1644728923ECD0A900DEDD2B /* RealmToken.swift */,
+				16F1FFA723F2FC00009A3A13 /* RealmLogin.swift */,
 			);
 			path = Persistent;
 			sourceTree = "<group>";
@@ -401,6 +411,7 @@
 			children = (
 				1644726D23ECB45C00DEDD2B /* NetworkService.swift */,
 				16F1FF9B23F2A10C009A3A13 /* DownloadService.swift */,
+				16F1FFA323F2F841009A3A13 /* AlamofireService.swift */,
 				1644726F23ECBF9500DEDD2B /* Session.swift */,
 				16F1FF9923F29B5F009A3A13 /* Download.swift */,
 			);
@@ -625,6 +636,8 @@
 			children = (
 				165D638C23E9C68500428AB1 /* AllSync.swift */,
 				164472A323EE194A00DEDD2B /* BkgAllSync.swift */,
+				16F1FFA023F2F3F8009A3A13 /* SysDeviceSync.swift */,
+				16F1FFA923F30310009A3A13 /* LoginSync.swift */,
 			);
 			path = Sync;
 			sourceTree = "<group>";
@@ -706,7 +719,6 @@
 				16797CC323E8D378001707D3 /* ThreadConstant.swift */,
 				165D639123E9C9E400428AB1 /* TypeAliases.swift */,
 				1621450C23F079DE008C7AD0 /* MenuMapConstant.swift */,
-				1621450223EF56D4008C7AD0 /* ProjectTagConstant.swift */,
 				16148EF523F185C5001E1A1F /* ProductConstant.swift */,
 			);
 			path = Constant;
@@ -959,6 +971,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				164472A223EE0D7B00DEDD2B /* SchedulableSync.swift in Sources */,
+				16F1FFA623F2FBC5009A3A13 /* Login.swift in Sources */,
 				1644729923EDAC4B00DEDD2B /* WaitIndicator.swift in Sources */,
 				162144F523EEC9AC008C7AD0 /* WebsocketService.swift in Sources */,
 				16ABE8D323E62B650065D873 /* DetailMapSetting.swift in Sources */,
@@ -974,11 +987,11 @@
 				1644728423ECCEAD00DEDD2B /* RealmService.swift in Sources */,
 				165DD6F623E3A13C0068D76E /* Filter.swift in Sources */,
 				16797CC223E8CAD3001707D3 /* DepoCover.swift in Sources */,
-				1621450323EF56D4008C7AD0 /* ProjectTagConstant.swift in Sources */,
 				1644728A23ECD0A900DEDD2B /* RealmToken.swift in Sources */,
 				165DD72823E46D300068D76E /* Sequences+Extensions.swift in Sources */,
 				16520DFA23E6EEB900AA3576 /* FavouritePresenter.swift in Sources */,
 				1621451123F0AFF8008C7AD0 /* ProductSectionHeader.swift in Sources */,
+				16F1FFA823F2FC00009A3A13 /* RealmLogin.swift in Sources */,
 				1644728023ECCC6B00DEDD2B /* RealmDetailMapSetting.swift in Sources */,
 				1644728C23ED759100DEDD2B /* RealmPoint.swift in Sources */,
 				165DD71423E3AA940068D76E /* ProductTableViewCell.swift in Sources */,
@@ -999,11 +1012,13 @@
 				1644727E23ECCBAA00DEDD2B /* RealmProduct.swift in Sources */,
 				164472A423EE194A00DEDD2B /* BkgAllSync.swift in Sources */,
 				1621450D23F079DE008C7AD0 /* MenuMapConstant.swift in Sources */,
+				16F1FFA123F2F3F8009A3A13 /* SysDeviceSync.swift in Sources */,
 				16DBA85223E823730088052B /* CoverPresenter.swift in Sources */,
 				1644729E23EE0C4D00DEDD2B /* FetchConfiguration.swift in Sources */,
 				16797CAC23E84B1F001707D3 /* CoverProtocols.swift in Sources */,
 				1621450823F07445008C7AD0 /* MapMenuViewController.swift in Sources */,
 				165DD6F023E3A0BA0068D76E /* MapPresenter+SideMenu.swift in Sources */,
+				16F1FFA423F2F841009A3A13 /* AlamofireService.swift in Sources */,
 				16DBA85623E82A0E0088052B /* PointConstant.swift in Sources */,
 				16797CC723E8D7B4001707D3 /* Response.swift in Sources */,
 				1644727723ECC77800DEDD2B /* RealmCategory.swift in Sources */,
@@ -1020,6 +1035,7 @@
 				16F1FF9A23F29B5F009A3A13 /* Download.swift in Sources */,
 				16F1FF9F23F2A9DF009A3A13 /* DownloadableSetter.swift in Sources */,
 				1621451523F0DF4F008C7AD0 /* Formatter.swift in Sources */,
+				16F1FFAA23F30310009A3A13 /* LoginSync.swift in Sources */,
 				16ABE8CF23E623FE0065D873 /* MapDetailViewController.swift in Sources */,
 				16DBA84F23E823450088052B /* CoverViewController.swift in Sources */,
 				16ABE8C823E5EA660065D873 /* FilterSectionHeader.swift in Sources */,

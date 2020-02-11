@@ -1,5 +1,5 @@
 import Foundation
-
+import SwiftyJSON
 
 class ParseService {
     
@@ -18,6 +18,24 @@ class ParseService {
         } catch let error {
             onError?("ParseService: \(error.localizedDescription)")
         }
+        return nil
+    }
+    
+    
+    static func parseSysDevice(_ val: Any) -> String {
+        let json = JSON(val)
+        let deviceId = json["data"]["device"].stringValue
+        return deviceId
+    }
+    
+    static func parseLogin(_ val: Any, userId: String, password: String, deviceId: String, onError: setterOnError) -> Login? {
+        let json = JSON(val)
+        let status = json["status"].stringValue
+        if status == "success" {
+            let token = json["data"]["token"].stringValue
+            return Login(userId: userId, password: password, token: token, deviceId: deviceId)
+        }
+        onError?(json.string ?? "Ошибка аутентификации: неверный логин или пароль, обратитесь в службу поддержки.")
         return nil
     }
 }

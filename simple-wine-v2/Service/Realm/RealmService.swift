@@ -49,7 +49,12 @@ class RealmService {
         return settings
     }
     
-    
+    public static func loadLogin() -> Login? {
+        guard let realm = getInstance(.unsafe) else { return nil }
+        let objects: Results<RealmLogin> = realm.objects(RealmLogin.self)
+        let login = realmToLogin(objects)
+        return login
+    }
     
     //MARK:- Save
     
@@ -74,9 +79,27 @@ class RealmService {
         case is DetailMapSetting:
             let settings = models as! [DetailMapSetting]
             detailMapSettingToRealm(settings)
+        case is Login:
+            let logins = models as! [Login]
+            loginToRealm(logins)
         default:
             log("save(models:): no case for \(element.self)", level: .warning)
         }
+    }
+    
+    private static func loginToRealm(_ logins: [Login]) {
+        var objects: [Object] = []
+        
+        for login in logins {
+            let realmLogin = RealmLogin()
+            realmLogin.id = 0
+            realmLogin.userId = login.userId
+            realmLogin.password = login.password
+            realmLogin.token = login.token
+            realmLogin.deviceId = login.deviceId
+            objects.append(realmLogin)
+        }
+        save(items: objects, update: true)
     }
     
     
@@ -223,6 +246,24 @@ class RealmService {
     //MARK:- private >>>
     
     
+    private static func realmToLogin(_ objects: Results<RealmLogin>) -> Login? {
+        
+        var logins = [Login]()
+        if objects.isEmpty {
+            return nil
+        }
+        
+        for obj in objects {
+            let userId = obj.userId
+            let password = obj.password
+            let token = obj.token
+            let deviceId = obj.deviceId
+            let login = Login(userId: userId, password: password, token: token, deviceId: deviceId)
+            logins.append(login)
+        }
+        return logins.first
+    }
+
     
     private static func realmToPoints(_ objects: Results<RealmPoint>) -> [Point]? {
         var points = [Point]()

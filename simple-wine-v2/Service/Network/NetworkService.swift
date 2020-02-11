@@ -1,5 +1,5 @@
 import Foundation
-
+import Alamofire
 
 class NetworkService {
     
@@ -10,7 +10,7 @@ class NetworkService {
     static var runningTask: [TaskEnum:Retry] = [:]
     
     enum TaskEnum {
-        case all
+        case all, systemDevice
     }
     
     class Retry {

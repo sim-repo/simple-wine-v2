@@ -1,7 +1,5 @@
 import Foundation
 
-
-//# >> проект: тупые менеджера
 enum MenuMapEnum: String {
     case classic, price, unknown
 }

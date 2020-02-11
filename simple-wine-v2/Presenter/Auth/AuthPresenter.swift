@@ -25,9 +25,11 @@ extension AuthPresenter: ViewableAuthPresenter {
     
     
     func didPressSignIn(login: String, password: String) {
-        //TODO check login
-        CoverPresenter.shared.setup(point: point)
-        view?.enter()
+        Setter.shared.authSignInDidSelect(login: login, password: password) { [weak self] in
+            guard let self = self else { return }
+            CoverPresenter.shared.setup(point: self.point)
+            self.view?.enter()
+        }
     }
 }
 

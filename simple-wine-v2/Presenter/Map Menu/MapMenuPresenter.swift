@@ -1,8 +1,6 @@
 import Foundation
 
 
-//# >> проект: тупые менеджера
-
 class MapMenuPresenter {
     
     private init(){}

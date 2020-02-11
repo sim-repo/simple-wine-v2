@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         WebsocketService.shared.wsConnect()
 
+        Setter.shared.sysDeviceSync()
         Setter.shared.allSync()
 
         KingfisherConfiguration.shared.setup()
