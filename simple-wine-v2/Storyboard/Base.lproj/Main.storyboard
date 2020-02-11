@@ -114,13 +114,31 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_depo_on_dark" translatesAutoresizingMaskIntoConstraints="NO" id="E6l-dq-LBl">
                                                 <rect key="frame" x="65" y="72.5" width="950" height="145"/>
                                             </imageView>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GN4-2h-53R">
+                                                <rect key="frame" x="8" y="280" width="150" height="2"/>
+                                                <color key="tintColor" red="0.58355963229999996" green="0.17151486869999999" blue="0.26263374090000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="2" id="DNE-19-APm"/>
+                                                    <constraint firstAttribute="width" constant="150" id="Ooo-id-iAc"/>
+                                                </constraints>
+                                            </progressView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100% of 1.35MB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6A-Ms-aYG">
+                                                <rect key="frame" x="162" y="275" width="77.5" height="12"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="1iW-ne-obK" secondAttribute="trailing" constant="32" id="20B-wy-WHH"/>
+                                            <constraint firstAttribute="bottom" secondItem="GN4-2h-53R" secondAttribute="bottom" constant="8" id="2I0-bI-77R"/>
                                             <constraint firstItem="1iW-ne-obK" firstAttribute="centerY" secondItem="2lA-2x-MaR" secondAttribute="centerY" id="Dan-oa-fag"/>
+                                            <constraint firstItem="A6A-Ms-aYG" firstAttribute="centerY" secondItem="GN4-2h-53R" secondAttribute="centerY" id="Dw9-YQ-lp5"/>
                                             <constraint firstItem="E6l-dq-LBl" firstAttribute="centerX" secondItem="2lA-2x-MaR" secondAttribute="centerX" id="Zil-ip-g5l"/>
+                                            <constraint firstItem="GN4-2h-53R" firstAttribute="leading" secondItem="2lA-2x-MaR" secondAttribute="leading" constant="8" id="eaX-x4-Tt1"/>
                                             <constraint firstItem="E6l-dq-LBl" firstAttribute="centerY" secondItem="2lA-2x-MaR" secondAttribute="centerY" id="f6X-Gu-eo4"/>
+                                            <constraint firstItem="A6A-Ms-aYG" firstAttribute="leading" secondItem="GN4-2h-53R" secondAttribute="trailing" constant="4" id="fRW-LP-Ek6"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -144,12 +162,14 @@
                         <outlet property="depoButton" destination="1iW-ne-obK" id="Wa9-bA-pIX"/>
                         <outlet property="grandcruButton" destination="1aq-Va-AyY" id="0hv-IR-EWR"/>
                         <outlet property="kuznetskyButton" destination="8Tk-UP-2f3" id="cIk-WQ-siA"/>
+                        <outlet property="progressLabel" destination="A6A-Ms-aYG" id="zyD-9S-TGp"/>
+                        <outlet property="progressView" destination="GN4-2h-53R" id="PLL-6Q-JwK"/>
                         <segue destination="R3N-At-WD7" kind="show" identifier="showAuthSegue" id="rjJ-2k-kek"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0qw-Nn-8Ik" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2191" y="20"/>
+            <point key="canvasLocation" x="-2191.1111111111109" y="20"/>
         </scene>
         <!--Auth View Controller-->
         <scene sceneID="SY1-2T-dpn">
@@ -476,14 +496,15 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FilterTableViewCell" id="Tc2-x2-t7V" customClass="FilterTableViewCell" customModule="simple_wine_v2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="250" height="30"/>
+                                        <rect key="frame" x="0.0" y="28" width="250" height="27"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tc2-x2-t7V" id="w3u-l7-Rf5">
-                                            <rect key="frame" x="0.0" y="0.0" width="250" height="30"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="250" height="27"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIV-yb-bwV">
-                                                    <rect key="frame" x="16" y="0.0" width="46" height="30"/>
+                                                    <rect key="frame" x="16" y="0.0" width="168" height="27"/>
+                                                    <fontDescription key="fontDescription" name="Geometria" family="Geometria" pointSize="15"/>
                                                     <state key="normal" title="Button">
                                                         <color key="titleColor" red="0.1034065673" green="0.1034065673" blue="0.1034065673" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </state>
@@ -491,17 +512,26 @@
                                                         <action selector="doPressTitle:" destination="Tc2-x2-t7V" eventType="touchUpInside" id="zlK-Fe-M9f"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="619-Bq-aBs">
+                                                    <rect key="frame" x="188" y="3" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tIV-yb-bwV" secondAttribute="trailing" id="FvT-Nh-XZY"/>
+                                                <constraint firstItem="619-Bq-aBs" firstAttribute="centerY" secondItem="w3u-l7-Rf5" secondAttribute="centerY" id="KD8-fF-3OW"/>
                                                 <constraint firstItem="tIV-yb-bwV" firstAttribute="leading" secondItem="w3u-l7-Rf5" secondAttribute="leading" constant="16" id="UDP-zb-dvl"/>
+                                                <constraint firstItem="619-Bq-aBs" firstAttribute="leading" secondItem="tIV-yb-bwV" secondAttribute="trailing" constant="4" id="ac2-lz-tS8"/>
                                                 <constraint firstAttribute="bottom" secondItem="tIV-yb-bwV" secondAttribute="bottom" id="bU9-x1-XIv"/>
+                                                <constraint firstAttribute="trailing" secondItem="619-Bq-aBs" secondAttribute="trailing" constant="20" symbolic="YES" id="ghK-6F-co2"/>
                                                 <constraint firstItem="tIV-yb-bwV" firstAttribute="top" secondItem="w3u-l7-Rf5" secondAttribute="top" id="rpD-fA-wq5"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="itemCountLabel" destination="619-Bq-aBs" id="STe-8f-mEc"/>
                                             <outlet property="titleButton" destination="tIV-yb-bwV" id="vo0-Sf-OyS"/>
                                         </connections>
                                     </tableViewCell>

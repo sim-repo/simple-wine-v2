@@ -2,8 +2,8 @@ import Foundation
 
 
 //# >> проект: тупые менеджера
-enum MenuMapEnum {
-    case classic, price
+enum MenuMapEnum: String {
+    case classic, price, unknown
 }
 
 
@@ -17,4 +17,5 @@ enum FilterVolumeEnum: String {
     case v_075 = "0.75"
     case v_1_5 = "1.5"
     case v_6 = "6"
+    case unknown
 }

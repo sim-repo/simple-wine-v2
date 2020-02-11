@@ -6,8 +6,7 @@ import Foundation
 extension MapPresenter {
     
     func getMaxLevel() -> Int {
-         let isPrice = menuMapEnum == .classic ? false : true  //# >> проект: тупые менеджера
-        var maxLevel = filterDataSource.filter{$0.categoryId == currentCategoryId && $0.kindId == selectedFilter.kindId && $0.isPrice == isPrice}.compactMap({$0.level}).max() ?? 0
+        var maxLevel = filterDataSource.filter{$0.categoryId == currentCategoryId && $0.kindId == selectedFilter.kindId}.compactMap({$0.level}).max() ?? 0
         maxLevel += 1
         return maxLevel
     }
@@ -18,10 +17,7 @@ extension MapPresenter {
     }
     
     func prepareShownFilters(by parent: Filter) {
-        
-        let isPrice = menuMapEnum == .classic ? false : true  //# >> проект: тупые менеджера
-        
-        let filters = filterDataSource.filter{ $0.parentId == parent.id && $0.categoryId == currentCategoryId && $0.isPrice == isPrice }
+        let filters = filterDataSource.filter{ $0.parentId == parent.id && $0.categoryId == currentCategoryId}
         
         for filter in filters {
             tmpShownFilter.append(filter)
@@ -95,6 +91,9 @@ extension MapPresenter: ViewableFilterPresenter {
         return filter.id == selected.id
     }
     
+    func filterGetItemsByFilter(filter: Filter) -> Int {
+        return itemsByFilter[filter.id]?.count ?? 0
+    }
     
     //setters
     func filterDidPress(at indexPath: IndexPath) {
@@ -108,8 +107,7 @@ extension MapPresenter: ViewableFilterPresenter {
        
         if maxLevel > 2,
            selectedFilter.level < maxLevel - 2 {
-                let isPrice = menuMapEnum == .classic ? false : true  //# >> проект: тупые менеджера
-                if let childFilter = filterDataSource.first(where: { $0.parentId == selectedFilter.id  && $0.isPrice == isPrice}) {
+                if let childFilter = filterDataSource.first(where: { $0.parentId == selectedFilter.id }) {
                     selectedFilter = childFilter
                 }
         }

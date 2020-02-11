@@ -28,11 +28,11 @@ class MapMenuViewController: UIViewController {
     
     
     @IBAction func pressClassic(_ sender: Any) {
-        presenter.didPressClassicMenuItem()
+        presenter.didPressEnter(menuMapEnum: .classic)
     }
     
     @IBAction func pressPrice(_ sender: Any) {
-        presenter.didPressPriceMenuItem()
+        presenter.didPressEnter(menuMapEnum: .price)
     }
     
     @IBAction func pressBack(_ sender: Any) {
@@ -45,5 +45,15 @@ extension MapMenuViewController: PresentableMapMenuView {
     
     func enter() {
         performSegue(withIdentifier: "showMapSegue", sender: nil)
+    }
+    
+    func showAlert(text: String) {
+        ThreadConstant.UI_THREAD {
+             let alert = UIAlertController(title: "Что-то пошло не так..",
+                                                     message: text,
+                                                     preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 }

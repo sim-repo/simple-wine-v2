@@ -22,12 +22,13 @@ extension PointMenuPresenter: ViewablePointMenuPresenter {
     
     func setView(view: PresentablePointMenuView) {
         self.view = view
-        if points == nil {
-            startWaitIndicator()
-        }
+        //if points == nil {
+        //    startWaitIndicator()
+      //  }
     }
     
     func didPressEnter(pointEnum: PointEnum) {
+        guard points != nil else { return }
         let point = points!.first(where: {$0.id == pointEnum})!
         Setter.shared.pointMenuDidSelect(point: point) { [weak self] in
             guard let self = self else { return }

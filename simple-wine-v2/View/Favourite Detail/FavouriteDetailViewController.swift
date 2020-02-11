@@ -40,11 +40,9 @@ class FavouriteDetailViewController: UIViewController {
     }
     
     
-    
     func setup(presenter: ViewableDetailFavouritePresenter) {
         product = presenter.getProduct()
     }
-    
     
     
     private func setupColor(product: Product){
@@ -77,7 +75,6 @@ class FavouriteDetailViewController: UIViewController {
         sugarLabel.font = Theme.geometriaLight(ofSize: 17)
     }
     
-    
     private func setupCountry(product: Product) {
         countryLabel.text = product.country
         countryLabel.textColor = Theme.unselected
@@ -90,9 +87,7 @@ class FavouriteDetailViewController: UIViewController {
         let formattedPrice =  Formatter.priceFormat(price: NSNumber(value: Int(product.price)), localeIdentifier: "ru_RU")
         priceLabel.text = formattedPrice
     }
-    
-    
-    
+
     
     @IBAction func pressClose(_ sender: Any) {
         dismiss(animated: true, completion: nil)

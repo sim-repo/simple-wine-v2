@@ -4,7 +4,6 @@ import RealmSwift
 class RealmService {
     
     
-    
     //MARK:- public >>
     
     //MARK:- Load
@@ -16,27 +15,27 @@ class RealmService {
     }
     
     
-    public static func loadCategories(pointEnum: PointEnum) -> [Category]? {
+    public static func loadCategories(pointEnum: PointEnum, menuMapEnum: MenuMapEnum ) -> [Category]? {
         guard let realm = getInstance(.unsafe) else { return nil }
-        let filter = "pointEnum = '\(pointEnum.rawValue)'"
+        let filter = "pointEnum = '\(pointEnum.rawValue)' AND menuMapEnum = '\(menuMapEnum)'"
         let objects: Results<RealmCategory> = realm.objects(RealmCategory.self).filter(filter)
         let categories = realmToCategories(objects)
         return categories
     }
     
     
-    public static func loadFilters(pointEnum: PointEnum) -> [Filter]? {
+    public static func loadFilters(pointEnum: PointEnum, menuMapEnum: MenuMapEnum) -> [Filter]? {
         guard let realm = getInstance(.unsafe) else { return nil }
-        let filter = "pointEnum = '\(pointEnum.rawValue)'"
+        let filter = "pointEnum = '\(pointEnum.rawValue)' AND menuMapEnum = '\(menuMapEnum)'"
         let objects: Results<RealmFilter> = realm.objects(RealmFilter.self).filter(filter)
         let filters = realmToFilters(objects)
         return filters
     }
     
     
-    public static func loadProducts(pointEnum: PointEnum) -> [Product]? {
+    public static func loadProducts(pointEnum: PointEnum, menuMapEnum: MenuMapEnum) -> [Product]? {
         guard let realm = getInstance(.unsafe) else { return nil }
-        let filter = "pointEnum = '\(pointEnum.rawValue)'"
+        let filter = "pointEnum = '\(pointEnum.rawValue)' AND menuMapEnum = '\(menuMapEnum)'"
         let objects: Results<RealmProduct> = realm.objects(RealmProduct.self).filter(filter)
         let products = realmToProducts(objects)
         return products
@@ -51,6 +50,8 @@ class RealmService {
     }
     
     
+    
+    //MARK:- Save
     
     
     public static func save(models: [PersistableModel], update: Bool) {
@@ -79,9 +80,6 @@ class RealmService {
     }
     
     
-    //MARK:- Save
-    
-    
     private static func pointsToRealm(_ points: [Point]) {
         var objects: [Object] = []
         
@@ -97,6 +95,7 @@ class RealmService {
     }
     
     
+    
     private static func categoriesToRealm(_ categories: [Category]) {
         var objects: [Object] = []
         
@@ -104,7 +103,8 @@ class RealmService {
             let realmCategory = RealmCategory()
             realmCategory.id = category.id
             realmCategory.title = category.title
-            realmCategory.pointEnum = category.pointId
+            realmCategory.pointEnum = category.pointEnum.rawValue
+            realmCategory.menuMapEnum = category.menuMapEnum.rawValue
             objects.append(realmCategory)
         }
         save(items: objects, update: true)
@@ -120,11 +120,11 @@ class RealmService {
             realmFilter.title = filter.title
             realmFilter.parentId.value = filter.parentId
             realmFilter.pointEnum = filter.pointEnum.rawValue
+            realmFilter.menuMapEnum = filter.menuMapEnum.rawValue
             realmFilter.kindId = filter.kindId
             realmFilter.categoryId = filter.categoryId
             realmFilter.level = filter.level
             realmFilter.parentTitle = filter.parentTitle ?? ""
-            realmFilter.isPrice = filter.isPrice //# >> проект: тупые менеджера
             realmFilter.volume = filter.volume.rawValue
             objects.append(realmFilter)
         }
@@ -138,15 +138,18 @@ class RealmService {
         for product in products {
             let realmProduct = RealmProduct()
             realmProduct.id = product.id
+            realmProduct.pointEnum = product.pointEnum.rawValue
+            realmProduct.menuMapEnum = product.menuMapEnum.rawValue
+            realmProduct.categoryId = product.categoryId
+            
+            realmProduct.attributeIds.append(objectsIn: product.attributeIds)
+            
             realmProduct.name = product.name
             realmProduct.nameRU = product.nameRU
             realmProduct.volume = product.volume
-            realmProduct.categoryId = product.categoryId
-            realmProduct.pointEnum = product.pointEnum.rawValue
             realmProduct.desc = product.desc
             realmProduct.price = product.price
             realmProduct.volume = product.volume
-            realmProduct.attributeIds.append(objectsIn: product.attributeIds)
             realmProduct.imageURL = product.imageURL
             realmProduct.manufactureYear = product.manufactureYear
             realmProduct.grapes = product.grapes
@@ -247,7 +250,8 @@ class RealmService {
             let id = obj.id
             let title = obj.title
             let pointEnum: PointEnum = PointEnum.init(rawValue: obj.pointEnum) ?? .unknown
-            let category = Category(id: id, title: title, pointEnum: pointEnum)
+            let menuMapEnum: MenuMapEnum = MenuMapEnum.init(rawValue: obj.menuMapEnum) ?? .unknown
+            let category = Category(id: id, title: title, pointEnum: pointEnum, menuMapEnum: menuMapEnum)
             categories.append(category)
         }
         return categories
@@ -265,19 +269,21 @@ class RealmService {
             let parentId = obj.parentId.value
             let categoryId = obj.categoryId
             let pointEnum: PointEnum = PointEnum.init(rawValue: obj.pointEnum) ?? .unknown
+            let menuMapEnum: MenuMapEnum = MenuMapEnum.init(rawValue: obj.menuMapEnum) ?? .unknown
             let kindId = obj.kindId
             let level = obj.level
             let parentTitle = obj.parentTitle
             
             let filter = Filter(id: id,
                                 pointEnum: pointEnum,
+                                menuMapEnum: menuMapEnum,
                                 title: title,
                                 parentId: parentId,
                                 level: level,
                                 parentTitle: parentTitle,
                                 kind: kindId,
                                 categoryId: categoryId)
-            filter.isPrice = obj.isPrice //# >> проект: тупые менеджера
+            
             if let vol = FilterVolumeEnum.init(rawValue: obj.volume) {
                 filter.volume = vol
             }
@@ -293,15 +299,18 @@ class RealmService {
             return nil
         }
         for obj in objects {
+            
             let id = obj.id
-            let name = obj.name
-            let nameRU = obj.nameRU
             let categoryId = obj.categoryId
             let pointEnum: PointEnum = PointEnum.init(rawValue: obj.pointEnum) ?? .unknown
+            let menuMapEnum: MenuMapEnum = MenuMapEnum.init(rawValue: obj.menuMapEnum) ?? .unknown
+            let attributeIds = Array(obj.attributeIds)
+            
+            let name = obj.name
+            let nameRU = obj.nameRU
             let desc = obj.desc
             let price = obj.price
             let volume = obj.volume
-            let attributeIds = Array(obj.attributeIds)
             let imageURL = obj.imageURL
             let manufactureYear = obj.manufactureYear
             let color = obj.color
@@ -316,6 +325,7 @@ class RealmService {
             let product = Product(id: id,
                                   name: name,
                                   pointEnum: pointEnum,
+                                  menuMapEnum: menuMapEnum,
                                   categoryId: categoryId,
                                   desc: desc,
                                   price: price,

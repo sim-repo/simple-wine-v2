@@ -51,4 +51,5 @@ protocol PresentablePointMenuView: class {
 //MARK:- Map Menu View
 protocol PresentableMapMenuView: class {
     func enter()
+    func showAlert(text: String) 
 }

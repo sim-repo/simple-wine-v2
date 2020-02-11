@@ -38,7 +38,7 @@ class Setter {
 //MARK:- sync functions
     
     func allSync(_ completion: (()->Void)? = nil) {
-        AllSync.shared.sync(getOnSuccess(completion), getOnError())
+        AllSync.shared.sync(self.getOnSuccess(completion), self.getOnError())
     }
     
     func bkgAllSync(appCompletion: ((_ newData: Bool) -> Void)? = nil) {
@@ -47,15 +47,44 @@ class Setter {
 }
 
 
+extension Setter: DownloadableSetter {
+    
+    func downloadDidFinish() {
+        ThreadConstant.UI_THREAD {
+            (PointMenuPresenter.shared.view as! PointMenuViewController).downloadDidFinish()
+        }
+    }
+    
+    func downloadUpdateProgress(progress: Float, totalSize : String) {
+        ThreadConstant.UI_THREAD {
+            (PointMenuPresenter.shared.view as! PointMenuViewController).downloadUpdateProgress(progress: progress, totalSize: totalSize)
+        }
+    }
+}
+
+
 //MARK:- point has being selected
 extension Setter {
     
+    
     func pointMenuDidSelect(point: Point, _ completion: (()->Void)? = nil) {
+        (AuthPresenter.shared as SetterableAuthPresenter).setCurrentPoint(point: point)
+        (MapMenuPresenter.shared as SetterableMapMenuPresenter).setCurrentPoint(point: point)
+        completion?()
+    }
+    
+    
+    func mapMenuDidSelect(point: Point, mapMenuEnum: MenuMapEnum, _ completion: (()->Void)? = nil) {
+        
+        // 1 сетапим точку в другие презентеры
+        (MapPresenter.shared as SetterableMapPresenter).setCurrentPoint(pointEnum: point.id)
+        (MapPresenter.shared as SetterableMapPresenter).setMapMenu(menuMapEnum: mapMenuEnum)
+        
         
         // 1 подгружаем из realm
-        let categories = RealmService.loadCategories(pointEnum: point.id)
-        let filters = RealmService.loadFilters(pointEnum: point.id)
-        let products = RealmService.loadProducts(pointEnum: point.id)
+        let categories = RealmService.loadCategories(pointEnum: point.id, menuMapEnum: mapMenuEnum)
+        let filters = RealmService.loadFilters(pointEnum: point.id, menuMapEnum: mapMenuEnum)
+        let products = RealmService.loadProducts(pointEnum: point.id, menuMapEnum: mapMenuEnum)
         let settings = RealmService.loadDetailMapSettings()
         
         // 2 очищаем кэш от старых данных
@@ -73,13 +102,9 @@ extension Setter {
                 detailMapSettings: settings!
             )
         } else {
-            (PointMenuPresenter.shared as SetterablePointMenuPresenter).showAlert(text: "Нет данных по \(point.name).\nПроверьте интернет-соединение или обратитесь к службе поддержки" )
+            (MapMenuPresenter.shared as SetterableMapMenuPresenter).showAlert(text: "Нет данных по \(point.name) : \(mapMenuEnum.rawValue).\nПроверьте интернет-соединение или обратитесь к службе поддержки" )
+            return
         }
-        
-        // 4 сетапим точку в другие презентеры
-        (AuthPresenter.shared as SetterableAuthPresenter).setCurrentPoint(point: point)
-        (MapMenuPresenter.shared as SetterableMapMenuPresenter).setCurrentPoint(point: point)
-        (MapPresenter.shared as SetterableMapPresenter).setCurrentPoint(pointEnum: point.id)
         
         // 5 вызываем segue transition
         completion?()

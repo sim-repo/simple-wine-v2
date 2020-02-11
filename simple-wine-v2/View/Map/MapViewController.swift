@@ -19,7 +19,6 @@ class MapViewController: UIViewController {
     
     @IBOutlet weak var filterTitleLabel: UILabel!
     @IBOutlet weak var volumeLabel: UILabel!
-    
 
     
     var presenter: MapPresenter {
@@ -100,6 +99,7 @@ class MapViewController: UIViewController {
         filterTitleLabel.font = Theme.charterBold(ofSize: 17)
         volumeLabel.font = Theme.charterBold(ofSize: 17)
     }
+    
     
     private func registerNib(){
         filterTableView.register( FilterSectionHeader.nib, forHeaderFooterViewReuseIdentifier: FilterSectionHeader.reuseIdentifier )

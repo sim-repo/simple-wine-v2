@@ -53,7 +53,6 @@
 		165D639023E9C6DA00428AB1 /* Setter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D638F23E9C6DA00428AB1 /* Setter.swift */; };
 		165D639223E9C9E400428AB1 /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D639123E9C9E400428AB1 /* TypeAliases.swift */; };
 		165D639823E9DF2C00428AB1 /* ParseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D639723E9DF2C00428AB1 /* ParseService.swift */; };
-		165D639B23E9EA3400428AB1 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D639A23E9EA3400428AB1 /* TestData.swift */; };
 		165DD6C623E39A0C0068D76E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165DD6C523E39A0C0068D76E /* AppDelegate.swift */; };
 		165DD6CD23E39A0C0068D76E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165DD6CB23E39A0C0068D76E /* Main.storyboard */; };
 		165DD6CF23E39A0D0068D76E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 165DD6CE23E39A0D0068D76E /* Assets.xcassets */; };
@@ -86,8 +85,6 @@
 		16797CC223E8CAD3001707D3 /* DepoCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16797CC123E8CAD3001707D3 /* DepoCover.swift */; };
 		16797CC423E8D379001707D3 /* ThreadConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16797CC323E8D378001707D3 /* ThreadConstant.swift */; };
 		16797CC723E8D7B4001707D3 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16797CC623E8D7B4001707D3 /* Response.swift */; };
-		16797CC923E8ED62001707D3 /* Test.json in Resources */ = {isa = PBXBuildFile; fileRef = 16797CC823E8ED62001707D3 /* Test.json */; };
-		16797CCD23E8F69F001707D3 /* TestParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16797CCC23E8F69F001707D3 /* TestParse.swift */; };
 		16ABE8C823E5EA660065D873 /* FilterSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABE8C723E5EA660065D873 /* FilterSectionHeader.swift */; };
 		16ABE8CA23E5EA750065D873 /* FilterSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16ABE8C923E5EA750065D873 /* FilterSectionHeader.xib */; };
 		16ABE8CF23E623FE0065D873 /* MapDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABE8CE23E623FE0065D873 /* MapDetailViewController.swift */; };
@@ -120,6 +117,9 @@
 		16DBA85423E827430088052B /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DBA85323E827430088052B /* Point.swift */; };
 		16DBA85623E82A0E0088052B /* PointConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DBA85523E82A0E0088052B /* PointConstant.swift */; };
 		16DBA85C23E8426B0088052B /* GrandCruCover.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16DBA85A23E8426B0088052B /* GrandCruCover.xib */; };
+		16F1FF9A23F29B5F009A3A13 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F1FF9923F29B5F009A3A13 /* Download.swift */; };
+		16F1FF9C23F2A10C009A3A13 /* DownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F1FF9B23F2A10C009A3A13 /* DownloadService.swift */; };
+		16F1FF9F23F2A9DF009A3A13 /* DownloadableSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F1FF9E23F2A9DF009A3A13 /* DownloadableSetter.swift */; };
 		D5CA5FA5429D21B6B18E5A44 /* Pods_simple_wine_v2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7279243E76EF54B08F73F05 /* Pods_simple_wine_v2.framework */; };
 /* End PBXBuildFile section */
 
@@ -172,7 +172,6 @@
 		165D638F23E9C6DA00428AB1 /* Setter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setter.swift; sourceTree = "<group>"; };
 		165D639123E9C9E400428AB1 /* TypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
 		165D639723E9DF2C00428AB1 /* ParseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseService.swift; sourceTree = "<group>"; };
-		165D639A23E9EA3400428AB1 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		165DD6C223E39A0C0068D76E /* simple-wine-v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "simple-wine-v2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		165DD6C523E39A0C0068D76E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		165DD6CC23E39A0C0068D76E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -207,8 +206,6 @@
 		16797CC123E8CAD3001707D3 /* DepoCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepoCover.swift; sourceTree = "<group>"; };
 		16797CC323E8D378001707D3 /* ThreadConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadConstant.swift; sourceTree = "<group>"; };
 		16797CC623E8D7B4001707D3 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
-		16797CC823E8ED62001707D3 /* Test.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Test.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
-		16797CCC23E8F69F001707D3 /* TestParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestParse.swift; sourceTree = "<group>"; };
 		16ABE8C723E5EA660065D873 /* FilterSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSectionHeader.swift; sourceTree = "<group>"; };
 		16ABE8C923E5EA750065D873 /* FilterSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterSectionHeader.xib; sourceTree = "<group>"; };
 		16ABE8CE23E623FE0065D873 /* MapDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailViewController.swift; sourceTree = "<group>"; };
@@ -241,6 +238,9 @@
 		16DBA85323E827430088052B /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		16DBA85523E82A0E0088052B /* PointConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointConstant.swift; sourceTree = "<group>"; };
 		16DBA85A23E8426B0088052B /* GrandCruCover.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GrandCruCover.xib; sourceTree = "<group>"; };
+		16F1FF9923F29B5F009A3A13 /* Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
+		16F1FF9B23F2A10C009A3A13 /* DownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadService.swift; sourceTree = "<group>"; };
+		16F1FF9E23F2A9DF009A3A13 /* DownloadableSetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadableSetter.swift; sourceTree = "<group>"; };
 		4A7265334B0A66442C1DF066 /* Pods-simple-wine-v2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simple-wine-v2.debug.xcconfig"; path = "Target Support Files/Pods-simple-wine-v2/Pods-simple-wine-v2.debug.xcconfig"; sourceTree = "<group>"; };
 		9BF400A9755BC9C1036D441C /* Pods-simple-wine-v2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simple-wine-v2.release.xcconfig"; path = "Target Support Files/Pods-simple-wine-v2/Pods-simple-wine-v2.release.xcconfig"; sourceTree = "<group>"; };
 		B7279243E76EF54B08F73F05 /* Pods_simple_wine_v2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_simple_wine_v2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -400,7 +400,9 @@
 			isa = PBXGroup;
 			children = (
 				1644726D23ECB45C00DEDD2B /* NetworkService.swift */,
+				16F1FF9B23F2A10C009A3A13 /* DownloadService.swift */,
 				1644726F23ECBF9500DEDD2B /* Session.swift */,
+				16F1FF9923F29B5F009A3A13 /* Download.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -424,7 +426,6 @@
 		165D639923E9EA1C00428AB1 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				165D639A23E9EA3400428AB1 /* TestData.swift */,
 				1621450423EF58F6008C7AD0 /* TestData2.swift */,
 			);
 			path = Data;
@@ -540,6 +541,7 @@
 		165DD6FC23E3A65C0068D76E /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				16F1FF9D23F2A9C1009A3A13 /* Setter */,
 				165DD72123E42FC10068D76E /* Sync */,
 				1644728D23ED86BD00DEDD2B /* Model */,
 				165DD6FE23E3A66D0068D76E /* View */,
@@ -684,18 +686,8 @@
 			isa = PBXGroup;
 			children = (
 				165D639923E9EA1C00428AB1 /* Data */,
-				16797CCB23E8F681001707D3 /* Parse */,
 			);
 			path = Test;
-			sourceTree = "<group>";
-		};
-		16797CCB23E8F681001707D3 /* Parse */ = {
-			isa = PBXGroup;
-			children = (
-				16797CC823E8ED62001707D3 /* Test.json */,
-				16797CCC23E8F69F001707D3 /* TestParse.swift */,
-			);
-			path = Parse;
 			sourceTree = "<group>";
 		};
 		16ABE89223E58B2C0065D873 /* UI */ = {
@@ -797,6 +789,14 @@
 			path = Cover;
 			sourceTree = "<group>";
 		};
+		16F1FF9D23F2A9C1009A3A13 /* Setter */ = {
+			isa = PBXGroup;
+			children = (
+				16F1FF9E23F2A9DF009A3A13 /* DownloadableSetter.swift */,
+			);
+			path = Setter;
+			sourceTree = "<group>";
+		};
 		ECE25878875D76AE5F51B40A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -882,7 +882,6 @@
 				16ABE8FD23E6562B0065D873 /* Geometria-ExtraLightItalic.otf in Resources */,
 				16ABE8F523E656210065D873 /* CharterITC Bold.otf in Resources */,
 				16ABE8FB23E6562B0065D873 /* Geometria-ExtraBlackItalic.otf in Resources */,
-				16797CC923E8ED62001707D3 /* Test.json in Resources */,
 				16ABE90223E6562B0065D873 /* Geometria-LightItalic.otf in Resources */,
 				16ABE90023E6562B0065D873 /* Geometria-Italic.otf in Resources */,
 				16ABE8FE23E6562B0065D873 /* Geometria-Heavy.otf in Resources */,
@@ -981,13 +980,13 @@
 				16520DFA23E6EEB900AA3576 /* FavouritePresenter.swift in Sources */,
 				1621451123F0AFF8008C7AD0 /* ProductSectionHeader.swift in Sources */,
 				1644728023ECCC6B00DEDD2B /* RealmDetailMapSetting.swift in Sources */,
-				16797CCD23E8F69F001707D3 /* TestParse.swift in Sources */,
 				1644728C23ED759100DEDD2B /* RealmPoint.swift in Sources */,
 				165DD71423E3AA940068D76E /* ProductTableViewCell.swift in Sources */,
 				16520E0023E6F2BF00AA3576 /* FavouriteDetailPresenter.swift in Sources */,
 				16797CAA23E84622001707D3 /* GrandCruCover.swift in Sources */,
 				165DD70023E3A69D0068D76E /* ViewablePresenter.swift in Sources */,
 				1644727023ECBF9500DEDD2B /* Session.swift in Sources */,
+				16F1FF9C23F2A10C009A3A13 /* DownloadService.swift in Sources */,
 				165DD6F423E3A1140068D76E /* Category.swift in Sources */,
 				1621450B23F0754B008C7AD0 /* MapMenuPresenter.swift in Sources */,
 				1644729C23EDAFEB00DEDD2B /* SetterablePresenter.swift in Sources */,
@@ -1018,6 +1017,8 @@
 				16520E0B23E71F9B00AA3576 /* FavouriteSectionHeader.swift in Sources */,
 				1644726E23ECB45C00DEDD2B /* NetworkService.swift in Sources */,
 				16797CB023E85620001707D3 /* PointMenuViewController.swift in Sources */,
+				16F1FF9A23F29B5F009A3A13 /* Download.swift in Sources */,
+				16F1FF9F23F2A9DF009A3A13 /* DownloadableSetter.swift in Sources */,
 				1621451523F0DF4F008C7AD0 /* Formatter.swift in Sources */,
 				16ABE8CF23E623FE0065D873 /* MapDetailViewController.swift in Sources */,
 				16DBA84F23E823450088052B /* CoverViewController.swift in Sources */,
@@ -1029,7 +1030,6 @@
 				1644727523ECC76500DEDD2B /* RealmBase.swift in Sources */,
 				162144F223EEC238008C7AD0 /* KingfisherConfiguration.swift in Sources */,
 				165D639823E9DF2C00428AB1 /* ParseService.swift in Sources */,
-				165D639B23E9EA3400428AB1 /* TestData.swift in Sources */,
 				165DD6E823E39F7E0068D76E /* MapViewController+Table.swift in Sources */,
 				1621451323F0BA85008C7AD0 /* UIColor + Extensions.swift in Sources */,
 				16148EF623F185C5001E1A1F /* ProductConstant.swift in Sources */,

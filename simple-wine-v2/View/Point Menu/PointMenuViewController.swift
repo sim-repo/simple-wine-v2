@@ -5,7 +5,11 @@ class PointMenuViewController: UIViewController {
     
     @IBOutlet weak var grandcruButton: UIButton!
     @IBOutlet weak var kuznetskyButton: UIButton!
-    @IBOutlet weak var depoButton: UIButton!
+    @IBOutlet weak var depoButton: UIButton!    
+    @IBOutlet weak var progressLabel: UILabel!
+    @IBOutlet weak var progressView: UIProgressView!
+    
+    var isDownloadingNow = false
     
     var inTransition = false
     
@@ -21,11 +25,17 @@ class PointMenuViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         setupButtons()
         let _ = presenter
         setupNotification()
+        setupProgress()
     }
    
+    private func setupProgress() {
+        progressLabel.isHidden = true
+        progressView.isHidden = true
+    }
     
     private func setupButtons(){
         grandcruButton.setImage(UIImage(named: "RightArrowButton"), for: .normal)
@@ -45,7 +55,7 @@ class PointMenuViewController: UIViewController {
             }
         }
     }
-    
+
 
     @IBAction func pressGrandCru(_ sender: Any) {
         guard inTransition == false else { return }
@@ -66,6 +76,46 @@ class PointMenuViewController: UIViewController {
     }
 }
 
+
+// Downloadable
+extension PointMenuViewController {
+    
+    func downloadUpdateProgress(progress: Float, totalSize : String) {
+        if progressLabel.isHidden {
+            progressLabel.isHidden = false
+            progressView.isHidden = false
+        }
+        
+        if grandcruButton.isHidden == false {
+            grandcruButton.isHidden = true
+            kuznetskyButton.isHidden = true
+            depoButton.isHidden = true
+        }
+        
+        isDownloadingNow = true
+        progressView.progress = progress
+        progressLabel.text = String(format: "%.1f%% of %@", progress * 100, totalSize)
+    }
+    
+    func downloadDidFinish() {
+        isDownloadingNow = false
+        
+        grandcruButton.isHidden = false
+        kuznetskyButton.isHidden = false
+        depoButton.isHidden = false
+        grandcruButton.alpha = 0
+        kuznetskyButton.alpha = 0
+        grandcruButton.alpha = 0
+        UIView.animate(withDuration: 1.0) {
+            self.grandcruButton.alpha = 1
+            self.kuznetskyButton.alpha = 1
+            self.grandcruButton.alpha = 1
+            self.progressView.alpha = 0
+            self.progressLabel.alpha = 0
+            self.view.layoutIfNeeded()
+        }
+    }
+}
 
 // Presentable
 extension PointMenuViewController: PresentablePointMenuView {

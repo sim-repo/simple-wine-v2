@@ -15,8 +15,7 @@ class MapMenuPresenter {
 
 
 extension MapMenuPresenter: ViewableMapMenuPresenter {
-    
-    
+
     func setView(view: PresentableMapMenuView) {
         self.view = view
     }
@@ -25,14 +24,11 @@ extension MapMenuPresenter: ViewableMapMenuPresenter {
         return point.logoOnLightImageURL
     }
     
-    func didPressClassicMenuItem() {
-        MapPresenter.shared.setup(menuMapEnum: .classic)
-        view?.enter()
-    }
-    
-    func didPressPriceMenuItem() {
-        MapPresenter.shared.setup(menuMapEnum: .price)
-        view?.enter()
+    func didPressEnter(menuMapEnum: MenuMapEnum) {
+        Setter.shared.mapMenuDidSelect(point: point, mapMenuEnum: menuMapEnum) { [weak self] in
+            guard let self = self else { return }
+            self.view?.enter()
+        }
     }
 }
 
@@ -41,5 +37,9 @@ extension MapMenuPresenter: SetterableMapMenuPresenter {
     
     func setCurrentPoint(point: Point) {
         self.point = point
+    }
+    
+    func showAlert(text: String) {
+        view?.showAlert(text: text)
     }
 }

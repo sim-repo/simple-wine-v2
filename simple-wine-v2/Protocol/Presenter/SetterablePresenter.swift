@@ -10,7 +10,7 @@ protocol SetterableMapPresenter {
                            detailMapSettings: [DetailMapSetting])
     
     func setCurrentPoint(pointEnum: PointEnum)
-    
+    func setMapMenu(menuMapEnum: MenuMapEnum)
     func clear()
 }
 
@@ -35,4 +35,5 @@ protocol SetterableAuthPresenter {
 
 protocol SetterableMapMenuPresenter {
     func setCurrentPoint(point: Point)
+    func showAlert(text: String)
 }

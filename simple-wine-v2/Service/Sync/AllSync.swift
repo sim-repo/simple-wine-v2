@@ -44,7 +44,7 @@ class AllSync {
             let url = NetworkConfiguration.getFullPath(path: "all3")
             var request = URLRequest(url: url)
             request.httpMethod = "GET"
-            NetworkService.requestAll(request, onSuccess, onError, self.getOnSuccess())
+            DownloadService.shared.downloadAll(request, onSuccess, onError, self.getOnSuccess())
         }
     }
 }
@@ -59,12 +59,13 @@ extension AllSync {
        
         let completion: syncOnSuccess = { [weak self] points, categories, filters, products, detailMapSettings in
             guard let self = self else { return }
+        
             RealmService.clearAll(confEnum: .unsafe)
-            RealmService.save(models: points, update: true)
-            RealmService.save(models: categories, update: true)
-            RealmService.save(models: filters, update: true)
-            RealmService.save(models: products, update: true)
-            RealmService.save(models: detailMapSettings, update: true)
+            RealmService.save(models: points, update: false)
+            RealmService.save(models: categories, update: false)
+            RealmService.save(models: filters, update: false)
+            RealmService.save(models: products, update: false)
+            RealmService.save(models: detailMapSettings, update: false)
             self.reachability.stopNotifier()
             NotificationCenter.default.removeObserver(self, name: .reachabilityChanged, object: self.reachability)
             self.closure = nil

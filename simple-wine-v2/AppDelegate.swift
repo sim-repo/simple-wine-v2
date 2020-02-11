@@ -4,24 +4,34 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
+      var backgroundSessionCompletionHandler: (() -> Void)?
+    
     // MARK: - Instance Properties
     var window: UIWindow? = {
         let window = UIWindow(frame: UIScreen.main.bounds)
         return window
     }()
 
+    func application(_ application: UIApplication,
+                     handleEventsForBackgroundURLSession handleEventsForBackgroundURLSessionidentifier: String,
+                     completionHandler: @escaping () -> Void) {
+      backgroundSessionCompletionHandler = completionHandler
+    }
+    
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         UNUserNotificationCenter.current().delegate = self
     
-      //  TestData2.shared.start()
+       // TestData2.shared.start()
 
         WebsocketService.shared.wsConnect()
 
         Setter.shared.allSync()
 
         KingfisherConfiguration.shared.setup()
+
+        
         // bkg update config:
         UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalMinimum)
     

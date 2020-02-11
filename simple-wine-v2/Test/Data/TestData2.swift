@@ -17,46 +17,77 @@ class TestData2 {
     private init(){}
     static var shared = TestData2()
     
-    var categories: [Category] = getCategories()
+    var categories: [Category] = getClassicCategories()
+    var priceCategories: [Category] = getPriceCategories()
+    
+    
     var products: [Product] = []
     var filters: [Filter] = []
     var productId = 0
     var filterId = 0
     var kindId = 0
     
+    var maxProducts = 2
     
     var iconByCountries: [String:String] = [:]
-    
     
     
     var filterCategories: [CategoryFilterProtocol] = [FilterCategory0(), FilterCategory1(), FilterCategory2(), FilterCategory3(), FilterCategory4(), FilterCategory5()]
     
     
     // point independed
-    static func getCategories() -> [Category] {
+    static func getClassicCategories() -> [Category] {
         return [
-            Category(id: 0, title: "Игристое", pointEnum: .grandcru),
-            Category(id: 1, title: "Шампанское", pointEnum: .grandcru),
-            Category(id: 2, title: "Вино", pointEnum: .grandcru),
-            Category(id: 3, title: "Десертное", pointEnum: .grandcru),
-            Category(id: 4, title: "Half-Bottle", pointEnum: .grandcru),
-            Category(id: 5, title: "Magnum",  pointEnum: .grandcru),
+            Category(id: 0, title: "Игристое", pointEnum: .grandcru, menuMapEnum: .classic),
+            Category(id: 1, title: "Шампанское", pointEnum: .grandcru, menuMapEnum: .classic),
+            Category(id: 2, title: "Вино", pointEnum: .grandcru, menuMapEnum: .classic),
+            Category(id: 3, title: "Десертное", pointEnum: .grandcru, menuMapEnum: .classic),
+            Category(id: 4, title: "Half-Bottle", pointEnum: .grandcru, menuMapEnum: .classic),
+            Category(id: 5, title: "Magnum",  pointEnum: .grandcru, menuMapEnum: .classic),
             
-            Category(id: 6, title: "Игристое",  pointEnum: .kuznetskiymost),
-            Category(id: 7, title: "Шампанское",  pointEnum: .kuznetskiymost),
-            Category(id: 8, title: "Вино",  pointEnum: .kuznetskiymost),
-            Category(id: 9, title: "Десертное", pointEnum: .kuznetskiymost),
-            Category(id: 10, title: "Half-Bottle",  pointEnum: .kuznetskiymost),
-            Category(id: 11, title: "Magnum",  pointEnum: .kuznetskiymost),
+            Category(id: 6, title: "Игристое",  pointEnum: .kuznetskiymost, menuMapEnum: .classic),
+            Category(id: 7, title: "Шампанское",  pointEnum: .kuznetskiymost, menuMapEnum: .classic),
+            Category(id: 8, title: "Вино",  pointEnum: .kuznetskiymost, menuMapEnum: .classic),
+            Category(id: 9, title: "Десертное", pointEnum: .kuznetskiymost, menuMapEnum: .classic),
+            Category(id: 10, title: "Half-Bottle",  pointEnum: .kuznetskiymost, menuMapEnum: .classic),
+            Category(id: 11, title: "Magnum",  pointEnum: .kuznetskiymost, menuMapEnum: .classic),
             
-            Category(id: 12, title: "Игристое",  pointEnum: .depo),
-            Category(id: 13, title: "Шампанское",  pointEnum: .depo),
-            Category(id: 14, title: "Вино",   pointEnum: .depo),
-            Category(id: 15, title: "Десертное",  pointEnum: .depo),
-            Category(id: 16, title: "Half-Bottle",  pointEnum: .depo),
-            Category(id: 17, title: "Magnum",  pointEnum: .depo)
+            Category(id: 12, title: "Игристое",  pointEnum: .depo, menuMapEnum: .classic),
+            Category(id: 13, title: "Шампанское",  pointEnum: .depo, menuMapEnum: .classic),
+            Category(id: 14, title: "Вино",   pointEnum: .depo, menuMapEnum: .classic),
+            Category(id: 15, title: "Десертное",  pointEnum: .depo, menuMapEnum: .classic),
+            Category(id: 16, title: "Half-Bottle",  pointEnum: .depo, menuMapEnum: .classic),
+            Category(id: 17, title: "Magnum",  pointEnum: .depo, menuMapEnum: .classic)
         ]
     }
+    
+    // point independed
+    static func getPriceCategories() -> [Category] {
+        return [
+            Category(id: 18, title: "Игристое", pointEnum: .grandcru, menuMapEnum: .price),
+            Category(id: 19, title: "Шампанское", pointEnum: .grandcru, menuMapEnum: .price),
+            Category(id: 20, title: "Вино", pointEnum: .grandcru, menuMapEnum: .price),
+            Category(id: 21, title: "Десертное", pointEnum: .grandcru, menuMapEnum: .price),
+            Category(id: 22, title: "Half-Bottle", pointEnum: .grandcru, menuMapEnum: .price),
+            Category(id: 23, title: "Magnum",  pointEnum: .grandcru, menuMapEnum: .price),
+            
+            Category(id: 24, title: "Игристое",  pointEnum: .kuznetskiymost, menuMapEnum: .price),
+            Category(id: 25, title: "Шампанское",  pointEnum: .kuznetskiymost, menuMapEnum: .price),
+            Category(id: 26, title: "Вино",  pointEnum: .kuznetskiymost, menuMapEnum: .price),
+            Category(id: 27, title: "Десертное", pointEnum: .kuznetskiymost, menuMapEnum: .price),
+            Category(id: 28, title: "Half-Bottle",  pointEnum: .kuznetskiymost, menuMapEnum: .price),
+            Category(id: 29, title: "Magnum",  pointEnum: .kuznetskiymost, menuMapEnum: .price),
+            
+            Category(id: 30, title: "Игристое",  pointEnum: .depo, menuMapEnum: .price),
+            Category(id: 31, title: "Шампанское",  pointEnum: .depo, menuMapEnum: .price),
+            Category(id: 32, title: "Вино",   pointEnum: .depo, menuMapEnum: .price),
+            Category(id: 33, title: "Десертное",  pointEnum: .depo, menuMapEnum: .price),
+            Category(id: 34, title: "Half-Bottle",  pointEnum: .depo, menuMapEnum: .price),
+            Category(id: 35, title: "Magnum",  pointEnum: .depo, menuMapEnum: .price)
+        ]
+    }
+    
+    
     
     
     func start() {
@@ -73,13 +104,16 @@ class TestData2 {
         iconByCountries["Чили"] = "http://185.219.42.85:3000/Images/chili.png"
         iconByCountries["Соединенные Штаты Америки"] = "http://185.219.42.85:3000/Images/usa.png"
         iconByCountries["Сербия"] = "http://185.219.42.85:3000/Images/serb.png"
-        
-        
+
         
         createFilter(pointEnum: .grandcru)
         createFilter(pointEnum: .kuznetskiymost)
         createFilter(pointEnum: .depo)
         
+        
+        createFilterPrice(pointEnum: .grandcru)
+        createFilterPrice(pointEnum: .kuznetskiymost)
+        createFilterPrice(pointEnum: .depo)
         
         
         //        for filter in filters {
@@ -93,8 +127,9 @@ class TestData2 {
         let points = Point.list()
         let mapSettings = DetailMapSetting.list()
         
-        let response = Response(points: points, categories: categories, filters: filters, products: products, detailMapSetting: mapSettings)
-        TestParse.shared.encode(response: response)
+        let allCategories = categories + priceCategories
+        let response = Response(points: points, categories: allCategories, filters: filters, products: products, detailMapSetting: mapSettings)
+        encode(response: response)
     }
     
     
@@ -104,7 +139,7 @@ class TestData2 {
         
         
         func getProductNameEng() -> [String] {
-             return ["White","Pink","Dessert","Magnum"]
+            return ["White","Pink","Dessert","Magnum"]
         }
         
         func getProductNameRU() -> [String] {
@@ -149,7 +184,7 @@ class TestData2 {
     class FilterCategory1: CategoryFilterProtocol {
         
         func getProductNameEng() -> [String] {
-             return ["White","Pink"]
+            return ["White","Pink"]
         }
         
         func getProductNameRU() -> [String] {
@@ -190,7 +225,7 @@ class TestData2 {
         
         
         func getProductNameEng() -> [String] {
-             return ["White", "Pink", "Red", "Dessert", "Half-bottle", "Magnum"]
+            return ["White", "Pink", "Red", "Dessert", "Half-bottle", "Magnum"]
         }
         
         func getProductNameRU() -> [String] {
@@ -330,7 +365,7 @@ class TestData2 {
         
         
         func getProductNameEng() -> [String] {
-             return ["Sparkling", "White Wine", "Half-bottle"]
+            return ["Sparkling", "White Wine", "Half-bottle"]
         }
         
         func getProductNameRU() -> [String] {
@@ -377,7 +412,7 @@ class TestData2 {
         
         
         func getProductNameEng() -> [String] {
-             return ["White Wine", "Red Wine", "Dessert"]
+            return ["White Wine", "Red Wine", "Dessert"]
         }
         
         func getProductNameRU() -> [String] {
@@ -422,7 +457,7 @@ class TestData2 {
         func getProductNameEng() -> [String] {
             return ["Sparkling", "White Wine", "Rose Wine", "Red Wine"]
         }
-               
+        
         func getProductNameRU() -> [String] {
             ["Игристое","Белое вино","Розовое вино","Красное вино"]
         }
@@ -430,8 +465,8 @@ class TestData2 {
         func getColor()->[ProductColorEnum] {
             return [.white, .white, .pink, .red]
         }
-               
-
+        
+        
         func getLevel0() -> [String] {
             return ["Игристое","Белое вино","Розовое вино","Красное вино"]
         }
@@ -464,6 +499,79 @@ class TestData2 {
     
     
     
+    private func createFilterPrice(pointEnum: PointEnum) {
+        
+        let currentCategories = priceCategories.filter({$0.pointEnum == pointEnum})
+        
+        
+        for (categoryIndex, filterCategory) in filterCategories.enumerated() {
+            
+            let currentCategory = currentCategories[categoryIndex]
+            
+            for (level0FilterIndex, level0FilterTitle) in filterCategory.getLevel0().enumerated() {
+                
+                let productNameENG = filterCategory.getProductNameEng()[level0FilterIndex]
+                let productNameRU = filterCategory.getProductNameRU()[level0FilterIndex]
+                let color = filterCategory.getColor()[level0FilterIndex]
+                
+                kindId += 1
+                
+                let filterLevel0 = Filter(id: filterId, pointEnum: pointEnum, menuMapEnum: .price, title: level0FilterTitle, parentId: nil, level: 0, parentTitle: nil, kind: kindId, categoryId: currentCategory.id)
+                
+                filterLevel0.volume = .v_075
+                filters.append(filterLevel0)
+                filterId += 1
+                
+                
+                for (level1FilterIndex, level1FilterTitle) in filterCategory.getLevel1Price(by: level0FilterIndex).enumerated() {
+                    
+                    
+                    let filterLevelPrice = Filter(id: filterId, pointEnum: pointEnum, menuMapEnum: .price, title: level1FilterTitle, parentId: filterLevel0.id, level: 1, parentTitle: filterLevel0.title, kind: kindId, categoryId: currentCategory.id)
+                    
+                    filterLevelPrice.volume = .v_075
+                    filters.append(filterLevelPrice)
+                    filterId += 1
+                    
+                    
+                    
+                    for (level2FilterIndex, level2FilterTitle) in filterCategory.getLevel1(by: level1FilterIndex).enumerated() {
+                        
+                        
+                        let filterLevel2 = Filter(id: filterId, pointEnum: pointEnum, menuMapEnum: .price, title: level2FilterTitle, parentId: filterLevelPrice.id, level: 2, parentTitle: filterLevelPrice.title, kind: kindId, categoryId: currentCategory.id)
+                        
+                        
+                        filterLevel2.volume = .v_075
+                        filters.append(filterLevel2)
+                        filterId += 1
+                        
+                        
+                        let random = Int.random(in: 1 ..< maxProducts)
+                        
+                        for _ in 0...random {
+                            let product = createProduct(
+                                name: productNameENG + " #\(productId)",
+                                nameRU: productNameRU + " #\(productId)",
+                                categoryId: currentCategory.id,
+                                filterId: filterLevel0.id,
+                                pointEnum: pointEnum,
+                                menuMapEnum: .price,
+                                volume: "0.75",
+                                color: color,
+                                sugar: getSugar())
+                            addAttribute(product: product, filterId: filterLevelPrice.id, attrName: "Цена", attrValue: level1FilterTitle)
+                            addAttribute(product: product, filterId: filterLevel2.id, attrName: level0FilterTitle, attrValue: level2FilterTitle)
+                            addCountry(product: product, country: level2FilterTitle)
+                            products.append(product)
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+    
+    
+    
     
     private func createFilter(pointEnum: PointEnum) {
         
@@ -483,7 +591,9 @@ class TestData2 {
                 
                 
                 kindId += 1
-                let filterLevel0 = Filter(id: filterId, pointEnum: pointEnum, title: level0FilterTitle, parentId: nil, level: 0, parentTitle: nil, kind: kindId, categoryId: currentCategory.id)
+                
+                let filterLevel0 = Filter(id: filterId, pointEnum: pointEnum, menuMapEnum: .classic, title: level0FilterTitle, parentId: nil, level: 0, parentTitle: nil, kind: kindId, categoryId: currentCategory.id)
+                
                 filterLevel0.volume = .v_075
                 filters.append(filterLevel0)
                 filterId += 1
@@ -491,87 +601,47 @@ class TestData2 {
                 
                 
                 if filterCategory.getLevel1(by: level0FilterIndex).count == 0 {
-                    for _ in 0...2 {
+                    
+                    let random = Int.random(in: 1 ..< maxProducts)
+                    
+                    for _ in 0...random {
                         let product = createProduct(
-                                name: productNameENG + " #\(productId)",
-                                nameRU: productNameRU + " #\(productId)",
-                                categoryId: currentCategory.id,
-                                filterId: filterLevel0.id,
-                                pointEnum: pointEnum,
-                                volume: "0.75",
-                                color: color,
-                                sugar: getSugar()
-                            )
+                            name: productNameENG + " #\(productId)",
+                            nameRU: productNameRU + " #\(productId)",
+                            categoryId: currentCategory.id,
+                            filterId: filterLevel0.id,
+                            pointEnum: pointEnum,
+                             menuMapEnum: .classic,
+                            volume: "0.75",
+                            color: color,
+                            sugar: getSugar()
+                        )
                         products.append(product)
                     }
                 }
                 
                 
-                
-                for (level1FilterIndex, level1FilterTitle) in filterCategory.getLevel1Price(by: level0FilterIndex).enumerated() {
-                    
-                    
-                    let filterLevelPrice = Filter(id: filterId, pointEnum: pointEnum, title: level1FilterTitle, parentId: filterLevel0.id, level: 1, parentTitle: filterLevel0.title, kind: kindId, categoryId: currentCategory.id)
-                    
-                    
-                    filterLevelPrice.isPrice = true
-                    filterLevelPrice.volume = .v_075
-                    filters.append(filterLevelPrice)
-                    filterId += 1
-                    
-                    
-                    
-                    for (level2FilterIndex, level2FilterTitle) in filterCategory.getLevel1(by: level1FilterIndex).enumerated() {
-                        
-                        
-                        let filterLevel2 = Filter(id: filterId, pointEnum: pointEnum, title: level2FilterTitle, parentId: filterLevelPrice.id, level: 2, parentTitle: filterLevelPrice.title, kind: kindId, categoryId: currentCategory.id)
-                        
-                        
-                        filterLevel2.volume = .v_075
-                        filterLevel2.isPrice = true
-                        filters.append(filterLevel2)
-                        filterId += 1
-                        
-                        for _ in 0...2 {
-                            let product = createProduct(
-                                name: productNameENG + " #\(productId)",
-                                nameRU: productNameRU + " #\(productId)",
-                                categoryId: currentCategory.id,
-                                filterId: filterLevel0.id,
-                                pointEnum: pointEnum,
-                                volume: "0.75",
-                                color: color,
-                                 sugar: getSugar())
-                            addAttribute(product: product, filterId: filterLevelPrice.id, attrName: "Цена", attrValue: level1FilterTitle)
-                            addAttribute(product: product, filterId: filterLevel2.id, attrName: level0FilterTitle, attrValue: level2FilterTitle)
-                            addCountry(product: product, country: level2FilterTitle)
-                            products.append(product)
-                        }
-                    }
-                }
-                
-                
-  
-                
-                
-                
                 for (level1FilterIndex, level1FilterTitle) in filterCategory.getLevel1(by: level0FilterIndex).enumerated() {
-                    let filterLevel1 = Filter(id: filterId, pointEnum: pointEnum, title: level1FilterTitle, parentId: filterLevel0.id, level: 1, parentTitle: filterLevel0.title, kind: kindId, categoryId: currentCategory.id)
+                    let filterLevel1 = Filter(id: filterId, pointEnum: pointEnum, menuMapEnum: .classic, title: level1FilterTitle, parentId: filterLevel0.id, level: 1, parentTitle: filterLevel0.title, kind: kindId, categoryId: currentCategory.id)
                     filterLevel1.volume = .v_075
                     filters.append(filterLevel1)
                     
                     
                     if filterCategory.getLevel2(by: level0FilterIndex, by: level1FilterIndex).count == 0 {
-                        for _ in 0...2 {
+                        
+                        let random = Int.random(in: 1 ..< maxProducts)
+                        
+                        for _ in 0...random {
                             let product = createProduct(
                                 name: productNameENG + " #\(productId)",
                                 nameRU: productNameRU + " #\(productId)",
                                 categoryId: currentCategory.id,
                                 filterId: filterLevel0.id,
                                 pointEnum: pointEnum,
+                                menuMapEnum: .classic,
                                 volume: "0.75",
                                 color: color,
-                                 sugar: getSugar())
+                                sugar: getSugar())
                             addAttribute(product: product, filterId: filterLevel1.id, attrName: level0FilterTitle, attrValue: level1FilterTitle)
                             addCountry(product: product, country: level1FilterTitle)
                             products.append(product)
@@ -583,20 +653,24 @@ class TestData2 {
                     
                     
                     for (_, level2FilterTitle) in filterCategory.getLevel2(by: level0FilterIndex, by: level1FilterIndex).enumerated() {
-                        let filterLevel2 = Filter(id: filterId, pointEnum: pointEnum, title: level2FilterTitle, parentId: filterLevel1.id, level: 2, parentTitle: filterLevel1.title, kind: kindId, categoryId: currentCategory.id)
+                        let filterLevel2 = Filter(id: filterId, pointEnum: pointEnum, menuMapEnum: .classic, title: level2FilterTitle, parentId: filterLevel1.id, level: 2, parentTitle: filterLevel1.title, kind: kindId, categoryId: currentCategory.id)
                         filterLevel2.volume = .v_075
                         filters.append(filterLevel2)
-                        for _ in 0...2 {
+                        
+                        let random = Int.random(in: 1 ..< maxProducts)
+                        
+                        for _ in 0...random {
                             let product = createProduct(
                                 name: productNameENG + " #\(productId)",
                                 nameRU: productNameRU + " #\(productId)",
                                 categoryId: currentCategory.id,
                                 filterId: filterLevel0.id,
                                 pointEnum: pointEnum,
+                                menuMapEnum: .classic,
                                 volume: "0.75",
                                 color: color,
                                 sugar: getSugar())
-                                
+                            
                             
                             addAttribute(product: product, filterId: filterLevel1.id, attrName: level0FilterTitle, attrValue: level1FilterTitle)
                             addAttribute(product: product, filterId: filterLevel2.id, attrName: level1FilterTitle, attrValue: level2FilterTitle)
@@ -612,7 +686,7 @@ class TestData2 {
         
         for product in products {
             let rootFilterId = product.attributeIds.first
-            let priceFilters = filters.filter{$0.parentId == rootFilterId && $0.isPrice == true}
+            let priceFilters = filters.filter{$0.parentId == rootFilterId && $0.menuMapEnum == .price}
             
             var filter: Filter?
             
@@ -640,6 +714,7 @@ class TestData2 {
                                categoryId: Int,
                                filterId: Int,
                                pointEnum: PointEnum,
+                               menuMapEnum: MenuMapEnum,
                                volume: String,
                                color: ProductColorEnum,
                                sugar: ProductSugarEnum
@@ -658,24 +733,25 @@ class TestData2 {
         for i in from...to {
             tmp += "\(grapes[i]),"
         }
-
+        
         let realString = String(tmp.dropLast())
         
         var colURL = ""
         switch color {
-            case .pink:
-                colURL = "http://185.219.42.85:3000/Images/pink.png"
-            case .red:
-                colURL = "http://185.219.42.85:3000/Images/red2.png"
-            case .white:
-                colURL = "http://185.219.42.85:3000/Images/white2.png"
-            default:
-                break
+        case .pink:
+            colURL = "http://185.219.42.85:3000/Images/pink.png"
+        case .red:
+            colURL = "http://185.219.42.85:3000/Images/red2.png"
+        case .white:
+            colURL = "http://185.219.42.85:3000/Images/white2.png"
+        default:
+            break
         }
-
+        
         let product = Product(id: productId,
                               name: name,
                               pointEnum: pointEnum,
+                              menuMapEnum: menuMapEnum,
                               categoryId: categoryId,
                               desc: "",
                               price: Double(price),
@@ -689,7 +765,7 @@ class TestData2 {
                               country: "",
                               countryIconURL: "",
                               sugar: sugar
-                              )
+        )
         productId += 1
         return product
     }
@@ -730,7 +806,7 @@ class TestData2 {
         product.country = country
         
         if let iconURL = iconByCountries[country] {
-          product.countryIconURL = iconURL
+            product.countryIconURL = iconURL
         }
     }
     
@@ -742,6 +818,20 @@ class TestData2 {
     }
     
     
-     let grapes:[String] = ["Айрен","Алиберне (одесский черный)","Алиготе","Аликанте","Альбариньо","Альянико","Амарал","Ансоника (инзолия)","Аринто","Арнеис","Асал","Барбера","Бастардо магарачский","Белые сорта винограда","Блауфренкиш","Боваледду","Бонарда","Боррасал","Бурбуленк","Буше (каберне фран)","Бьянколлела","Верделло","Вердехо","Вердиккио","Верментино","Весполина","Виньяо","Виозиньо","Вионье","Витовска","Виура","Гальоппо","Гаме","Гарганега","Гарнача","Гевюрцтраминер","Годельо","Грасиано","Греканико","Грекетто","Греко","Греко неро","Гренаш","Гренаш блан","Грилло","Гро мансенг","Грюнер вельтлинер","Джинестра","Дзибиббо (мускат александрийский)","Дольчетто","Другие сорта","Зинфандель","Инзолия (ансоника)","Каберло","Каберне совиньон","Каберне фран","Канайоло","Кариньян","Кариньяно","Карменер","Катарратто","Кахури мцване","Киси","Клерет","Кодега","Коломбар","Колорино","Корвина веронезе","Корвиноне","Кортезе","Красностоп","Красные сорта винограда","Кроатина","Лагрейн","Лаурейро","Лозе","Лоурейро","Мальбек","Мальвазия","Мальвазия бьянка","Мальвазия истриана","Мальвазия нера","Мальвазия фина","Марсан","Марселан","Масуэло","Матаро","Менсия","Мерло","Молинара","Монастрель","Мондёс","Моника","Монтепульчано","Москатель","Москатель де грано менудо","Мурведр","Мускат","Мускат гамбургский","Мускат желтый","Мускат люнель","Мюллер тургау","Мюскаде (мелон де бургонь)","Мюскадель","Мюскарден","Неббиоло","Негретт","Негроамаро","Нерелло маскалезе","Неро д'авола","Нурагус","Озелета","Палава","Паломино","Пассерина","Педерна","Педро хименес","Пекорелло","Пекорино","Перриконе","Пигато","Пикпуль","Пино блан","Пино бьянко","Пиногри","Пино гриджо","Пино неро","Пино нуар","Пинотаж","Примитиво","Пти вердо","Пти сира","Птит сира","Пуньителло","Пьедироссо","Рабигато","Рабозо","Рефоско","Риболла джалла","Риполи","Рислинг","Рислинг итальянский","Рислинг рейнский","Ркацители","Ролль (верментино)","Рондинелла","Россезе","Руссан","Санджовезе","Санкт лаурент","Саперави","Семильон","Сенсо","Сильванер","Сира","Совиньон блан","Совиньон гри","Соусон","Танна","Темпранильо","Терольдего","Тибурен","Тиморассо","Тинта амарела","Тинта баррока","Тинта веласко","Тинта као","Тинта рориш","Тинто фино (темпранильо)","Токай","Торронтес","Траминер","Треббьяно","Треббьяно д'абруццо","Треббьяно ди лугана","Треббьяно тоскано (проканико)","Трейшадура","Турига насьонал","Турига франка","Фалангина","Фамозо","Фениле","Фер серваду","Фиано","Фурминт","Харшлевелю","Цвайгельт","Чарелло","Шардоне","Шенен блан","Шираз","Шпетбургундер (пино нуар)"]
+    let grapes:[String] = ["Айрен","Алиберне (одесский черный)","Алиготе","Аликанте","Альбариньо","Альянико","Амарал","Ансоника (инзолия)","Аринто","Арнеис","Асал","Барбера","Бастардо магарачский","Белые сорта винограда","Блауфренкиш","Боваледду","Бонарда","Боррасал","Бурбуленк","Буше (каберне фран)","Бьянколлела","Верделло","Вердехо","Вердиккио","Верментино","Весполина","Виньяо","Виозиньо","Вионье","Витовска","Виура","Гальоппо","Гаме","Гарганега","Гарнача","Гевюрцтраминер","Годельо","Грасиано","Греканико","Грекетто","Греко","Греко неро","Гренаш","Гренаш блан","Грилло","Гро мансенг","Грюнер вельтлинер","Джинестра","Дзибиббо (мускат александрийский)","Дольчетто","Другие сорта","Зинфандель","Инзолия (ансоника)","Каберло","Каберне совиньон","Каберне фран","Канайоло","Кариньян","Кариньяно","Карменер","Катарратто","Кахури мцване","Киси","Клерет","Кодега","Коломбар","Колорино","Корвина веронезе","Корвиноне","Кортезе","Красностоп","Красные сорта винограда","Кроатина","Лагрейн","Лаурейро","Лозе","Лоурейро","Мальбек","Мальвазия","Мальвазия бьянка","Мальвазия истриана","Мальвазия нера","Мальвазия фина","Марсан","Марселан","Масуэло","Матаро","Менсия","Мерло","Молинара","Монастрель","Мондёс","Моника","Монтепульчано","Москатель","Москатель де грано менудо","Мурведр","Мускат","Мускат гамбургский","Мускат желтый","Мускат люнель","Мюллер тургау","Мюскаде (мелон де бургонь)","Мюскадель","Мюскарден","Неббиоло","Негретт","Негроамаро","Нерелло маскалезе","Неро д'авола","Нурагус","Озелета","Палава","Паломино","Пассерина","Педерна","Педро хименес","Пекорелло","Пекорино","Перриконе","Пигато","Пикпуль","Пино блан","Пино бьянко","Пиногри","Пино гриджо","Пино неро","Пино нуар","Пинотаж","Примитиво","Пти вердо","Пти сира","Птит сира","Пуньителло","Пьедироссо","Рабигато","Рабозо","Рефоско","Риболла джалла","Риполи","Рислинг","Рислинг итальянский","Рислинг рейнский","Ркацители","Ролль (верментино)","Рондинелла","Россезе","Руссан","Санджовезе","Санкт лаурент","Саперави","Семильон","Сенсо","Сильванер","Сира","Совиньон блан","Совиньон гри","Соусон","Танна","Темпранильо","Терольдего","Тибурен","Тиморассо","Тинта амарела","Тинта баррока","Тинта веласко","Тинта као","Тинта рориш","Тинто фино (темпранильо)","Токай","Торронтес","Траминер","Треббьяно","Треббьяно д'абруццо","Треббьяно ди лугана","Треббьяно тоскано (проканико)","Трейшадура","Турига насьонал","Турига франка","Фалангина","Фамозо","Фениле","Фер серваду","Фиано","Фурминт","Харшлевелю","Цвайгельт","Чарелло","Шардоне","Шенен блан","Шираз","Шпетбургундер (пино нуар)"]
+    
+    
+    
+    func encode(response: Response){
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        do {
+            if let data = try? encoder.encode(response) {
+                print(String(data: data, encoding: .utf8)!)
+            }
+        } catch let err {
+            print(err.localizedDescription)
+        }
+    }
     
 }

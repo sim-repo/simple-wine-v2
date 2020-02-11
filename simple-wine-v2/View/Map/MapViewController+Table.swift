@@ -35,7 +35,7 @@ extension MapViewController: UITableViewDataSource , UITableViewDelegate{
             let cell = tableView.dequeueReusableCell(withIdentifier: "FilterTableViewCell", for: indexPath) as! FilterTableViewCell
             if let filter = presenter.filterGetData(indexPath: indexPath) {
                 let isSelected = presenter.filterIsSelected(filter: filter)
-                cell.setup(filter, presenter, indexPath, isSelected)
+                cell.setup(filter, presenter, indexPath, isSelected, itemCounts: 0)
             }
             return cell
             

@@ -1,10 +1,14 @@
 import Foundation
 
 
-struct NetworkService {
+class NetworkService {
+    
+    
+    static var shared = NetworkService()
+    
     
     static var runningTask: [TaskEnum:Retry] = [:]
-
+    
     enum TaskEnum {
         case all
     }
@@ -38,7 +42,7 @@ struct NetworkService {
             trying.dispatchGroup?.enter()
             trying.task?()
         }
-     }
+    }
     
     
     static func requestDidFinish(taskEnum: TaskEnum){
@@ -57,40 +61,43 @@ struct NetworkService {
 
 
 
-
 //MARK:- Requests
 
 extension NetworkService {
     
     public static func requestAll(_ request: URLRequest,
-                                         _ onSuccess: setterOnSuccess,
-                                         _ onError: setterOnError,
-                                         _ syncOnSuccess: syncOnSuccess) {
+                                  _ onSuccess: setterOnSuccess,
+                                  _ onError: setterOnError,
+                                  _ syncOnSuccess: syncOnSuccess) {
         
         let dispatchGroup = DispatchGroup()
         
         let task = {
             session.dataTask(with: request) { (data, response, error) in
-            
-            if let error = error {
-                tryAgain(taskEnum: .all, err: error.localizedDescription)
-                return
-            }
-            guard let data = data,
-                data.isEmpty == false
-            else {
-                tryAgain(taskEnum: .all, err: "data is empty")
-                return
-            }
-            guard let resp = ParseService.decodeAll(data: data, onError) else { return }
                 
-            dispatchGroup.leave()
-            // TODO: add threads
-            requestDidFinish(taskEnum: .all)
-            onSuccess?(resp.points)
-            syncOnSuccess?(resp.points, resp.categories, resp.filters, resp.products, resp.detailMapSetting)
+                if let error = error {
+                    tryAgain(taskEnum: .all, err: error.localizedDescription)
+                    return
+                }
+                guard let data = data,
+                    data.isEmpty == false
+                    else {
+                        tryAgain(taskEnum: .all, err: "data is empty")
+                        return
+                }
+                guard let resp = ParseService.decodeAll(data: data, onError) else { return }
+                dispatchGroup.leave()
+                // TODO: add threads
+                requestDidFinish(taskEnum: .all)
+                onSuccess?(resp.points)
+                syncOnSuccess?(resp.points, resp.categories, resp.filters, resp.products, resp.detailMapSetting)
             }.resume()
         }
         runner(taskEnum: .all, task: task, onError: onError, dispatchGroup: dispatchGroup)
     }
 }
+    
+    
+    
+    
+    

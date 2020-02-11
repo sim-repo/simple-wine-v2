@@ -6,21 +6,17 @@ import Foundation
 extension MapPresenter {
     
     func prepareProduct() {
-        tmpShownProducts.removeAll()
         tmpShownProductSectionTitle.removeAll()
         tmpShownProductsByFilter.removeAll()
         guard selectedFilter != nil else { return }
         
-        tmpShownProducts = productDataSource.filter{$0.attributeIds.contains(selectedFilter.id)}
         fillProductsByFilter()
     }
     
     
     private func fillProductsByFilter() {
         
-        let isPrice = menuMapEnum == .classic ? false : true  //# >> проект: тупые менеджера
-        
-        let childFilters = filterDataSource.filter{ $0.parentId == selectedFilter.id && $0.isPrice == isPrice }
+        let childFilters = filterDataSource.filter{ $0.parentId == selectedFilter.id }
         if childFilters.isEmpty == false {
             for (section, filter) in childFilters.enumerated() {
                 tmpShownProductSectionTitle[section] = filter.title
@@ -32,6 +28,17 @@ extension MapPresenter {
                     tmpShownProductsByFilter[IndexPath(row: row, section: section)] = product
                 }
             }
+        }
+    }
+    
+    
+    private func fillProductsBySearch( searchText: String ) {
+        let products = productDataSource.filter{ $0.name.lowercased().contains(searchText.lowercased())}
+        tmpShownProductSectionTitle.removeAll()
+        tmpShownProductsByFilter.removeAll()
+        tmpShownProductSectionTitle[0] = "Результаты поиска:"
+        for (row, product) in products.enumerated() {
+             tmpShownProductsByFilter[IndexPath(row: row, section: 0)] = product
         }
     }
 }
@@ -73,19 +80,20 @@ extension MapPresenter: ViewableProductPresenter {
     
     
     func productSearchTextDidBeginEditing() {
-        tmpShownProductsWhenSearching = tmpShownProducts
+
     }
     
     
     func productSearchTextDidChange(textSearch: String) {
-        if textSearch == "" {
-            tmpShownProducts = tmpShownProductsWhenSearching
-        } else {
-            let searched = productDataSource.filter{$0.desc.lowercased().range(of: textSearch.lowercased()) != nil }
-            if searched.isEmpty == false {
-                tmpShownProducts = searched
-            }
-        }
+        fillProductsBySearch(searchText: textSearch)
+//        if textSearch == "" {
+//            tmpShownProducts = tmpShownProductsWhenSearching
+//        } else {
+//            let searched = productDataSource.filter{$0.desc.lowercased().range(of: textSearch.lowercased()) != nil }
+//            if searched.isEmpty == false {
+//                tmpShownProducts = searched
+//            }
+//        }
         view?.productReloadData()
     }
     

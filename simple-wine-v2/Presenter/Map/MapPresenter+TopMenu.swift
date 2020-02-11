@@ -29,8 +29,7 @@ extension MapPresenter: ViewableCategoryPresenter {
         
         let maxLevel = getMaxLevel()
         if maxLevel > 2 {
-            let isPrice = menuMapEnum == .classic ? false : true  //# >> проект: тупые менеджера
-            if let childFilter = filterDataSource.first(where: { $0.parentId == selectedFilter.id  && $0.isPrice == isPrice}) {
+            if let childFilter = filterDataSource.first(where: { $0.parentId == selectedFilter.id }) {
                 selectedFilter = childFilter
             }
         }

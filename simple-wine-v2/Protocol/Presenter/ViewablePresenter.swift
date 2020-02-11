@@ -26,7 +26,7 @@ protocol ViewableFilterPresenter {
     func filterGetIndexPath(category: Category) -> IndexPath?
     func filterGetSectionTitle(section: Int) -> String
     func filterIsSelected(filter: Filter) -> Bool
-    
+    func filterGetItemsByFilter(filter: Filter) -> Int
     
     func filterDidPress(at indexPath: IndexPath)
 }
@@ -100,6 +100,7 @@ protocol ViewablePointMenuPresenter {
     func didPressEnter(pointEnum: PointEnum)
 }
 
+
 //MARK:- Auth
 protocol ViewableAuthPresenter {
     func setView(view: PresentableAuthView)
@@ -113,6 +114,5 @@ protocol ViewableAuthPresenter {
 protocol ViewableMapMenuPresenter {
     func setView(view: PresentableMapMenuView)
     func getLogoImageURL() -> String
-    func didPressClassicMenuItem()
-    func didPressPriceMenuItem()
+    func didPressEnter(menuMapEnum: MenuMapEnum)
 }

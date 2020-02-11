@@ -25,7 +25,6 @@ class MapPresenter {
     var tmpFilterSection: [IndexPath:Filter] = [:]
     
     //MARK:- product
-    var tmpShownProducts: [Product] = [] //product id: Product
     var tmpShownProductsWhenSearching: [Product] = [] // used when searching
     
     var tmpShownProductsByFilter = [IndexPath: Product]()
@@ -40,10 +39,19 @@ class MapPresenter {
     //MARK:- selected map: classic or price
     var menuMapEnum: MenuMapEnum = .classic
     
+    //MARK:- items by filter
+    var itemsByFilter: [Int : [Int]] = [:]
+    
+    
     private init(){}
 
     func setup(menuMapEnum: MenuMapEnum) {
         self.menuMapEnum = menuMapEnum
+    }
+    
+    func calcItemsPerFilter() {
+        let attributes = productDataSource.filter({$0.pointEnum == currentPointEnum}).flatMap({$0.attributeIds})
+        itemsByFilter = Dictionary(grouping: attributes, by: { $0 })
     }
 }
 
@@ -71,7 +79,6 @@ extension MapPresenter: ViewableMapPresenter {
     
     func back() {
         selectedFilter = nil
-        tmpShownProducts.removeAll()
         tmpShownProductsWhenSearching.removeAll()
         tmpShownFilter.removeAll()
         tmpFilterSectionTitle.removeAll()
@@ -104,6 +111,10 @@ extension MapPresenter: ViewableFavouriteMapPresenter {
 //MARK:- Setterable
 
 extension MapPresenter: SetterableMapPresenter {
+    
+    func setMapMenu(menuMapEnum: MenuMapEnum) {
+        self.menuMapEnum = menuMapEnum
+    }
 
     func setCurrentPoint(pointEnum: PointEnum) {
         self.currentPointEnum = pointEnum
@@ -118,6 +129,7 @@ extension MapPresenter: SetterableMapPresenter {
         productDataSource = products
         detailMapSettingDataSource = detailMapSettings
         selectedFilter = filters.first
+        calcItemsPerFilter()
     }
     
     func clear() {
@@ -127,7 +139,6 @@ extension MapPresenter: SetterableMapPresenter {
         productDataSource.removeAll()
         detailMapSettingDataSource.removeAll()
 
-        tmpShownProducts.removeAll()
         tmpShownProductsWhenSearching.removeAll()
         tmpShownFilter.removeAll()
         tmpFilterSectionTitle.removeAll()
