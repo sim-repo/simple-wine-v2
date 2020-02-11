@@ -103,6 +103,7 @@ extension PointMenuViewController {
             self.progressLabel.alpha = 0
             self.view.layoutIfNeeded()
         }
+        
     }
 }
 

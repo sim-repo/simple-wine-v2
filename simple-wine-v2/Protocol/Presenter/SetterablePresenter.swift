@@ -42,4 +42,5 @@ protocol SetterableCoverPresenter {
 protocol SetterableMapMenuPresenter {
     func setCurrentPoint(point: Point)
     func showAlert(text: String)
+    func showActionAlert(text: String, completion: (()->Void)?)
 }

@@ -56,4 +56,26 @@ extension MapMenuViewController: PresentableMapMenuView {
             self.present(alert, animated: true, completion: nil)
         }
     }
+    
+    func showActionAlert(text: String, completion: (()->Void)? = nil ) {
+        
+        ThreadConstant.UI_THREAD {
+            let alertController = UIAlertController(title: "Что-то пошло не так", message: text, preferredStyle: .alert)
+
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
+                 UIAlertAction in
+                self.navigationController?.popToRootViewController(animated: true)
+                completion?()
+             }
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
+                 UIAlertAction in
+             }
+
+             alertController.addAction(okAction)
+             alertController.addAction(cancelAction)
+
+             self.present(alertController, animated: true)
+        }
+    }
+    
 }

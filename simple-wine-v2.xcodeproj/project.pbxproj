@@ -177,7 +177,7 @@
 		165D638F23E9C6DA00428AB1 /* Setter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setter.swift; sourceTree = "<group>"; };
 		165D639123E9C9E400428AB1 /* TypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
 		165D639723E9DF2C00428AB1 /* ParseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseService.swift; sourceTree = "<group>"; };
-		165DD6C223E39A0C0068D76E /* simple-wine-v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "simple-wine-v2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		165DD6C223E39A0C0068D76E /* SimpleWineCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleWineCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		165DD6C523E39A0C0068D76E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		165DD6CC23E39A0C0068D76E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		165DD6CE23E39A0D0068D76E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -459,7 +459,7 @@
 		165DD6C323E39A0C0068D76E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				165DD6C223E39A0C0068D76E /* simple-wine-v2.app */,
+				165DD6C223E39A0C0068D76E /* SimpleWineCard.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -854,7 +854,7 @@
 			);
 			name = "simple-wine-v2";
 			productName = "simple-wine-v2";
-			productReference = 165DD6C223E39A0C0068D76E /* simple-wine-v2.app */;
+			productReference = 165DD6C223E39A0C0068D76E /* SimpleWineCard.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1218,7 +1218,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.garneteum.simple-wine-v2";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SimpleWineCard;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -1238,7 +1238,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.garneteum.simple-wine-v2";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SimpleWineCard;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};

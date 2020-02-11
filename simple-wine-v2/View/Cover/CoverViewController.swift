@@ -66,6 +66,7 @@ extension CoverViewController: PresentableCoverView {
     }
     
     func logout() {
+        
         navigationController?.popViewController(animated: true)
     }
 }

@@ -31,7 +31,8 @@ class Setter {
     private func getLoginOnSuccess(_ completion: (()->Void)? = nil) -> setterLoginOnSuccess {
         let completion: setterLoginOnSuccess = { login in
             completion?()
-            self.allSync()
+            self.tokenId = login.token
+            self.allSync(force: false)
         }
         return completion
     }
@@ -41,7 +42,7 @@ class Setter {
         let completion: setterTokenOnSuccess = { success in
             if success {
                 completion?()
-                self.allSync()
+                self.allSync(force: false)
             }
         }
         return completion
@@ -77,8 +78,8 @@ class Setter {
     
 //MARK:- sync functions
     
-    func allSync(_ completion: (()->Void)? = nil) {
-        AllSync.shared.sync(self.getOnSuccess(completion), self.getOnError())
+    func allSync(force: Bool, _ completion: (()->Void)? = nil) {
+        AllSync.shared.sync(self.getOnSuccess(completion), self.getOnError(), force: force)
     }
     
     func bkgAllSync(appCompletion: ((_ newData: Bool) -> Void)? = nil) {
@@ -169,11 +170,19 @@ extension Setter {
                 detailMapSettings: settings!
             )
         } else {
-            (MapMenuPresenter.shared as SetterableMapMenuPresenter).showAlert(text: "Нет данных по \(point.name) : \(mapMenuEnum.rawValue).\nПроверьте интернет-соединение или обратитесь к службе поддержки" )
+            (MapMenuPresenter.shared as SetterableMapMenuPresenter).showActionAlert(text: "Нет данных по \(point.name) : \(mapMenuEnum.rawValue).\nНажимте OK, чтобы попытаться скачать данные.\nВ случае неудачи обратитесь к службе поддержки") {
+                self.allSync(force: true)
+            }
             return
         }
         
         // 5 вызываем segue transition
         completion?()
+    }
+    
+    func coverDidLogout() {
+        tokenId = ""
+        RealmService.clearLogin()
+        (PointMenuPresenter.shared as SetterablePointMenuPresenter).showAuth()
     }
 }

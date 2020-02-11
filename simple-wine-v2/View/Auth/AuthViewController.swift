@@ -45,7 +45,7 @@ class AuthViewController: UIViewController {
     
     // temporary
     private func setDefaultPassword() {
-        loginLabel.text = "kuznetsky.test@simplewine.ru1"
+        loginLabel.text = "kuznetsky.test@simplewine.ru"
         passwordLabel.text = "4fp1AoQ8@wUX"
     }
     

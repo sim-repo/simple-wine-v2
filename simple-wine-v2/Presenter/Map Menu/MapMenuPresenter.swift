@@ -32,7 +32,7 @@ extension MapMenuPresenter: ViewableMapMenuPresenter {
 
 
 extension MapMenuPresenter: SetterableMapMenuPresenter {
-    
+
     func setCurrentPoint(point: Point) {
         self.point = point
     }
@@ -40,4 +40,9 @@ extension MapMenuPresenter: SetterableMapMenuPresenter {
     func showAlert(text: String) {
         view?.showAlert(text: text)
     }
+    
+    func showActionAlert(text: String, completion: (()->Void)? = nil ) {
+        view?.showActionAlert(text: text, completion: completion)
+    }
+    
 }

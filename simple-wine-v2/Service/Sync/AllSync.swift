@@ -11,7 +11,18 @@ class AllSync {
 
     
     func sync(_ onSuccess: setterOnSuccess,
-              _ onError: setterOnError) {
+              _ onError: setterOnError,
+              force: Bool
+              ) {
+        
+        if force {
+            let url = NetworkConfiguration.getFullPath(path: "all3")
+            var request = URLRequest(url: url)
+            request.httpMethod = "GET"
+            DownloadService.shared.downloadAll(request, onSuccess, onError, self.getOnSuccess())
+            return
+        }
+        
         
         let interval = Date().timeIntervalSince(getLastSyncDate() ?? Date.yesterday)
         

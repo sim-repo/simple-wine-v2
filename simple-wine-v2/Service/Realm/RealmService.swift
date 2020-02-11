@@ -214,6 +214,17 @@ class RealmService {
         }
     }
     
+    static func clearLogin() {
+        let realm = getInstance(.safe)
+        do {
+            try realm?.write {
+                realm?.deleteAll()
+            }
+        } catch(let err) {
+            Logger.catchError(msg: err.localizedDescription)
+        }
+    }
+    
     
     enum RealmConfigEnum {
         

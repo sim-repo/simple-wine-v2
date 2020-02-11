@@ -29,6 +29,7 @@ extension CoverPresenter: ViewableCoverPresenter {
     
     func didLogout() {
         view?.logout()
+        Setter.shared.coverDidLogout()
     }
 }
 
