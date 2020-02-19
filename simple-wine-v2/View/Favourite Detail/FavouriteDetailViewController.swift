@@ -20,8 +20,7 @@ class FavouriteDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        bkgView.backgroundColor = Theme.bkg
+        bkgView.backgroundColor = .clear
         
         setCloseButton()
         guard let product = product else { return }

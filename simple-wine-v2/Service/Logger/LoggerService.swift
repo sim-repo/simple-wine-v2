@@ -43,7 +43,7 @@ struct Logger {
         #endif
     }
 
-    static func logInf(msg: String) {
+    static func logInf(_ msg: String) {
         //TODO
     }
 
